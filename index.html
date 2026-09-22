@@ -229,7 +229,7 @@
 </style>
 
 <style id="resizablePanelsV046">
-/* v0.050: 직접 크기 조절 */
+/* v0.051: 직접 크기 조절 */
 .calcBattleArea{grid-template-columns:var(--trainer-w,150px) minmax(360px,1fr) var(--trinket-w,150px);align-items:start;}
 .calcTrainerPanel,.calcTrinketPanel,.calcCenter>.calcBox{position:relative;box-sizing:border-box;}
 .calcTrainerPanel{width:var(--trainer-w,150px);height:var(--trainer-h,180px);min-width:120px;min-height:180px;overflow:auto;}
@@ -248,7 +248,7 @@
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.050</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.051</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -287,15 +287,15 @@
               </div>
               <div class="calcTeamHint">바토몬을 선택해 추가 · 같은 바토몬 3마리 → Lv.2 · Lv.2 2마리 → Lv.3 · 클릭으로 제거 · 드래그로 위치 변경</div>
             </div>
+            <section class="selectedTrinketPanel" id="selectedTrinketPanel" aria-label="선택한 장신구">
+              <div class="selectedTrinketPanelHead"><strong>선택한 장신구</strong><span class="selectedTrinketPanelHint">아이콘에 마우스를 올리면 이름 표시</span></div>
+              <div class="selectedTrinkets" id="selectedTrinkets"></div>
+            </section>
           </main>
           <aside class="calcTrinketPanel" id="calcTrinketPanel" tabindex="0" role="button" aria-label="장신구 선택">
             <div class="calcTrinketHead">장신구</div>
             <div class="calcTrinketBody" id="calcTrinketBody"><div class="calcTrinketHint">장신구를 선택하세요</div></div>
           </aside>
-          <section class="selectedTrinketPanel" id="selectedTrinketPanel" aria-label="선택한 장신구">
-            <div class="selectedTrinketPanelHead"><strong>선택한 장신구</strong><span class="selectedTrinketPanelHint">아이콘에 마우스를 올리면 이름 표시</span></div>
-            <div class="selectedTrinkets" id="selectedTrinkets"></div>
-          </section>
           <div class="calcShop">
             <div class="calcBatomonFilters">
               <input id="calcBatomonSearch" type="search" placeholder="이름 / 번호 검색" autocomplete="off">
@@ -423,8 +423,8 @@
 <div id="editOverlay" class="overlay"><div class="modal"><div class="modalhead"><h2 id="editTitle">사진 수정</h2><button class="close" onclick="closeEditor()">×</button></div><div class="editor"><div class="canvasWrap"><canvas id="canvas" width="760" height="580"></canvas></div><div class="controls"><label>새 사진 선택</label><input id="fileInput" type="file" accept="image/*"><label>확대</label><input id="zoom" type="range" min="0.5" max="3" step="0.01" value="1"><div class="controlrow"><div><label>X 위치</label><input id="posX" type="range" min="-500" max="500" step="1" value="0"></div><div><label>Y 위치</label><input id="posY" type="range" min="-500" max="500" step="1" value="0"></div></div><div class="controlrow"><button onclick="fitImage()">원래 맞춤</button><button onclick="centerImage()">가운데</button></div><div class="controlrow"><button onclick="rotate(-90)">↶ 90°</button><button onclick="rotate(90)">↷ 90°</button></div><button class="primary" onclick="saveEditor()">수정 사진 저장</button><button onclick="resetPhoto()">이 캐릭터 원본으로 복원</button><button onclick="removeCustom()">저장된 수정본 삭제</button><button onclick="downloadEdited()">현재 사진 JPG 저장</button><div id="editStatus" class="small"></div></div></div></div></div>
 
 <style>
-/* v0.050 selected trinkets moved to a separate resizable panel */
-.selectedTrinketPanel{grid-column:1 / -1;position:relative;box-sizing:border-box;width:100%;min-height:76px;height:var(--selected-trinket-h,96px);background:#171c24;border:1px solid #303947;border-radius:12px;padding:10px 12px;overflow:auto}
+/* v0.051 selected trinkets placed directly below team */
+.selectedTrinketPanel{position:relative;box-sizing:border-box;width:100%;min-height:76px;height:var(--selected-trinket-h,96px);background:#171c24;border:1px solid #303947;border-radius:12px;padding:10px 12px;overflow:auto}
 .selectedTrinketPanelHead{display:flex;align-items:center;gap:10px;margin-bottom:7px;color:#f3f5f7;font-size:12px}
 .selectedTrinketPanelHint{font-size:10px;color:#8f9aa8;font-weight:400}
 .selectedTrinkets{display:flex;flex-wrap:wrap;align-items:center;gap:8px;min-height:0}
