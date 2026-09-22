@@ -221,19 +221,31 @@ function renderTrainers(){
 async function init(){
   loadEdits();
   try{
-    const res=await fetch('./characters.json?cb='+Date.now(),{cache:'no-store'});if(!res.ok)throw new Error(`HTTP ${res.status}`);const data=await res.json();characters=Array.isArray(data)?data:(data.characters||[]);
-    if(characters.length===0)throw new Error('characters 배열이 비어 있습니다.');
-    const tr=await fetch('./trainers.json?cb='+Date.now(),{cache:'no-store'});
-    if(!tr.ok)throw new Error(`trainers.json HTTP ${tr.status}`);
-    const td=await tr.json();
-    trainers=Array.isArray(td)?td:(td.trainers||[]);
-    if(trainers.length===0)throw new Error('trainers 배열이 비어 있습니다.');
+    const res=await fetch('./characters.json?cb='+Date.now(),{cache:'no-store'});
+    if(!res.ok) throw new Error(`characters.json HTTP ${res.status}`);
+    const data=await res.json();
+    characters=Array.isArray(data)?data:(data.characters||[]);
+    if(characters.length===0) throw new Error('characters 배열이 비어 있습니다.');
+
+    // 트레이너 파일은 별도로 로드합니다. 파일이 없거나 GitHub Pages 배포가 아직 안 된 경우에도
+    // 사이트의 바토몬 도감은 정상적으로 열리고, 아래 내장된 공식 데이터로 트레이너 탭을 표시합니다.
+    try{
+      const tr=await fetch('./trainers.json?cb='+Date.now(),{cache:'no-store'});
+      if(tr.ok){
+        const td=await tr.json();
+        trainers=Array.isArray(td)?td:(td.trainers||[]);
+      }
+    }catch(e){ console.warn('trainers.json 로드 실패 → 내장 트레이너 데이터 사용',e); }
+
+    if(!trainers.length) trainers=[{"id":"mysterious-trainer","name":"???","ability":"Gain MissingN.","region":null,"tags":["Not offered by Mysterious Mask","Outside random trainer choices"],"url":"https://batomon.com/trainers/mysterious-trainer"},{"id":"black-belt","name":"Black Belt","ability":"On Battle Start If you have exactly 1 Fighting monster on your team, activate its On Victory ability.","region":"Jinto","tags":[],"url":"https://batomon.com/trainers/black-belt"},{"id":"bug-catcher","name":"Bug Catcher","ability":"The first Bug monster you buy each day is free.","region":"Pantra Jinto","tags":[],"url":"https://batomon.com/trainers/bug-catcher"},{"id":"burglar","name":"Burglar","ability":"Trinket gifts only offer 2 choices, but you can take both of them.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/burglar"},{"id":"chef","name":"Chef","ability":"Your singled-typed monsters gain Fire typing. Your Fire monsters have +2 Burn.","region":"Pantra Jinto","tags":[],"url":"https://batomon.com/trainers/pyromaniac"},{"id":"chemist","name":"Chemist","ability":"Your Toxic monsters have +1 Poison. When any monster levels up, increase this effect by +1 Poison.","region":"Pantra Jinto","tags":[],"url":"https://batomon.com/trainers/chemist"},{"id":"egg-breeder","name":"Egg Breeder","ability":"Gain a Purple Egg that hatches into a level 2 Super Rare monster in 5 days.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/egg-breeder"},{"id":"gamer","name":"Gamer","ability":"Gain a Mythical monster and $30 on day 9.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/gamer"},{"id":"gentleman","name":"Gentleman","ability":"From day 4 onwards, your shop no longer stocks Common or Uncommon monsters.","region":"Pantra Jinto","tags":["Unique","Not offered by Mysterious Mask"],"url":"https://batomon.com/trainers/gentleman"},{"id":"lucky-girl","name":"Lucky Girl","ability":"SHINY monsters are more likely to appear.","region":"Pantra Jinto","tags":[],"url":"https://batomon.com/trainers/youngster-f"},{"id":"mad-scientist","name":"Mad Scientist","ability":"On day 7, transform monsters on your active team into random level 1 Legendary monsters.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/mad-scientist"},{"id":"masked-man","name":"Masked Man","ability":"Every 4 days, choose a trainer and gain their ability.","region":"Pantra Jinto","tags":["Not offered by Mysterious Mask"],"url":"https://batomon.com/trainers/masked-man"},{"id":"monster-ranger","name":"Monster Ranger","ability":"Start with an Uncommon monster. Get another copy of that monster every 2 days.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/monster-ranger"},{"id":"musician","name":"Musician","ability":"If you have exactly 1 Electric monster on your team, it will have +150% Shock.","region":"Pantra","tags":[],"url":"https://batomon.com/trainers/musician"},{"id":"painter","name":"Painter","ability":"Random species will be painted with every type this run.","region":"Pantra Jinto","tags":["Unique","Not offered by Mysterious Mask"],"url":"https://batomon.com/trainers/painter"},{"id":"redhead","name":"Redhead","ability":"On Victory Give your Fire monsters +2 Burn permanently.","region":"Pantra Jinto","tags":[],"url":"https://batomon.com/trainers/redhead"},{"id":"rich-lady","name":"Rich Lady","ability":"Gain shop rank +2 and $10.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/lady"},{"id":"scavenger","name":"Scavenger","ability":"Gain an additional copy of each non-unique Common or Uncommon Trinket from a gift.","region":"Pantra Jinto","tags":[],"url":"https://batomon.com/trainers/scavenger"},{"id":"shopkeeper","name":"Shopkeeper","ability":"Your shop stocks Item 1 rarity tier higher and cost 15% less.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/shopkeeper"},{"id":"swim-coach","name":"Swim Coach","ability":"Gain a random Water monster each day.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/swim-coach"},{"id":"treasure-hunter","name":"Treasure Hunter","ability":"When you get Trinket gifts, your choices are 1 rarity tier higher.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/treasure-hunter"},{"id":"twins","name":"Twins","ability":"When monsters merge into level 3, gain an exact copy.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/twins"},{"id":"youngster","name":"Youngster","ability":"Gain 3 free rerolls every day.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/youngster-m"}];
+
     document.getElementById('status').textContent=`데이터 로드 완료 · 원향 ${characters.length}마리 · 공식 데이터 적용`;
     render();
     renderTrainers();
   }catch(err){
-    console.error(err);document.getElementById('status').textContent='characters.json을 불러오지 못했습니다. index.html과 characters.json이 같은 GitHub 폴더에 있는지 확인하세요.';
-    document.getElementById('grid').innerHTML='<div class="empty">데이터 파일을 찾을 수 없습니다.<br><br><b>GitHub에 index.html과 characters.json을 같은 폴더에 올려주세요.</b></div>';
+    console.error(err);
+    document.getElementById('status').textContent='캐릭터 DB를 불러오지 못했습니다: '+err.message;
+    document.getElementById('grid').innerHTML='<div class="empty">characters.json을 읽지 못했습니다.<br><br><b>GitHub 저장소에서 index.html과 characters.json이 같은 폴더에 있는지 확인하세요.</b></div>';
   }
 }
 init();
