@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.017</title>
+<title>바토몬 원향 도감 v0.018</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -73,13 +73,25 @@
 .eventChoice{font-weight:700}
 .eventReward{margin-top:4px;color:#b7d7ff}
 .eventSub{margin-top:3px;font-size:12px;opacity:.72}
-.sectionCalcLink{height:40px;display:inline-flex;align-items:center;border:1px solid #7c8fa6;border-radius:10px;background:#18222d;color:#fff;padding:0 16px;font-weight:800;text-decoration:none}.sectionCalcLink:hover{background:#243342}</style>
+
+/* v0.018 Damage Calculator UI */
+.calcPage{background:#0c6673;min-height:calc(100vh - 30px);border:1px solid #153f4a;border-radius:18px;overflow:hidden;box-shadow:0 18px 55px rgba(0,0,0,.28)}
+.calcTopbar{height:58px;background:linear-gradient(180deg,#20c3f0 0%,#13a8d4 100%);border-bottom:3px solid #087c9d;display:flex;align-items:center;justify-content:center;gap:clamp(24px,5vw,90px);font-weight:900;color:#fff;text-shadow:2px 2px 0 rgba(0,0,0,.18)}
+.calcStatus{display:flex;align-items:center;gap:10px;font-size:20px;min-width:110px;justify-content:center}.calcIcon{font-size:30px;line-height:1}.calcDay{font-size:30px}.calcCounter{font-size:20px}
+.calcBoard{position:relative;padding:14px 18px 18px;background-color:#0c6875;background-image:linear-gradient(135deg,rgba(38,184,210,.14) 25%,transparent 25%,transparent 75%,rgba(38,184,210,.14) 75%),linear-gradient(315deg,rgba(38,184,210,.08) 25%,transparent 25%,transparent 75%,rgba(38,184,210,.08) 75%);background-size:150px 150px;background-position:0 0,75px 75px}
+.calcBattleArea{display:grid;grid-template-columns:320px minmax(560px,680px) 1fr;gap:24px;align-items:start;min-height:470px}.calcTrainerPanel{background:#f4f4f5;border:6px solid #8f939e;outline:3px solid #252a31;border-radius:8px;box-shadow:5px 5px 0 rgba(0,0,0,.2);overflow:hidden}.calcTrainerTitle{height:48px;background:#ffc20f;color:#fff;font-size:22px;font-weight:900;padding:9px 12px;border-bottom:5px solid #e6a800;text-shadow:2px 2px 0 rgba(0,0,0,.2)}.calcTrainerImage{height:190px;background:#e7e8ea;display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:4px solid #a7a9b2}.calcTrainerImage img{width:100%;height:100%;object-fit:contain;image-rendering:auto}.calcTrainerAbility{min-height:150px;padding:16px 14px;color:#555c68;font-size:17px;line-height:1.55;font-weight:800;text-align:center;background:#fafafa}.calcTrainerHp{height:45px;background:#fff;border-top:4px solid #a7a9b2;display:flex;align-items:center;padding:4px 10px;font-size:18px;font-weight:900;color:#ffbd00}.calcHpBar{height:27px;flex:1;background:#2de83b;border:2px solid #8a8d95;margin-left:7px;box-shadow:inset 0 0 0 2px #15b622;color:#fff;text-align:center;line-height:23px;text-shadow:2px 2px 0 rgba(0,0,0,.55)}
+.calcCenter{display:flex;flex-direction:column;gap:14px}.calcBox{background:#f3f3f4;border:5px solid #8e929d;outline:2px solid #252a31;border-radius:7px;box-shadow:4px 4px 0 rgba(0,0,0,.2);overflow:hidden}.calcBoxHead{height:40px;padding:6px 12px;font-size:20px;font-weight:900;color:#fff;background:#ffc20f;border-bottom:4px solid #e2a500;text-shadow:2px 2px 0 rgba(0,0,0,.15)}.calcBoxHead.team{background:#ef4d6a;border-bottom-color:#cf3450}.calcSlots{padding:6px;display:grid;gap:7px}.calcSlots.bench{grid-template-columns:repeat(4,1fr)}.calcSlots.team{grid-template-columns:repeat(3,1fr)}.calcSlot{height:110px;background:#fff;border:4px solid #b8bbc4;box-shadow:inset 0 0 0 2px #e6e7ea;display:flex;align-items:center;justify-content:center;position:relative;color:#b3b6bd;font-size:12px;font-weight:900}.calcSlot:after{content:'+';font-size:26px;color:#d0d2d7}.calcSlot:hover{border-color:#8ea7b7;background:#f9fcfd}.calcSlot.teamSlot{height:112px}.calcTeamHint{font-size:12px;color:#66707d;text-align:center;padding:2px 0 8px}.calcRightSpace{min-height:1px}
+.calcShop{margin-top:12px;background:#eef0f1;border:5px solid #8e929d;outline:2px solid #252a31;border-radius:7px;box-shadow:4px 4px 0 rgba(0,0,0,.2);min-height:180px;overflow:hidden}.calcShopHead{height:44px;background:#65c9ee;color:#10232c;border-bottom:4px solid #3ba5c9;font-size:22px;font-weight:900;padding:7px 14px}.calcShopBlank{height:135px;background:#f7f7f7}
+.calcNotice{margin-top:10px;color:#d9f5fb;font-size:12px;text-align:center}.calcNavButton{position:relative}.calcNavButton.on{background:#173247!important;color:#6fd9ff!important}
+@media(max-width:1050px){.calcBattleArea{grid-template-columns:270px 1fr}.calcRightSpace{display:none}.calcTrainerImage{height:165px}.calcTrainerAbility{font-size:15px}.calcSlot,.calcSlot.teamSlot{height:95px}}
+@media(max-width:720px){.calcTopbar{gap:8px;justify-content:space-around}.calcStatus{font-size:14px;min-width:auto}.calcDay{font-size:20px}.calcCounter{font-size:14px}.calcBattleArea{grid-template-columns:1fr}.calcTrainerPanel{max-width:420px;margin:auto;width:100%}.calcCenter{width:100%}.calcSlots.bench{grid-template-columns:repeat(2,1fr)}.calcSlots.team{grid-template-columns:repeat(2,1fr)}.calcBoard{padding:10px}.calcShop{min-height:140px}.calcShopBlank{height:95px}}
+</style>
 <!-- English originals are retained in trainers.json only: name_en / ability_en -->
 </head>
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.017</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.018</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -94,11 +106,11 @@
     <button id="tabItem" onclick="switchSection('item')">도구 40종</button>
     <button id="tabEvent" onclick="switchSection('event')">이벤트 15종</button>
     <button id="tabMechanic" onclick="switchSection('mechanic')">시스템 30종</button>
-    <a class="sectionCalcLink" href="./damage-calculator.html">⚔ 데미지 계산기</a>
+    <button id="tabCalculator" class="calcNavButton" onclick="switchSection('calculator')">⚔ 데미지 계산기</button>
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.017</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.018</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -171,6 +183,49 @@
     </div>
     <div id="mechanicStatus" class="trainerStatus">mechanics.json 불러오는 중…</div>
     <div id="mechanicGrid" class="mechanicsGrid"></div>
+  </section>
+
+  <section id="calculatorSection" class="section">
+    <div class="calcPage">
+      <div class="calcTopbar">
+        <div class="calcStatus"><span class="calcIcon">🫀</span><span>10</span></div>
+        <div class="calcDay">1일차</div>
+        <div class="calcStatus"><span class="calcIcon">🪙</span><span class="calcCounter">0/10</span></div>
+      </div>
+      <div class="calcBoard">
+        <div class="calcBattleArea">
+          <aside class="calcTrainerPanel">
+            <div class="calcTrainerTitle">알 브리더</div>
+            <div class="calcTrainerImage"><img id="calcTrainerImage" alt="알 브리더"></div>
+            <div class="calcTrainerAbility">5일 뒤 레벨 2 <span style="color:#a53dc5">영웅</span> 등급<br>바토몬으로 부화하는 보라색 알을 얻어요.</div>
+            <div class="calcTrainerHp"><span>HP</span><div class="calcHpBar">300</div></div>
+          </aside>
+
+          <main class="calcCenter">
+            <div class="calcBox">
+              <div class="calcBoxHead">벤치</div>
+              <div class="calcSlots bench">
+                <div class="calcSlot" data-slot="bench-1"></div><div class="calcSlot" data-slot="bench-2"></div><div class="calcSlot" data-slot="bench-3"></div><div class="calcSlot" data-slot="bench-4"></div>
+              </div>
+            </div>
+            <div class="calcBox">
+              <div class="calcBoxHead team">내 팀</div>
+              <div class="calcSlots team">
+                <div class="calcSlot teamSlot" data-slot="team-1"></div><div class="calcSlot teamSlot" data-slot="team-2"></div><div class="calcSlot teamSlot" data-slot="team-3"></div>
+                <div class="calcSlot teamSlot" data-slot="team-4"></div><div class="calcSlot teamSlot" data-slot="team-5"></div><div class="calcSlot teamSlot" data-slot="team-6"></div>
+              </div>
+              <div class="calcTeamHint">바토몬 배치 영역 · 계산 기능은 다음 단계에서 연결됩니다.</div>
+            </div>
+          </main>
+          <div class="calcRightSpace"></div>
+        </div>
+        <div class="calcShop">
+          <div class="calcShopHead">상점</div>
+          <div class="calcShopBlank"></div>
+        </div>
+        <div class="calcNotice">현재는 전투판 UI만 구성되어 있습니다. 상점 및 실제 전투/데미지 계산 기능은 이후 연결합니다.</div>
+      </div>
+    </div>
   </section>
 </div>
 
@@ -336,6 +391,8 @@ function switchSection(section){
   document.getElementById('itemSection')?.classList.toggle('on',section==='item');
   document.getElementById('eventSection')?.classList.toggle('on',section==='event');
   document.getElementById('mechanicSection')?.classList.toggle('on',isM);
+  const isC=section==='calculator'; document.getElementById('calculatorSection')?.classList.toggle('on',isC);
+  document.getElementById('tabCalculator')?.classList.toggle('on',isC);
   document.getElementById('tabEvent')?.classList.toggle('on',section==='event');
   document.getElementById('tabMechanic')?.classList.toggle('on',isM);
 
@@ -572,7 +629,7 @@ function renderMechanics(){
 async function init(){
   loadEdits();
   try{
-    const res=await fetch('./characters.json?v=0.017&cb='+Date.now(),{cache:'no-store'});
+    const res=await fetch('./characters.json?v=0.018&cb='+Date.now(),{cache:'no-store'});
     if(!res.ok) throw new Error(`characters.json HTTP ${res.status}`);
     const data=await res.json();
     characters=Array.isArray(data)?data:(data.characters||[]);
@@ -581,10 +638,11 @@ async function init(){
     // 트레이너 파일은 별도로 로드합니다. 파일이 없거나 GitHub Pages 배포가 아직 안 된 경우에도
     // 사이트의 바토몬 도감은 정상적으로 열리고, 아래 내장된 공식 데이터로 트레이너 탭을 표시합니다.
     try{
-      const tr=await fetch('./trainers.json?v=0.017&cb='+Date.now(),{cache:'no-store'});
+      const tr=await fetch('./trainers.json?cb='+Date.now(),{cache:'no-store'});
       if(tr.ok){
         const td=await tr.json();
         trainers=Array.isArray(td)?td:(td.trainers||[]);
+    const eggBreeder=trainers.find(t=>t.id==='egg-breeder'); if(eggBreeder&&eggBreeder.image_url) document.getElementById('calcTrainerImage').src=eggBreeder.image_url;
       }
     }catch(e){ console.warn('trainers.json 로드 실패 → 내장 트레이너 데이터 사용',e); }
 
@@ -592,13 +650,13 @@ async function init(){
 
     document.getElementById('status').textContent=`데이터 로드 완료 · 원향 ${characters.length}마리 · 공식 데이터 적용`;
     try{
-      const ev=await fetch('./events.json?v=0.017&cb='+Date.now(),{cache:'no-store'});
+      const ev=await fetch('./events.json?cb='+Date.now(),{cache:'no-store'});
     if(ev.ok){ const ed=await ev.json(); events=Array.isArray(ed)?ed:(ed.events||[]); }
-    const it=await fetch('./items.json?v=0.017&cb='+Date.now(),{cache:'no-store'});
+    const it=await fetch('./items.json?cb='+Date.now(),{cache:'no-store'});
     if(it.ok){ const id=await it.json(); items=Array.isArray(id)?id:(id.items||[]); }
-    const tk=await fetch('./trinkets.json?v=0.017&cb='+Date.now(),{cache:'no-store'});
+    const tk=await fetch('./trinkets.json?cb='+Date.now(),{cache:'no-store'});
       if(tk.ok){ const kd=await tk.json(); trinkets=Array.isArray(kd)?kd:(kd.trinkets||[]); }
-    const mc=await fetch('./mechanics.json?v=0.017&cb='+Date.now(),{cache:'no-store'});
+    const mc=await fetch('./mechanics.json?cb='+Date.now(),{cache:'no-store'});
     if(mc.ok){ const md=await mc.json(); mechanics=Array.isArray(md)?md:(md.mechanics||[]); }
     }catch(e){ console.warn('trinkets.json 로드 실패',e); }
     render();
