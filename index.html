@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.006</title>
+<title>바토몬 원향 도감 v0.007</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -51,13 +51,20 @@
 .siteVersion{display:inline-block;font-size:12px;font-weight:700;vertical-align:middle;margin-left:8px;padding:4px 8px;border:1px solid #3c4d5e;border-radius:7px;color:#9fd8ff;background:#17212b}
 .trinketPortrait img,.trainerPortrait img{referrer-policy:no-referrer}
 
+
+.eventCard{min-width:0}
+.eventOptions{display:grid;gap:8px;margin-top:10px}
+.eventOption{padding:9px 10px;border-radius:10px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07)}
+.eventChoice{font-weight:700}
+.eventReward{margin-top:4px;color:#b7d7ff}
+.eventSub{margin-top:3px;font-size:12px;opacity:.72}
 </style>
 <!-- English originals are retained in trainers.json only: name_en / ability_en -->
 </head>
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.006</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22) + 트레이너 23종 + 장신구 93종 + 도구 40종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.007</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22) + 트레이너 23종 + 장신구 93종 + 도구 40종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -70,6 +77,7 @@
     <button id="tabTrainer" onclick="switchSection('trainer')">트레이너 23종</button>
     <button id="tabTrinket" onclick="switchSection('trinket')">장신구 93종</button>
     <button id="tabItem" onclick="switchSection('item')">도구 40종</button>
+    <button id="tabEvent" onclick="switchSection('event')">이벤트 15종</button>
   </div>
 
   <section id="batomonSection" class="section on">
@@ -116,6 +124,21 @@
     <div id="itemStatus" class="trainerStatus">items.json 불러오는 중…</div>
     <div id="itemGrid" class="trainerGrid"></div>
   </section>
+
+  <section id="eventSection" class="section">
+    <div class="tools" style="margin-bottom:12px">
+      <input id="eventSearch" placeholder="이벤트 이름 / 설명 / 보상 검색">
+      <select id="eventSchedule">
+        <option value="">전체 일정</option>
+        <option value="Day 3">3일차</option>
+        <option value="Day 6">6일차</option>
+        <option value="Day 9">9일차</option>
+        <option value="Special">특수</option>
+      </select>
+    </div>
+    <div id="eventStatus" class="trainerStatus">events.json 불러오는 중…</div>
+    <div id="eventGrid" class="trainerGrid"></div>
+  </section>
 </div>
 
 <div id="statsOverlay" class="overlay"><div class="modal"><div class="modalhead"><h2 id="statsTitle">능력치</h2><button class="close" onclick="closeStats()">×</button></div><div class="stats"><div class="tabs" id="modeTabs"></div><div class="levels" id="levelTabs"></div><div class="statbox" id="statContent"></div></div></div></div>
@@ -128,6 +151,7 @@ let characters=[];
 let trainers=[];
 let trinkets=[];
 let items=[];
+let events=[];
 let statsCurrent=null;
 let statsMode='normal';
 let statsLevel=1;
@@ -242,7 +266,9 @@ const trainerSearch=document.getElementById('trainerSearch'); if(trainerSearch)t
 const trinketSearch=document.getElementById('trinketSearch'); if(trinketSearch)trinketSearch.addEventListener('input',renderTrinkets);
 const trinketRarity=document.getElementById('trinketRarity'); if(trinketRarity)trinketRarity.addEventListener('change',renderTrinkets);
 const itemSearch=document.getElementById('itemSearch'); if(itemSearch)itemSearch.addEventListener('input',renderItems);
-const itemRarity=document.getElementById('itemRarity'); if(itemRarity)itemRarity.addEventListener('change',renderItems);document.getElementById('rank').addEventListener('change',render);document.getElementById('sort').addEventListener('change',render);document.getElementById('resetEdits').addEventListener('click',()=>{if(!confirm('모든 사진 수정 내용을 이 브라우저에서 삭제할까요?'))return;edits={};saveEdits();render()});
+const itemRarity=document.getElementById('itemRarity'); if(itemRarity)itemRarity.addEventListener('change',renderItems);
+const eventSearch=document.getElementById('eventSearch'); if(eventSearch)eventSearch.addEventListener('input',renderEvents);
+const eventSchedule=document.getElementById('eventSchedule'); if(eventSchedule)eventSchedule.addEventListener('change',renderEvents);document.getElementById('rank').addEventListener('change',render);document.getElementById('sort').addEventListener('change',render);document.getElementById('resetEdits').addEventListener('click',()=>{if(!confirm('모든 사진 수정 내용을 이 브라우저에서 삭제할까요?'))return;edits={};saveEdits();render()});
 
 
 function switchSection(section){
@@ -254,6 +280,8 @@ function switchSection(section){
   document.getElementById('trainerSection')?.classList.toggle('on',isT);
   document.getElementById('trinketSection')?.classList.toggle('on',isK);
   document.getElementById('itemSection')?.classList.toggle('on',section==='item');
+  document.getElementById('eventSection')?.classList.toggle('on',section==='event');
+  document.getElementById('tabEvent')?.classList.toggle('on',section==='event');
 
   document.getElementById('tabBatomon')?.classList.toggle('on',isB);
   document.getElementById('tabTrainer')?.classList.toggle('on',isT);
@@ -408,6 +436,51 @@ function renderItems(){
 }
 
 
+
+function renderEvents(){
+  const g=document.getElementById('eventGrid'), status=document.getElementById('eventStatus');
+  if(!g||!status) return;
+  const q=(document.getElementById('eventSearch')?.value||'').trim().toLowerCase();
+  const schedule=(document.getElementById('eventSchedule')?.value||'');
+  const list=events.filter(e=>{
+    const s=[e.name_ko||'',e.name_en||'',e.description_ko||'',e.description_en||'',e.tier_ko||'',e.tier||'',
+      ...(e.options||[]).flat()].join(' ').toLowerCase();
+    return (!q||s.includes(q)) && (!schedule||e.schedule===schedule);
+  });
+  g.innerHTML='';
+  for(const e of list){
+    const card=document.createElement('div'); card.className='trainerCard eventCard';
+    const portrait=document.createElement('div'); portrait.className='trinketPortrait';
+    const img=document.createElement('img'); img.alt=(e.name_ko||e.name_en)+' 이미지'; img.loading='lazy'; img.decoding='async'; img.referrerPolicy='no-referrer';
+    const slug=e.id;
+    const urls=[
+      e.image_local||'',
+      e.image_url||`https://batomon.com/game/25377295/event/${slug}.png`,
+      `https://wsrv.nl/?url=${encodeURIComponent(e.image_url||`https://batomon.com/game/25377295/event/${slug}.png`)}`,
+      `https://images.weserv.nl/?url=${encodeURIComponent(e.image_url||`https://batomon.com/game/25377295/event/${slug}.png`)}`
+    ].filter(Boolean);
+    let i=0; const next=()=>{if(i>=urls.length){portrait.classList.add('noImage');return;}img.src=urls[i++];}; img.onerror=next; next(); portrait.appendChild(img);
+    const head=document.createElement('div'); head.className='trainerHead';
+    const left=document.createElement('div');
+    const nm=document.createElement('div'); nm.className='trainerName'; nm.textContent=e.name_ko||e.name_en;
+    const rg=document.createElement('div'); rg.className='trinketRarity'; rg.textContent=[e.tier_ko||e.tier,e.schedule_ko||e.schedule].filter(Boolean).join(' · ');
+    left.append(nm,rg); head.append(left);
+    const desc=document.createElement('div'); desc.className='trinketEffect'; desc.textContent=e.description_ko||e.description_en||'';
+    const opts=document.createElement('div'); opts.className='eventOptions';
+    (e.options||[]).forEach(o=>{
+      const box=document.createElement('div'); box.className='eventOption';
+      const a=document.createElement('div'); a.className='eventChoice'; a.textContent=o[1]||o[0];
+      const b=document.createElement('div'); b.className='eventReward'; b.textContent=o[3]||o[2];
+      box.append(a,b);
+      if(o[4]){const sub=document.createElement('div');sub.className='eventSub';sub.textContent=o[5]||o[4];box.append(sub);}
+      opts.append(box);
+    });
+    const link=document.createElement('a'); link.href=`https://batomon.com/events/${e.id}`; link.target='_blank'; link.rel='noopener noreferrer'; link.textContent='공식 원문 보기 ↗';
+    card.append(portrait,head,desc,opts,link); g.appendChild(card);
+  }
+  status.textContent=`이벤트 ${events.length}종 · Balance 22 / 1.0.0 · 현재 표시 ${list.length}종`;
+}
+
 async function init(){
   loadEdits();
   try{
@@ -431,7 +504,9 @@ async function init(){
 
     document.getElementById('status').textContent=`데이터 로드 완료 · 원향 ${characters.length}마리 · 공식 데이터 적용`;
     try{
-      const it=await fetch('./items.json?cb='+Date.now(),{cache:'no-store'});
+      const ev=await fetch('./events.json?cb='+Date.now(),{cache:'no-store'});
+    if(ev.ok){ const ed=await ev.json(); events=Array.isArray(ed)?ed:(ed.events||[]); }
+    const it=await fetch('./items.json?cb='+Date.now(),{cache:'no-store'});
     if(it.ok){ const id=await it.json(); items=Array.isArray(id)?id:(id.items||[]); }
     const tk=await fetch('./trinkets.json?cb='+Date.now(),{cache:'no-store'});
       if(tk.ok){ const kd=await tk.json(); trinkets=Array.isArray(kd)?kd:(kd.trinkets||[]); }
@@ -440,6 +515,7 @@ async function init(){
     renderTrainers();
     renderTrinkets();
     renderItems();
+    renderEvents();
   }catch(err){
     console.error(err);
     document.getElementById('status').textContent='데이터를 불러오지 못했습니다: '+err.message;

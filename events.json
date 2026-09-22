@@ -1,0 +1,490 @@
+{
+  "site_version": "0.007",
+  "source": "https://batomon.com/wiki",
+  "events_source": "https://batomon.com/events",
+  "patch": "Balance 22",
+  "game_version": "1.0.0",
+  "steam_build": "25377295",
+  "count": 15,
+  "events": [
+    {
+      "id": "baby-basilisk",
+      "name_en": "Baby Basilisk",
+      "name_ko": "아기 바실리스크",
+      "description_en": "In the middle of a forest, you come across a crying baby basilisk monster. It seems it has gotten lost from its parents.",
+      "description_ko": "숲 한가운데에서 울고 있는 아기 바실리스크 바토몬을 발견합니다. 부모를 잃어버린 것 같습니다.",
+      "tier": "Tier 2",
+      "tier_ko": "2단계",
+      "schedule": "Day 6",
+      "schedule_ko": "6일차",
+      "options": [
+        [
+          "Adopt it",
+          "입양한다",
+          "Gain a Ignit",
+          "이그닛을 획득합니다."
+        ],
+        [
+          "Help it find its parents",
+          "부모를 찾도록 도와준다",
+          "Get a Rare trinket gift",
+          "희귀 장신구 선물을 획득합니다."
+        ],
+        [
+          "Capture it and sell it",
+          "포획해서 판다",
+          "Gain $40",
+          "$40를 획득합니다."
+        ]
+      ]
+    },
+    {
+      "id": "bug-collector",
+      "name_en": "Bug Collector",
+      "name_ko": "곤충 수집가",
+      "description_en": "You run into a bug collector. He offers to share with you one of the bugs he has caught today.",
+      "description_ko": "곤충 수집가를 만납니다. 그는 오늘 잡은 곤충 중 하나를 나눠주겠다고 합니다.",
+      "tier": "Tier 3",
+      "tier_ko": "3단계",
+      "schedule": "Day 3",
+      "schedule_ko": "3일차",
+      "options": [
+        [
+          "Take the fighter ant",
+          "싸움개미를 받는다",
+          "Gain a level 2 Guardiant",
+          "레벨 2 가디언트를 획득합니다."
+        ],
+        [
+          "Take the gold beetle",
+          "황금 딱정벌레를 받는다",
+          "Gain Gildshell with +20 Damage",
+          "피해 +20이 적용된 길드셸을 획득합니다."
+        ],
+        [
+          "Take the boxing mantis",
+          "복싱 사마귀를 받는다",
+          "Gain Brawlmantis with +1 Multicast",
+          "멀티캐스트 +1이 적용된 브롤맨티스를 획득합니다."
+        ]
+      ]
+    },
+    {
+      "id": "dragon-tamer",
+      "name_en": "Dragon Tamer",
+      "name_ko": "드래곤 조련사",
+      "description_en": "You run into a traveling dragon tamer. He says he has too many dragons to take care of and offers you to adopt one.",
+      "description_ko": "여행 중인 드래곤 조련사를 만납니다. 그는 돌봐야 할 드래곤이 너무 많다며 한 마리를 입양하라고 합니다.",
+      "tier": "Tier 3",
+      "tier_ko": "3단계",
+      "schedule": "Day 9",
+      "schedule_ko": "9일차",
+      "options": [
+        [
+          "Adopt the one with the big horn",
+          "큰 뿔이 있는 드래곤을 입양한다",
+          "Gain a SHINY Saberhorn",
+          "SHINY 세이버혼을 획득합니다."
+        ],
+        [
+          "Adopt the one with the crown",
+          "왕관을 쓴 드래곤을 입양한다",
+          "Gain a SHINY Draconarch",
+          "SHINY 드라코나크를 획득합니다."
+        ],
+        [
+          "Adopt the long one",
+          "긴 드래곤을 입양한다",
+          "Gain a SHINY Onsetra",
+          "SHINY 온세트라를 획득합니다."
+        ]
+      ]
+    },
+    {
+      "id": "dragons-nest",
+      "name_en": "Dragons Nest",
+      "name_ko": "드래곤 둥지",
+      "description_en": "You stumble upon a dragon's hoard. Take something before the dragon comes back!",
+      "description_ko": "드래곤의 보물을 발견했습니다. 드래곤이 돌아오기 전에 무언가를 가져가세요!",
+      "tier": "Tier 3",
+      "tier_ko": "3단계",
+      "schedule": "Day 3",
+      "schedule_ko": "3일차",
+      "options": [
+        [
+          "Take the egg",
+          "알을 가져간다",
+          "Gain Dragon Egg",
+          "드래곤 에그를 획득합니다."
+        ],
+        [
+          "Take the sword",
+          "검을 가져간다",
+          "Gain Hero's Sword",
+          "영웅의 검을 획득합니다."
+        ],
+        [
+          "Take the coins",
+          "동전을 가져간다",
+          "Gain $20",
+          "$20를 획득합니다."
+        ]
+      ]
+    },
+    {
+      "id": "dryad-statue",
+      "name_en": "Dryad Statue",
+      "name_ko": "드라이어드 조각상",
+      "description_en": "You explore deep into the woods and find a statue with a glowing gem embedded in its head.",
+      "description_ko": "숲 깊숙한 곳을 탐험하다가 머리에 빛나는 보석이 박힌 조각상을 발견합니다.",
+      "tier": "Tier 3",
+      "tier_ko": "3단계",
+      "schedule": "Day 9",
+      "schedule_ko": "9일차",
+      "options": [
+        [
+          "Pray to it",
+          "조각상에게 기도한다",
+          "Give a monster Grass typing, Gain a Dryadell",
+          "바토몬 하나에게 풀 타입을 부여하고 드라이어델을 획득합니다.",
+          "Target: a monster without Grass typing",
+          "대상: 풀 타입이 없는 바토몬"
+        ],
+        [
+          "Take the gem",
+          "보석을 가져간다",
+          "Gain Mysterious Gem",
+          "신비한 보석을 획득합니다."
+        ],
+        [
+          "Gently touch it",
+          "살짝 만진다",
+          "Gain Dryad's Charm",
+          "드라이어드의 부적을 획득합니다."
+        ]
+      ]
+    },
+    {
+      "id": "dryad-statue-oshima",
+      "name_en": "Dryad Statue Oshima",
+      "name_ko": "드라이어드 조각상 오시마",
+      "description_en": "You explore deep into the woods and find a statue with a glowing gem embedded in its head.",
+      "description_ko": "숲 깊숙한 곳을 탐험하다가 머리에 빛나는 보석이 박힌 조각상을 발견합니다.",
+      "tier": "Tier 3",
+      "tier_ko": "3단계",
+      "schedule": "Day 9",
+      "schedule_ko": "9일차",
+      "options": [
+        [
+          "Pray to it",
+          "조각상에게 기도한다",
+          "Give a monster Grass typing, Gain Ginsage",
+          "바토몬 하나에게 풀 타입을 부여하고 진세이지를 획득합니다.",
+          "Target: a monster without Grass typing",
+          "대상: 풀 타입이 없는 바토몬"
+        ],
+        [
+          "Take the gem",
+          "보석을 가져간다",
+          "Gain Mysterious Gem",
+          "신비한 보석을 획득합니다."
+        ],
+        [
+          "Gently touch it",
+          "살짝 만진다",
+          "Gain Dryad's Charm",
+          "드라이어드의 부적을 획득합니다."
+        ]
+      ]
+    },
+    {
+      "id": "endless-boss-prep",
+      "name_en": "Endless Boss Prep",
+      "name_ko": "엔드리스 보스 준비",
+      "description_en": "You've finally made it this far. You might need one of these for the final battle",
+      "description_ko": "드디어 여기까지 왔습니다. 최종 전투를 위해 이것들 중 하나가 필요할지도 모릅니다.",
+      "tier": "Tier 4",
+      "tier_ko": "4단계",
+      "schedule": "Special",
+      "schedule_ko": "특수",
+      "options": [
+        [
+          "Take the dragon",
+          "드래곤을 가져간다",
+          "Gain a level 2 SHINY Celestia",
+          "레벨 2 SHINY 셀레스티아를 획득합니다."
+        ],
+        [
+          "Take the statue",
+          "조각상을 가져간다",
+          "Gain a level 4 SHINY Cherubble",
+          "레벨 4 SHINY 체러블을 획득합니다."
+        ],
+        [
+          "Take the charm",
+          "부적을 가져간다",
+          "Gain Mysterious Charm",
+          "신비한 부적을 획득합니다."
+        ]
+      ]
+    },
+    {
+      "id": "fossil-discovery",
+      "name_en": "Fossil Discovery",
+      "name_ko": "화석 발견",
+      "description_en": "You discover a winged fossil deep inside a cave.",
+      "description_ko": "동굴 깊은 곳에서 날개 달린 화석을 발견합니다.",
+      "tier": "After 3 runs",
+      "tier_ko": "3회 완료 후",
+      "schedule": "Day 6",
+      "schedule_ko": "6일차",
+      "options": [
+        [
+          "Take it to a lab and revive it",
+          "연구소로 가져가 되살린다",
+          "Gain Talonite",
+          "탈로나이트를 획득합니다."
+        ],
+        [
+          "Keep it",
+          "그대로 보관한다",
+          "Gain Winged Fossil",
+          "날개 화석을 획득합니다."
+        ],
+        [
+          "Sell it",
+          "판매한다",
+          "Gain $40",
+          "$40를 획득합니다."
+        ]
+      ]
+    },
+    {
+      "id": "genius-inventor",
+      "name_en": "Genius Inventor",
+      "name_ko": "천재 발명가",
+      "description_en": "You encounter a genius inventor. He asks if you want to test any of his new inventions.",
+      "description_ko": "천재 발명가를 만납니다. 그는 자신의 새로운 발명품을 시험해 보겠냐고 묻습니다.",
+      "tier": "Tier 3 After 5 games",
+      "tier_ko": "5회 완료 후 3단계",
+      "schedule": "Day 9",
+      "schedule_ko": "9일차",
+      "options": [
+        [
+          "Test the Recombobulator",
+          "리컴보뷸레이터를 시험한다",
+          "Randomly transform your monsters 1 rarity higher (max Mythical rarity)",
+          "바토몬을 무작위로 한 등급 높은 희귀도로 변환합니다. (최대 신화 등급)",
+          "Resolves at the start of the next shop.",
+          "다음 상점 시작 시 적용됩니다."
+        ],
+        [
+          "Test the Shockify Ray",
+          "쇼크파이 광선을 시험한다",
+          "Give a monster Electric typing and +5 Shock",
+          "바토몬 하나에게 전기 타입과 쇼크 +5를 부여합니다.",
+          "Target: a monster without Electric typing",
+          "대상: 전기 타입이 없는 바토몬"
+        ],
+        [
+          "Test the Gold-o-matic",
+          "골드-오-매틱을 시험한다",
+          "Gain Gold-o-matic",
+          "골드-오-매틱을 획득합니다."
+        ]
+      ]
+    },
+    {
+      "id": "meteor-crash",
+      "name_en": "Meteor Crash",
+      "name_ko": "운석 충돌",
+      "description_en": "You see a meteor fly through the sky and then crash nearby. You rush over to see the meteor with a glowing gem embed in it.",
+      "description_ko": "하늘을 가로지르던 운석이 근처에 떨어집니다. 달려가 보니 빛나는 보석이 박혀 있습니다.",
+      "tier": "Tier 3",
+      "tier_ko": "3단계",
+      "schedule": "Day 6",
+      "schedule_ko": "6일차",
+      "options": [
+        [
+          "Touch the glowing gem",
+          "빛나는 보석을 만진다",
+          "Level up a level 1 monster",
+          "레벨 1 바토몬의 레벨을 올립니다.",
+          "Target: a level 1 monster",
+          "대상: 레벨 1 바토몬"
+        ],
+        [
+          "Mine the meteor",
+          "운석을 채굴한다",
+          "Gain Meteorite",
+          "운석을 획득합니다."
+        ],
+        [
+          "Take some meteor debris and sell it",
+          "운석 파편을 가져가 판매한다",
+          "Gain $40",
+          "$40를 획득합니다."
+        ]
+      ]
+    },
+    {
+      "id": "pond-fairy",
+      "name_en": "Pond Fairy",
+      "name_ko": "연못 요정",
+      "description_en": "As you stroll through the forest, a blue fairy monster emerges from a nearby pond. The fairy says it will grant you a wish.",
+      "description_ko": "숲을 걷던 중 근처 연못에서 파란 요정 바토몬이 나타납니다. 요정은 소원을 하나 들어주겠다고 합니다.",
+      "tier": "Tier 2",
+      "tier_ko": "2단계",
+      "schedule": "Day 6",
+      "schedule_ko": "6일차",
+      "options": [
+        [
+          "Wish for fame",
+          "명성을 원한다",
+          "Increase shop rank by 2",
+          "상점 등급을 2 올립니다."
+        ],
+        [
+          "Wish for wealth",
+          "부를 원한다",
+          "Gain Gold Bar",
+          "골드바를 획득합니다."
+        ],
+        [
+          "Capture the fairy",
+          "요정을 포획한다",
+          "Gain Wishwash",
+          "위시워시를 획득합니다."
+        ]
+      ]
+    },
+    {
+      "id": "professor-encounter",
+      "name_en": "Professor Encounter",
+      "name_ko": "교수와의 만남",
+      "description_en": "You run into a monster professor who's out doing research. He asks if there is anything you need help with?",
+      "description_ko": "연구를 위해 돌아다니는 바토몬 교수를 만납니다. 도움이 필요한 것이 있냐고 묻습니다.",
+      "tier": "Tier 3",
+      "tier_ko": "3단계",
+      "schedule": "Day 9",
+      "schedule_ko": "9일차",
+      "options": [
+        [
+          "Get advice on monster training",
+          "바토몬 훈련에 대해 조언을 받는다",
+          "Level up a monster (max level 4)",
+          "바토몬 하나의 레벨을 올립니다. (최대 레벨 4)",
+          "Target: a monster below level 4",
+          "대상: 레벨 4 미만 바토몬"
+        ],
+        [
+          "Ask about his research",
+          "연구에 대해 묻는다",
+          "Gain Research Notes",
+          "연구 노트를 획득합니다."
+        ],
+        [
+          "Get investment advice",
+          "투자 조언을 받는다",
+          "Gain $60",
+          "$60를 획득합니다."
+        ]
+      ]
+    },
+    {
+      "id": "rainbow-berry",
+      "name_en": "Rainbow Berry",
+      "name_ko": "무지개 열매",
+      "description_en": "As you wade through the forest, you stumble upon a berry bush. In the bush is a peculiar rainbow berry.",
+      "description_ko": "숲을 지나가다 열매 덤불을 발견합니다. 그 안에는 특이한 무지개 열매가 있습니다.",
+      "tier": "Tier 1",
+      "tier_ko": "1단계",
+      "schedule": "Day 3",
+      "schedule_ko": "3일차",
+      "options": [
+        [
+          "Feed it to a monster",
+          "바토몬에게 먹인다",
+          "Turn a monster SHINY",
+          "바토몬 하나를 SHINY로 만듭니다.",
+          "Target: a non-SHINY monster with a SHINY form",
+          "대상: SHINY 형태가 존재하는 일반 바토몬"
+        ],
+        [
+          "Take it",
+          "가져간다",
+          "Gain Rainbow Berry",
+          "무지개 열매를 획득합니다."
+        ],
+        [
+          "Sell it at the market",
+          "시장에 판다",
+          "Gain $20",
+          "$20를 획득합니다."
+        ]
+      ]
+    },
+    {
+      "id": "second-chance",
+      "name_en": "Second Chance",
+      "name_ko": "두 번째 기회",
+      "description_en": "A mysterious trainer approaches. She says, \"Don't give up now. You have potential. Take this.\"",
+      "description_ko": "수수께끼의 트레이너가 다가옵니다. 그녀가 말합니다. \"지금 포기하지 마세요. 당신에게는 가능성이 있어요. 이걸 받으세요.\"",
+      "tier": "Special",
+      "tier_ko": "특수",
+      "schedule": "Special",
+      "schedule_ko": "특수",
+      "options": [
+        [
+          "Accept a life and a trinket",
+          "생명과 장신구를 받는다",
+          "Get a Super Rare trinket gift",
+          "슈퍼 레어 장신구 선물을 획득합니다."
+        ],
+        [
+          "Accept a life and a monster",
+          "생명과 바토몬을 받는다",
+          "Gain a random level 2 Super Rare monster",
+          "무작위 레벨 2 슈퍼 레어 바토몬을 획득합니다."
+        ],
+        [
+          "Accept a life and a charm",
+          "생명과 부적을 받는다",
+          "Gain Mysterious Charm",
+          "신비한 부적을 획득합니다."
+        ]
+      ]
+    },
+    {
+      "id": "traveling-merchant",
+      "name_en": "Traveling Merchant",
+      "name_ko": "떠돌이 상인",
+      "description_en": "You meet a traveling merchant. He offers you his strange wares.",
+      "description_ko": "떠돌이 상인을 만납니다. 그는 자신의 신기한 물건들을 보여줍니다.",
+      "tier": "Tier 3",
+      "tier_ko": "3단계",
+      "schedule": "Day 3",
+      "schedule_ko": "3일차",
+      "options": [
+        [
+          "Take the exotic monster",
+          "이국적인 바토몬을 받는다",
+          "Gain a Rare monster from another region",
+          "다른 지역의 희귀 바토몬을 획득합니다."
+        ],
+        [
+          "Take the strange lens",
+          "이상한 렌즈를 받는다",
+          "Gain Kaleidoscope",
+          "칼레이도스코프를 획득합니다."
+        ],
+        [
+          "Take the dull-looking gem",
+          "볼품없는 보석을 받는다",
+          "Gain Fake Diamond",
+          "가짜 다이아몬드를 획득합니다."
+        ]
+      ]
+    }
+  ]
+}
