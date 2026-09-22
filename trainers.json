@@ -343,5 +343,6 @@
   "image_source_note": "Trainer sprite image URLs resolved from the image links exposed by the trainer catalog.",
   "display_language": "ko",
   "original_language": "en",
-  "translation_note": "화면에는 한국어를 표시하고, 영어 원문은 name_en / ability_en으로 보존합니다."
+  "translation_note": "화면에는 한국어를 표시하고, 영어 원문은 name_en / ability_en으로 보존합니다.",
+  "site_version": "0.004"
 }

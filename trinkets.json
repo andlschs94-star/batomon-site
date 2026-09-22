@@ -1220,5 +1220,6 @@
     }
   ],
   "image_source": "https://batomon.com/trinkets",
-  "image_source_note": "Official sprite URLs resolved from each Batomon.com Trinket reference page."
+  "image_source_note": "Official sprite URLs resolved from each Batomon.com Trinket reference page.",
+  "site_version": "0.004"
 }
