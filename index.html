@@ -40,6 +40,10 @@
 
 .trainerPortrait{height:118px;display:flex;align-items:center;justify-content:center;margin:-14px -14px 12px;background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,0));border-radius:14px 14px 0 0;overflow:hidden}
 .trainerPortrait img{width:128px;height:128px;object-fit:contain;image-rendering:auto;filter:drop-shadow(0 4px 8px rgba(0,0,0,.25))}
+
+.trinketRarity{font-size:11px;color:#b8c7d9;margin-top:5px}
+.trinketEffect{font-size:13px;line-height:1.55;color:#e3e7ec;margin:12px 0;min-height:58px}
+.trinketUnique{font-size:10px;padding:4px 6px;border-radius:6px;background:#332c1e;color:#f0d58a}
 </style>
 <!-- English originals are retained in trainers.json only: name_en / ability_en -->
 </head>
@@ -57,6 +61,7 @@
   <div class="sectionTabs">
     <button id="tabBatomon" class="on" onclick="switchSection('batomon')">바토몬 도감</button>
     <button id="tabTrainer" onclick="switchSection('trainer')">트레이너 23종</button>
+    <button id="tabTrinket" onclick="switchSection('trinket')">장신구 93종</button>
   </div>
 
   <section id="batomonSection" class="section on">
@@ -79,6 +84,7 @@
 'use strict';
 let characters=[];
 let trainers=[];
+let trinkets=[];
 let statsCurrent=null;
 let statsMode='normal';
 let statsLevel=1;
@@ -189,16 +195,19 @@ for(const id of ['statsOverlay','editOverlay'])document.getElementById(id).addEv
 window.addEventListener('keydown',e=>{if(e.key==='Escape'){if(document.getElementById('editOverlay').style.display==='flex')closeEditor();else if(document.getElementById('statsOverlay').style.display==='flex')closeStats()}});
 
 document.getElementById('search').addEventListener('input',render);
-const trainerSearch=document.getElementById('trainerSearch'); if(trainerSearch)trainerSearch.addEventListener('input',renderTrainers);document.getElementById('rank').addEventListener('change',render);document.getElementById('sort').addEventListener('change',render);document.getElementById('resetEdits').addEventListener('click',()=>{if(!confirm('모든 사진 수정 내용을 이 브라우저에서 삭제할까요?'))return;edits={};saveEdits();render()});
+const trainerSearch=document.getElementById('trainerSearch'); if(trainerSearch)trainerSearch.addEventListener('input',renderTrainers);
+const trinketSearch=document.getElementById('trinketSearch'); if(trinketSearch)trinketSearch.addEventListener('input',renderTrinkets);
+const trinketRarity=document.getElementById('trinketRarity'); if(trinketRarity)trinketRarity.addEventListener('change',renderTrinkets);document.getElementById('rank').addEventListener('change',render);document.getElementById('sort').addEventListener('change',render);document.getElementById('resetEdits').addEventListener('click',()=>{if(!confirm('모든 사진 수정 내용을 이 브라우저에서 삭제할까요?'))return;edits={};saveEdits();render()});
 
 
 function switchSection(section){
-  const isB=section==='batomon';
+  const isB=section==='batomon'; const isT=section==='trainer';
   document.getElementById('batomonSection').classList.toggle('on',isB);
-  document.getElementById('trainerSection').classList.toggle('on',!isB);
+  document.getElementById('trainerSection').classList.toggle('on',isT);
+  document.getElementById('trinketSection').classList.toggle('on',section==='trinket');
   document.getElementById('tabBatomon').classList.toggle('on',isB);
-  document.getElementById('tabTrainer').classList.toggle('on',!isB);
-  document.querySelector('.tools').style.display=isB?'flex':'none';
+  document.getElementById('tabTrainer').classList.toggle('on',isT);
+  document.getElementById('tabTrinket').classList.toggle('on',section==='trinket');
 }
 function renderTrainers(){
   const g=document.getElementById('trainerGrid');
@@ -225,6 +234,31 @@ function renderTrainers(){
   document.getElementById('trainerStatus').textContent=`트레이너 ${trainers.length}종 · Balance 22 / 1.0.0 · 현재 표시 ${list.length}종`;
 }
 
+
+function renderTrinkets(){
+  const g=document.getElementById('trinketGrid');
+  const q=(document.getElementById('trinketSearch')?.value||'').trim().toLowerCase();
+  const rarity=document.getElementById('trinketRarity')?.value||'';
+  const list=trinkets.filter(t=>{
+    const hit=!q||[t.name_ko,t.name_en,t.effect_ko,t.effect_en,t.rarity].join(' ').toLowerCase().includes(q);
+    return hit&&(!rarity||t.rarity===rarity);
+  });
+  g.innerHTML='';
+  if(!list.length){g.innerHTML='<div class="empty">조건에 맞는 장신구가 없습니다.</div>';return;}
+  for(const t of list){
+    const card=document.createElement('div');card.className='trainerCard';
+    const head=document.createElement('div');head.className='trainerHead';
+    const left=document.createElement('div');
+    const nm=document.createElement('div');nm.className='trainerName';nm.textContent=t.name_ko;
+    const rg=document.createElement('div');rg.className='trinketRarity';rg.textContent=t.rarity+(t.unique?' · 고유':'');
+    left.append(nm,rg);head.append(left);
+    const effect=document.createElement('div');effect.className='trinketEffect';effect.textContent=t.effect_ko;
+    const link=document.createElement('a');link.href=t.source_url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='공식 원문 보기 ↗';
+    card.append(head,effect,link);g.appendChild(card);
+  }
+  document.getElementById('trinketStatus').textContent=`장신구 ${trinkets.length}종 · Balance 22 / 1.0.0 · 현재 표시 ${list.length}종`;
+}
+
 async function init(){
   loadEdits();
   try{
@@ -247,8 +281,13 @@ async function init(){
     if(!trainers.length) trainers=[{"id":"mysterious-trainer","name":"???","ability":"Gain MissingN.","region":null,"tags":["Not offered by Mysterious Mask","Outside random trainer choices"],"url":"https://batomon.com/trainers/mysterious-trainer"},{"id":"black-belt","name":"Black Belt","ability":"On Battle Start If you have exactly 1 Fighting monster on your team, activate its On Victory ability.","region":"Jinto","tags":[],"url":"https://batomon.com/trainers/black-belt"},{"id":"bug-catcher","name":"Bug Catcher","ability":"The first Bug monster you buy each day is free.","region":"Pantra Jinto","tags":[],"url":"https://batomon.com/trainers/bug-catcher"},{"id":"burglar","name":"Burglar","ability":"Trinket gifts only offer 2 choices, but you can take both of them.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/burglar"},{"id":"chef","name":"Chef","ability":"Your singled-typed monsters gain Fire typing. Your Fire monsters have +2 Burn.","region":"Pantra Jinto","tags":[],"url":"https://batomon.com/trainers/pyromaniac"},{"id":"chemist","name":"Chemist","ability":"Your Toxic monsters have +1 Poison. When any monster levels up, increase this effect by +1 Poison.","region":"Pantra Jinto","tags":[],"url":"https://batomon.com/trainers/chemist"},{"id":"egg-breeder","name":"Egg Breeder","ability":"Gain a Purple Egg that hatches into a level 2 Super Rare monster in 5 days.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/egg-breeder"},{"id":"gamer","name":"Gamer","ability":"Gain a Mythical monster and $30 on day 9.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/gamer"},{"id":"gentleman","name":"Gentleman","ability":"From day 4 onwards, your shop no longer stocks Common or Uncommon monsters.","region":"Pantra Jinto","tags":["Unique","Not offered by Mysterious Mask"],"url":"https://batomon.com/trainers/gentleman"},{"id":"lucky-girl","name":"Lucky Girl","ability":"SHINY monsters are more likely to appear.","region":"Pantra Jinto","tags":[],"url":"https://batomon.com/trainers/youngster-f"},{"id":"mad-scientist","name":"Mad Scientist","ability":"On day 7, transform monsters on your active team into random level 1 Legendary monsters.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/mad-scientist"},{"id":"masked-man","name":"Masked Man","ability":"Every 4 days, choose a trainer and gain their ability.","region":"Pantra Jinto","tags":["Not offered by Mysterious Mask"],"url":"https://batomon.com/trainers/masked-man"},{"id":"monster-ranger","name":"Monster Ranger","ability":"Start with an Uncommon monster. Get another copy of that monster every 2 days.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/monster-ranger"},{"id":"musician","name":"Musician","ability":"If you have exactly 1 Electric monster on your team, it will have +150% Shock.","region":"Pantra","tags":[],"url":"https://batomon.com/trainers/musician"},{"id":"painter","name":"Painter","ability":"Random species will be painted with every type this run.","region":"Pantra Jinto","tags":["Unique","Not offered by Mysterious Mask"],"url":"https://batomon.com/trainers/painter"},{"id":"redhead","name":"Redhead","ability":"On Victory Give your Fire monsters +2 Burn permanently.","region":"Pantra Jinto","tags":[],"url":"https://batomon.com/trainers/redhead"},{"id":"rich-lady","name":"Rich Lady","ability":"Gain shop rank +2 and $10.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/lady"},{"id":"scavenger","name":"Scavenger","ability":"Gain an additional copy of each non-unique Common or Uncommon Trinket from a gift.","region":"Pantra Jinto","tags":[],"url":"https://batomon.com/trainers/scavenger"},{"id":"shopkeeper","name":"Shopkeeper","ability":"Your shop stocks Item 1 rarity tier higher and cost 15% less.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/shopkeeper"},{"id":"swim-coach","name":"Swim Coach","ability":"Gain a random Water monster each day.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/swim-coach"},{"id":"treasure-hunter","name":"Treasure Hunter","ability":"When you get Trinket gifts, your choices are 1 rarity tier higher.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/treasure-hunter"},{"id":"twins","name":"Twins","ability":"When monsters merge into level 3, gain an exact copy.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/twins"},{"id":"youngster","name":"Youngster","ability":"Gain 3 free rerolls every day.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/youngster-m"}];
 
     document.getElementById('status').textContent=`데이터 로드 완료 · 원향 ${characters.length}마리 · 공식 데이터 적용`;
+    try{
+      const tk=await fetch('./trinkets.json?cb='+Date.now(),{cache:'no-store'});
+      if(tk.ok){ const kd=await tk.json(); trinkets=Array.isArray(kd)?kd:(kd.trinkets||[]); }
+    }catch(e){ console.warn('trinkets.json 로드 실패',e); }
     render();
     renderTrainers();
+    renderTrinkets();
   }catch(err){
     console.error(err);
     document.getElementById('status').textContent='캐릭터 DB를 불러오지 못했습니다: '+err.message;
