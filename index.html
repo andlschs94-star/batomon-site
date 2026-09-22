@@ -50,7 +50,7 @@
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감</div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22) + 트레이너 23종</div></div>
+    <div><div class="title">바토몬 원향 도감</div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22) + 트레이너 23종 + 장신구 93종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -73,6 +73,23 @@
     <div class="tools" style="margin-bottom:12px"><input id="trainerSearch" placeholder="트레이너 이름 / 효과 검색"></div>
     <div id="trainerStatus" class="trainerStatus">trainers.json 불러오는 중…</div>
     <div id="trainerGrid" class="trainerGrid"></div>
+  </section>
+
+  <section id="trinketSection" class="section">
+    <div class="tools" style="margin-bottom:12px">
+      <input id="trinketSearch" placeholder="장신구 이름 / 효과 검색">
+      <select id="trinketRarity">
+        <option value="">전체 희귀도</option>
+        <option value="Common">일반</option>
+        <option value="Uncommon">고급</option>
+        <option value="Rare">희귀</option>
+        <option value="Super Rare">슈퍼 레어</option>
+        <option value="Legendary">전설</option>
+        <option value="Mythical">신화</option>
+      </select>
+    </div>
+    <div id="trinketStatus" class="trainerStatus">장신구 93종 불러오는 중…</div>
+    <div id="trinketGrid" class="trainerGrid"></div>
   </section>
 </div>
 
@@ -201,13 +218,17 @@ const trinketRarity=document.getElementById('trinketRarity'); if(trinketRarity)t
 
 
 function switchSection(section){
-  const isB=section==='batomon'; const isT=section==='trainer';
-  document.getElementById('batomonSection').classList.toggle('on',isB);
-  document.getElementById('trainerSection').classList.toggle('on',isT);
-  document.getElementById('trinketSection').classList.toggle('on',section==='trinket');
-  document.getElementById('tabBatomon').classList.toggle('on',isB);
-  document.getElementById('tabTrainer').classList.toggle('on',isT);
-  document.getElementById('tabTrinket').classList.toggle('on',section==='trinket');
+  const isB=section==='batomon';
+  const isT=section==='trainer';
+  const isK=section==='trinket';
+
+  document.getElementById('batomonSection')?.classList.toggle('on',isB);
+  document.getElementById('trainerSection')?.classList.toggle('on',isT);
+  document.getElementById('trinketSection')?.classList.toggle('on',isK);
+
+  document.getElementById('tabBatomon')?.classList.toggle('on',isB);
+  document.getElementById('tabTrainer')?.classList.toggle('on',isT);
+  document.getElementById('tabTrinket')?.classList.toggle('on',isK);
 }
 function renderTrainers(){
   const g=document.getElementById('trainerGrid');
@@ -237,26 +258,64 @@ function renderTrainers(){
 
 function renderTrinkets(){
   const g=document.getElementById('trinketGrid');
+  const status=document.getElementById('trinketStatus');
+  if(!g || !status) return;
+
   const q=(document.getElementById('trinketSearch')?.value||'').trim().toLowerCase();
   const rarity=document.getElementById('trinketRarity')?.value||'';
+
   const list=trinkets.filter(t=>{
-    const hit=!q||[t.name_ko,t.name_en,t.effect_ko,t.effect_en,t.rarity].join(' ').toLowerCase().includes(q);
-    return hit&&(!rarity||t.rarity===rarity);
+    const searchable=[
+      t.name_ko||'', t.name_en||'', t.effect_ko||'', t.effect_en||'', t.rarity||''
+    ].join(' ').toLowerCase();
+    return (!q || searchable.includes(q)) && (!rarity || t.rarity===rarity);
   });
+
   g.innerHTML='';
-  if(!list.length){g.innerHTML='<div class="empty">조건에 맞는 장신구가 없습니다.</div>';return;}
-  for(const t of list){
-    const card=document.createElement('div');card.className='trainerCard';
-    const head=document.createElement('div');head.className='trainerHead';
-    const left=document.createElement('div');
-    const nm=document.createElement('div');nm.className='trainerName';nm.textContent=t.name_ko;
-    const rg=document.createElement('div');rg.className='trinketRarity';rg.textContent=t.rarity+(t.unique?' · 고유':'');
-    left.append(nm,rg);head.append(left);
-    const effect=document.createElement('div');effect.className='trinketEffect';effect.textContent=t.effect_ko;
-    const link=document.createElement('a');link.href=t.source_url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='공식 원문 보기 ↗';
-    card.append(head,effect,link);g.appendChild(card);
+  if(!list.length){
+    g.innerHTML='<div class="empty">조건에 맞는 장신구가 없습니다.</div>';
+    status.textContent=`장신구 ${trinkets.length}종 · 현재 표시 0종`;
+    return;
   }
-  document.getElementById('trinketStatus').textContent=`장신구 ${trinkets.length}종 · Balance 22 / 1.0.0 · 현재 표시 ${list.length}종`;
+
+  for(const t of list){
+    const card=document.createElement('div');
+    card.className='trainerCard';
+
+    const head=document.createElement('div');
+    head.className='trainerHead';
+
+    const left=document.createElement('div');
+
+    const nm=document.createElement('div');
+    nm.className='trainerName';
+    nm.textContent=t.name_ko || t.name_en || '이름 없음';
+
+    const rg=document.createElement('div');
+    rg.className='trinketRarity';
+    const rarityKo={
+      'Common':'일반','Uncommon':'고급','Rare':'희귀',
+      'Super Rare':'슈퍼 레어','Legendary':'전설','Mythical':'신화'
+    };
+    rg.textContent=(rarityKo[t.rarity]||t.rarity||'미표기')+(t.unique?' · 고유':'');
+    left.append(nm,rg);
+    head.append(left);
+
+    const effect=document.createElement('div');
+    effect.className='trinketEffect';
+    effect.textContent=t.effect_ko || t.effect_en || '효과 정보 없음';
+
+    const link=document.createElement('a');
+    link.href=t.source_url || 'https://batomon.com/trinkets';
+    link.target='_blank';
+    link.rel='noopener noreferrer';
+    link.textContent='공식 원문 보기 ↗';
+
+    card.append(head,effect,link);
+    g.appendChild(card);
+  }
+
+  status.textContent=`장신구 ${trinkets.length}종 · Balance 22 / 1.0.0 · 현재 표시 ${list.length}종`;
 }
 
 async function init(){
@@ -290,8 +349,8 @@ async function init(){
     renderTrinkets();
   }catch(err){
     console.error(err);
-    document.getElementById('status').textContent='캐릭터 DB를 불러오지 못했습니다: '+err.message;
-    document.getElementById('grid').innerHTML='<div class="empty">characters.json을 읽지 못했습니다.<br><br><b>GitHub 저장소에서 index.html과 characters.json이 같은 폴더에 있는지 확인하세요.</b></div>';
+    document.getElementById('status').textContent='데이터를 불러오지 못했습니다: '+err.message;
+    document.getElementById('grid').innerHTML='<div class="empty">사이트 데이터 로드 중 오류가 발생했습니다.<br><br><b>characters.json / trainers.json / trinkets.json의 위치와 파일명을 확인하세요.</b></div>';
   }
 }
 init();
