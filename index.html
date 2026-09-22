@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.047</title>
+<title>바토몬 원향 도감 v0.048</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -73,7 +73,7 @@
 .eventChoice{font-weight:700}
 .eventReward{margin-top:4px;color:#b7d7ff}
 .eventSub{margin-top:3px;font-size:12px;opacity:.72}
-/* v0.047 Damage Calculator UI */
+/* v0.048 Damage Calculator UI */
 .calcPage{background:#0c6673;min-height:calc(100vh - 30px);border:1px solid #153f4a;border-radius:18px;overflow:hidden;box-shadow:0 18px 55px rgba(0,0,0,.28)}
 .calcTopbar{height:58px;background:linear-gradient(180deg,#20c3f0 0%,#13a8d4 100%);border-bottom:3px solid #087c9d;display:flex;align-items:center;justify-content:center;gap:clamp(24px,5vw,90px);font-weight:900;color:#fff;text-shadow:2px 2px 0 rgba(0,0,0,.18)}
 .calcStatus{display:flex;align-items:center;gap:10px;font-size:20px;min-width:110px;justify-content:center}.calcIcon{font-size:30px;line-height:1}.calcDay{font-size:30px}.calcCounter{font-size:20px}
@@ -82,7 +82,7 @@
 .calcCenter{display:flex;flex-direction:column;gap:14px}.calcBox{background:#f3f3f4;border:5px solid #8e929d;outline:2px solid #252a31;border-radius:7px;box-shadow:4px 4px 0 rgba(0,0,0,.2);overflow:hidden}.calcBoxHead{height:40px;padding:6px 12px;font-size:20px;font-weight:900;color:#fff;background:#ffc20f;border-bottom:4px solid #e2a500;text-shadow:2px 2px 0 rgba(0,0,0,.15)}.calcBoxHead.team{background:#ef4d6a;border-bottom-color:#cf3450}.calcSlots{padding:6px;display:grid;gap:7px}.calcSlots.bench{grid-template-columns:repeat(4,1fr)}.calcSlots.team{grid-template-columns:repeat(3,1fr)}.calcSlot{height:110px;background:#fff;border:4px solid #b8bbc4;box-shadow:inset 0 0 0 2px #e6e7ea;display:flex;align-items:center;justify-content:center;position:relative;color:#b3b6bd;font-size:12px;font-weight:900}.calcSlot:after{content:'+';font-size:26px;color:#d0d2d7}.calcSlot:hover{border-color:#8ea7b7;background:#f9fcfd}.calcSlot.teamSlot{height:112px}.calcTeamHint{font-size:12px;color:#66707d;text-align:center;padding:2px 0 8px}.calcRightSpace{display:none}
 .calcShop{grid-column:3;grid-row:1;margin-top:0;background:#eef0f1;border:5px solid #8e929d;outline:2px solid #252a31;border-radius:7px;box-shadow:4px 4px 0 rgba(0,0,0,.2);min-height:330px;overflow:visible}.calcShopHead{height:38px;background:#65c9ee;color:#10232c;border-bottom:4px solid #3ba5c9;font-size:19px;font-weight:900;padding:6px 12px}.calcShopBlank{height:285px;background:#f7f7f7}
 .calcNotice{margin-top:10px;color:#d9f5fb;font-size:12px;text-align:center}.calcNavButton{position:relative}.calcNavButton.on{background:#173247!important;color:#6fd9ff!important}
-/* v0.047 Trainer selector UI */
+/* v0.048 Trainer selector UI */
 .calcTrainerPanel{cursor:pointer;position:relative}
 .calcTrainerPanel:focus-visible{outline:4px solid #20c3f0;outline-offset:3px}
 .calcTrainerChange{position:absolute;right:10px;top:10px;background:rgba(0,0,0,.58);color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:7px;padding:5px 9px;font-size:12px;font-weight:800;z-index:2}
@@ -99,25 +99,25 @@
 @media(max-width:720px){.calcTopbar{gap:8px;justify-content:space-around}.calcStatus{font-size:14px;min-width:auto}.calcDay{font-size:20px}.calcCounter{font-size:14px}.calcBattleArea{grid-template-columns:1fr}.calcTrainerPanel{max-width:220px;margin:auto;width:100%}.calcCenter{width:100%}.calcSlots.team{grid-template-columns:repeat(2,1fr)}.calcBoard{padding:10px}.calcShop{grid-column:1;grid-row:3;min-height:140px}.calcShopBlank{height:95px}}
 
 
-/* v0.047 UI: calculator opens by default; shop moved below and widened */
+/* v0.048 UI: calculator opens by default; shop moved below and widened */
 .calcBattleArea{grid-template-columns:180px minmax(460px,1fr);}
 .calcShop{grid-column:1/-1;grid-row:2;width:100%;min-height:190px;margin-top:0;}
 .calcShopBlank{height:140px;}
 @media(max-width:1050px){.calcBattleArea{grid-template-columns:150px 1fr}.calcShop{grid-column:1/-1;grid-row:2;min-height:170px}.calcShopBlank{height:120px}}
 @media(max-width:720px){.calcBattleArea{grid-template-columns:1fr}.calcShop{grid-column:1;grid-row:3;min-height:150px}.calcShopBlank{height:105px}}
 
-/* v0.047 Batomon list / team placement UI */
+/* v0.048 Batomon list / team placement UI */
 .calcBatomonFilters{display:grid;grid-template-columns:minmax(180px,1.2fr) auto;gap:7px;padding:8px;background:#e3e6e9;border-bottom:2px solid #b8bdc4;align-items:start}
 .calcBatomonFilters input,.calcBatomonFilters button{height:32px;border:2px solid #aeb4bb;border-radius:5px;background:#fff;padding:0 8px;font-size:11px;font-weight:800;min-width:0}.calcBatomonFilters input:focus{outline:2px solid #20a9d0;outline-offset:1px}.calcBatomonFilters button{cursor:pointer;background:#f4f5f6}.calcBatomonFilters button:hover{background:#dff5fb;border-color:#20a9d0}
 .calcFilterGroup{grid-column:1/-1;background:#fff;border:2px solid #c4c8ce;border-radius:6px;padding:7px}.calcFilterTitle{font-size:11px;font-weight:900;color:#444b55;margin-bottom:6px}.calcFilterOptions{display:flex;flex-wrap:wrap;gap:5px}.calcFilterOption{display:inline-flex;align-items:center;gap:4px;padding:4px 7px;border:1px solid #c4c8ce;border-radius:5px;background:#f6f7f8;color:#3d444d;font-size:10px;font-weight:800;cursor:pointer;user-select:none}.calcFilterOption:hover{border-color:#20a9d0;background:#eefaff}.calcFilterOption input{margin:0;accent-color:#159fc8;width:13px;height:13px}.calcFilterOption.checked{border-color:#20a9d0;background:#dff5fb;color:#08627c}
 .calcBatomonCount{padding:5px 9px 2px;font-size:10px;font-weight:900;color:#69717a;background:#f7f7f7}
 .calcShopGrid{background:#f7f7f7;padding:8px;display:grid;grid-template-columns:repeat(8,minmax(72px,1fr));gap:7px;overflow:visible}
-/* v0.047 UI: keep Batomon list area fixed so filtering does not move the surrounding layout */
+/* v0.048 UI: keep Batomon list area fixed so filtering does not move the surrounding layout */
 .calcShopGrid{min-height:640px;align-content:start}
 .calcShopGrid .calcShopEmpty{min-height:624px;display:flex;align-items:center;justify-content:center;grid-column:1/-1}
 
 .calcBatomonCard{border:2px solid #c4c7cd;background:#fff;border-radius:6px;padding:3px;cursor:pointer;display:grid;grid-template-columns:28px 1fr;grid-template-rows:44px 18px;column-gap:4px;align-items:center;min-width:0;text-align:left}
-/* v0.047 UI: rarity-tinted Batomon list cards */
+/* v0.048 UI: rarity-tinted Batomon list cards */
 .calcBatomonCard.rarity-common{background:#e9ecef;border-color:#b8bec5}
 .calcBatomonCard.rarity-uncommon{background:#e5f4df;border-color:#91c47d}
 .calcBatomonCard.rarity-rare{background:#e5efff;border-color:#83aee8}
@@ -136,7 +136,7 @@
 @media(max-width:1050px){.calcShopGrid{grid-template-columns:repeat(6,minmax(72px,1fr));min-height:885px;height:auto}}
 @media(max-width:720px){.calcShopGrid{grid-template-columns:repeat(4,minmax(68px,1fr));min-height:1250px;height:auto}}
 
-/* v0.047 UI: remove Batomon list title and strengthen rarity colors */
+/* v0.048 UI: remove Batomon list title and strengthen rarity colors */
 .calcShop{margin-top:-2px}
 .calcBatomonFilters{border-top:2px solid #b8bdc4}
 .calcFilterOption.rarity-common{background:#e5e7eb;border-color:#9ca3af;color:#374151}
@@ -145,7 +145,7 @@
 .calcFilterOption.rarity-super-rare{background:#f3e8ff;border-color:#8b5cf6;color:#6d28d9}
 .calcFilterOption.rarity-legendary{background:#fef3c7;border-color:#f59e0b;color:#92400e}
 .calcFilterOption.rarity-mythical{background:#fce7f3;border-color:#ec4899;color:#9d174d}
-/* v0.047 UI: compact rarity/type filters with visual separation */
+/* v0.048 UI: compact rarity/type filters with visual separation */
 .calcBatomonFilters{grid-template-columns:minmax(180px,1.2fr) auto;align-items:center}
 .calcFilterGroup{grid-column:auto;display:flex;align-items:center;gap:8px;padding:5px 7px;min-width:0;border:0;border-right:2px solid #c9cdd3;border-radius:0;background:transparent}
 .calcFilterGroup:last-of-type{border-right:0}
@@ -185,7 +185,7 @@
 </style>
 <!-- English originals are retained in trainers.json only: name_en / ability_en -->
 
-<style>/* v0.047 UI: trinket selector repair */
+<style>/* v0.048 UI: trinket selector repair */
 .calcBattleArea{grid-template-columns:150px minmax(360px,1fr) 150px;gap:14px;align-items:start}
 .calcTrainerPanel,.calcTrinketPanel{width:150px}
 .calcTrainerTitle{height:26px;font-size:12px;padding:5px 7px}
@@ -214,7 +214,7 @@
 @media(max-width:720px){.calcBattleArea{grid-template-columns:1fr}.calcTrainerPanel,.calcTrinketPanel{width:100%;max-width:220px;margin:auto}.calcTrinketPanel{grid-row:2}.calcCenter{width:100%}.calcShop{grid-column:1;grid-row:3}.calcSlots.team{grid-template-columns:repeat(3,1fr)}}
 </style>
 
-<style>/* v0.047: compact centered team panel */
+<style>/* v0.048: compact centered team panel */
 .calcCenter{align-items:center}
 .calcCenter>.calcBox{width:190px;max-width:100%;box-sizing:border-box}
 .calcCenter>.calcBox .calcSlots.team{grid-template-columns:repeat(3,1fr);padding:5px;gap:5px}
@@ -229,7 +229,7 @@
 </style>
 
 <style id="resizablePanelsV046">
-/* v0.047: 직접 크기 조절 */
+/* v0.048: 직접 크기 조절 */
 .calcBattleArea{grid-template-columns:var(--trainer-w,150px) minmax(360px,1fr) var(--trinket-w,150px);}
 .calcTrainerPanel,.calcTrinketPanel,.calcCenter>.calcBox{position:relative;box-sizing:border-box;}
 .calcTrainerPanel{width:var(--trainer-w,150px);min-width:120px;min-height:180px;}
@@ -248,7 +248,7 @@
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.047</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.048</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -322,7 +322,7 @@
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.047</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.048</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -429,7 +429,7 @@
 .selectedTrinketRemove:hover{color:#fff}
 </style>
 <style>
-/* v0.047 team Batomon editor */
+/* v0.048 team Batomon editor */
 .teamEditPanel{width:min(420px,100%);background:#f7f9fc;color:#18212b;border:1px solid #3a4655;border-radius:16px;box-shadow:0 25px 80px rgba(0,0,0,.5);overflow:hidden}
 .teamEditOverlay{background:transparent}.teamEditOverlay .modalhead{background:#f7f9fc;border-bottom:1px solid #dbe2ea}.teamEditOverlay .modalhead h2{color:#18212b}.teamEditOverlay .close{background:#e9eef4;color:#263341}.teamEditOverlay .teamEditPanel{box-shadow:0 15px 45px rgba(30,45,65,.18);border-color:#cbd5e1}.teamEditBody{padding:16px}.teamEditPreview{display:flex;align-items:center;gap:12px;padding:10px;background:#ffffff;border:1px solid #2a323d;border-radius:12px;margin-bottom:14px}.teamEditPreview img{width:58px;height:58px;object-fit:contain}.teamEditName{font-weight:900;color:#18212b}.teamEditSub{font-size:11px;color:#687585;margin-top:3px}.teamEditRow{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 0}.teamEditLevels{display:flex;gap:7px;flex-wrap:wrap}.teamEditLevel{border:1px solid #cbd4df;background:#eef2f6;color:#344150;border-radius:9px;padding:8px 13px;cursor:pointer;font-weight:900}.teamEditLevel.on{background:#4e8ab3;color:#fff;border-color:#3b7399}.teamEditShiny{display:flex;align-items:center;gap:8px;color:#25313d;font-weight:800}
 .teamSlot.shinySlot{background:linear-gradient(135deg,rgba(255,215,80,.28),rgba(255,166,0,.14));border-color:#f4c95d;box-shadow:0 0 0 1px rgba(255,215,80,.18),0 0 14px rgba(255,200,70,.14)}
@@ -651,7 +651,7 @@ function renderCalcBatomonList(){
   if(count)count.textContent=`${list.length} / ${characters.length}마리 표시`;
   if(!list.length){g.innerHTML='<div class="calcShopEmpty">바토몬 데이터를 불러오는 중입니다.</div>';return;}
   for(const item of list){
-    const card=document.createElement('button'); card.type='button'; const rarityValue=String(item.officialRarity||item.officialRarity_ko||item.rank||''); card.className='calcBatomonCard rarity-'+(calcRarityClassMap[rarityValue]||rarityValue.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''));
+    const card=document.createElement('button'); card.type='button'; card.draggable=true; const rarityValue=String(item.officialRarity||item.officialRarity_ko||item.rank||''); card.className='calcBatomonCard rarity-'+(calcRarityClassMap[rarityValue]||rarityValue.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''));
     const img=document.createElement('img'); img.alt=item.name||item.officialName||''; img.loading='lazy'; img.referrerPolicy='no-referrer';
     const urls=officialFallbackUrls(item); let idx=0;
     const next=()=>{if(idx>=urls.length){img.style.display='none';return;} img.src=urls[idx++];};
@@ -666,6 +666,15 @@ function renderCalcBatomonList(){
       addBatomonToTeam(item,target);
     });
     card.addEventListener('contextmenu',e=>{e.preventDefault();openBatomonInfoEditor(item);});
+    card.addEventListener('dragstart',e=>{
+      teamDragMoved=true;
+      dragTeamIndex=null;
+      e.dataTransfer.effectAllowed='copy';
+      e.dataTransfer.setData('application/x-batomon-key',getTeamSpeciesKey(item));
+      e.dataTransfer.setData('text/plain','batomon:'+getTeamSpeciesKey(item));
+      card.classList.add('dragging');
+    });
+    card.addEventListener('dragend',()=>{teamDragMoved=false;document.querySelectorAll('.teamSlot').forEach(s=>s.classList.remove('dragOver'));});
     g.appendChild(card);
   }
 }
@@ -806,12 +815,18 @@ function renderCalcTeam(){
     const entry=calcTeam[index];
     if(!entry){
       slot.classList.toggle('slotSelected',selectedTeamSlotIndex===index);
-      slot.ondragover=e=>{e.preventDefault(); if(dragTeamIndex!==null)slot.classList.add('dragOver');};
+      slot.ondragover=e=>{e.preventDefault(); const hasBatomon=e.dataTransfer.types.includes('application/x-batomon-key'); if(dragTeamIndex!==null || hasBatomon)slot.classList.add('dragOver'); e.dataTransfer.dropEffect=hasBatomon?'copy':'move';};
       slot.ondragleave=()=>slot.classList.remove('dragOver');
       slot.ondrop=e=>{
         e.preventDefault();
-        const from=dragTeamIndex!==null?dragTeamIndex:Number(e.dataTransfer.getData('text/plain'));
         slot.classList.remove('dragOver');
+        const key=e.dataTransfer.getData('application/x-batomon-key');
+        if(key){
+          const item=characters.find(x=>getTeamSpeciesKey(x)===String(key));
+          if(item && !calcTeam[index]) addBatomonToTeam(item,index);
+          return;
+        }
+        const from=dragTeamIndex!==null?dragTeamIndex:Number(e.dataTransfer.getData('text/plain'));
         if(Number.isInteger(from))moveTeamEntry(from,index);
       };
       slot.onclick=()=>{
@@ -844,11 +859,17 @@ function renderCalcTeam(){
       e.dataTransfer.effectAllowed='move'; e.dataTransfer.setData('text/plain',String(index));
     };
     slot.ondragend=()=>{dragTeamIndex=null;slot.classList.remove('dragging');slots.forEach(s=>s.classList.remove('dragOver'));};
-    slot.ondragover=e=>{e.preventDefault(); if(dragTeamIndex!==null && dragTeamIndex!==index)slot.classList.add('dragOver'); e.dataTransfer.dropEffect='move';};
+    slot.ondragover=e=>{e.preventDefault(); const hasBatomon=e.dataTransfer.types.includes('application/x-batomon-key'); if((dragTeamIndex!==null && dragTeamIndex!==index)||hasBatomon)slot.classList.add('dragOver'); e.dataTransfer.dropEffect=hasBatomon?'copy':'move';};
     slot.ondragleave=()=>slot.classList.remove('dragOver');
     slot.ondrop=e=>{
-      e.preventDefault(); const from=dragTeamIndex!==null?dragTeamIndex:Number(e.dataTransfer.getData('text/plain'));
-      slot.classList.remove('dragOver');
+      e.preventDefault(); slot.classList.remove('dragOver');
+      const key=e.dataTransfer.getData('application/x-batomon-key');
+      if(key){
+        const item=characters.find(x=>getTeamSpeciesKey(x)===String(key));
+        if(item && !calcTeam[index]) addBatomonToTeam(item,index);
+        return;
+      }
+      const from=dragTeamIndex!==null?dragTeamIndex:Number(e.dataTransfer.getData('text/plain'));
       if(Number.isInteger(from))moveTeamEntry(from,index);
     };
   });
@@ -1244,7 +1265,7 @@ init();
 </script>
 
 <script>
-// v0.047 resizable trainer / team / trinket panels
+// v0.048 resizable trainer / team / trinket panels
 (function(){
   const root=document.querySelector('.calcBattleArea');
   if(!root)return;
