@@ -160,7 +160,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/spinarai.png",
       "image_local": "assets/batomon/spinarai.png",
-      "officialRarity_ko": "일반"
+      "officialRarity_ko": "일반",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 2,
@@ -308,7 +311,10 @@
       "image_url": "https://batomon.com/game/25377295/monster/venopuff.png",
       "image_local": "assets/batomon/toximoth.png",
       "officialRarity_ko": "일반",
-      "name_en": "Venopuff"
+      "name_en": "Venopuff",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 3,
@@ -394,7 +400,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/dribblet.png",
       "image_local": "assets/batomon/dribblet.png",
-      "officialRarity_ko": "일반"
+      "officialRarity_ko": "일반",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 4,
@@ -540,7 +549,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/guardiant.png",
       "image_local": "assets/batomon/guardiant.png",
-      "officialRarity_ko": "일반"
+      "officialRarity_ko": "일반",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 5,
@@ -686,7 +698,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/joltail.png",
       "image_local": "assets/batomon/joltail.png",
-      "officialRarity_ko": "일반"
+      "officialRarity_ko": "일반",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 6,
@@ -832,7 +847,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/stingarde.png",
       "image_local": "assets/batomon/stingarde.png",
-      "officialRarity_ko": "일반"
+      "officialRarity_ko": "일반",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 7,
@@ -918,7 +936,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/scorchimp.png",
       "image_local": "assets/batomon/scorchimp.png",
-      "officialRarity_ko": "일반"
+      "officialRarity_ko": "일반",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 8,
@@ -1004,7 +1025,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/panbud.png",
       "image_local": "assets/batomon/panbud.png",
-      "officialRarity_ko": "일반"
+      "officialRarity_ko": "일반",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 9,
@@ -1151,7 +1175,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/velocect.png",
       "image_local": "assets/batomon/velocect.png",
-      "officialRarity_ko": "일반"
+      "officialRarity_ko": "일반",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 10,
@@ -1298,7 +1325,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/mosslug.png",
       "image_local": "assets/batomon/mosslug.png",
-      "officialRarity_ko": "일반"
+      "officialRarity_ko": "일반",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 11,
@@ -1444,7 +1474,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/pebbler.png",
       "image_local": "assets/batomon/pebbler.png",
-      "officialRarity_ko": "일반"
+      "officialRarity_ko": "일반",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 12,
@@ -1591,7 +1624,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/bumblebolt.png",
       "image_local": "assets/batomon/bumblebolt.png",
-      "officialRarity_ko": "일반"
+      "officialRarity_ko": "일반",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 13,
@@ -1738,7 +1774,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/magmite.png",
       "image_local": "assets/batomon/magmite.png",
-      "officialRarity_ko": "일반"
+      "officialRarity_ko": "일반",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 14,
@@ -1884,7 +1923,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/gildshell.png",
       "image_local": "assets/batomon/gildshell.png",
-      "officialRarity_ko": "고급"
+      "officialRarity_ko": "고급",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 15,
@@ -2031,7 +2073,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/vipair.png",
       "image_local": "assets/batomon/vipair.png",
-      "officialRarity_ko": "희귀"
+      "officialRarity_ko": "희귀",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 16,
@@ -2178,7 +2223,10 @@
       "image_url": "https://batomon.com/game/25377295/monster/puffloon.png",
       "image_local": "assets/batomon/venopuff.png",
       "officialRarity_ko": "일반",
-      "name_en": "Puffloon"
+      "name_en": "Puffloon",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 17,
@@ -2324,7 +2372,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/boomagon.png",
       "image_local": "assets/batomon/boomagon.png",
-      "officialRarity_ko": "고급"
+      "officialRarity_ko": "고급",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 18,
@@ -2470,7 +2521,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/galvanade.png",
       "image_local": "assets/batomon/galvanade.png",
-      "officialRarity_ko": "고급"
+      "officialRarity_ko": "고급",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 19,
@@ -2617,7 +2671,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/alpinine.png",
       "image_local": "assets/batomon/alpinine.png",
-      "officialRarity_ko": "고급"
+      "officialRarity_ko": "고급",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 20,
@@ -2763,7 +2820,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/runerock.png",
       "image_local": "assets/batomon/runerock.png",
-      "officialRarity_ko": "고급"
+      "officialRarity_ko": "고급",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 21,
@@ -2909,7 +2969,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/infernade.png",
       "image_local": "assets/batomon/infernade.png",
-      "officialRarity_ko": "고급"
+      "officialRarity_ko": "고급",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 22,
@@ -3056,7 +3119,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/cinderfly.png",
       "image_local": "assets/batomon/cinderfly.png",
-      "officialRarity_ko": "고급"
+      "officialRarity_ko": "고급",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 23,
@@ -3202,7 +3268,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/berroon.png",
       "image_local": "assets/batomon/berroon.png",
-      "officialRarity_ko": "고급"
+      "officialRarity_ko": "고급",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 24,
@@ -3349,7 +3418,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/shogapede.png",
       "image_local": "assets/batomon/shogapede.png",
-      "officialRarity_ko": "고급"
+      "officialRarity_ko": "고급",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 25,
@@ -3496,7 +3568,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/brawlmantis.png",
       "image_local": "assets/batomon/brawlmantis.png",
-      "officialRarity_ko": "고급"
+      "officialRarity_ko": "고급",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 26,
@@ -3642,7 +3717,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/frizzly.png",
       "image_local": "assets/batomon/frizzly.png",
-      "officialRarity_ko": "고급"
+      "officialRarity_ko": "고급",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 27,
@@ -3789,7 +3867,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/plunderbird.png",
       "image_local": "assets/batomon/plunderbird.png",
-      "officialRarity_ko": "고급"
+      "officialRarity_ko": "고급",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 28,
@@ -3936,7 +4017,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/thorntail.png",
       "image_local": "assets/batomon/thorntail.png",
-      "officialRarity_ko": "희귀"
+      "officialRarity_ko": "희귀",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 29,
@@ -4082,7 +4166,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/cicadence.png",
       "image_local": "assets/batomon/cicadence.png",
-      "officialRarity_ko": "희귀"
+      "officialRarity_ko": "희귀",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 30,
@@ -4228,7 +4315,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/formiqueen.png",
       "image_local": "assets/batomon/formiqueen.png",
-      "officialRarity_ko": "희귀"
+      "officialRarity_ko": "희귀",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 31,
@@ -4374,7 +4464,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/noxalith.png",
       "image_local": "assets/batomon/noxalith.png",
-      "officialRarity_ko": "희귀"
+      "officialRarity_ko": "희귀",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 32,
@@ -4520,7 +4613,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/cherubble.png",
       "image_local": "assets/batomon/cherubble.png",
-      "officialRarity_ko": "희귀"
+      "officialRarity_ko": "희귀",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 33,
@@ -4666,7 +4762,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/aster.png",
       "image_local": "assets/batomon/aster.png",
-      "officialRarity_ko": "희귀"
+      "officialRarity_ko": "희귀",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 34,
@@ -4813,7 +4912,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/aristobat.png",
       "image_local": "assets/batomon/aristobat.png",
-      "officialRarity_ko": "희귀"
+      "officialRarity_ko": "희귀",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 35,
@@ -4960,7 +5062,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/humbolt.png",
       "image_local": "assets/batomon/humbolt.png",
-      "officialRarity_ko": "희귀"
+      "officialRarity_ko": "희귀",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 36,
@@ -5106,7 +5211,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/lignite.png",
       "image_local": "assets/batomon/lignite.png",
-      "officialRarity_ko": "희귀"
+      "officialRarity_ko": "희귀",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 37,
@@ -5253,7 +5361,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/magmalith.png",
       "image_local": "assets/batomon/magmalith.png",
-      "officialRarity_ko": "희귀"
+      "officialRarity_ko": "희귀",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 38,
@@ -5399,7 +5510,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/dracana.png",
       "image_local": "assets/batomon/dracana.png",
-      "officialRarity_ko": "희귀"
+      "officialRarity_ko": "희귀",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 39,
@@ -5545,7 +5659,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/dirgefin.png",
       "image_local": "assets/batomon/dirgefin.png",
-      "officialRarity_ko": "희귀"
+      "officialRarity_ko": "희귀",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 40,
@@ -5691,7 +5808,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/ironcore.png",
       "image_local": "assets/batomon/ironcore.png",
-      "officialRarity_ko": "희귀"
+      "officialRarity_ko": "희귀",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 41,
@@ -5838,7 +5958,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/stalagrove.png",
       "image_local": "assets/batomon/stalagrove.png",
-      "officialRarity_ko": "희귀"
+      "officialRarity_ko": "희귀",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 42,
@@ -5984,7 +6107,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/dryadell.png",
       "image_local": "assets/batomon/dryadell.png",
-      "officialRarity_ko": "영웅"
+      "officialRarity_ko": "영웅",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 43,
@@ -6131,7 +6257,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/fumungus.png",
       "image_local": "assets/batomon/fumungus.png",
-      "officialRarity_ko": "영웅"
+      "officialRarity_ko": "영웅",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 44,
@@ -6277,7 +6406,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/prismagon.png",
       "image_local": "assets/batomon/prismagon.png",
-      "officialRarity_ko": "영웅"
+      "officialRarity_ko": "영웅",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 45,
@@ -6423,7 +6555,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/sirenade.png",
       "image_local": "assets/batomon/sirenade.png",
-      "officialRarity_ko": "영웅"
+      "officialRarity_ko": "영웅",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 46,
@@ -6569,7 +6704,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/celestia.png",
       "image_local": "assets/batomon/celestia.png",
-      "officialRarity_ko": "영웅"
+      "officialRarity_ko": "영웅",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 47,
@@ -6716,7 +6854,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/blazewing.png",
       "image_local": "assets/batomon/blazewing.png",
-      "officialRarity_ko": "영웅"
+      "officialRarity_ko": "영웅",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 48,
@@ -6863,7 +7004,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/shelldra.png",
       "image_local": "assets/batomon/shelldra.png",
-      "officialRarity_ko": "영웅"
+      "officialRarity_ko": "영웅",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 49,
@@ -7010,7 +7154,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/coalem.png",
       "image_local": "assets/batomon/coalem.png",
-      "officialRarity_ko": "영웅"
+      "officialRarity_ko": "영웅",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 50,
@@ -7156,7 +7303,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/clawnetic.png",
       "image_local": "assets/batomon/clawnetic.png",
-      "officialRarity_ko": "영웅"
+      "officialRarity_ko": "영웅",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 51,
@@ -7302,7 +7452,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/reapra.png",
       "image_local": "assets/batomon/reapra.png",
-      "officialRarity_ko": "영웅"
+      "officialRarity_ko": "영웅",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 52,
@@ -7448,7 +7601,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/zephyrex.png",
       "image_local": "assets/batomon/zephyrex.png",
-      "officialRarity_ko": "영웅"
+      "officialRarity_ko": "영웅",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 53,
@@ -7594,7 +7750,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/aegistruct.png",
       "image_local": "assets/batomon/aegistruct.png",
-      "officialRarity_ko": "영웅"
+      "officialRarity_ko": "영웅",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 54,
@@ -7740,7 +7899,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/pylong.png",
       "image_local": "assets/batomon/pylong.png",
-      "officialRarity_ko": "영웅"
+      "officialRarity_ko": "영웅",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 55,
@@ -7887,7 +8049,10 @@
       "image_url": "https://batomon.com/game/25377295/monster/cobrex.png",
       "image_local": "assets/batomon/basilord.png",
       "officialRarity_ko": "전설",
-      "name_en": "Cobrex"
+      "name_en": "Cobrex",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 56,
@@ -8033,7 +8198,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/torrantler.png",
       "image_local": "assets/batomon/torrantler.png",
-      "officialRarity_ko": "전설"
+      "officialRarity_ko": "전설",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 57,
@@ -8179,7 +8347,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/galvanine.png",
       "image_local": "assets/batomon/galvanine.png",
-      "officialRarity_ko": "전설"
+      "officialRarity_ko": "전설",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 58,
@@ -8325,7 +8496,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/geminiss.png",
       "image_local": "assets/batomon/geminiss.png",
-      "officialRarity_ko": "전설"
+      "officialRarity_ko": "전설",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 59,
@@ -8471,7 +8645,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/blixie.png",
       "image_local": "assets/batomon/blixie.png",
-      "officialRarity_ko": "전설"
+      "officialRarity_ko": "전설",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 60,
@@ -8617,7 +8794,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/onsetra.png",
       "image_local": "assets/batomon/onsetra.png",
-      "officialRarity_ko": "전설"
+      "officialRarity_ko": "전설",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 61,
@@ -8763,7 +8943,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/gaiadrasil.png",
       "image_local": "assets/batomon/gaiadrasil.png",
-      "officialRarity_ko": "전설"
+      "officialRarity_ko": "전설",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 62,
@@ -8909,7 +9092,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/dragonarch.png",
       "image_local": "assets/batomon/dragonarch.png",
-      "officialRarity_ko": "전설"
+      "officialRarity_ko": "전설",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 63,
@@ -9055,7 +9241,10 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/saberhorn.png",
       "image_local": "assets/batomon/saberhorn.png",
-      "officialRarity_ko": "전설"
+      "officialRarity_ko": "전설",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     },
     {
       "no": 64,
@@ -9201,8 +9390,12 @@
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/stellagon.png",
       "image_local": "assets/batomon/stellagon.png",
-      "officialRarity_ko": "전설"
+      "officialRarity_ko": "전설",
+      "region": "원향",
+      "region_ko": "원향",
+      "region_en": "Wonhyang"
     }
   ],
-  "site_version": "0.014"
+  "site_version": "0.015",
+  "region": "원향"
 }

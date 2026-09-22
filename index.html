@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.014</title>
+<title>바토몬 원향 도감 v0.015</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -64,7 +64,7 @@
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.014</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22) + 트레이너 23종 + 장신구 93종 + 도구 40종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.015</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -81,7 +81,7 @@
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.014</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.015</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -206,10 +206,11 @@ function render(){
     top.append(n,nm);
     const r=document.createElement('div'); r.className='rank'; r.textContent=item.rank||'';
     const t=document.createElement('div'); t.className='type'; t.textContent=item.type||'';
+    const rg=document.createElement('div'); rg.className='type'; rg.textContent='지역 · '+(item.region_ko||item.region||'미표기');
     const act=document.createElement('div'); act.className='actions';
     const sb=document.createElement('button'); sb.textContent='능력치 보기'; sb.onclick=()=>openStats(item.no);
     const eb=document.createElement('button'); eb.textContent='✎ 사진 수정'; eb.onclick=()=>openEditor(item.no);
-    act.append(sb,eb); body.append(top,r,t,act); c.append(img,body); g.appendChild(c);
+    act.append(sb,eb); body.append(top,r,t,rg,act); c.append(img,body); g.appendChild(c);
   }
   document.getElementById('status').textContent=`총 ${characters.length}마리 · 현재 표시 ${list.length}마리`;
 }
@@ -500,7 +501,7 @@ function renderEvents(){
 async function init(){
   loadEdits();
   try{
-    const res=await fetch('./characters.json?v=0.014&cb='+Date.now(),{cache:'no-store'});
+    const res=await fetch('./characters.json?v=0.015&cb='+Date.now(),{cache:'no-store'});
     if(!res.ok) throw new Error(`characters.json HTTP ${res.status}`);
     const data=await res.json();
     characters=Array.isArray(data)?data:(data.characters||[]);
