@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.022</title>
+<title>바토몬 원향 도감 v0.023</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -73,7 +73,7 @@
 .eventChoice{font-weight:700}
 .eventReward{margin-top:4px;color:#b7d7ff}
 .eventSub{margin-top:3px;font-size:12px;opacity:.72}
-/* v0.022 Damage Calculator UI */
+/* v0.023 Damage Calculator UI */
 .calcPage{background:#0c6673;min-height:calc(100vh - 30px);border:1px solid #153f4a;border-radius:18px;overflow:hidden;box-shadow:0 18px 55px rgba(0,0,0,.28)}
 .calcTopbar{height:58px;background:linear-gradient(180deg,#20c3f0 0%,#13a8d4 100%);border-bottom:3px solid #087c9d;display:flex;align-items:center;justify-content:center;gap:clamp(24px,5vw,90px);font-weight:900;color:#fff;text-shadow:2px 2px 0 rgba(0,0,0,.18)}
 .calcStatus{display:flex;align-items:center;gap:10px;font-size:20px;min-width:110px;justify-content:center}.calcIcon{font-size:30px;line-height:1}.calcDay{font-size:30px}.calcCounter{font-size:20px}
@@ -82,7 +82,7 @@
 .calcCenter{display:flex;flex-direction:column;gap:14px}.calcBox{background:#f3f3f4;border:5px solid #8e929d;outline:2px solid #252a31;border-radius:7px;box-shadow:4px 4px 0 rgba(0,0,0,.2);overflow:hidden}.calcBoxHead{height:40px;padding:6px 12px;font-size:20px;font-weight:900;color:#fff;background:#ffc20f;border-bottom:4px solid #e2a500;text-shadow:2px 2px 0 rgba(0,0,0,.15)}.calcBoxHead.team{background:#ef4d6a;border-bottom-color:#cf3450}.calcSlots{padding:6px;display:grid;gap:7px}.calcSlots.bench{grid-template-columns:repeat(4,1fr)}.calcSlots.team{grid-template-columns:repeat(3,1fr)}.calcSlot{height:110px;background:#fff;border:4px solid #b8bbc4;box-shadow:inset 0 0 0 2px #e6e7ea;display:flex;align-items:center;justify-content:center;position:relative;color:#b3b6bd;font-size:12px;font-weight:900}.calcSlot:after{content:'+';font-size:26px;color:#d0d2d7}.calcSlot:hover{border-color:#8ea7b7;background:#f9fcfd}.calcSlot.teamSlot{height:112px}.calcTeamHint{font-size:12px;color:#66707d;text-align:center;padding:2px 0 8px}.calcRightSpace{display:none}
 .calcShop{grid-column:3;grid-row:1;margin-top:0;background:#eef0f1;border:5px solid #8e929d;outline:2px solid #252a31;border-radius:7px;box-shadow:4px 4px 0 rgba(0,0,0,.2);min-height:330px;overflow:hidden}.calcShopHead{height:38px;background:#65c9ee;color:#10232c;border-bottom:4px solid #3ba5c9;font-size:19px;font-weight:900;padding:6px 12px}.calcShopBlank{height:285px;background:#f7f7f7}
 .calcNotice{margin-top:10px;color:#d9f5fb;font-size:12px;text-align:center}.calcNavButton{position:relative}.calcNavButton.on{background:#173247!important;color:#6fd9ff!important}
-/* v0.022 Trainer selector UI */
+/* v0.023 Trainer selector UI */
 .calcTrainerPanel{cursor:pointer;position:relative}
 .calcTrainerPanel:focus-visible{outline:4px solid #20c3f0;outline-offset:3px}
 .calcTrainerChange{position:absolute;right:10px;top:10px;background:rgba(0,0,0,.58);color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:7px;padding:5px 9px;font-size:12px;font-weight:800;z-index:2}
@@ -98,13 +98,20 @@
 @media(max-width:1050px){.calcBattleArea{grid-template-columns:150px 1fr}.calcTrainerImage{height:80px}.calcTrainerAbility{font-size:10px}.calcShop{grid-column:1/-1;grid-row:2;min-height:150px}.calcShopBlank{height:105px}.calcSlot,.calcSlot.teamSlot{height:95px}}
 @media(max-width:720px){.calcTopbar{gap:8px;justify-content:space-around}.calcStatus{font-size:14px;min-width:auto}.calcDay{font-size:20px}.calcCounter{font-size:14px}.calcBattleArea{grid-template-columns:1fr}.calcTrainerPanel{max-width:220px;margin:auto;width:100%}.calcCenter{width:100%}.calcSlots.team{grid-template-columns:repeat(2,1fr)}.calcBoard{padding:10px}.calcShop{grid-column:1;grid-row:3;min-height:140px}.calcShopBlank{height:95px}}
 
+
+/* v0.023 UI: calculator opens by default; shop moved below and widened */
+.calcBattleArea{grid-template-columns:180px minmax(460px,1fr);}
+.calcShop{grid-column:1/-1;grid-row:2;width:100%;min-height:190px;margin-top:0;}
+.calcShopBlank{height:140px;}
+@media(max-width:1050px){.calcBattleArea{grid-template-columns:150px 1fr}.calcShop{grid-column:1/-1;grid-row:2;min-height:170px}.calcShopBlank{height:120px}}
+@media(max-width:720px){.calcBattleArea{grid-template-columns:1fr}.calcShop{grid-column:1;grid-row:3;min-height:150px}.calcShopBlank{height:105px}}
 </style>
 <!-- English originals are retained in trainers.json only: name_en / ability_en -->
 </head>
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.022</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.023</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -117,7 +124,7 @@
     <button id="tabCodex" onclick="switchSection('codex')">📖 도감</button>
   </div>
 
-  <section id="calculatorSection" class="section">
+  <section id="calculatorSection" class="section on">
     <div class="calcPage">
       <div class="calcTopbar">
         <div class="calcStatus"><span class="calcIcon">🫀</span><span>10</span></div>
@@ -167,7 +174,7 @@
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.022</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.023</div>
     <div id="grid" class="grid"></div>
   </section>
 
