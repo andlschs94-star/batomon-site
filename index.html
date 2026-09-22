@@ -64,7 +64,7 @@ function render(){
   const q=document.getElementById('search').value.trim().toLowerCase();
   const rf=document.getElementById('rank').value;
   const sort=document.getElementById('sort').value;
-  let list=characters.filter(c=>(!q||String(c.name).toLowerCase().includes(q))&&(!rf||c.rank===rf));
+  let list=characters.filter(c=>(!q||[c.name,c.officialName,c.type].filter(Boolean).join(' ').toLowerCase().includes(q))&&(!rf||c.rank===rf));
   list.sort((a,b)=>sort==='name'?String(a.name).localeCompare(String(b.name),'ko'):sort==='rank'?(rankOrder(a.rank)-rankOrder(b.rank)||a.no-b.no):a.no-b.no);
   g.innerHTML='';
   if(!list.length){g.innerHTML='<div class="empty">조건에 맞는 캐릭터가 없습니다.</div>';return;}
@@ -88,7 +88,7 @@ function render(){
 function rankOrder(r){return ({'일반':1,'고급':2,'희귀':3,'영웅':4,'전설':5})[r]||99}
 
 function openStats(no){
-  const item=getItem(no); if(!item)return; statsCurrent=item; statsMode='normal'; statsLevel=1; document.getElementById('statsTitle').textContent=`${String(item.no).padStart(2,'0')}번 ${item.name} · 능력치`; drawStats(); document.getElementById('statsOverlay').style.display='flex';
+  const item=getItem(no); if(!item)return; statsCurrent=item; statsMode='normal'; statsLevel=1; document.getElementById('statsTitle').textContent=`${String(item.no).padStart(2,'0')}번 ${item.name}${item.officialName?` · ${item.officialName}`:''}`; drawStats(); document.getElementById('statsOverlay').style.display='flex';
 }
 function drawStats(){
   if(!statsCurrent)return;
@@ -100,9 +100,18 @@ function drawStats(){
   const arr=statsMode==='normal'?(statsCurrent.levels||[]):(statsCurrent.shinyLevels||[]);
   const d=arr.find(x=>Number(x.level)===statsLevel)||{};
   const box=document.getElementById('statContent'); box.innerHTML='';
-  const rows=[['능력치',d.stats||'미입력'],['재사용',d.cooldown||'미입력'],['멀티캐스트',d.multicast||'미입력'],['능력',d.ability||'미입력']];
+  const rows=[
+    ['공식명',statsCurrent.officialName||'미입력'],
+    ['공식등급',statsCurrent.officialRarity||'미입력'],
+    ['속성',statsCurrent.type||'미입력'],
+    ['가격',statsCurrent.price==null?'미입력':`$${statsCurrent.price}`],
+    ['능력치',d.stats||'미입력'],
+    ['재사용',d.cooldown||'미입력'],
+    ['멀티캐스트',d.multicast||'미입력'],
+    ['능력',d.ability||'미입력']
+  ];
   for(const [l,v] of rows){const row=document.createElement('div');row.className='statrow';const a=document.createElement('div');a.className='label';a.textContent=l;const b=document.createElement('div');b.textContent=v;row.append(a,b);box.appendChild(row)}
-  const s=document.createElement('div');s.className='source';s.textContent='출처: '+(d.source||'미입력');box.appendChild(s);
+  const s=document.createElement('div');s.className='source';s.textContent='출처: '; const a=document.createElement('a'); a.href=d.source||statsCurrent.officialUrl||'#'; a.target='_blank'; a.rel='noopener noreferrer'; a.textContent=d.source||statsCurrent.officialUrl||'미입력'; s.appendChild(a); box.appendChild(s);
 }
 function closeStats(){document.getElementById('statsOverlay').style.display='none';statsCurrent=null}
 
