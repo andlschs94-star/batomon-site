@@ -229,11 +229,11 @@
 </style>
 
 <style id="resizablePanelsV046">
-/* v0.048: 직접 크기 조절 */
-.calcBattleArea{grid-template-columns:var(--trainer-w,150px) minmax(360px,1fr) var(--trinket-w,150px);}
+/* v0.049: 직접 크기 조절 */
+.calcBattleArea{grid-template-columns:var(--trainer-w,150px) minmax(360px,1fr) var(--trinket-w,150px);align-items:start;}
 .calcTrainerPanel,.calcTrinketPanel,.calcCenter>.calcBox{position:relative;box-sizing:border-box;}
-.calcTrainerPanel{width:var(--trainer-w,150px);min-width:120px;min-height:180px;}
-.calcTrinketPanel{width:var(--trinket-w,150px);min-width:120px;min-height:160px;}
+.calcTrainerPanel{width:var(--trainer-w,150px);height:var(--trainer-h,180px);min-width:120px;min-height:180px;overflow:auto;}
+.calcTrinketPanel{width:var(--trinket-w,150px);height:var(--trinket-h,160px);min-width:120px;min-height:160px;overflow:auto;}
 .calcCenter>.calcBox{width:var(--team-w,190px);height:var(--team-h,auto);min-width:190px;min-height:205px;}
 .calcCenter>.calcBox .calcSlots.team{height:calc(var(--team-h,205px) - 74px);min-height:120px;box-sizing:border-box;grid-template-rows:repeat(2,minmax(0,1fr));}
 .calcCenter>.calcBox .calcSlot.teamSlot{height:auto;min-height:55px;}
@@ -241,14 +241,14 @@
 .resizeHandle:hover{opacity:1;border-color:#20a9d0;}
 .resizingPanel{user-select:none!important;}
 .resizingPanel *{user-select:none!important;}
-@media(max-width:1050px){.calcBattleArea{grid-template-columns:var(--trainer-w,145px) minmax(330px,1fr) var(--trinket-w,145px)}.calcTrainerPanel{width:var(--trainer-w,145px)}.calcTrinketPanel{width:var(--trinket-w,145px)}}
+@media(max-width:1050px){.calcBattleArea{grid-template-columns:var(--trainer-w,145px) minmax(330px,1fr) var(--trinket-w,145px)}.calcTrainerPanel{width:var(--trainer-w,145px);height:var(--trainer-h,180px)}.calcTrinketPanel{width:var(--trinket-w,145px);height:var(--trinket-h,160px)}}
 @media(max-width:720px){.calcBattleArea{grid-template-columns:1fr}.calcTrainerPanel,.calcTrinketPanel{width:100%;max-width:320px}.calcCenter>.calcBox{width:var(--team-w,190px);max-width:100%;}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.048</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.049</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -1273,10 +1273,15 @@ init();
   const trinket=document.getElementById('calcTrinketPanel');
   const team=document.querySelector('.calcCenter>.calcBox');
   if(!trainer||!trinket||!team)return;
+  let suppressClickUntil=0;
+  document.addEventListener('click',function(e){
+    if(Date.now()<suppressClickUntil){ e.preventDefault(); e.stopPropagation(); }
+  },true);
   function addHandle(el,type){
     if(el.querySelector('.resizeHandle'))return;
     const h=document.createElement('div'); h.className='resizeHandle'; h.title='드래그해서 크기 조절'; h.setAttribute('aria-label','크기 조절');
     el.appendChild(h);
+    h.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); });
     h.addEventListener('pointerdown',function(e){
       e.preventDefault(); e.stopPropagation();
       const startX=e.clientX,startY=e.clientY;
@@ -1284,17 +1289,20 @@ init();
       const startW=rect.width,startH=rect.height;
       const minW=type==='team'?190:120, minH=type==='team'?205:150;
       const maxW=type==='team'?420:360, maxH=type==='team'?520:520;
+      let moved=false;
       el.classList.add('resizingPanel');
       h.setPointerCapture?.(e.pointerId);
       function move(ev){
+        if(Math.abs(ev.clientX-startX)>3 || Math.abs(ev.clientY-startY)>3) moved=true;
         const w=Math.max(minW,Math.min(maxW,startW+(ev.clientX-startX)));
         const hh=Math.max(minH,Math.min(maxH,startH+(ev.clientY-startY)));
-        if(type==='trainer') root.style.setProperty('--trainer-w',Math.round(w)+'px');
-        if(type==='trinket') root.style.setProperty('--trinket-w',Math.round(w)+'px');
+        if(type==='trainer'){ root.style.setProperty('--trainer-w',Math.round(w)+'px'); root.style.setProperty('--trainer-h',Math.round(hh)+'px'); }
+        if(type==='trinket'){ root.style.setProperty('--trinket-w',Math.round(w)+'px'); root.style.setProperty('--trinket-h',Math.round(hh)+'px'); }
         if(type==='team'){team.style.setProperty('--team-w',Math.round(w)+'px');team.style.setProperty('--team-h',Math.round(hh)+'px');}
       }
       function up(){
         el.classList.remove('resizingPanel');
+        if(moved) suppressClickUntil=Date.now()+120;
         window.removeEventListener('pointermove',move); window.removeEventListener('pointerup',up);
       }
       window.addEventListener('pointermove',move); window.addEventListener('pointerup',up,{once:true});
