@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.015</title>
+<title>바토몬 원향 도감 v0.016</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -48,6 +48,21 @@
 .trinketEffect{font-size:13px;line-height:1.55;color:#e3e7ec;margin:12px 0;min-height:58px}
 .trinketUnique{font-size:10px;padding:4px 6px;border-radius:6px;background:#332c1e;color:#f0d58a}
 
+
+.mechanicsGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.mechanicCard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0;transition:.18s transform,.18s border-color}
+.mechanicCard:hover{transform:translateY(-2px);border-color:#4b586b}
+.mechanicHead{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.mechanicName{font-size:17px;font-weight:800}.mechanicKo{font-size:12px;color:#9fd8ff;margin-top:4px}
+.mechanicCat{font-size:10px;padding:5px 7px;border-radius:7px;background:#252d38;color:#cbd2dc;white-space:nowrap}
+.mechanicSummary{font-size:13px;line-height:1.55;color:#e3e7ec;margin:12px 0}
+.mechanicRules{margin:0;padding-left:19px;color:#cbd2dc;font-size:12px;line-height:1.65}
+.mechanicRules li{margin:4px 0}.mechanicFormula{margin:10px 0;padding:10px 12px;background:#0e1319;border:1px solid var(--line);border-radius:9px;font-family:Consolas,monospace;font-size:12px;color:#bfe4ff;overflow:auto}
+.mechanicExamples{display:flex;gap:5px;flex-wrap:wrap;margin-top:12px}.mechanicExample{font-size:10px;padding:4px 6px;border-radius:6px;background:#202a35;color:#b9d8ee}
+.mechanicCard a{display:inline-block;margin-top:12px;color:#8ed0ff;text-decoration:none;font-size:11px}.mechanicCard a:hover{text-decoration:underline}
+@media (max-width:1100px){.mechanicsGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.mechanicsGrid{grid-template-columns:1fr}}
+
 .siteVersion{display:inline-block;font-size:12px;font-weight:700;vertical-align:middle;margin-left:8px;padding:4px 8px;border:1px solid #3c4d5e;border-radius:7px;color:#9fd8ff;background:#17212b}
 .trinketPortrait img,.trainerPortrait img{referrer-policy:no-referrer}
 
@@ -64,7 +79,7 @@
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.015</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.016</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -78,10 +93,11 @@
     <button id="tabTrinket" onclick="switchSection('trinket')">장신구 93종</button>
     <button id="tabItem" onclick="switchSection('item')">도구 40종</button>
     <button id="tabEvent" onclick="switchSection('event')">이벤트 15종</button>
+    <button id="tabMechanic" onclick="switchSection('mechanic')">시스템 30종</button>
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.015</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.016</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -139,6 +155,22 @@
     <div id="eventStatus" class="trainerStatus">events.json 불러오는 중…</div>
     <div id="eventGrid" class="trainerGrid"></div>
   </section>
+
+  <section id="mechanicSection" class="section">
+    <div class="tools" style="margin-bottom:12px">
+      <input id="mechanicSearch" placeholder="시스템 이름 / 규칙 검색">
+      <select id="mechanicCategory">
+        <option value="">전체 분류</option>
+        <option value="Combat stats & statuses">전투 수치 및 상태</option>
+        <option value="Timing & activation">타이밍 및 발동</option>
+        <option value="Battle rules">전투 규칙</option>
+        <option value="Unit changes">유닛 변화</option>
+        <option value="Shop & economy">상점 및 경제</option>
+      </select>
+    </div>
+    <div id="mechanicStatus" class="trainerStatus">mechanics.json 불러오는 중…</div>
+    <div id="mechanicGrid" class="mechanicsGrid"></div>
+  </section>
 </div>
 
 <div id="statsOverlay" class="overlay"><div class="modal"><div class="modalhead"><h2 id="statsTitle">능력치</h2><button class="close" onclick="closeStats()">×</button></div><div class="stats"><div class="tabs" id="modeTabs"></div><div class="levels" id="levelTabs"></div><div class="statbox" id="statContent"></div></div></div></div>
@@ -152,6 +184,7 @@ let trainers=[];
 let trinkets=[];
 let items=[];
 let events=[];
+let mechanics=[];
 let statsCurrent=null;
 let statsMode='normal';
 let statsLevel=1;
@@ -285,20 +318,25 @@ const trinketRarity=document.getElementById('trinketRarity'); if(trinketRarity)t
 const itemSearch=document.getElementById('itemSearch'); if(itemSearch)itemSearch.addEventListener('input',renderItems);
 const itemRarity=document.getElementById('itemRarity'); if(itemRarity)itemRarity.addEventListener('change',renderItems);
 const eventSearch=document.getElementById('eventSearch'); if(eventSearch)eventSearch.addEventListener('input',renderEvents);
-const eventSchedule=document.getElementById('eventSchedule'); if(eventSchedule)eventSchedule.addEventListener('change',renderEvents);document.getElementById('rank').addEventListener('change',render);document.getElementById('sort').addEventListener('change',render);document.getElementById('resetEdits').addEventListener('click',()=>{if(!confirm('모든 사진 수정 내용을 이 브라우저에서 삭제할까요?'))return;edits={};saveEdits();render()});
+const eventSchedule=document.getElementById('eventSchedule'); if(eventSchedule)eventSchedule.addEventListener('change',renderEvents);
+const mechanicSearch=document.getElementById('mechanicSearch'); if(mechanicSearch)mechanicSearch.addEventListener('input',renderMechanics);
+const mechanicCategory=document.getElementById('mechanicCategory'); if(mechanicCategory)mechanicCategory.addEventListener('change',renderMechanics);document.getElementById('rank').addEventListener('change',render);document.getElementById('sort').addEventListener('change',render);document.getElementById('resetEdits').addEventListener('click',()=>{if(!confirm('모든 사진 수정 내용을 이 브라우저에서 삭제할까요?'))return;edits={};saveEdits();render()});
 
 
 function switchSection(section){
   const isB=section==='batomon';
   const isT=section==='trainer';
   const isK=section==='trinket';
+  const isM=section==='mechanic';
 
   document.getElementById('batomonSection')?.classList.toggle('on',isB);
   document.getElementById('trainerSection')?.classList.toggle('on',isT);
   document.getElementById('trinketSection')?.classList.toggle('on',isK);
   document.getElementById('itemSection')?.classList.toggle('on',section==='item');
   document.getElementById('eventSection')?.classList.toggle('on',section==='event');
+  document.getElementById('mechanicSection')?.classList.toggle('on',isM);
   document.getElementById('tabEvent')?.classList.toggle('on',section==='event');
+  document.getElementById('tabMechanic')?.classList.toggle('on',isM);
 
   document.getElementById('tabBatomon')?.classList.toggle('on',isB);
   document.getElementById('tabTrainer')?.classList.toggle('on',isT);
@@ -498,10 +536,42 @@ function renderEvents(){
   status.textContent=`이벤트 ${events.length}종 · Balance 22 / 1.0.0 · 현재 표시 ${list.length}종`;
 }
 
+function renderMechanics(){
+  const g=document.getElementById('mechanicGrid'), status=document.getElementById('mechanicStatus');
+  if(!g||!status) return;
+  const q=(document.getElementById('mechanicSearch')?.value||'').trim().toLowerCase();
+  const cat=document.getElementById('mechanicCategory')?.value||'';
+  const list=mechanics.filter(m=>{
+    const s=[m.name_ko||'',m.name_en||'',m.summary_ko||'',m.summary_en||'',m.category_ko||'',m.category_en||'',...(m.rules_ko||[]),...(m.rules_en||[]),...(m.examples||[])].join(' ').toLowerCase();
+    return (!q||s.includes(q)) && (!cat||m.category_en===cat);
+  });
+  g.innerHTML='';
+  if(!list.length){g.innerHTML='<div class="empty">조건에 맞는 시스템이 없습니다.</div>';}
+  for(const m of list){
+    const card=document.createElement('div');card.className='mechanicCard';
+    const head=document.createElement('div');head.className='mechanicHead';
+    const left=document.createElement('div');
+    const nm=document.createElement('div');nm.className='mechanicName';nm.textContent=m.name_ko||m.name_en;
+    const en=document.createElement('div');en.className='mechanicKo';en.textContent=m.name_en;
+    left.append(nm,en);
+    const catEl=document.createElement('div');catEl.className='mechanicCat';catEl.textContent=m.category_ko||m.category_en;
+    head.append(left,catEl);
+    const summary=document.createElement('div');summary.className='mechanicSummary';summary.textContent=m.summary_ko||m.summary_en||'';
+    const rules=document.createElement('ul');rules.className='mechanicRules';
+    for(const r of (m.rules_ko||[])){const li=document.createElement('li');li.textContent=r;rules.appendChild(li);}
+    card.append(head,summary,rules);
+    if(m.formula){const f=document.createElement('div');f.className='mechanicFormula';f.textContent=(m.formula_label?m.formula_label+' : ':'')+m.formula;card.appendChild(f);}
+    if((m.examples||[]).length){const ex=document.createElement('div');ex.className='mechanicExamples';for(const x of m.examples){const b=document.createElement('span');b.className='mechanicExample';b.textContent=x;ex.appendChild(b)}card.appendChild(ex)}
+    const link=document.createElement('a');link.href=m.source_url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='공식 원문 보기 ↗';card.appendChild(link);
+    g.appendChild(card);
+  }
+  status.textContent=`시스템 ${mechanics.length}종 · Balance 22 / Steam build 25377295 · 현재 표시 ${list.length}종`;
+}
+
 async function init(){
   loadEdits();
   try{
-    const res=await fetch('./characters.json?v=0.015&cb='+Date.now(),{cache:'no-store'});
+    const res=await fetch('./characters.json?v=0.016&cb='+Date.now(),{cache:'no-store'});
     if(!res.ok) throw new Error(`characters.json HTTP ${res.status}`);
     const data=await res.json();
     characters=Array.isArray(data)?data:(data.characters||[]);
@@ -527,12 +597,15 @@ async function init(){
     if(it.ok){ const id=await it.json(); items=Array.isArray(id)?id:(id.items||[]); }
     const tk=await fetch('./trinkets.json?cb='+Date.now(),{cache:'no-store'});
       if(tk.ok){ const kd=await tk.json(); trinkets=Array.isArray(kd)?kd:(kd.trinkets||[]); }
+    const mc=await fetch('./mechanics.json?cb='+Date.now(),{cache:'no-store'});
+    if(mc.ok){ const md=await mc.json(); mechanics=Array.isArray(md)?md:(md.mechanics||[]); }
     }catch(e){ console.warn('trinkets.json 로드 실패',e); }
     render();
     renderTrainers();
     renderTrinkets();
     renderItems();
     renderEvents();
+    renderMechanics();
   }catch(err){
     console.error(err);
     document.getElementById('status').textContent='데이터를 불러오지 못했습니다: '+err.message;

@@ -1,0 +1,830 @@
+{
+  "site_version": "0.016",
+  "game": "Batomon Showdown",
+  "patch": "Balance 22",
+  "steam_build": "25377295",
+  "source": "https://batomon.com/wiki",
+  "count": 30,
+  "mechanics": [
+    {
+      "id": "damage",
+      "name_en": "Damage",
+      "name_ko": "피해",
+      "category_en": "Combat stats & statuses",
+      "category_ko": "전투 수치 및 상태",
+      "summary_en": "Damage breaks Shield first, then lowers the enemy team's shared HP.",
+      "summary_ko": "피해는 먼저 실드를 소모시키고, 남은 피해가 상대 팀의 공유 HP를 감소시킵니다.",
+      "rules_en": [
+        "A Batomon's Damage stat deals direct damage; Burn, Poison, Shock, and Sudden Death are separate damage sources.",
+        "Shield absorbs incoming Damage before that Damage reaches team HP.",
+        "On the same tick, Shield resolves before Damage."
+      ],
+      "rules_ko": [
+        "바토몬의 Damage 수치는 직접 피해를 줍니다. Burn, Poison, Shock, Sudden Death는 별도의 피해원입니다.",
+        "받는 피해는 팀 HP에 적용되기 전에 실드가 먼저 흡수합니다.",
+        "같은 틱에서는 실드가 피해보다 먼저 처리됩니다."
+      ],
+      "examples": [
+        "Bambudo"
+      ],
+      "source_url": "https://batomon.com/mechanics/damage"
+    },
+    {
+      "id": "heal",
+      "name_en": "Heal",
+      "name_ko": "회복",
+      "category_en": "Combat stats & statuses",
+      "category_ko": "전투 수치 및 상태",
+      "summary_en": "Heal restores shared team HP after same-tick offensive effects resolve.",
+      "summary_ko": "회복은 같은 틱의 공격 관련 효과가 처리된 뒤 팀의 공유 HP를 회복합니다.",
+      "rules_en": [
+        "Heal restores team HP; Batomon do not have separate personal HP bars.",
+        "Heal cannot raise team HP above that battle's maximum.",
+        "For casts on the same tick, Heal resolves after Shield, Damage, and status application.",
+        "Same-tick Heal can restore HP after lethal Damage has resolved, before the winner is checked."
+      ],
+      "rules_ko": [
+        "회복은 팀 HP를 회복하며, 개별 바토몬에게 별도의 HP 게이지가 있는 것은 아닙니다.",
+        "회복으로 팀 HP가 해당 전투의 최대 HP를 초과할 수 없습니다.",
+        "같은 틱의 시전에서는 실드, 피해, 상태 적용 이후에 회복이 처리됩니다.",
+        "치명적인 피해가 처리된 같은 틱이라도 승패 판정 전에 회복으로 HP를 되돌릴 수 있습니다."
+      ],
+      "examples": [
+        "Mystic Pearl"
+      ],
+      "source_url": "https://batomon.com/mechanics/heal"
+    },
+    {
+      "id": "shield",
+      "name_en": "Shield",
+      "name_ko": "실드",
+      "category_en": "Combat stats & statuses",
+      "category_ko": "전투 수치 및 상태",
+      "summary_en": "Shield is a temporary layer that absorbs incoming damage before shared team HP.",
+      "summary_ko": "실드는 일시적인 방어층으로, 받는 피해를 팀 공유 HP보다 먼저 흡수합니다.",
+      "rules_en": [
+        "Shield absorbs direct Damage before team HP.",
+        "If a team has Shield when Burn, Poison, or Shock damage lands, that status damage is reduced by 15% before Shield absorbs it.",
+        "Shield is separate from Protect: Shield absorbs damage, while Protect prevents Knockout."
+      ],
+      "rules_ko": [
+        "실드는 직접 피해를 팀 HP보다 먼저 흡수합니다.",
+        "팀에 실드가 있는 상태에서 Burn, Poison, Shock 피해가 들어오면 해당 상태 피해는 실드에 흡수되기 전에 15% 감소합니다.",
+        "실드와 Protect는 별개입니다. 실드는 피해를 흡수하고 Protect는 Knockout을 방지합니다."
+      ],
+      "examples": [
+        "Pebbler"
+      ],
+      "source_url": "https://batomon.com/mechanics/shield"
+    },
+    {
+      "id": "burn",
+      "name_en": "Burn",
+      "name_ko": "화상",
+      "category_en": "Combat stats & statuses",
+      "category_ko": "전투 수치 및 상태",
+      "summary_en": "Burn deals stacking damage twice per second, then loses one stack.",
+      "summary_ko": "화상은 중첩 수만큼 초당 2회 피해를 주고, 피해를 줄 때마다 중첩이 1 감소합니다.",
+      "rules_en": [
+        "Each base Burn tick deals damage equal to the current Burn stack count.",
+        "After each Burn damage tick, Burn loses 1 stack.",
+        "If Shield is present, Burn damage is reduced by 15% before Shield absorbs it."
+      ],
+      "rules_ko": [
+        "기본 화상 틱은 현재 화상 중첩 수와 같은 피해를 줍니다.",
+        "화상 피해 틱이 발생할 때마다 화상 중첩이 1 감소합니다.",
+        "실드가 있으면 화상 피해는 실드에 흡수되기 전에 15% 감소합니다."
+      ],
+      "examples": [
+        "Fire Orb"
+      ],
+      "source_url": "https://batomon.com/mechanics/burn"
+    },
+    {
+      "id": "poison",
+      "name_en": "Poison",
+      "name_ko": "독",
+      "category_en": "Combat stats & statuses",
+      "category_ko": "전투 수치 및 상태",
+      "summary_en": "Poison deals steady stacking damage once per second without natural decay.",
+      "summary_ko": "독은 중첩 수만큼 매초 지속 피해를 주며 자연적으로 감소하지 않습니다.",
+      "rules_en": [
+        "Poison deals damage equal to its current stack count once per second.",
+        "Poison does not decay after dealing damage.",
+        "Poison does not ignore Shield: if Shield is present, Poison damage is reduced by 15% before Shield absorbs it."
+      ],
+      "rules_ko": [
+        "독은 매초 현재 독 중첩 수와 같은 피해를 줍니다.",
+        "독은 피해를 준 뒤에도 자연적으로 감소하지 않습니다.",
+        "독은 실드를 무시하지 않습니다. 실드가 있으면 독 피해는 실드에 흡수되기 전에 15% 감소합니다."
+      ],
+      "examples": [
+        "Poison Orb"
+      ],
+      "source_url": "https://batomon.com/mechanics/poison"
+    },
+    {
+      "id": "shock",
+      "name_en": "Shock",
+      "name_ko": "감전",
+      "category_en": "Combat stats & statuses",
+      "category_ko": "전투 수치 및 상태",
+      "summary_en": "Direct Damage triggers a separate Shock hit equal to the target's Shock stacks; Shock stays until removed.",
+      "summary_ko": "직접 피해가 들어가면 대상의 감전 중첩만큼 별도의 감전 피해가 발생하며, 감전은 제거될 때까지 유지됩니다.",
+      "rules_en": [
+        "When direct Damage hits a team with Shock, Shock deals a separate hit equal to the current Shock stack count.",
+        "That Shock hit resolves before the direct hit, so it reaches Shield first.",
+        "Shock applied by a cast does not affect that same cast's direct Damage because status application follows Damage.",
+        "Shock does not decay naturally.",
+        "Burn, Poison, Shock, and Sudden Death damage do not trigger another Shock hit.",
+        "If Shield is present, the triggered Shock hit is reduced by 15% before Shield absorbs it."
+      ],
+      "rules_ko": [
+        "감전 상태에서 직접 피해를 받으면 현재 감전 중첩 수만큼 별도의 감전 피해가 발생합니다.",
+        "감전 피해는 직접 피해보다 먼저 처리되므로 실드가 먼저 감전 피해를 받습니다.",
+        "같은 시전으로 새로 부여된 감전은 피해보다 상태 적용이 늦기 때문에 그 시전의 직접 피해에는 발동하지 않습니다.",
+        "감전은 자연적으로 감소하지 않습니다.",
+        "Burn, Poison, Shock, Sudden Death 피해는 추가 감전을 다시 발동시키지 않습니다.",
+        "실드가 있으면 발동한 감전 피해는 실드에 흡수되기 전에 15% 감소합니다."
+      ],
+      "examples": [
+        "Battery Pack"
+      ],
+      "source_url": "https://batomon.com/mechanics/shock"
+    },
+    {
+      "id": "cooldown-speed",
+      "name_en": "Cooldown Speed",
+      "name_ko": "쿨다운 속도",
+      "category_en": "Combat stats & statuses",
+      "category_ko": "전투 수치 및 상태",
+      "summary_en": "Cooldown Speed divides a Batomon's base cooldown, while added cooldown is applied afterward.",
+      "summary_ko": "쿨다운 속도는 기본 쿨다운을 나누며, 추가 쿨다운은 그 이후에 적용됩니다.",
+      "rules_en": [
+        "More Cooldown Speed makes a Batomon cast more often.",
+        "With no added cooldown, +100% Cooldown Speed turns a 6-second base cooldown into 3 seconds.",
+        "A Batomon's effective cooldown cannot go below 0.1 seconds.",
+        "Charge advances current cast progress; it does not change base cooldown, added cooldown, or Cooldown Speed."
+      ],
+      "rules_ko": [
+        "쿨다운 속도가 높을수록 바토몬이 더 자주 시전합니다.",
+        "추가 쿨다운이 없다면 쿨다운 속도 +100%에서 기본 쿨다운 6초가 3초가 됩니다.",
+        "실제 쿨다운은 0.1초보다 짧아질 수 없습니다.",
+        "Charge는 현재 시전 진행도를 앞당길 뿐 기본 쿨다운, 추가 쿨다운, 쿨다운 속도 자체를 변경하지 않습니다."
+      ],
+      "formula": "max(0.1s, base ÷ max(0.1, 1 + speed) + added cooldown)",
+      "formula_label": "쿨다운 공식",
+      "examples": [
+        "Haste Orb"
+      ],
+      "source_url": "https://batomon.com/mechanics/cooldown-speed"
+    },
+    {
+      "id": "multicast",
+      "name_en": "Multicast",
+      "name_ko": "멀티캐스트",
+      "category_en": "Combat stats & statuses",
+      "category_ko": "전투 수치 및 상태",
+      "summary_en": "Multicast is the total number of consecutive casts in one activation.",
+      "summary_ko": "멀티캐스트는 한 번의 활성화에서 연속으로 발생하는 전체 시전 횟수입니다.",
+      "rules_en": [
+        "Multicast 2 means two total casts, not two additional casts.",
+        "Consecutive Multicast repeats are spaced 0.1 seconds apart.",
+        "Each repeat is another cast, so On Cast resolves for each cast in the sequence.",
+        "Any queued repeats stop if that Batomon is Knocked Out."
+      ],
+      "rules_ko": [
+        "멀티캐스트 2는 추가 2회가 아니라 총 2회 시전이라는 뜻입니다.",
+        "연속 멀티캐스트 시전 사이에는 0.1초 간격이 있습니다.",
+        "각 반복 시전도 별도의 시전이므로 해당 순서의 각 시전마다 On Cast가 처리됩니다.",
+        "대기 중인 반복 시전은 해당 바토몬이 Knockout되면 중단됩니다."
+      ],
+      "examples": [
+        "Black Feather"
+      ],
+      "source_url": "https://batomon.com/mechanics/multicast"
+    },
+    {
+      "id": "on-cast",
+      "name_en": "On Cast",
+      "name_ko": "시전 시",
+      "category_en": "Timing & activation",
+      "category_ko": "타이밍 및 발동",
+      "summary_en": "On Cast resolves whenever that Batomon performs a cast.",
+      "summary_ko": "시전 시 효과는 해당 바토몬이 시전할 때마다 처리됩니다.",
+      "rules_en": [
+        "An On Cast ability resolves when its own Batomon casts and that ability is enabled.",
+        "Multicast repeats the cast, so On Cast resolves for every cast in that Multicast sequence.",
+        "Cooldown Speed and Charge can move the next timed cast earlier without changing the printed On Cast effect."
+      ],
+      "rules_ko": [
+        "On Cast 능력은 해당 바토몬이 시전하고 그 능력이 활성화되어 있을 때 처리됩니다.",
+        "멀티캐스트는 시전을 반복하므로 해당 순서의 모든 시전마다 On Cast가 처리됩니다.",
+        "쿨다운 속도와 Charge는 다음 정기 시전을 앞당길 수 있지만, 표시된 On Cast 효과 자체를 변경하지는 않습니다."
+      ],
+      "examples": [
+        "Bambudo"
+      ],
+      "source_url": "https://batomon.com/mechanics/on-cast"
+    },
+    {
+      "id": "on-battle-start",
+      "name_en": "On Battle Start",
+      "name_ko": "전투 시작 시",
+      "category_en": "Timing & activation",
+      "category_ko": "타이밍 및 발동",
+      "summary_en": "On Battle Start abilities resolve before normal timed casts begin.",
+      "summary_ko": "전투 시작 시 능력은 일반적인 타이밍 시전이 시작되기 전에 처리됩니다.",
+      "rules_en": [
+        "On Battle Start abilities resolve before normal timed casts, with higher-priority start effects resolving first.",
+        "Knocked-out or ability-disabled Batomon do not resolve their normal On Battle Start activation.",
+        "Effects can explicitly activate On Battle Start abilities additional times.",
+        "Coffee adds one activation for the next battle; Draconarch activates adjacent allies' On Battle Start abilities when it casts."
+      ],
+      "rules_ko": [
+        "전투 시작 시 능력은 일반 시전보다 먼저 처리되며, 시작 효과 중 우선순위가 높은 효과가 먼저 처리됩니다.",
+        "Knockout 상태이거나 능력이 비활성화된 바토몬은 일반적인 전투 시작 발동을 처리하지 않습니다.",
+        "다른 효과가 On Battle Start 능력을 추가로 발동시킬 수 있습니다.",
+        "Coffee는 다음 전투의 On Battle Start 발동을 1회 추가하고, Draconarch는 시전할 때 인접 아군의 On Battle Start를 발동시킵니다."
+      ],
+      "examples": [
+        "Coffee",
+        "Draconarch"
+      ],
+      "source_url": "https://batomon.com/mechanics/on-battle-start"
+    },
+    {
+      "id": "ongoing",
+      "name_en": "Ongoing",
+      "name_ko": "지속 효과",
+      "category_en": "Timing & activation",
+      "category_ko": "타이밍 및 발동",
+      "summary_en": "Ongoing abilities apply without waiting for a cast and recalculate as active effects change.",
+      "summary_ko": "지속 효과는 시전을 기다리지 않고 적용되며 활성 효과가 변할 때 다시 계산됩니다.",
+      "rules_en": [
+        "An Ongoing ability contributes while its source is active; Knocked-out and ability-disabled sources stop contributing.",
+        "Level 1 Onsetra makes the ally behind apply its Ongoing ability one additional time.",
+        "Normal Celestia disables every Ongoing Batomon in its row on both teams at battle start.",
+        "Disabling an Ongoing ability does not prevent that Batomon's ordinary cast."
+      ],
+      "rules_ko": [
+        "지속 효과는 그 효과의 원천이 활성화되어 있는 동안 적용되며, Knockout되거나 능력이 비활성화되면 적용을 멈춥니다.",
+        "레벨 1 Onsetra는 뒤쪽 아군의 지속 효과 적용 횟수를 1회 추가합니다.",
+        "일반 Celestia는 전투 시작 시 양 팀의 같은 행에 있는 모든 Ongoing 바토몬의 능력을 비활성화합니다.",
+        "Ongoing 능력이 비활성화되어도 해당 바토몬의 일반적인 능력치 시전은 계속됩니다."
+      ],
+      "examples": [
+        "Formiqueen",
+        "Onsetra",
+        "Celestia"
+      ],
+      "source_url": "https://batomon.com/mechanics/ongoing"
+    },
+    {
+      "id": "on-victory",
+      "name_en": "On Victory",
+      "name_ko": "승리 시",
+      "category_en": "Timing & activation",
+      "category_ko": "타이밍 및 발동",
+      "summary_en": "On Victory resolves only after the player's team wins the battle.",
+      "summary_ko": "승리 시 효과는 플레이어 팀이 전투에서 승리한 뒤에만 처리됩니다.",
+      "rules_en": [
+        "A loss does not activate On Victory.",
+        "On Victory effects apply their exact printed reward only after a win.",
+        "If both teams reach zero HP on the same tick, the result is recorded as a win for the player."
+      ],
+      "rules_ko": [
+        "패배하면 On Victory 효과가 발동하지 않습니다.",
+        "On Victory 효과는 승리한 뒤 표시된 보상을 그대로 적용합니다.",
+        "같은 틱에 양 팀의 HP가 모두 0이 되면 플레이어의 승리로 기록됩니다."
+      ],
+      "examples": [
+        "Brawlmantis",
+        "Gold Trophy"
+      ],
+      "source_url": "https://batomon.com/mechanics/on-victory"
+    },
+    {
+      "id": "triggering",
+      "name_en": "Triggering",
+      "name_ko": "강제 발동",
+      "category_en": "Timing & activation",
+      "category_ko": "타이밍 및 발동",
+      "summary_en": "Trigger effects start the named Batomon's full cast sequence using the effect's exact target.",
+      "summary_ko": "강제 발동 효과는 지정된 대상 바토몬의 전체 시전 순서를 정확한 대상 지정과 함께 시작합니다.",
+      "rules_en": [
+        "A triggered Batomon uses its current Multicast for that cast sequence.",
+        "Triggering a Batomon does not reset its current cooldown progress. That progress keeps building toward its next normal timed cast, and only completing the normal cooldown resets it.",
+        "A Trigger effect uses its printed target, such as an ally above, adjacent allies, or the Batomon itself.",
+        "Trigger chains keep printed exclusions; Puffloon and Torrantler explicitly exclude other copies of themselves.",
+        "Coffee and Draconarch can activate Berroon's On Battle Start effect in the current build."
+      ],
+      "rules_ko": [
+        "강제 발동된 바토몬은 현재 멀티캐스트 수를 사용해 해당 시전 순서를 처리합니다.",
+        "강제 발동은 현재 쿨다운 진행도를 초기화하지 않습니다. 진행도는 다음 일반 시전을 향해 계속 쌓이며, 일반 쿨다운이 완료될 때만 초기화됩니다.",
+        "강제 발동은 위의 아군, 인접 아군, 자기 자신 등 효과에 표시된 정확한 대상을 사용합니다.",
+        "연쇄 강제 발동에서도 원문에 적힌 제외 조건이 유지됩니다. Puffloon과 Torrantler는 다른 자신과 같은 종의 복사본을 명시적으로 제외합니다.",
+        "현재 빌드에서는 Coffee와 Draconarch가 Berroon의 On Battle Start 효과를 발동시킬 수 있습니다."
+      ],
+      "examples": [
+        "Cicadence",
+        "Torrantler",
+        "Frizzly"
+      ],
+      "source_url": "https://batomon.com/mechanics/triggering"
+    },
+    {
+      "id": "charge",
+      "name_en": "Charge",
+      "name_ko": "차지",
+      "category_en": "Timing & activation",
+      "category_ko": "타이밍 및 발동",
+      "summary_en": "Charge advances a Batomon toward its next cast by the stated number of seconds.",
+      "summary_ko": "차지는 표시된 초만큼 다음 시전까지의 진행도를 앞당깁니다.",
+      "rules_en": [
+        "Charge adds the printed number of seconds to current cast progress.",
+        "Charge does not reset or change base cooldown, added cooldown, or Cooldown Speed.",
+        "Dracana and Ironcore cannot receive Charge, including from other sources."
+      ],
+      "rules_ko": [
+        "Charge는 표시된 초만큼 현재 시전 진행도에 더합니다.",
+        "Charge는 기본 쿨다운, 추가 쿨다운, 쿨다운 속도를 초기화하거나 변경하지 않습니다.",
+        "Dracana와 Ironcore는 다른 효과를 통한 경우를 포함해 Charge를 받을 수 없습니다."
+      ],
+      "examples": [
+        "Dracana",
+        "Ironcore"
+      ],
+      "source_url": "https://batomon.com/mechanics/charge"
+    },
+    {
+      "id": "ability-disable",
+      "name_en": "Ability Disable",
+      "name_ko": "능력 비활성화",
+      "category_en": "Timing & activation",
+      "category_ko": "타이밍 및 발동",
+      "summary_en": "Ability Disable turns off the targeted ability without stopping the Batomon's ordinary stat cast.",
+      "summary_ko": "능력 비활성화는 지정된 능력만 끄며 바토몬의 일반적인 능력치 시전은 멈추지 않습니다.",
+      "rules_en": [
+        "Normal Celestia disables every Ongoing Batomon in its row on both teams; Shiny Celestia targets enemies in that row.",
+        "A disabled Ongoing ability stops contributing its modifier and a disabled On Cast ability does not resolve.",
+        "The affected Batomon still performs ordinary Damage, Heal, Shield, and status casts from its stats."
+      ],
+      "rules_ko": [
+        "일반 Celestia는 양 팀의 같은 행에 있는 모든 Ongoing 바토몬을 비활성화하며, Shiny Celestia는 그 행의 적을 대상으로 합니다.",
+        "비활성화된 Ongoing 능력은 보정값 적용을 멈추고, 비활성화된 On Cast 능력은 처리되지 않습니다.",
+        "영향받은 바토몬은 능력 비활성화와 관계없이 능력치에 따른 Damage, Heal, Shield, 상태 효과 시전을 계속합니다."
+      ],
+      "examples": [
+        "Celestia"
+      ],
+      "source_url": "https://batomon.com/mechanics/ability-disable"
+    },
+    {
+      "id": "team-hp",
+      "name_en": "Team HP",
+      "name_ko": "팀 HP",
+      "category_en": "Battle rules",
+      "category_ko": "전투 규칙",
+      "summary_en": "Each side fights with one shared HP total rather than separate HP for every Batomon.",
+      "summary_ko": "각 팀은 개별 바토몬 HP가 아니라 하나의 공유 HP를 사용합니다.",
+      "rules_en": [
+        "Damage lowers shared team HP after Shield is exhausted.",
+        "Heal restores shared team HP without exceeding that battle's maximum.",
+        "Shield protects shared team HP by absorbing incoming damage first.",
+        "If both teams reach zero HP on the same tick after ordered effects resolve, the player is awarded the win."
+      ],
+      "rules_ko": [
+        "실드가 소진된 뒤 남은 피해가 팀의 공유 HP를 감소시킵니다.",
+        "회복은 해당 전투의 최대 HP를 넘지 않는 범위에서 팀의 공유 HP를 회복합니다.",
+        "실드는 받는 피해를 먼저 흡수해 공유 HP를 보호합니다.",
+        "정해진 처리 순서가 끝난 같은 틱에 양 팀 HP가 0이 되면 플레이어가 승리합니다."
+      ],
+      "examples": [
+        "Pebbler",
+        "Mystic Pearl"
+      ],
+      "source_url": "https://batomon.com/mechanics/team-hp"
+    },
+    {
+      "id": "protect",
+      "name_en": "Protect",
+      "name_ko": "보호",
+      "category_en": "Battle rules",
+      "category_ko": "전투 규칙",
+      "summary_en": "Protect prevents a Knockout and spends one stack when it triggers.",
+      "summary_ko": "Protect는 Knockout을 막고 발동 시 중첩을 1 소모합니다.",
+      "rules_en": [
+        "When a protected Batomon would be Knocked Out, Protect prevents that Knockout.",
+        "Protect decreases by 1 when triggered.",
+        "Protect does not prevent team HP from reaching zero and does not replace Shield."
+      ],
+      "rules_ko": [
+        "Protect가 있는 바토몬이 Knockout될 상황이면 Protect가 해당 Knockout을 막습니다.",
+        "Protect는 발동할 때 1 감소합니다.",
+        "Protect는 팀 HP가 0이 되는 것을 막지 않으며 실드를 대신하지 않습니다."
+      ],
+      "examples": [
+        "Cherubble"
+      ],
+      "source_url": "https://batomon.com/mechanics/protect"
+    },
+    {
+      "id": "knockout",
+      "name_en": "Knockout",
+      "name_ko": "Knockout",
+      "category_en": "Battle rules",
+      "category_ko": "전투 규칙",
+      "summary_en": "Knockout effects defeat the exact Batomon named by the effect, unless Protect prevents it.",
+      "summary_ko": "Knockout 효과는 지정된 정확한 바토몬을 쓰러뜨리며 Protect가 있으면 막힐 수 있습니다.",
+      "rules_en": [
+        "Current effects can Knockout their source, adjacent allies, or selected enemies according to their exact target text.",
+        "Protect prevents a Knockout and loses 1 stack when it does.",
+        "A Knocked Out Batomon stops casting and stops contributing Ongoing effects.",
+        "Aerophim can revive a knocked-out ally while transforming it."
+      ],
+      "rules_ko": [
+        "현재 효과는 정확한 대상 문구에 따라 자기 자신, 인접 아군 또는 선택된 적을 Knockout할 수 있습니다.",
+        "Protect는 Knockout을 막으며 그때 중첩을 1 소모합니다.",
+        "Knockout된 바토몬은 시전을 멈추고 Ongoing 효과 제공도 멈춥니다.",
+        "Aerophim은 Knockout된 아군을 되살리면서 변신시킬 수 있습니다."
+      ],
+      "examples": [
+        "Reapra",
+        "Stingarde"
+      ],
+      "source_url": "https://batomon.com/mechanics/knockout"
+    },
+    {
+      "id": "same-tick-resolution",
+      "name_en": "Same-tick Resolution",
+      "name_ko": "동일 틱 처리 순서",
+      "category_en": "Battle rules",
+      "category_ko": "전투 규칙",
+      "summary_en": "Casts on the same tick resolve in the fixed order Shield, Damage, status effects, then Heal.",
+      "summary_ko": "같은 틱의 시전은 실드 → 피해 → 상태 효과 → 회복 순서로 처리됩니다.",
+      "rules_en": [
+        "First: apply Shield.",
+        "Second: resolve Damage.",
+        "Third: apply status effects.",
+        "Fourth: resolve Heal.",
+        "If both teams reach zero HP on that tick, the player receives the win."
+      ],
+      "rules_ko": [
+        "첫째: 실드를 적용합니다.",
+        "둘째: 피해를 처리합니다.",
+        "셋째: 상태 효과를 적용합니다.",
+        "넷째: 회복을 처리합니다.",
+        "해당 틱에 양 팀 HP가 0이 되면 플레이어가 승리합니다."
+      ],
+      "examples": [
+        "Pebbler",
+        "Bambudo",
+        "Black Sludge",
+        "Mystic Pearl"
+      ],
+      "source_url": "https://batomon.com/mechanics/same-tick-resolution"
+    },
+    {
+      "id": "sudden-death",
+      "name_en": "Sudden Death",
+      "name_ko": "서든 데스",
+      "category_en": "Battle rules",
+      "category_ko": "전투 규칙",
+      "summary_en": "Sudden Death begins at 30 battle seconds, then a sandstorm damages both teams every 0.5 seconds.",
+      "summary_ko": "서든 데스는 전투 30초에 시작하며 이후 모래폭풍이 0.5초마다 양 팀에 피해를 줍니다.",
+      "rules_en": [
+        "Sudden Death begins when the battle timer reaches 30 seconds.",
+        "The first sandstorm hit follows after 0.5 seconds, and hits continue every 0.5 seconds.",
+        "Damage follows 8 × 2^(seconds active ÷ 3), doubling every 3 seconds.",
+        "Shield absorbs Sudden Death damage, but the 15% Shield reduction for Burn, Poison, and Shock does not apply to it.",
+        "The damage scales continuously while the popup shows a whole-number value."
+      ],
+      "rules_ko": [
+        "전투 타이머가 30초에 도달하면 서든 데스가 시작됩니다.",
+        "첫 모래폭풍은 0.5초 후 발생하고 이후 0.5초마다 계속 발생합니다.",
+        "피해량은 8 × 2^(활성 시간 ÷ 3) 공식을 따르며 3초마다 2배가 됩니다.",
+        "실드는 서든 데스 피해를 흡수하지만 Burn, Poison, Shock에 적용되는 15% 실드 감소 규칙은 서든 데스에는 적용되지 않습니다.",
+        "피해량은 연속적으로 증가하며 화면에는 정수 값이 표시됩니다."
+      ],
+      "formula": "damage = 8 × 2^(seconds active ÷ 3)",
+      "formula_label": "모래폭풍 피해 공식",
+      "examples": [
+        "Pebbler"
+      ],
+      "source_url": "https://batomon.com/mechanics/sudden-death"
+    },
+    {
+      "id": "adjacency-and-targeting",
+      "name_en": "Adjacency & Targeting",
+      "name_ko": "인접 및 대상 지정",
+      "category_en": "Battle rules",
+      "category_ko": "전투 규칙",
+      "summary_en": "The six-slot 3×2 board uses orthogonal adjacency; diagonals are not adjacent.",
+      "summary_ko": "6칸 3×2 보드는 상하좌우 인접만 인정하며 대각선은 인접하지 않습니다.",
+      "rules_en": [
+        "Slots touching above, below, left, or right are adjacent; diagonal slots are not.",
+        "Front and behind share a column; left and right share a row; a row contains three slots.",
+        "Opposite targets the mirrored slot on the enemy board.",
+        "Link Cable is the explicit exception that considers every Batomon on your team adjacent to each other."
+      ],
+      "rules_ko": [
+        "위, 아래, 왼쪽, 오른쪽으로 맞닿은 슬롯만 인접하며 대각선 슬롯은 인접하지 않습니다.",
+        "앞과 뒤는 같은 열, 왼쪽과 오른쪽은 같은 행에 있으며 한 행에는 3칸이 있습니다.",
+        "Opposite는 상대 보드의 거울 위치 슬롯을 가리킵니다.",
+        "Link Cable은 예외적으로 자신의 모든 바토몬을 서로 인접한 것으로 취급합니다."
+      ],
+      "examples": [
+        "Link Cable",
+        "Reapra",
+        "Dracana"
+      ],
+      "source_url": "https://batomon.com/mechanics/adjacency-and-targeting"
+    },
+    {
+      "id": "permanent-vs-battle-only",
+      "name_en": "Permanent vs Battle-only",
+      "name_ko": "영구 효과와 전투 한정 효과",
+      "category_en": "Battle rules",
+      "category_ko": "전투 규칙",
+      "summary_en": "Permanent effects carry into later battles; effects marked for this battle expire afterward.",
+      "summary_ko": "영구 효과는 다음 전투에도 유지되고, '이번 전투'로 표시된 효과는 전투 종료 후 사라집니다.",
+      "rules_en": [
+        "A change explicitly marked permanently remains on that Batomon across later battles in the run.",
+        "A change marked for this battle ends after that battle.",
+        "A plain copy keeps only the copied species, level, and shiny state; permanent bonuses, added types, and tracked progress are not copied.",
+        "A transformation can be persistent or battle-only, but it is still the same Batomon and keeps its persistent state."
+      ],
+      "rules_ko": [
+        "'영구적으로' 표시된 변경은 해당 바토몬에 남아 이후 전투에도 유지됩니다.",
+        "'이번 전투'로 표시된 변경은 전투가 끝나면 종료됩니다.",
+        "일반 복사는 종, 레벨, Shiny 상태만 복사하며 영구 보너스, 추가 타입, 추적 중인 진행도는 복사하지 않습니다.",
+        "변신은 영구일 수도 전투 한정일 수도 있지만 동일한 바토몬의 상태를 유지하며 지속 상태를 보존합니다."
+      ],
+      "examples": [
+        "Bambudo",
+        "Mosslug",
+        "Magic Lasso"
+      ],
+      "source_url": "https://batomon.com/mechanics/permanent-vs-battle-only"
+    },
+    {
+      "id": "debuff-removal",
+      "name_en": "Debuff Removal",
+      "name_ko": "디버프 제거",
+      "category_en": "Battle rules",
+      "category_ko": "전투 규칙",
+      "summary_en": "Debuff-removal effects remove the exact flat stacks or percentage printed by the current effect.",
+      "summary_ko": "디버프 제거 효과는 해당 효과에 표시된 정확한 고정 중첩 수 또는 비율만큼 제거합니다.",
+      "rules_en": [
+        "At Level 1, Runerock removes up to 15 Burn, Poison, and Shock from its team when it casts.",
+        "At Level 1, Sirenade removes 20% of each of those debuffs and rounds each removal up to a whole stack.",
+        "The flat and percentage versions are different effects; use the exact current text."
+      ],
+      "rules_ko": [
+        "레벨 1 Runerock은 시전할 때 자신의 팀에서 Burn, Poison, Shock을 각각 최대 15까지 제거합니다.",
+        "레벨 1 Sirenade는 각 디버프의 20%를 제거하며, 제거량은 각각 정수 중첩으로 올림합니다.",
+        "고정 수치 제거와 퍼센트 제거는 서로 다른 효과이므로 현재 효과 문구를 그대로 적용해야 합니다."
+      ],
+      "examples": [
+        "Runerock",
+        "Sirenade"
+      ],
+      "source_url": "https://batomon.com/mechanics/debuff-removal"
+    },
+    {
+      "id": "stat-caps",
+      "name_en": "Stat Caps",
+      "name_ko": "능력치 상한",
+      "category_en": "Battle rules",
+      "category_ko": "전투 규칙",
+      "summary_en": "Damage, Heal, Shield, Burn, Poison, Shock, and their multipliers cap at 999,999,999.",
+      "summary_ko": "Damage, Heal, Shield, Burn, Poison, Shock 및 해당 배율은 999,999,999에서 상한에 도달합니다.",
+      "rules_en": [
+        "Those capped combat stats cannot increase beyond 999,999,999.",
+        "Cooldown and Multicast use separate rules: effective cooldown has a 0.1-second minimum and Multicast has a minimum of 1.",
+        "The combat-stat cap does not establish a cap for team HP, gold, shop values, or unrelated systems."
+      ],
+      "rules_ko": [
+        "해당 전투 능력치는 999,999,999를 초과해 증가할 수 없습니다.",
+        "쿨다운과 멀티캐스트는 별도 규칙을 사용합니다. 실제 쿨다운의 최소값은 0.1초이고 멀티캐스트의 최소값은 1입니다.",
+        "전투 능력치 상한은 팀 HP, 골드, 상점 값 등 다른 시스템의 상한을 의미하지 않습니다."
+      ],
+      "examples": [
+        "Bambudo",
+        "Excalibur"
+      ],
+      "source_url": "https://batomon.com/mechanics/stat-caps"
+    },
+    {
+      "id": "levels-and-merging",
+      "name_en": "Levels & Merging",
+      "name_ko": "레벨 및 합성",
+      "category_en": "Unit changes",
+      "category_ko": "유닛 변화",
+      "summary_en": "Standard merges use three Level 1 copies for Level 2, then two Level 2 copies for Level 3.",
+      "summary_ko": "일반 합성은 레벨 1 세 마리로 레벨 2를 만들고, 레벨 2 두 마리로 레벨 3을 만듭니다.",
+      "rules_en": [
+        "Three Level 1 Batomon in the same merge group combine into one Level 2 Batomon.",
+        "Two Level 2 Batomon in the same merge group combine into one Level 3 Batomon.",
+        "Standard merges stop at Level 3; special instant level-ups can reach the universal maximum of Level 4.",
+        "Current level values can change cooldown, Multicast, stats, and ability numbers by level.",
+        "Added types survive a merge, and any shiny ingredient makes the result shiny."
+      ],
+      "rules_ko": [
+        "같은 합성 그룹의 레벨 1 바토몬 3마리를 합치면 레벨 2가 됩니다.",
+        "같은 합성 그룹의 레벨 2 바토몬 2마리를 합치면 레벨 3이 됩니다.",
+        "일반 합성은 레벨 3에서 끝나며, 특수 즉시 레벨업 효과를 통해 최대 레벨 4까지 갈 수 있습니다.",
+        "레벨에 따라 쿨다운, 멀티캐스트, 능력치, 능력 수치가 달라질 수 있습니다.",
+        "추가된 타입은 합성 후에도 유지되며, 재료 중 하나라도 Shiny면 결과도 Shiny가 됩니다."
+      ],
+      "examples": [
+        "Silver Watch"
+      ],
+      "source_url": "https://batomon.com/mechanics/levels-and-merging"
+    },
+    {
+      "id": "shiny",
+      "name_en": "Shiny",
+      "name_ko": "샤이니",
+      "category_en": "Unit changes",
+      "category_ko": "유닛 변화",
+      "summary_en": "Shiny Batomon use their own current stats and ability values rather than one universal multiplier.",
+      "summary_ko": "샤이니 바토몬은 하나의 공통 배율이 아니라 각자의 현재 능력치와 능력 수치를 사용합니다.",
+      "rules_en": [
+        "A shiny variant can have different level stats, ability text, or ability values from its normal variant.",
+        "Compare the exact normal and shiny entries for that Batomon; there is no single multiplier that describes every shiny.",
+        "If any ingredient in a merge is shiny, the merged result is shiny.",
+        "Shiny Berry chooses a random non-shiny Batomon that has a shiny form."
+      ],
+      "rules_ko": [
+        "샤이니 변종은 일반형과 레벨별 능력치, 능력 문구 또는 능력 수치가 다를 수 있습니다.",
+        "각 바토몬의 일반형과 샤이니 데이터를 직접 비교해야 하며 모든 샤이니에 공통으로 적용되는 단일 배율은 없습니다.",
+        "합성 재료 중 하나라도 샤이니면 합성 결과도 샤이니가 됩니다.",
+        "Shiny Berry는 샤이니 형태가 존재하는 비샤이니 바토몬 중 하나를 무작위로 선택합니다."
+      ],
+      "examples": [
+        "Shiny Berry",
+        "Shiny Bambudo"
+      ],
+      "source_url": "https://batomon.com/mechanics/shiny"
+    },
+    {
+      "id": "evolution",
+      "name_en": "Evolution",
+      "name_ko": "진화",
+      "category_en": "Unit changes",
+      "category_ko": "유닛 변화",
+      "summary_en": "Evolution changes a Batomon when that species' exact current trigger is satisfied.",
+      "summary_ko": "진화는 해당 종의 정확한 현재 발동 조건이 충족되면 바토몬을 변화시킵니다.",
+      "rules_en": [
+        "Some current Batomon evolve at a level threshold, including Panbud at Level 3.",
+        "Ignit evolves after a victory.",
+        "Pipskull records Knockouts; after two, it evolves when the next shop is ready if you do not already own Ratacomb.",
+        "Evolution timing, restrictions, and target are species-specific."
+      ],
+      "rules_ko": [
+        "현재 일부 바토몬은 특정 레벨에서 진화하며 Panbud는 레벨 3에서 진화합니다.",
+        "Ignit은 승리 후 진화합니다.",
+        "Pipskull은 Knockout 횟수를 기록하며 2회가 되면 다음 상점이 준비될 때 Ratacomb을 이미 보유하고 있지 않은 경우 진화합니다.",
+        "진화 시점, 조건, 제한, 대상은 종마다 다릅니다."
+      ],
+      "examples": [
+        "Panbud",
+        "Ignit",
+        "Pipskull"
+      ],
+      "source_url": "https://batomon.com/mechanics/evolution"
+    },
+    {
+      "id": "transformation",
+      "name_en": "Transformation",
+      "name_ko": "변신",
+      "category_en": "Unit changes",
+      "category_ko": "유닛 변화",
+      "summary_en": "Transformation changes species while keeping the Batomon's persistent state.",
+      "summary_ko": "변신은 바토몬의 지속 상태를 유지한 채 종을 변경합니다.",
+      "rules_en": [
+        "Level, shiny state, permanent bonuses, added types, and tracked progress stay with a Batomon when its species changes.",
+        "A transformation can be persistent, such as a transformation stone, or limited to one battle, such as MissingN.'s battle-start effect.",
+        "Aerophim revives adjacent allies, gives them permanent Multicast, and persistently transforms them into random monsters of the same rarity."
+      ],
+      "rules_ko": [
+        "종이 바뀌어도 레벨, Shiny 상태, 영구 보너스, 추가 타입, 추적 중인 진행도는 해당 바토몬에 유지됩니다.",
+        "변신은 변신석처럼 영구적일 수도 있고 MissingN.의 전투 시작 효과처럼 한 전투에만 적용될 수도 있습니다.",
+        "Aerophim은 인접 아군을 부활시키고 영구적으로 멀티캐스트를 +1한 뒤 같은 희귀도의 무작위 바토몬으로 영구 변신시킵니다."
+      ],
+      "examples": [
+        "Green Stone",
+        "Aerophim",
+        "MissingN."
+      ],
+      "source_url": "https://batomon.com/mechanics/transformation"
+    },
+    {
+      "id": "types",
+      "name_en": "Types",
+      "name_ko": "타입",
+      "category_en": "Unit changes",
+      "category_ko": "유닛 변화",
+      "summary_en": "Types determine which type-targeted effects include a Batomon and can power unique-type bonuses.",
+      "summary_ko": "타입은 타입 지정 효과의 대상 여부를 결정하고 고유 타입 보너스에 사용될 수 있습니다.",
+      "rules_en": [
+        "Current effects can target allies by type, including Fire, Water, Electric, Toxic, Flying, Rock, Grass, and Bug.",
+        "Some effects add a type; Chef gives single-typed monsters Fire typing.",
+        "Unique-type effects count the different current types on the team.",
+        "Added types remain through both merges and transformations."
+      ],
+      "rules_ko": [
+        "현재 효과는 Fire, Water, Electric, Toxic, Flying, Rock, Grass, Bug 등 타입별로 아군을 지정할 수 있습니다.",
+        "일부 효과는 타입을 추가합니다. 예를 들어 Chef는 단일 타입 바토몬에게 Fire 타입을 추가합니다.",
+        "고유 타입 효과는 팀에 현재 존재하는 서로 다른 타입의 수를 계산합니다.",
+        "추가된 타입은 합성과 변신 후에도 유지됩니다."
+      ],
+      "examples": [
+        "Prismagon",
+        "Chef",
+        "Rainbow Berry"
+      ],
+      "source_url": "https://batomon.com/mechanics/types"
+    },
+    {
+      "id": "monster-pool",
+      "name_en": "Monster pool & shop",
+      "name_ko": "바토몬 풀 및 상점",
+      "category_en": "Shop & economy",
+      "category_ko": "상점 및 경제",
+      "summary_en": "Each shop has five slots, uses rank-based rarity odds, and rolls from your run's active species set.",
+      "summary_ko": "상점은 5개 슬롯으로 구성되며 랭크별 희귀도 확률을 사용하고 해당 런의 활성 종 목록에서 바토몬을 뽑습니다.",
+      "rules_en": [
+        "A normal shop has five slots: the first four roll Batomon, while the fifth tries to roll an eligible Item if you still have an Item use; if none is eligible, it rolls a Batomon.",
+        "The daily Item limit starts at 1. Berry-style Items refund their use, Tote Bag adds 2 uses, and Berroon adds uses to the next day; when no Item use remains, the fifth slot rolls a Batomon instead.",
+        "A normal reroll replaces all five slots. It costs $3 unless a free reroll is available, in which case one free reroll is spent first.",
+        "Free rerolls stack and carry over: Fake Coin grants 1, Membership Card grants 1 after each Item purchase, and Youngster grants 3 each day.",
+        "Locking is free and carries the current contents into the next day. The lock then clears, and any empty bought slots are refilled.",
+        "A normal reroll visibly unlocks a locked shop, but the newly rolled contents still carry into the next day if that shop had already been locked.",
+        "The run begins at Shop Rank 1 and gains 1 rank at the start of every day. Basic Bait lowers rank by 1 but not below 1; Apex Bait, Market License, Lady, and some events add rank.",
+        "Base rank odds never include Mythical. The highest base rarity is Common at Rank 1, Uncommon at Ranks 2–3, Rare at 4–5, Super Rare at 6–8, and Legendary at Rank 9 or higher.",
+        "The percentages shown in the shop use the final normalized weights after effects such as VIP Pass or Research Notes change them.",
+        "Offers are generated independently for each run. Buying a Batomon does not remove a finite copy from the pool, so the same species can appear repeatedly or in multiple slots.",
+        "Normal offers require membership in the active set. The default Starter set contains 70 of the 88 current catalog species; the other 18 include evolutions and special, event, secret, Oshima, null, or development species rather than normal Starter offers.",
+        "Normal rolls exclude species you already own at Level 3 or 4 in team or bench, plus that evolution's listed base species. If a chosen rarity has no valid species, the roll falls back one rarity at a time.",
+        "The normal shiny chance is 1 in 200 per rolled Batomon. Shiny-chance bonuses multiply that base chance; Lucky Girl changes it to 10%.",
+        "Rainbow Pearl turns current and future shop Batomon shiny when that species has a shiny form.",
+        "Buying uses the offer's current price, places the Batomon in a requested empty slot or the first team slot, then the first bench slot, and applies purchase effects before checking merges.",
+        "The team holds 6 Batomon and the bench holds 4. If all 10 slots are full and the purchase cannot merge immediately, it enters overflow; reroll, lock, and battle stay disabled until overflow is cleared.",
+        "Standard merges use three Level 1 copies for Level 2 and two Level 2 copies for Level 3. Riglet/Rigalord and Pipskull/Ratacomb share merge groups; other species match their own ID.",
+        "A merge keeps the strongest permanent bonus for each stat rather than adding matching bonuses, combines added types and stored discounts, and becomes shiny if any ingredient is shiny.",
+        "Standard merges stop at Level 3. Upgrade Disc can level a bought Batomon once, Mega Upgrade Disc turns the next Level 3 into Level 4, and Level 4 is the maximum.",
+        "Sell value is ceil((base cost × level multiplier + stored purchase discounts) ÷ 2) plus bonus Sell Value, with multipliers 1, 3, 6, and 12 for Levels 1–4.",
+        "A rarity Ticket replaces all five slots with Batomon rolls of its chosen rarity, spends no normal or free reroll, and still uses normal set, maxed-species, fallback, shiny, and spawn effects.",
+        "Ticket rolls do not clear an existing lock. Echo Bell repeats a zero-cost Ticket effect, producing another full Ticket roll without another Item use.",
+        "Research Notes adds 20 Legendary weight. VIP Pass sets Common and Uncommon weight to zero and forces Rare weight when no higher base weight remains.",
+        "Mystic Incense queues a Mythical from the active set for the next fresh shop roll and is consumed when that Batomon is inserted. Base rank odds still never roll Mythical.",
+        "Each Faebloom gives the Item slot a 10% chance to become Mythical. Shopkeeper raises rolled Item tier by 1, capped at Mythical, and discounts Items by 15%; both effects stack with additional copies.",
+        "Coupon discounts every current Batomon offer by $5, while Bug Catcher, Bug Net, Chef, Rainbow Pearl, and the shop Bells alter eligible offers as they spawn. Persistent offer bonuses remain on a purchased Batomon.",
+        "Voucher recruits a random current Batomon offer, Lootbox grants a random Legendary, and Recruiting Flyer grants a Level 3 Uncommon. These are direct grants rather than normal paid Batomon purchases.",
+        "When a shop is rerolled, Cosmivore permanently gains a percentage of the discarded Batomon's combined Damage, Heal, Shield, Burn, Poison, and Shock; bought or empty slots contribute nothing."
+      ],
+      "rules_ko": [
+        "일반 상점은 5개 슬롯이며 처음 4칸은 바토몬을 뽑고, 다섯 번째 칸은 도구 사용 횟수가 남아 있으면 조건에 맞는 도구를 먼저 뽑습니다. 가능한 도구가 없으면 바토몬을 뽑습니다.",
+        "하루 도구 사용 횟수는 1회에서 시작합니다. 베리 계열 도구는 사용 횟수를 돌려주고, Tote Bag은 2회 추가하며, Berroon은 다음 날 사용 횟수를 추가합니다. 도구 사용 횟수가 없으면 다섯 번째 슬롯도 바토몬을 뽑습니다.",
+        "일반 새로고침은 5개 슬롯을 모두 교체합니다. 무료 새로고침이 없으면 비용은 $3이며, 무료 새로고침이 있으면 무료 횟수를 먼저 사용합니다.",
+        "무료 새로고침은 누적 및 이월됩니다. Fake Coin은 1회, Membership Card는 도구 구매 후 1회, Youngster는 매일 3회를 제공합니다.",
+        "잠금은 무료이며 현재 상점 내용을 다음 날로 유지합니다. 잠금은 다음 날 해제되고 구매해 비어 있는 슬롯은 다시 채워집니다.",
+        "일반 새로고침은 화면상 잠금을 해제하지만, 이미 잠겨 있던 상점이었다면 새로 뽑은 내용도 다음 날로 유지됩니다.",
+        "런은 상점 랭크 1에서 시작하며 매일 시작할 때 랭크가 1 상승합니다. Basic Bait은 랭크를 1 낮추되 최소 1이며, Apex Bait, Market License, Lady 및 일부 이벤트는 랭크를 올립니다.",
+        "기본 랭크 확률에는 신화가 포함되지 않습니다. 최고 기본 희귀도는 랭크 1에서 일반, 랭크 2~3에서 고급, 랭크 4~5에서 희귀, 랭크 6~8에서 영웅, 랭크 9 이상에서 전설입니다.",
+        "상점에 표시되는 확률은 VIP Pass나 Research Notes 등의 효과로 가중치가 변경된 뒤 최종 정규화된 값입니다.",
+        "상점 제안은 각 런에서 독립적으로 생성됩니다. 바토몬을 구매해도 유한한 개체 수에서 제거되는 방식이 아니므로 같은 종이 여러 번 또는 여러 슬롯에 등장할 수 있습니다.",
+        "일반 제안은 활성 종 목록에 포함되어야 합니다. 기본 Starter 세트는 현재 도감 88종 중 70종이며 나머지 18종은 진화형, 특수, 이벤트, 비밀, Oshima, null, 개발용 종 등으로 일반 Starter 상점에 나오지 않습니다.",
+        "일반 뽑기에서는 팀이나 벤치에 레벨 3 또는 4로 이미 보유한 종과 그 진화의 기본 종이 제외됩니다. 선택된 희귀도에 유효한 종이 없으면 한 단계씩 낮은 희귀도로 대체합니다.",
+        "일반 Shiny 확률은 뽑힌 바토몬 1마리당 1/200입니다. Shiny 확률 보너스는 이 기본 확률에 배수로 적용되며 Lucky Girl은 10%로 변경합니다.",
+        "Rainbow Pearl은 샤이니 형태가 있는 종이라면 현재 및 이후 상점에 나오는 해당 바토몬을 Shiny로 만듭니다.",
+        "구매 시 현재 표시된 가격을 사용하며, 지정된 빈 슬롯이 있으면 그곳에 배치하고 없으면 첫 팀 슬롯, 이후 첫 벤치 슬롯에 배치합니다. 구매 효과를 적용한 뒤 합성을 확인합니다.",
+        "팀은 바토몬 6마리, 벤치는 4마리를 보유합니다. 10칸이 모두 차고 즉시 합성도 할 수 없는 상태에서 구매하면 오버플로에 들어가며, 오버플로를 해결할 때까지 새로고침·잠금·전투가 비활성화됩니다.",
+        "일반 합성은 레벨 1 3마리로 레벨 2, 레벨 2 2마리로 레벨 3을 만듭니다. Riglet/Rigalord와 Pipskull/Ratacomb은 같은 합성 그룹을 공유하며 나머지는 자신의 ID를 기준으로 합성합니다.",
+        "합성은 각 능력치의 영구 보너스를 더하는 대신 가장 강한 값을 유지하고, 추가 타입과 저장된 할인값을 합치며 재료 중 하나라도 Shiny면 결과도 Shiny가 됩니다.",
+        "일반 합성은 레벨 3에서 끝납니다. Upgrade Disc는 구매한 바토몬을 한 번 레벨업할 수 있고, Mega Upgrade Disc는 다음 레벨 3을 레벨 4로 만들며 레벨 4가 최대입니다.",
+        "판매가는 ceil((기본 가격 × 레벨 배율 + 저장된 구매 할인) ÷ 2)에 추가 Sell Value를 더한 값이며, 레벨 1~4의 배율은 각각 1, 3, 6, 12입니다.",
+        "희귀도 Ticket은 선택된 희귀도의 바토몬으로 5개 슬롯을 모두 교체하고 일반/무료 새로고침을 사용하지 않으며, 일반 종 목록·최대 레벨 종 제외·대체 희귀도·Shiny·등장 효과를 그대로 사용합니다.",
+        "Ticket 뽑기는 기존 잠금을 해제하지 않습니다. Echo Bell은 비용 없는 Ticket 효과를 반복해 추가 도구 사용 없이 전체 Ticket 뽑기를 한 번 더 수행합니다.",
+        "Research Notes는 전설 가중치를 20 추가합니다. VIP Pass는 일반과 고급 가중치를 0으로 만들고 더 높은 기본 가중치가 없을 때 희귀 가중치를 강제로 사용합니다.",
+        "Mystic Incense는 활성 종 목록에서 신화 바토몬을 다음 새 상점 뽑기에 예약하고 해당 바토몬이 배치될 때 소모됩니다. 기본 랭크 확률 자체에는 신화가 포함되지 않습니다.",
+        "Faebloom 1개마다 도구 슬롯이 신화가 될 확률이 10% 추가됩니다. Shopkeeper는 등장 도구의 등급을 1단계 올리며 최대 신화까지 가능하고 도구 가격을 15% 할인합니다. 여러 개의 추가 복사본 효과도 중첩됩니다.",
+        "Coupon은 현재 모든 바토몬 제안을 $5 할인합니다. Bug Catcher, Bug Net, Chef, Rainbow Pearl, 상점의 Bells는 등장하는 제안의 조건을 변경하며, 구매된 바토몬에는 지속되는 제안 보너스가 남습니다.",
+        "Voucher는 현재 상점에 나온 바토몬 중 하나를 무작위 영입하고, Lootbox는 무작위 전설을, Recruiting Flyer는 레벨 3 고급 바토몬을 제공합니다. 이들은 일반 유료 구매와 별개의 직접 지급입니다.",
+        "상점을 새로고침하면 Cosmivore가 버려진 바토몬들의 Damage, Heal, Shield, Burn, Poison, Shock 합계의 일정 비율을 영구적으로 얻습니다. 구매했거나 비어 있던 슬롯은 계산에 포함되지 않습니다."
+      ],
+      "examples": [
+        "Crimson Ticket",
+        "Coupon",
+        "Research Notes",
+        "Rainbow Pearl",
+        "Mystic Incense",
+        "Cosmivore"
+      ],
+      "source_url": "https://batomon.com/mechanics/monster-pool"
+    }
+  ]
+}
