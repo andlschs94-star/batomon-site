@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.026</title>
+<title>바토몬 원향 도감 v0.027</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -73,7 +73,7 @@
 .eventChoice{font-weight:700}
 .eventReward{margin-top:4px;color:#b7d7ff}
 .eventSub{margin-top:3px;font-size:12px;opacity:.72}
-/* v0.026 Damage Calculator UI */
+/* v0.027 Damage Calculator UI */
 .calcPage{background:#0c6673;min-height:calc(100vh - 30px);border:1px solid #153f4a;border-radius:18px;overflow:hidden;box-shadow:0 18px 55px rgba(0,0,0,.28)}
 .calcTopbar{height:58px;background:linear-gradient(180deg,#20c3f0 0%,#13a8d4 100%);border-bottom:3px solid #087c9d;display:flex;align-items:center;justify-content:center;gap:clamp(24px,5vw,90px);font-weight:900;color:#fff;text-shadow:2px 2px 0 rgba(0,0,0,.18)}
 .calcStatus{display:flex;align-items:center;gap:10px;font-size:20px;min-width:110px;justify-content:center}.calcIcon{font-size:30px;line-height:1}.calcDay{font-size:30px}.calcCounter{font-size:20px}
@@ -82,7 +82,7 @@
 .calcCenter{display:flex;flex-direction:column;gap:14px}.calcBox{background:#f3f3f4;border:5px solid #8e929d;outline:2px solid #252a31;border-radius:7px;box-shadow:4px 4px 0 rgba(0,0,0,.2);overflow:hidden}.calcBoxHead{height:40px;padding:6px 12px;font-size:20px;font-weight:900;color:#fff;background:#ffc20f;border-bottom:4px solid #e2a500;text-shadow:2px 2px 0 rgba(0,0,0,.15)}.calcBoxHead.team{background:#ef4d6a;border-bottom-color:#cf3450}.calcSlots{padding:6px;display:grid;gap:7px}.calcSlots.bench{grid-template-columns:repeat(4,1fr)}.calcSlots.team{grid-template-columns:repeat(3,1fr)}.calcSlot{height:110px;background:#fff;border:4px solid #b8bbc4;box-shadow:inset 0 0 0 2px #e6e7ea;display:flex;align-items:center;justify-content:center;position:relative;color:#b3b6bd;font-size:12px;font-weight:900}.calcSlot:after{content:'+';font-size:26px;color:#d0d2d7}.calcSlot:hover{border-color:#8ea7b7;background:#f9fcfd}.calcSlot.teamSlot{height:112px}.calcTeamHint{font-size:12px;color:#66707d;text-align:center;padding:2px 0 8px}.calcRightSpace{display:none}
 .calcShop{grid-column:3;grid-row:1;margin-top:0;background:#eef0f1;border:5px solid #8e929d;outline:2px solid #252a31;border-radius:7px;box-shadow:4px 4px 0 rgba(0,0,0,.2);min-height:330px;overflow:hidden}.calcShopHead{height:38px;background:#65c9ee;color:#10232c;border-bottom:4px solid #3ba5c9;font-size:19px;font-weight:900;padding:6px 12px}.calcShopBlank{height:285px;background:#f7f7f7}
 .calcNotice{margin-top:10px;color:#d9f5fb;font-size:12px;text-align:center}.calcNavButton{position:relative}.calcNavButton.on{background:#173247!important;color:#6fd9ff!important}
-/* v0.026 Trainer selector UI */
+/* v0.027 Trainer selector UI */
 .calcTrainerPanel{cursor:pointer;position:relative}
 .calcTrainerPanel:focus-visible{outline:4px solid #20c3f0;outline-offset:3px}
 .calcTrainerChange{position:absolute;right:10px;top:10px;background:rgba(0,0,0,.58);color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:7px;padding:5px 9px;font-size:12px;font-weight:800;z-index:2}
@@ -99,14 +99,14 @@
 @media(max-width:720px){.calcTopbar{gap:8px;justify-content:space-around}.calcStatus{font-size:14px;min-width:auto}.calcDay{font-size:20px}.calcCounter{font-size:14px}.calcBattleArea{grid-template-columns:1fr}.calcTrainerPanel{max-width:220px;margin:auto;width:100%}.calcCenter{width:100%}.calcSlots.team{grid-template-columns:repeat(2,1fr)}.calcBoard{padding:10px}.calcShop{grid-column:1;grid-row:3;min-height:140px}.calcShopBlank{height:95px}}
 
 
-/* v0.026 UI: calculator opens by default; shop moved below and widened */
+/* v0.027 UI: calculator opens by default; shop moved below and widened */
 .calcBattleArea{grid-template-columns:180px minmax(460px,1fr);}
 .calcShop{grid-column:1/-1;grid-row:2;width:100%;min-height:190px;margin-top:0;}
 .calcShopBlank{height:140px;}
 @media(max-width:1050px){.calcBattleArea{grid-template-columns:150px 1fr}.calcShop{grid-column:1/-1;grid-row:2;min-height:170px}.calcShopBlank{height:120px}}
 @media(max-width:720px){.calcBattleArea{grid-template-columns:1fr}.calcShop{grid-column:1;grid-row:3;min-height:150px}.calcShopBlank{height:105px}}
 
-/* v0.026 Batomon list / team placement UI */
+/* v0.027 Batomon list / team placement UI */
 .calcShopGrid{height:140px;background:#f7f7f7;padding:8px;display:grid;grid-template-columns:repeat(8,minmax(72px,1fr));gap:7px;overflow-y:auto;overflow-x:hidden}
 .calcBatomonCard{border:2px solid #c4c7cd;background:#fff;border-radius:6px;padding:3px;cursor:pointer;display:grid;grid-template-columns:28px 1fr;grid-template-rows:44px 18px;column-gap:4px;align-items:center;min-width:0;text-align:left}
 .calcBatomonCard:hover{border-color:#20a9d0;background:#eefaff}.calcBatomonCard img{grid-column:1/-1;width:100%;height:44px;object-fit:contain}.calcBatomonNo{font-size:9px;font-weight:900;color:#7b818b}.calcBatomonName{font-size:10px;font-weight:900;color:#303741;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -115,7 +115,7 @@
 </style>
 <!-- English originals are retained in trainers.json only: name_en / ability_en -->
 
-<style>/* v0.026 UI: trinket selector repair */
+<style>/* v0.027 UI: trinket selector repair */
 .calcBattleArea{grid-template-columns:150px minmax(360px,1fr) 150px;gap:14px;align-items:start}
 .calcTrainerPanel,.calcTrinketPanel{width:150px}
 .calcTrainerTitle{height:26px;font-size:12px;padding:5px 7px}
@@ -147,7 +147,7 @@
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.026</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.027</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -185,6 +185,7 @@
                 <div class="calcSlot teamSlot" data-slot="team-4"></div><div class="calcSlot teamSlot" data-slot="team-5"></div><div class="calcSlot teamSlot" data-slot="team-6"></div>
               </div>
               <div class="calcTeamHint">바토몬 배치 영역 · 계산 기능은 다음 단계에서 연결됩니다.</div>
+              <div class="selectedTrinkets" id="selectedTrinkets" aria-label="선택한 장신구"></div>
             </div>
           </main>
           <aside class="calcTrinketPanel" id="calcTrinketPanel" tabindex="0" role="button" aria-label="장신구 선택">
@@ -214,7 +215,7 @@
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.026</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.027</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -310,12 +311,22 @@
 
 <div id="editOverlay" class="overlay"><div class="modal"><div class="modalhead"><h2 id="editTitle">사진 수정</h2><button class="close" onclick="closeEditor()">×</button></div><div class="editor"><div class="canvasWrap"><canvas id="canvas" width="760" height="580"></canvas></div><div class="controls"><label>새 사진 선택</label><input id="fileInput" type="file" accept="image/*"><label>확대</label><input id="zoom" type="range" min="0.5" max="3" step="0.01" value="1"><div class="controlrow"><div><label>X 위치</label><input id="posX" type="range" min="-500" max="500" step="1" value="0"></div><div><label>Y 위치</label><input id="posY" type="range" min="-500" max="500" step="1" value="0"></div></div><div class="controlrow"><button onclick="fitImage()">원래 맞춤</button><button onclick="centerImage()">가운데</button></div><div class="controlrow"><button onclick="rotate(-90)">↶ 90°</button><button onclick="rotate(90)">↷ 90°</button></div><button class="primary" onclick="saveEditor()">수정 사진 저장</button><button onclick="resetPhoto()">이 캐릭터 원본으로 복원</button><button onclick="removeCustom()">저장된 수정본 삭제</button><button onclick="downloadEdited()">현재 사진 JPG 저장</button><div id="editStatus" class="small"></div></div></div></div></div>
 
+<style>
+.selectedTrinkets{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px;min-height:0}
+.selectedTrinket{display:flex;align-items:center;gap:6px;min-width:0;padding:5px 8px;border:1px solid #344252;border-radius:9px;background:#141a22;color:#e9edf2;font-size:11px}
+.selectedTrinket img{width:28px;height:28px;object-fit:contain;border-radius:5px;background:#0d1218}
+.selectedTrinketName{max-width:120px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.selectedTrinketCount{min-width:22px;padding:2px 5px;border-radius:6px;background:#2a4459;color:#fff;font-weight:800;text-align:center}
+.selectedTrinketRemove{border:0;background:transparent;color:#9da7b3;cursor:pointer;font-size:14px;padding:0 2px;line-height:1}
+.selectedTrinketRemove:hover{color:#fff}
+</style>
 <script>
 'use strict';
 let characters=[];
 let trainers=[];
 let trinkets=[];
 let calcSelectedTrinketId=null;
+let selectedTrinkets=[];
 let items=[];
 let events=[];
 let mechanics=[];
@@ -512,12 +523,29 @@ function getTrinketImageSources(t){
 
 function renderCalcTrinket(){
   const body=document.getElementById('calcTrinketBody'); if(!body)return;
-  const t=trinkets.find(x=>String(x.id||x.slug||x.name_en||x.name_ko)===String(calcSelectedTrinketId));
+  const last=selectedTrinkets[selectedTrinkets.length-1];
+  const t=last?trinkets.find(x=>String(x.id||x.slug||x.name_en||x.name_ko)===String(last.id)):null;
   body.innerHTML='';
-  if(!t){body.innerHTML='<div class="calcTrinketHint">장신구를 선택하세요</div>';return;}
+  if(!t){body.innerHTML='<div class="calcTrinketHint">장신구를 선택하세요</div>';renderSelectedTrinkets();return;}
   const img=document.createElement('img'); img.alt=getTrinketName(t); img.loading='lazy'; img.referrerPolicy='no-referrer';
   const sources=[t.image_local||'',t.image_url||''].filter(Boolean); let i=0; const next=()=>{if(i>=sources.length){img.style.display='none';return;}img.src=sources[i++];}; img.onerror=next; next();
   const name=document.createElement('div');name.className='calcTrinketName';name.textContent=getTrinketName(t); body.append(img,name);
+  renderSelectedTrinkets();
+}
+function renderSelectedTrinkets(){
+  const root=document.getElementById('selectedTrinkets'); if(!root)return;
+  root.innerHTML='';
+  if(!selectedTrinkets.length)return;
+  for(const entry of selectedTrinkets){
+    const t=trinkets.find(x=>String(x.id||x.slug||x.name_en||x.name_ko)===String(entry.id)); if(!t)continue;
+    const chip=document.createElement('div');chip.className='selectedTrinket';
+    const img=document.createElement('img');img.alt='';img.loading='lazy';img.referrerPolicy='no-referrer';
+    const sources=getTrinketImageSources(t);let i=0;const next=()=>{if(i>=sources.length){img.style.display='none';return;}img.src=sources[i++];};img.onerror=next;next();
+    const name=document.createElement('span');name.className='selectedTrinketName';name.textContent=getTrinketName(t);
+    const count=document.createElement('span');count.className='selectedTrinketCount';count.textContent='×'+entry.count;
+    const remove=document.createElement('button');remove.type='button';remove.className='selectedTrinketRemove';remove.textContent='×';remove.title='장신구 제거';remove.addEventListener('click',()=>{entry.count--;if(entry.count<=0)selectedTrinkets=selectedTrinkets.filter(x=>x!==entry);renderCalcTrinket();});
+    chip.append(img,name,count,remove);root.appendChild(chip);
+  }
 }
 function renderCalcTrinketList(){
   const g=document.getElementById('calcTrinketGrid');if(!g)return;
@@ -531,7 +559,7 @@ function renderCalcTrinketList(){
     const sources=[t.image_local||'',t.image_url||''].filter(Boolean);let i=0;const next=()=>{if(i>=sources.length){img.style.display='none';return;}img.src=sources[i++];};img.onerror=next;next();
     const name=document.createElement('div');name.className='trainerSelectName';name.textContent=getTrinketName(t);
     const en=document.createElement('div');en.className='trainerSelectNameEn';en.textContent=t.name_en||t.name||'';
-    card.append(img,name,en);card.addEventListener('click',()=>{calcSelectedTrinketId=t.id||t.slug||t.name_en||t.name_ko;renderCalcTrinket();closeTrinketSelector()});g.appendChild(card);
+    card.append(img,name,en);card.addEventListener('click',()=>{const id=t.id||t.slug||t.name_en||t.name_ko;calcSelectedTrinketId=id;const existing=selectedTrinkets.find(x=>String(x.id)===String(id));if(existing)existing.count++;else selectedTrinkets.push({id,count:1});renderCalcTrinket();});g.appendChild(card);
   }
 }
 async function openTrinketSelector(){
@@ -540,7 +568,7 @@ async function openTrinketSelector(){
   o.style.display='flex';o.setAttribute('aria-hidden','false');
   if(!trinkets.length){
     const g=document.getElementById('calcTrinketGrid');g.innerHTML='<div class="trainerSelectEmpty">장신구 목록을 불러오는 중…</div>';
-    try{const r=await fetch('./trinkets.json?v=0.026&cb='+Date.now(),{cache:'no-store'});if(r.ok){const d=await r.json();trinkets=Array.isArray(d)?d:(d.trinkets||[]);}}catch(e){console.warn('장신구 선택 목록 로드 실패',e);}
+    try{const r=await fetch('./trinkets.json?v=0.027&cb='+Date.now(),{cache:'no-store'});if(r.ok){const d=await r.json();trinkets=Array.isArray(d)?d:(d.trinkets||[]);}}catch(e){console.warn('장신구 선택 목록 로드 실패',e);}
   }
   renderCalcTrinketList();document.getElementById('calcTrinketSearch').focus();
 }
@@ -855,7 +883,7 @@ async function init(){
     if(ev.ok){ const ed=await ev.json(); events=Array.isArray(ed)?ed:(ed.events||[]); }
     const it=await fetch('./items.json?v=0.024&cb='+Date.now(),{cache:'no-store'});
     if(it.ok){ const id=await it.json(); items=Array.isArray(id)?id:(id.items||[]); }
-    const tk=await fetch('./trinkets.json?v=0.026&cb='+Date.now(),{cache:'no-store'});
+    const tk=await fetch('./trinkets.json?v=0.027&cb='+Date.now(),{cache:'no-store'});
       if(tk.ok){ const kd=await tk.json(); trinkets=Array.isArray(kd)?kd:(kd.trinkets||[]); }
     const mc=await fetch('./mechanics.json?v=0.024&cb='+Date.now(),{cache:'no-store'});
     if(mc.ok){ const md=await mc.json(); mechanics=Array.isArray(md)?md:(md.mechanics||[]); }
