@@ -1,0 +1,227 @@
+{
+  "game": "Batomon Showdown",
+  "source": "https://batomon.com",
+  "source_page": "https://batomon.com/trainers",
+  "patch": "Balance 22",
+  "version": "1.0.0",
+  "count": 23,
+  "trainers": [
+    {
+      "id": "mysterious-trainer",
+      "name": "???",
+      "ability": "Gain MissingN.",
+      "region": null,
+      "tags": [
+        "Not offered by Mysterious Mask",
+        "Outside random trainer choices"
+      ],
+      "url": "https://batomon.com/trainers/mysterious-trainer"
+    },
+    {
+      "id": "black-belt",
+      "name": "Black Belt",
+      "ability": "On Battle Start If you have exactly 1 Fighting monster on your team, activate its On Victory ability.",
+      "region": "Jinto",
+      "tags": [],
+      "url": "https://batomon.com/trainers/black-belt"
+    },
+    {
+      "id": "bug-catcher",
+      "name": "Bug Catcher",
+      "ability": "The first Bug monster you buy each day is free.",
+      "region": "Pantra Jinto",
+      "tags": [],
+      "url": "https://batomon.com/trainers/bug-catcher"
+    },
+    {
+      "id": "burglar",
+      "name": "Burglar",
+      "ability": "Trinket gifts only offer 2 choices, but you can take both of them.",
+      "region": "Pantra Jinto",
+      "tags": [
+        "Unique"
+      ],
+      "url": "https://batomon.com/trainers/burglar"
+    },
+    {
+      "id": "chef",
+      "name": "Chef",
+      "ability": "Your singled-typed monsters gain Fire typing. Your Fire monsters have +2 Burn.",
+      "region": "Pantra Jinto",
+      "tags": [],
+      "url": "https://batomon.com/trainers/pyromaniac"
+    },
+    {
+      "id": "chemist",
+      "name": "Chemist",
+      "ability": "Your Toxic monsters have +1 Poison. When any monster levels up, increase this effect by +1 Poison.",
+      "region": "Pantra Jinto",
+      "tags": [],
+      "url": "https://batomon.com/trainers/chemist"
+    },
+    {
+      "id": "egg-breeder",
+      "name": "Egg Breeder",
+      "ability": "Gain a Purple Egg that hatches into a level 2 Super Rare monster in 5 days.",
+      "region": "Pantra Jinto",
+      "tags": [
+        "Unique"
+      ],
+      "url": "https://batomon.com/trainers/egg-breeder"
+    },
+    {
+      "id": "gamer",
+      "name": "Gamer",
+      "ability": "Gain a Mythical monster and $30 on day 9.",
+      "region": "Pantra Jinto",
+      "tags": [
+        "Unique"
+      ],
+      "url": "https://batomon.com/trainers/gamer"
+    },
+    {
+      "id": "gentleman",
+      "name": "Gentleman",
+      "ability": "From day 4 onwards, your shop no longer stocks Common or Uncommon monsters.",
+      "region": "Pantra Jinto",
+      "tags": [
+        "Unique",
+        "Not offered by Mysterious Mask"
+      ],
+      "url": "https://batomon.com/trainers/gentleman"
+    },
+    {
+      "id": "lucky-girl",
+      "name": "Lucky Girl",
+      "ability": "SHINY monsters are more likely to appear.",
+      "region": "Pantra Jinto",
+      "tags": [],
+      "url": "https://batomon.com/trainers/youngster-f"
+    },
+    {
+      "id": "mad-scientist",
+      "name": "Mad Scientist",
+      "ability": "On day 7, transform monsters on your active team into random level 1 Legendary monsters.",
+      "region": "Pantra Jinto",
+      "tags": [
+        "Unique"
+      ],
+      "url": "https://batomon.com/trainers/mad-scientist"
+    },
+    {
+      "id": "masked-man",
+      "name": "Masked Man",
+      "ability": "Every 4 days, choose a trainer and gain their ability.",
+      "region": "Pantra Jinto",
+      "tags": [
+        "Not offered by Mysterious Mask"
+      ],
+      "url": "https://batomon.com/trainers/masked-man"
+    },
+    {
+      "id": "monster-ranger",
+      "name": "Monster Ranger",
+      "ability": "Start with an Uncommon monster. Get another copy of that monster every 2 days.",
+      "region": "Pantra Jinto",
+      "tags": [
+        "Unique"
+      ],
+      "url": "https://batomon.com/trainers/monster-ranger"
+    },
+    {
+      "id": "musician",
+      "name": "Musician",
+      "ability": "If you have exactly 1 Electric monster on your team, it will have +150% Shock.",
+      "region": "Pantra",
+      "tags": [],
+      "url": "https://batomon.com/trainers/musician"
+    },
+    {
+      "id": "painter",
+      "name": "Painter",
+      "ability": "Random species will be painted with every type this run.",
+      "region": "Pantra Jinto",
+      "tags": [
+        "Unique",
+        "Not offered by Mysterious Mask"
+      ],
+      "url": "https://batomon.com/trainers/painter"
+    },
+    {
+      "id": "redhead",
+      "name": "Redhead",
+      "ability": "On Victory Give your Fire monsters +2 Burn permanently.",
+      "region": "Pantra Jinto",
+      "tags": [],
+      "url": "https://batomon.com/trainers/redhead"
+    },
+    {
+      "id": "rich-lady",
+      "name": "Rich Lady",
+      "ability": "Gain shop rank +2 and $10.",
+      "region": "Pantra Jinto",
+      "tags": [
+        "Unique"
+      ],
+      "url": "https://batomon.com/trainers/lady"
+    },
+    {
+      "id": "scavenger",
+      "name": "Scavenger",
+      "ability": "Gain an additional copy of each non-unique Common or Uncommon Trinket from a gift.",
+      "region": "Pantra Jinto",
+      "tags": [],
+      "url": "https://batomon.com/trainers/scavenger"
+    },
+    {
+      "id": "shopkeeper",
+      "name": "Shopkeeper",
+      "ability": "Your shop stocks Item 1 rarity tier higher and cost 15% less.",
+      "region": "Pantra Jinto",
+      "tags": [
+        "Unique"
+      ],
+      "url": "https://batomon.com/trainers/shopkeeper"
+    },
+    {
+      "id": "swim-coach",
+      "name": "Swim Coach",
+      "ability": "Gain a random Water monster each day.",
+      "region": "Pantra Jinto",
+      "tags": [
+        "Unique"
+      ],
+      "url": "https://batomon.com/trainers/swim-coach"
+    },
+    {
+      "id": "treasure-hunter",
+      "name": "Treasure Hunter",
+      "ability": "When you get Trinket gifts, your choices are 1 rarity tier higher.",
+      "region": "Pantra Jinto",
+      "tags": [
+        "Unique"
+      ],
+      "url": "https://batomon.com/trainers/treasure-hunter"
+    },
+    {
+      "id": "twins",
+      "name": "Twins",
+      "ability": "When monsters merge into level 3, gain an exact copy.",
+      "region": "Pantra Jinto",
+      "tags": [
+        "Unique"
+      ],
+      "url": "https://batomon.com/trainers/twins"
+    },
+    {
+      "id": "youngster",
+      "name": "Youngster",
+      "ability": "Gain 3 free rerolls every day.",
+      "region": "Pantra Jinto",
+      "tags": [
+        "Unique"
+      ],
+      "url": "https://batomon.com/trainers/youngster-m"
+    }
+  ]
+}
