@@ -414,7 +414,10 @@
 <style>
 /* v0.041 team Batomon editor */
 .teamEditPanel{width:min(420px,100%);background:#12171e;border:1px solid #3a4655;border-radius:16px;box-shadow:0 25px 80px rgba(0,0,0,.5);overflow:hidden}
-.teamEditBody{padding:16px}.teamEditPreview{display:flex;align-items:center;gap:12px;padding:10px;background:#0e1319;border:1px solid #2a323d;border-radius:12px;margin-bottom:14px}.teamEditPreview img{width:58px;height:58px;object-fit:contain}.teamEditName{font-weight:900;color:#fff}.teamEditSub{font-size:11px;color:#8f9baa;margin-top:3px}.teamEditRow{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 0}.teamEditLevels{display:flex;gap:7px;flex-wrap:wrap}.teamEditLevel{border:1px solid #3a4655;background:#1a2028;color:#cbd2dc;border-radius:9px;padding:8px 13px;cursor:pointer;font-weight:900}.teamEditLevel.on{background:#2a4459;color:#fff;border-color:#4e8ab3}.teamEditShiny{display:flex;align-items:center;gap:8px;color:#fff;font-weight:800}.teamEditActions{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}.teamEditSave{border:0;background:#ef4d6a;color:#fff;border-radius:9px;padding:9px 15px;font-weight:900;cursor:pointer}.teamEditCancel{border:1px solid #3a4655;background:#1a2028;color:#cbd2dc;border-radius:9px;padding:9px 15px;font-weight:900;cursor:pointer}
+.teamEditBody{padding:16px}.teamEditPreview{display:flex;align-items:center;gap:12px;padding:10px;background:#0e1319;border:1px solid #2a323d;border-radius:12px;margin-bottom:14px}.teamEditPreview img{width:58px;height:58px;object-fit:contain}.teamEditName{font-weight:900;color:#fff}.teamEditSub{font-size:11px;color:#8f9baa;margin-top:3px}.teamEditRow{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 0}.teamEditLevels{display:flex;gap:7px;flex-wrap:wrap}.teamEditLevel{border:1px solid #3a4655;background:#1a2028;color:#cbd2dc;border-radius:9px;padding:8px 13px;cursor:pointer;font-weight:900}.teamEditLevel.on{background:#2a4459;color:#fff;border-color:#4e8ab3}.teamEditShiny{display:flex;align-items:center;gap:8px;color:#fff;font-weight:800}
+.teamSlot.shinySlot{background:linear-gradient(135deg,rgba(255,215,80,.28),rgba(255,166,0,.14));border-color:#f4c95d;box-shadow:0 0 0 1px rgba(255,215,80,.18),0 0 14px rgba(255,200,70,.14)}
+.teamSlot.shinySlot::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(120deg,transparent 20%,rgba(255,255,255,.16) 50%,transparent 80%);opacity:.65}
+.teamEditActions{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}.teamEditSave{border:0;background:#ef4d6a;color:#fff;border-radius:9px;padding:9px 15px;font-weight:900;cursor:pointer}.teamEditCancel{border:1px solid #3a4655;background:#1a2028;color:#cbd2dc;border-radius:9px;padding:9px 15px;font-weight:900;cursor:pointer}
 .teamSlotShiny{position:absolute;left:3px;bottom:3px;background:#ffd43b;color:#5d4500;border-radius:5px;padding:1px 4px;font-size:7px;font-weight:900;z-index:3}
 </style>
 
@@ -779,6 +782,7 @@ function renderCalcTeam(){
     const item=entry.item||{};
     slot.dataset.teamIndex=String(index);
     slot.dataset.batomonNo=String(item.no||'');
+    slot.classList.toggle('shinySlot',!!entry.shiny);
     slot.draggable=true;
 
     const img=document.createElement('img'); img.alt=getTeamEntryName(entry); img.loading='lazy'; img.referrerPolicy='no-referrer';
