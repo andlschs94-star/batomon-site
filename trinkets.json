@@ -1500,5 +1500,5 @@
   ],
   "image_source": "https://batomon.com/trinkets",
   "image_source_note": "Official Batomon.com sprite URL verified against each current Trinket reference page; site uses locally hosted copies fetched from the official image URLs.",
-  "site_version": "0.017"
+  "site_version": "0.019"
 }
