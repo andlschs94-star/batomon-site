@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.037</title>
+<title>바토몬 원향 도감 v0.039</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -73,7 +73,7 @@
 .eventChoice{font-weight:700}
 .eventReward{margin-top:4px;color:#b7d7ff}
 .eventSub{margin-top:3px;font-size:12px;opacity:.72}
-/* v0.037 Damage Calculator UI */
+/* v0.039 Damage Calculator UI */
 .calcPage{background:#0c6673;min-height:calc(100vh - 30px);border:1px solid #153f4a;border-radius:18px;overflow:hidden;box-shadow:0 18px 55px rgba(0,0,0,.28)}
 .calcTopbar{height:58px;background:linear-gradient(180deg,#20c3f0 0%,#13a8d4 100%);border-bottom:3px solid #087c9d;display:flex;align-items:center;justify-content:center;gap:clamp(24px,5vw,90px);font-weight:900;color:#fff;text-shadow:2px 2px 0 rgba(0,0,0,.18)}
 .calcStatus{display:flex;align-items:center;gap:10px;font-size:20px;min-width:110px;justify-content:center}.calcIcon{font-size:30px;line-height:1}.calcDay{font-size:30px}.calcCounter{font-size:20px}
@@ -82,7 +82,7 @@
 .calcCenter{display:flex;flex-direction:column;gap:14px}.calcBox{background:#f3f3f4;border:5px solid #8e929d;outline:2px solid #252a31;border-radius:7px;box-shadow:4px 4px 0 rgba(0,0,0,.2);overflow:hidden}.calcBoxHead{height:40px;padding:6px 12px;font-size:20px;font-weight:900;color:#fff;background:#ffc20f;border-bottom:4px solid #e2a500;text-shadow:2px 2px 0 rgba(0,0,0,.15)}.calcBoxHead.team{background:#ef4d6a;border-bottom-color:#cf3450}.calcSlots{padding:6px;display:grid;gap:7px}.calcSlots.bench{grid-template-columns:repeat(4,1fr)}.calcSlots.team{grid-template-columns:repeat(3,1fr)}.calcSlot{height:110px;background:#fff;border:4px solid #b8bbc4;box-shadow:inset 0 0 0 2px #e6e7ea;display:flex;align-items:center;justify-content:center;position:relative;color:#b3b6bd;font-size:12px;font-weight:900}.calcSlot:after{content:'+';font-size:26px;color:#d0d2d7}.calcSlot:hover{border-color:#8ea7b7;background:#f9fcfd}.calcSlot.teamSlot{height:112px}.calcTeamHint{font-size:12px;color:#66707d;text-align:center;padding:2px 0 8px}.calcRightSpace{display:none}
 .calcShop{grid-column:3;grid-row:1;margin-top:0;background:#eef0f1;border:5px solid #8e929d;outline:2px solid #252a31;border-radius:7px;box-shadow:4px 4px 0 rgba(0,0,0,.2);min-height:330px;overflow:visible}.calcShopHead{height:38px;background:#65c9ee;color:#10232c;border-bottom:4px solid #3ba5c9;font-size:19px;font-weight:900;padding:6px 12px}.calcShopBlank{height:285px;background:#f7f7f7}
 .calcNotice{margin-top:10px;color:#d9f5fb;font-size:12px;text-align:center}.calcNavButton{position:relative}.calcNavButton.on{background:#173247!important;color:#6fd9ff!important}
-/* v0.037 Trainer selector UI */
+/* v0.039 Trainer selector UI */
 .calcTrainerPanel{cursor:pointer;position:relative}
 .calcTrainerPanel:focus-visible{outline:4px solid #20c3f0;outline-offset:3px}
 .calcTrainerChange{position:absolute;right:10px;top:10px;background:rgba(0,0,0,.58);color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:7px;padding:5px 9px;font-size:12px;font-weight:800;z-index:2}
@@ -99,25 +99,25 @@
 @media(max-width:720px){.calcTopbar{gap:8px;justify-content:space-around}.calcStatus{font-size:14px;min-width:auto}.calcDay{font-size:20px}.calcCounter{font-size:14px}.calcBattleArea{grid-template-columns:1fr}.calcTrainerPanel{max-width:220px;margin:auto;width:100%}.calcCenter{width:100%}.calcSlots.team{grid-template-columns:repeat(2,1fr)}.calcBoard{padding:10px}.calcShop{grid-column:1;grid-row:3;min-height:140px}.calcShopBlank{height:95px}}
 
 
-/* v0.037 UI: calculator opens by default; shop moved below and widened */
+/* v0.039 UI: calculator opens by default; shop moved below and widened */
 .calcBattleArea{grid-template-columns:180px minmax(460px,1fr);}
 .calcShop{grid-column:1/-1;grid-row:2;width:100%;min-height:190px;margin-top:0;}
 .calcShopBlank{height:140px;}
 @media(max-width:1050px){.calcBattleArea{grid-template-columns:150px 1fr}.calcShop{grid-column:1/-1;grid-row:2;min-height:170px}.calcShopBlank{height:120px}}
 @media(max-width:720px){.calcBattleArea{grid-template-columns:1fr}.calcShop{grid-column:1;grid-row:3;min-height:150px}.calcShopBlank{height:105px}}
 
-/* v0.037 Batomon list / team placement UI */
+/* v0.039 Batomon list / team placement UI */
 .calcBatomonFilters{display:grid;grid-template-columns:minmax(180px,1.2fr) auto;gap:7px;padding:8px;background:#e3e6e9;border-bottom:2px solid #b8bdc4;align-items:start}
 .calcBatomonFilters input,.calcBatomonFilters button{height:32px;border:2px solid #aeb4bb;border-radius:5px;background:#fff;padding:0 8px;font-size:11px;font-weight:800;min-width:0}.calcBatomonFilters input:focus{outline:2px solid #20a9d0;outline-offset:1px}.calcBatomonFilters button{cursor:pointer;background:#f4f5f6}.calcBatomonFilters button:hover{background:#dff5fb;border-color:#20a9d0}
 .calcFilterGroup{grid-column:1/-1;background:#fff;border:2px solid #c4c8ce;border-radius:6px;padding:7px}.calcFilterTitle{font-size:11px;font-weight:900;color:#444b55;margin-bottom:6px}.calcFilterOptions{display:flex;flex-wrap:wrap;gap:5px}.calcFilterOption{display:inline-flex;align-items:center;gap:4px;padding:4px 7px;border:1px solid #c4c8ce;border-radius:5px;background:#f6f7f8;color:#3d444d;font-size:10px;font-weight:800;cursor:pointer;user-select:none}.calcFilterOption:hover{border-color:#20a9d0;background:#eefaff}.calcFilterOption input{margin:0;accent-color:#159fc8;width:13px;height:13px}.calcFilterOption.checked{border-color:#20a9d0;background:#dff5fb;color:#08627c}
 .calcBatomonCount{padding:5px 9px 2px;font-size:10px;font-weight:900;color:#69717a;background:#f7f7f7}
 .calcShopGrid{background:#f7f7f7;padding:8px;display:grid;grid-template-columns:repeat(8,minmax(72px,1fr));gap:7px;overflow:visible}
-/* v0.037 UI: keep Batomon list area fixed so filtering does not move the surrounding layout */
+/* v0.039 UI: keep Batomon list area fixed so filtering does not move the surrounding layout */
 .calcShopGrid{min-height:640px;align-content:start}
 .calcShopGrid .calcShopEmpty{min-height:624px;display:flex;align-items:center;justify-content:center;grid-column:1/-1}
 
 .calcBatomonCard{border:2px solid #c4c7cd;background:#fff;border-radius:6px;padding:3px;cursor:pointer;display:grid;grid-template-columns:28px 1fr;grid-template-rows:44px 18px;column-gap:4px;align-items:center;min-width:0;text-align:left}
-/* v0.037 UI: rarity-tinted Batomon list cards */
+/* v0.039 UI: rarity-tinted Batomon list cards */
 .calcBatomonCard.rarity-common{background:#e9ecef;border-color:#b8bec5}
 .calcBatomonCard.rarity-uncommon{background:#e5f4df;border-color:#91c47d}
 .calcBatomonCard.rarity-rare{background:#e5efff;border-color:#83aee8}
@@ -136,7 +136,7 @@
 @media(max-width:1050px){.calcShopGrid{grid-template-columns:repeat(6,minmax(72px,1fr));min-height:885px;height:auto}}
 @media(max-width:720px){.calcShopGrid{grid-template-columns:repeat(4,minmax(68px,1fr));min-height:1250px;height:auto}}
 
-/* v0.037 UI: remove Batomon list title and strengthen rarity colors */
+/* v0.039 UI: remove Batomon list title and strengthen rarity colors */
 .calcShop{margin-top:-2px}
 .calcBatomonFilters{border-top:2px solid #b8bdc4}
 .calcFilterOption.rarity-common{background:#e5e7eb;border-color:#9ca3af;color:#374151}
@@ -145,7 +145,7 @@
 .calcFilterOption.rarity-super-rare{background:#f3e8ff;border-color:#8b5cf6;color:#6d28d9}
 .calcFilterOption.rarity-legendary{background:#fef3c7;border-color:#f59e0b;color:#92400e}
 .calcFilterOption.rarity-mythical{background:#fce7f3;border-color:#ec4899;color:#9d174d}
-/* v0.037 UI: compact rarity/type filters with visual separation */
+/* v0.039 UI: compact rarity/type filters with visual separation */
 .calcBatomonFilters{grid-template-columns:minmax(180px,1.2fr) auto;align-items:center}
 .calcFilterGroup{grid-column:auto;display:flex;align-items:center;gap:8px;padding:5px 7px;min-width:0;border:0;border-right:2px solid #c9cdd3;border-radius:0;background:transparent}
 .calcFilterGroup:last-of-type{border-right:0}
@@ -185,7 +185,7 @@
 </style>
 <!-- English originals are retained in trainers.json only: name_en / ability_en -->
 
-<style>/* v0.037 UI: trinket selector repair */
+<style>/* v0.039 UI: trinket selector repair */
 .calcBattleArea{grid-template-columns:150px minmax(360px,1fr) 150px;gap:14px;align-items:start}
 .calcTrainerPanel,.calcTrinketPanel{width:150px}
 .calcTrainerTitle{height:26px;font-size:12px;padding:5px 7px}
@@ -214,7 +214,7 @@
 @media(max-width:720px){.calcBattleArea{grid-template-columns:1fr}.calcTrainerPanel,.calcTrinketPanel{width:100%;max-width:220px;margin:auto}.calcTrinketPanel{grid-row:2}.calcCenter{width:100%}.calcShop{grid-column:1;grid-row:3}.calcSlots.team{grid-template-columns:repeat(3,1fr)}}
 </style>
 
-<style>/* v0.037: compact centered team panel */
+<style>/* v0.039: compact centered team panel */
 .calcCenter{align-items:center}
 .calcCenter>.calcBox{width:190px;max-width:100%;box-sizing:border-box}
 .calcCenter>.calcBox .calcSlots.team{grid-template-columns:repeat(3,1fr);padding:5px;gap:5px}
@@ -231,7 +231,7 @@
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.037</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.039</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -305,7 +305,7 @@
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.037</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.039</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -600,7 +600,8 @@ function renderCalcFilterOptions(elId,values,selected,labels){
   });
 }
 function initCalcBatomonFilters(){
-  const rarities=[...new Set(characters.map(x=>calcFilterValue(x.officialRarity||x.officialRarity_ko||x.rank)).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b),'ko'));
+  const rarityOrder=['일반','고급','희귀','영웅','전설','신화','Common','Uncommon','Rare','Super Rare','Legendary','Mythical'];
+  const rarities=[...new Set(characters.map(x=>calcFilterValue(x.officialRarity||x.officialRarity_ko||x.rank)).filter(Boolean))].sort((a,b)=>{const ka=calcRarityLabels[a]||a; const kb=calcRarityLabels[b]||b; const ia=rarityOrder.indexOf(ka); const ib=rarityOrder.indexOf(kb); return (ia<0?999:ia)-(ib<0?999:ib);});
   const types=[...new Set(characters.flatMap(x=>Array.isArray(x.officialTypes)?x.officialTypes.map(calcFilterValue):String(x.type||'').split('/').map(v=>v.trim()).filter(Boolean)).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b),'en'));
   renderCalcFilterOptions('calcBatomonRarity',rarities,calcBatomonRarityFilters,calcRarityLabels);
   renderCalcFilterOptions('calcBatomonType',types,calcBatomonTypeFilters,calcTypeLabels);
