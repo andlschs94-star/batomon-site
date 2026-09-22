@@ -20,7 +20,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/alphas_crown.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/alphas_crown.png"
     },
     {
       "id": "ancient-plume",
@@ -33,7 +34,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/ancient_plume.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/ancient_plume.png"
     },
     {
       "id": "arcade-coins",
@@ -45,8 +47,9 @@
       "unique": true,
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
-      "image_url": "https://batomon.com/game/25335160/trinket/arcade_coins.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_url": "https://batomon.com/game/25377295/trinket/arcade_coins.png",
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/arcade_coins.png"
     },
     {
       "id": "barbell",
@@ -59,7 +62,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/barbell.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/barbell.png"
     },
     {
       "id": "bargain-bin",
@@ -72,7 +76,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/bargain_bin.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/bargain_bin.png"
     },
     {
       "id": "blitz-bell",
@@ -85,7 +90,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/blitz_bell.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/blitz_bell.png"
     },
     {
       "id": "blue-incense",
@@ -98,7 +104,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/blue_incense.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/blue_incense.png"
     },
     {
       "id": "boxing-glove",
@@ -111,7 +118,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/boxing_glove.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/boxing_glove.png"
     },
     {
       "id": "bug-net",
@@ -124,7 +132,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/bug_net.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/bug_net.png"
     },
     {
       "id": "candy-jar",
@@ -137,7 +146,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/candy_jar.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/candy_jar.png"
     },
     {
       "id": "dryad-s-charm",
@@ -150,7 +160,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/dryad_s_charm.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/dryad_s_charm.png"
     },
     {
       "id": "earth-crest",
@@ -163,7 +174,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/earth_crest.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/earth_crest.png"
     },
     {
       "id": "echo-bell",
@@ -176,7 +188,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/echo_bell.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/echo_bell.png"
     },
     {
       "id": "echo-charm",
@@ -189,7 +202,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/echo_charm.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/echo_charm.png"
     },
     {
       "id": "excalibur",
@@ -202,7 +216,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/excalibur.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/excalibur.png"
     },
     {
       "id": "fake-diamond",
@@ -215,7 +230,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/fake_diamond.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/fake_diamond.png"
     },
     {
       "id": "fancy-sword",
@@ -228,7 +244,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/fancy_sword.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/fancy_sword.png"
     },
     {
       "id": "fire-bell",
@@ -241,7 +258,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/fire_bell.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/fire_bell.png"
     },
     {
       "id": "fire-orb",
@@ -254,7 +272,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/fire_orb.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/fire_orb.png"
     },
     {
       "id": "fool-s-gold",
@@ -267,7 +286,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/fool_s_gold.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/fool_s_gold.png"
     },
     {
       "id": "giant-club",
@@ -280,7 +300,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/giant_club.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/giant_club.png"
     },
     {
       "id": "gold-bar",
@@ -293,7 +314,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/gold_bar.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/gold_bar.png"
     },
     {
       "id": "gold-bracelet",
@@ -306,7 +328,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/gold_bracelet.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/gold_bracelet.png"
     },
     {
       "id": "gold-incense",
@@ -319,7 +342,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/gold_incense.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/gold_incense.png"
     },
     {
       "id": "gold-nugget",
@@ -332,7 +356,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/gold_nugget.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/gold_nugget.png"
     },
     {
       "id": "gold-trophy",
@@ -345,7 +370,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/gold_trophy.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/gold_trophy.png"
     },
     {
       "id": "gold-o-matic",
@@ -358,7 +384,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/gold_o_matic.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/gold_o_matic.png"
     },
     {
       "id": "greedy-gloves",
@@ -370,8 +397,9 @@
       "unique": false,
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
-      "image_url": "https://batomon.com/game/25274443/trinket/greedy_gloves.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_url": "https://batomon.com/game/25377295/trinket/greedy_gloves.png",
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/greedy_gloves.png"
     },
     {
       "id": "grow-lamp",
@@ -384,7 +412,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/grow_lamp.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/grow_lamp.png"
     },
     {
       "id": "haste-crown",
@@ -397,7 +426,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/haste_crown.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/haste_crown.png"
     },
     {
       "id": "haste-orb",
@@ -410,7 +440,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/haste_orb.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/haste_orb.png"
     },
     {
       "id": "hero-s-sword",
@@ -423,7 +454,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/hero_s_sword.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/hero_s_sword.png"
     },
     {
       "id": "holy-grail",
@@ -436,7 +468,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/holy_grail.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/holy_grail.png"
     },
     {
       "id": "junk",
@@ -449,7 +482,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/junk.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/junk.png"
     },
     {
       "id": "kaleidoscope",
@@ -462,7 +496,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/kaleidoscope.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/kaleidoscope.png"
     },
     {
       "id": "link-cable",
@@ -475,7 +510,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/link_cable.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/link_cable.png"
     },
     {
       "id": "locked-box",
@@ -488,7 +524,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/locked_box.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/locked_box.png"
     },
     {
       "id": "market-license",
@@ -501,7 +538,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/market_license.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/market_license.png"
     },
     {
       "id": "master-crown",
@@ -514,7 +552,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/master_crown.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/master_crown.png"
     },
     {
       "id": "mega-duplicator",
@@ -527,7 +566,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/mega_duplicator.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/mega_duplicator.png"
     },
     {
       "id": "mega-upgrade-disc",
@@ -540,7 +580,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/mega_upgrade_disc.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/mega_upgrade_disc.png"
     },
     {
       "id": "membership-card",
@@ -553,7 +594,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/membership_card.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/membership_card.png"
     },
     {
       "id": "metal-bat",
@@ -566,7 +608,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/metal_bat.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/metal_bat.png"
     },
     {
       "id": "meteorite",
@@ -579,7 +622,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/meteorite.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/meteorite.png"
     },
     {
       "id": "metronome",
@@ -592,7 +636,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/metronome.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/metronome.png"
     },
     {
       "id": "mighty-bell",
@@ -604,8 +649,9 @@
       "unique": false,
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
-      "image_url": "https://batomon.com/game/25274443/trinket/mighty_bell.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_url": "https://batomon.com/game/25377295/trinket/mighty_bell.png",
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/mighty_bell.png"
     },
     {
       "id": "mini-duplicator",
@@ -618,7 +664,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/mini_duplicator.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/mini_duplicator.png"
     },
     {
       "id": "momentum-flag",
@@ -631,7 +678,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/momentum_flag.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/momentum_flag.png"
     },
     {
       "id": "mysterious-charm",
@@ -644,7 +692,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/mysterious_charm.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/mysterious_charm.png"
     },
     {
       "id": "mysterious-chest",
@@ -657,7 +706,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/mysterious_chest.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/mysterious_chest.png"
     },
     {
       "id": "mysterious-gem",
@@ -670,7 +720,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/mysterious_gem.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/mysterious_gem.png"
     },
     {
       "id": "mysterious-mask",
@@ -682,8 +733,9 @@
       "unique": false,
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
-      "image_url": "https://batomon.com/game/24914580/trinket/mysterious_mask.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_url": "https://batomon.com/game/25377295/trinket/mysterious_mask.png",
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/mysterious_mask.png"
     },
     {
       "id": "mystic-incense",
@@ -695,8 +747,9 @@
       "unique": false,
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
-      "image_url": "https://batomon.com/game/25274443/trinket/mystic_incense.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_url": "https://batomon.com/game/25377295/trinket/mystic_incense.png",
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/mystic_incense.png"
     },
     {
       "id": "piggy-bank",
@@ -709,7 +762,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/piggy_bank.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/piggy_bank.png"
     },
     {
       "id": "poison-bell",
@@ -722,7 +776,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/poison_bell.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/poison_bell.png"
     },
     {
       "id": "poison-orb",
@@ -735,7 +790,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/poison_orb.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/poison_orb.png"
     },
     {
       "id": "power-band",
@@ -748,7 +804,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/power_band.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/power_band.png"
     },
     {
       "id": "power-bell",
@@ -761,7 +818,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/power_bell.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/power_bell.png"
     },
     {
       "id": "power-crown",
@@ -774,7 +832,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/power_crown.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/power_crown.png"
     },
     {
       "id": "power-pouch",
@@ -787,7 +846,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/power_pouch.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/power_pouch.png"
     },
     {
       "id": "purple-incense",
@@ -800,7 +860,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/purple_incense.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/purple_incense.png"
     },
     {
       "id": "quick-bell",
@@ -813,7 +874,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/quick_bell.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/quick_bell.png"
     },
     {
       "id": "quick-flag",
@@ -826,7 +888,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/quick_flag.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/quick_flag.png"
     },
     {
       "id": "rainbow-berry",
@@ -839,7 +902,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/rainbow_berry.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/rainbow_berry.png"
     },
     {
       "id": "rainbow-pearl",
@@ -852,7 +916,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/rainbow_pearl.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/rainbow_pearl.png"
     },
     {
       "id": "rally-flag",
@@ -865,7 +930,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/rally_flag.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/rally_flag.png"
     },
     {
       "id": "razor-beak",
@@ -877,8 +943,9 @@
       "unique": false,
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
-      "image_url": "https://batomon.com/game/25274443/trinket/razor_beak.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_url": "https://batomon.com/game/25377295/trinket/razor_beak.png",
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/razor_beak.png"
     },
     {
       "id": "repeater-charm",
@@ -891,7 +958,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/repeater_charm.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/repeater_charm.png"
     },
     {
       "id": "research-notes",
@@ -904,7 +972,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/research_notes.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/research_notes.png"
     },
     {
       "id": "rigged-dice",
@@ -917,7 +986,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/rigged_dice.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/rigged_dice.png"
     },
     {
       "id": "rocket-boots",
@@ -930,7 +1000,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/rocket_boots.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/rocket_boots.png"
     },
     {
       "id": "sapphire-amulet",
@@ -943,7 +1014,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/sapphire_amulet.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/sapphire_amulet.png"
     },
     {
       "id": "sapphire-ring",
@@ -956,7 +1028,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/sapphire_ring.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/sapphire_ring.png"
     },
     {
       "id": "scrap-sword",
@@ -969,7 +1042,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/scrap_sword.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/scrap_sword.png"
     },
     {
       "id": "sea-crest",
@@ -982,7 +1056,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/sea_crest.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/sea_crest.png"
     },
     {
       "id": "silver-watch",
@@ -995,7 +1070,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/silver_watch.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/silver_watch.png"
     },
     {
       "id": "small-club",
@@ -1008,7 +1084,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/small_club.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/small_club.png"
     },
     {
       "id": "speed-crest",
@@ -1021,7 +1098,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/speed_crest.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/speed_crest.png"
     },
     {
       "id": "speed-whistle",
@@ -1034,7 +1112,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/speed_whistle.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/speed_whistle.png"
     },
     {
       "id": "tempo-charm",
@@ -1047,7 +1126,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/tempo_charm.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/tempo_charm.png"
     },
     {
       "id": "terrarium",
@@ -1060,7 +1140,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/terrarium.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/terrarium.png"
     },
     {
       "id": "topaz-amulet",
@@ -1073,7 +1154,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/topaz_amulet.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/topaz_amulet.png"
     },
     {
       "id": "topaz-ring",
@@ -1086,7 +1168,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/topaz_ring.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/topaz_ring.png"
     },
     {
       "id": "training-weights",
@@ -1099,7 +1182,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/training_weights.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/training_weights.png"
     },
     {
       "id": "treasure-map",
@@ -1112,7 +1196,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/treasure_map.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/treasure_map.png"
     },
     {
       "id": "ultra-duplicator",
@@ -1125,7 +1210,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/ultra_duplicator.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/ultra_duplicator.png"
     },
     {
       "id": "upgrade-disc",
@@ -1138,7 +1224,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/upgrade_disc.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/upgrade_disc.png"
     },
     {
       "id": "vip-pass",
@@ -1151,7 +1238,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/vip_pass.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/vip_pass.png"
     },
     {
       "id": "warhorn",
@@ -1164,7 +1252,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/warhorn.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/warhorn.png"
     },
     {
       "id": "winged-crown",
@@ -1177,7 +1266,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/winged_crown.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/winged_crown.png"
     },
     {
       "id": "winged-fossil",
@@ -1190,7 +1280,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/winged_fossil.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/winged_fossil.png"
     },
     {
       "id": "wood-sword",
@@ -1203,7 +1294,8 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/wood_sword.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/wood_sword.png"
     },
     {
       "id": "zenith-stone",
@@ -1216,10 +1308,11 @@
       "availability": "Random gifts",
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/zenith_stone.png",
-      "image_source": "Batomon.com official trinket sprite"
+      "image_source": "Batomon.com official trinket sprite",
+      "image_local": "assets/trinkets/zenith_stone.png"
     }
   ],
   "image_source": "https://batomon.com/trinkets",
-  "image_source_note": "Official sprite URLs resolved from each Batomon.com Trinket reference page.",
-  "site_version": "0.004"
+  "image_source_note": "Official Batomon.com sprite URL verified against each current Trinket reference page; site uses locally hosted copies fetched from the official image URLs.",
+  "site_version": "0.005"
 }
