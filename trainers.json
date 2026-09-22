@@ -15,7 +15,8 @@
         "Not offered by Mysterious Mask",
         "Outside random trainer choices"
       ],
-      "url": "https://batomon.com/trainers/mysterious-trainer"
+      "url": "https://batomon.com/trainers/mysterious-trainer",
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/mysterious_trainer.png"
     },
     {
       "id": "black-belt",
@@ -23,7 +24,8 @@
       "ability": "On Battle Start If you have exactly 1 Fighting monster on your team, activate its On Victory ability.",
       "region": "Jinto",
       "tags": [],
-      "url": "https://batomon.com/trainers/black-belt"
+      "url": "https://batomon.com/trainers/black-belt",
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/black_belt.png"
     },
     {
       "id": "bug-catcher",
@@ -31,7 +33,8 @@
       "ability": "The first Bug monster you buy each day is free.",
       "region": "Pantra Jinto",
       "tags": [],
-      "url": "https://batomon.com/trainers/bug-catcher"
+      "url": "https://batomon.com/trainers/bug-catcher",
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/bug_catcher.png"
     },
     {
       "id": "burglar",
@@ -41,7 +44,8 @@
       "tags": [
         "Unique"
       ],
-      "url": "https://batomon.com/trainers/burglar"
+      "url": "https://batomon.com/trainers/burglar",
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/burglar.png"
     },
     {
       "id": "chef",
@@ -49,7 +53,8 @@
       "ability": "Your singled-typed monsters gain Fire typing. Your Fire monsters have +2 Burn.",
       "region": "Pantra Jinto",
       "tags": [],
-      "url": "https://batomon.com/trainers/pyromaniac"
+      "url": "https://batomon.com/trainers/pyromaniac",
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/pyromaniac.png"
     },
     {
       "id": "chemist",
@@ -57,7 +62,8 @@
       "ability": "Your Toxic monsters have +1 Poison. When any monster levels up, increase this effect by +1 Poison.",
       "region": "Pantra Jinto",
       "tags": [],
-      "url": "https://batomon.com/trainers/chemist"
+      "url": "https://batomon.com/trainers/chemist",
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/chemist.png"
     },
     {
       "id": "egg-breeder",
@@ -67,7 +73,8 @@
       "tags": [
         "Unique"
       ],
-      "url": "https://batomon.com/trainers/egg-breeder"
+      "url": "https://batomon.com/trainers/egg-breeder",
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/egg_breeder.png"
     },
     {
       "id": "gamer",
@@ -77,7 +84,8 @@
       "tags": [
         "Unique"
       ],
-      "url": "https://batomon.com/trainers/gamer"
+      "url": "https://batomon.com/trainers/gamer",
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/gamer.png"
     },
     {
       "id": "gentleman",
@@ -88,7 +96,8 @@
         "Unique",
         "Not offered by Mysterious Mask"
       ],
-      "url": "https://batomon.com/trainers/gentleman"
+      "url": "https://batomon.com/trainers/gentleman",
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/gentleman.png"
     },
     {
       "id": "lucky-girl",
@@ -96,7 +105,8 @@
       "ability": "SHINY monsters are more likely to appear.",
       "region": "Pantra Jinto",
       "tags": [],
-      "url": "https://batomon.com/trainers/youngster-f"
+      "url": "https://batomon.com/trainers/youngster-f",
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/youngster_f.png"
     },
     {
       "id": "mad-scientist",
@@ -106,7 +116,8 @@
       "tags": [
         "Unique"
       ],
-      "url": "https://batomon.com/trainers/mad-scientist"
+      "url": "https://batomon.com/trainers/mad-scientist",
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/mad_scientist.png"
     },
     {
       "id": "masked-man",
@@ -116,7 +127,8 @@
       "tags": [
         "Not offered by Mysterious Mask"
       ],
-      "url": "https://batomon.com/trainers/masked-man"
+      "url": "https://batomon.com/trainers/masked-man",
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/masked_man.png"
     },
     {
       "id": "monster-ranger",
@@ -126,7 +138,8 @@
       "tags": [
         "Unique"
       ],
-      "url": "https://batomon.com/trainers/monster-ranger"
+      "url": "https://batomon.com/trainers/monster-ranger",
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/monster_ranger.png"
     },
     {
       "id": "musician",
@@ -134,7 +147,8 @@
       "ability": "If you have exactly 1 Electric monster on your team, it will have +150% Shock.",
       "region": "Pantra",
       "tags": [],
-      "url": "https://batomon.com/trainers/musician"
+      "url": "https://batomon.com/trainers/musician",
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/musician.png"
     },
     {
       "id": "painter",
@@ -145,7 +159,8 @@
         "Unique",
         "Not offered by Mysterious Mask"
       ],
-      "url": "https://batomon.com/trainers/painter"
+      "url": "https://batomon.com/trainers/painter",
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/painter.png"
     },
     {
       "id": "redhead",
@@ -153,7 +168,8 @@
       "ability": "On Victory Give your Fire monsters +2 Burn permanently.",
       "region": "Pantra Jinto",
       "tags": [],
-      "url": "https://batomon.com/trainers/redhead"
+      "url": "https://batomon.com/trainers/redhead",
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/redhead.png"
     },
     {
       "id": "rich-lady",
@@ -163,7 +179,8 @@
       "tags": [
         "Unique"
       ],
-      "url": "https://batomon.com/trainers/lady"
+      "url": "https://batomon.com/trainers/lady",
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/lady.png"
     },
     {
       "id": "scavenger",
@@ -171,7 +188,8 @@
       "ability": "Gain an additional copy of each non-unique Common or Uncommon Trinket from a gift.",
       "region": "Pantra Jinto",
       "tags": [],
-      "url": "https://batomon.com/trainers/scavenger"
+      "url": "https://batomon.com/trainers/scavenger",
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/scavenger.png"
     },
     {
       "id": "shopkeeper",
@@ -181,7 +199,8 @@
       "tags": [
         "Unique"
       ],
-      "url": "https://batomon.com/trainers/shopkeeper"
+      "url": "https://batomon.com/trainers/shopkeeper",
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/shopkeeper.png"
     },
     {
       "id": "swim-coach",
@@ -191,7 +210,8 @@
       "tags": [
         "Unique"
       ],
-      "url": "https://batomon.com/trainers/swim-coach"
+      "url": "https://batomon.com/trainers/swim-coach",
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/swim_coach.png"
     },
     {
       "id": "treasure-hunter",
@@ -201,7 +221,8 @@
       "tags": [
         "Unique"
       ],
-      "url": "https://batomon.com/trainers/treasure-hunter"
+      "url": "https://batomon.com/trainers/treasure-hunter",
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/treasure_hunter.png"
     },
     {
       "id": "twins",
@@ -211,7 +232,8 @@
       "tags": [
         "Unique"
       ],
-      "url": "https://batomon.com/trainers/twins"
+      "url": "https://batomon.com/trainers/twins",
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/twins.png"
     },
     {
       "id": "youngster",
@@ -221,7 +243,10 @@
       "tags": [
         "Unique"
       ],
-      "url": "https://batomon.com/trainers/youngster-m"
+      "url": "https://batomon.com/trainers/youngster-m",
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/youngster_m.png"
     }
-  ]
+  ],
+  "image_source": "https://www.critcap.gg/batomon/trainers/",
+  "image_source_note": "Trainer sprite image URLs resolved from the image links exposed by the trainer catalog."
 }
