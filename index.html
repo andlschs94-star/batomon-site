@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.005</title>
+<title>바토몬 원향 도감 v0.006</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -57,7 +57,7 @@
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.005</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22) + 트레이너 23종 + 장신구 93종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.006</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22) + 트레이너 23종 + 장신구 93종 + 도구 40종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -69,6 +69,7 @@
     <button id="tabBatomon" class="on" onclick="switchSection('batomon')">바토몬 도감</button>
     <button id="tabTrainer" onclick="switchSection('trainer')">트레이너 23종</button>
     <button id="tabTrinket" onclick="switchSection('trinket')">장신구 93종</button>
+    <button id="tabItem" onclick="switchSection('item')">도구 40종</button>
   </div>
 
   <section id="batomonSection" class="section on">
@@ -98,6 +99,23 @@
     <div id="trinketStatus" class="trainerStatus">장신구 93종 불러오는 중…</div>
     <div id="trinketGrid" class="trainerGrid"></div>
   </section>
+
+  <section id="itemSection" class="section">
+    <div class="tools" style="margin-bottom:12px">
+      <input id="itemSearch" placeholder="도구 이름 / 효과 검색">
+      <select id="itemRarity">
+        <option value="">전체 등급</option>
+        <option value="Common">일반</option>
+        <option value="Uncommon">고급</option>
+        <option value="Rare">희귀</option>
+        <option value="Super Rare">슈퍼 레어</option>
+        <option value="Legendary">전설</option>
+        <option value="Mythical">신화</option>
+      </select>
+    </div>
+    <div id="itemStatus" class="trainerStatus">items.json 불러오는 중…</div>
+    <div id="itemGrid" class="trainerGrid"></div>
+  </section>
 </div>
 
 <div id="statsOverlay" class="overlay"><div class="modal"><div class="modalhead"><h2 id="statsTitle">능력치</h2><button class="close" onclick="closeStats()">×</button></div><div class="stats"><div class="tabs" id="modeTabs"></div><div class="levels" id="levelTabs"></div><div class="statbox" id="statContent"></div></div></div></div>
@@ -109,6 +127,7 @@
 let characters=[];
 let trainers=[];
 let trinkets=[];
+let items=[];
 let statsCurrent=null;
 let statsMode='normal';
 let statsLevel=1;
@@ -221,7 +240,9 @@ window.addEventListener('keydown',e=>{if(e.key==='Escape'){if(document.getElemen
 document.getElementById('search').addEventListener('input',render);
 const trainerSearch=document.getElementById('trainerSearch'); if(trainerSearch)trainerSearch.addEventListener('input',renderTrainers);
 const trinketSearch=document.getElementById('trinketSearch'); if(trinketSearch)trinketSearch.addEventListener('input',renderTrinkets);
-const trinketRarity=document.getElementById('trinketRarity'); if(trinketRarity)trinketRarity.addEventListener('change',renderTrinkets);document.getElementById('rank').addEventListener('change',render);document.getElementById('sort').addEventListener('change',render);document.getElementById('resetEdits').addEventListener('click',()=>{if(!confirm('모든 사진 수정 내용을 이 브라우저에서 삭제할까요?'))return;edits={};saveEdits();render()});
+const trinketRarity=document.getElementById('trinketRarity'); if(trinketRarity)trinketRarity.addEventListener('change',renderTrinkets);
+const itemSearch=document.getElementById('itemSearch'); if(itemSearch)itemSearch.addEventListener('input',renderItems);
+const itemRarity=document.getElementById('itemRarity'); if(itemRarity)itemRarity.addEventListener('change',renderItems);document.getElementById('rank').addEventListener('change',render);document.getElementById('sort').addEventListener('change',render);document.getElementById('resetEdits').addEventListener('click',()=>{if(!confirm('모든 사진 수정 내용을 이 브라우저에서 삭제할까요?'))return;edits={};saveEdits();render()});
 
 
 function switchSection(section){
@@ -232,10 +253,12 @@ function switchSection(section){
   document.getElementById('batomonSection')?.classList.toggle('on',isB);
   document.getElementById('trainerSection')?.classList.toggle('on',isT);
   document.getElementById('trinketSection')?.classList.toggle('on',isK);
+  document.getElementById('itemSection')?.classList.toggle('on',section==='item');
 
   document.getElementById('tabBatomon')?.classList.toggle('on',isB);
   document.getElementById('tabTrainer')?.classList.toggle('on',isT);
   document.getElementById('tabTrinket')?.classList.toggle('on',isK);
+  document.getElementById('tabItem')?.classList.toggle('on',section==='item');
 }
 function renderTrainers(){
   const g=document.getElementById('trainerGrid');
@@ -351,6 +374,40 @@ function renderTrinkets(){
   status.textContent=`장신구 ${trinkets.length}종 · Balance 22 / 1.0.0 · 현재 표시 ${list.length}종`;
 }
 
+function renderItems(){
+  const g=document.getElementById('itemGrid');
+  const status=document.getElementById('itemStatus');
+  if(!g || !status) return;
+  const q=(document.getElementById('itemSearch')?.value||'').trim().toLowerCase();
+  const rarity=(document.getElementById('itemRarity')?.value||'');
+  const list=items.filter(t=>{
+    const s=[t.name_ko||'',t.name_en||'',t.effect_ko||'',t.effect_en||'',t.rarity||''].join(' ').toLowerCase();
+    return (!q || s.includes(q)) && (!rarity || t.rarity===rarity);
+  });
+  g.innerHTML='';
+  if(!list.length){g.innerHTML='<div class="empty">조건에 맞는 도구가 없습니다.</div>';status.textContent=`도구 ${items.length}종 · 현재 표시 0종`;return;}
+  for(const t of list){
+    const card=document.createElement('div');card.className='trainerCard';
+    const portrait=document.createElement('div');portrait.className='trinketPortrait';
+    const img=document.createElement('img');img.alt=(t.name_ko||t.name_en||'도구')+' 이미지';img.loading='lazy';img.decoding='async';img.referrerPolicy='no-referrer';
+    const sources=[t.image_local,t.image_url,
+      t.image_url?'https://wsrv.nl/?url='+encodeURIComponent(t.image_url):'',
+      t.image_url?'https://images.weserv.nl/?url='+encodeURIComponent(t.image_url):''].filter(Boolean);
+    let idx=0; const next=()=>{if(idx>=sources.length){portrait.classList.add('noImage');return;}img.src=sources[idx++];}; img.onerror=next; next(); portrait.appendChild(img);
+    const head=document.createElement('div');head.className='trainerHead';
+    const left=document.createElement('div');
+    const nm=document.createElement('div');nm.className='trainerName';nm.textContent=t.name_ko||t.name_en;
+    const rg=document.createElement('div');rg.className='trinketRarity';rg.textContent=(t.rarity_ko||t.rarity||'미표기')+(t.appears_once_per_day?' · 하루 1회 등장':'');
+    left.append(nm,rg);head.append(left);
+    const meta=document.createElement('div');meta.className='trinketRarity';meta.textContent=`가격 $${t.cost}`;
+    const effect=document.createElement('div');effect.className='trinketEffect';effect.textContent=t.effect_ko||t.effect_en||'효과 정보 없음';
+    const link=document.createElement('a');link.href=t.source_url||'https://batomon.com/items';link.target='_blank';link.rel='noopener noreferrer';link.textContent='공식 원문 보기 ↗';
+    card.append(portrait,head,meta,effect,link);g.appendChild(card);
+  }
+  status.textContent=`도구 ${items.length}종 · Balance 22 / 1.0.0 · 현재 표시 ${list.length}종`;
+}
+
+
 async function init(){
   loadEdits();
   try{
@@ -374,16 +431,19 @@ async function init(){
 
     document.getElementById('status').textContent=`데이터 로드 완료 · 원향 ${characters.length}마리 · 공식 데이터 적용`;
     try{
-      const tk=await fetch('./trinkets.json?cb='+Date.now(),{cache:'no-store'});
+      const it=await fetch('./items.json?cb='+Date.now(),{cache:'no-store'});
+    if(it.ok){ const id=await it.json(); items=Array.isArray(id)?id:(id.items||[]); }
+    const tk=await fetch('./trinkets.json?cb='+Date.now(),{cache:'no-store'});
       if(tk.ok){ const kd=await tk.json(); trinkets=Array.isArray(kd)?kd:(kd.trinkets||[]); }
     }catch(e){ console.warn('trinkets.json 로드 실패',e); }
     render();
     renderTrainers();
     renderTrinkets();
+    renderItems();
   }catch(err){
     console.error(err);
     document.getElementById('status').textContent='데이터를 불러오지 못했습니다: '+err.message;
-    document.getElementById('grid').innerHTML='<div class="empty">사이트 데이터 로드 중 오류가 발생했습니다.<br><br><b>characters.json / trainers.json / trinkets.json의 위치와 파일명을 확인하세요.</b></div>';
+    document.getElementById('grid').innerHTML='<div class="empty">사이트 데이터 로드 중 오류가 발생했습니다.<br><br><b>characters.json / trainers.json / trinkets.json / items.json의 위치와 파일명을 확인하세요.</b></div>';
   }
 }
 init();
