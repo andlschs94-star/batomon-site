@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.016</title>
+<title>바토몬 원향 도감 v0.017</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -73,13 +73,13 @@
 .eventChoice{font-weight:700}
 .eventReward{margin-top:4px;color:#b7d7ff}
 .eventSub{margin-top:3px;font-size:12px;opacity:.72}
-</style>
+.sectionCalcLink{height:40px;display:inline-flex;align-items:center;border:1px solid #7c8fa6;border-radius:10px;background:#18222d;color:#fff;padding:0 16px;font-weight:800;text-decoration:none}.sectionCalcLink:hover{background:#243342}</style>
 <!-- English originals are retained in trainers.json only: name_en / ability_en -->
 </head>
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.016</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.017</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -94,10 +94,11 @@
     <button id="tabItem" onclick="switchSection('item')">도구 40종</button>
     <button id="tabEvent" onclick="switchSection('event')">이벤트 15종</button>
     <button id="tabMechanic" onclick="switchSection('mechanic')">시스템 30종</button>
+    <a class="sectionCalcLink" href="./damage-calculator.html">⚔ 데미지 계산기</a>
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.016</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.017</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -571,7 +572,7 @@ function renderMechanics(){
 async function init(){
   loadEdits();
   try{
-    const res=await fetch('./characters.json?v=0.016&cb='+Date.now(),{cache:'no-store'});
+    const res=await fetch('./characters.json?v=0.017&cb='+Date.now(),{cache:'no-store'});
     if(!res.ok) throw new Error(`characters.json HTTP ${res.status}`);
     const data=await res.json();
     characters=Array.isArray(data)?data:(data.characters||[]);
@@ -580,7 +581,7 @@ async function init(){
     // 트레이너 파일은 별도로 로드합니다. 파일이 없거나 GitHub Pages 배포가 아직 안 된 경우에도
     // 사이트의 바토몬 도감은 정상적으로 열리고, 아래 내장된 공식 데이터로 트레이너 탭을 표시합니다.
     try{
-      const tr=await fetch('./trainers.json?cb='+Date.now(),{cache:'no-store'});
+      const tr=await fetch('./trainers.json?v=0.017&cb='+Date.now(),{cache:'no-store'});
       if(tr.ok){
         const td=await tr.json();
         trainers=Array.isArray(td)?td:(td.trainers||[]);
@@ -591,13 +592,13 @@ async function init(){
 
     document.getElementById('status').textContent=`데이터 로드 완료 · 원향 ${characters.length}마리 · 공식 데이터 적용`;
     try{
-      const ev=await fetch('./events.json?cb='+Date.now(),{cache:'no-store'});
+      const ev=await fetch('./events.json?v=0.017&cb='+Date.now(),{cache:'no-store'});
     if(ev.ok){ const ed=await ev.json(); events=Array.isArray(ed)?ed:(ed.events||[]); }
-    const it=await fetch('./items.json?cb='+Date.now(),{cache:'no-store'});
+    const it=await fetch('./items.json?v=0.017&cb='+Date.now(),{cache:'no-store'});
     if(it.ok){ const id=await it.json(); items=Array.isArray(id)?id:(id.items||[]); }
-    const tk=await fetch('./trinkets.json?cb='+Date.now(),{cache:'no-store'});
+    const tk=await fetch('./trinkets.json?v=0.017&cb='+Date.now(),{cache:'no-store'});
       if(tk.ok){ const kd=await tk.json(); trinkets=Array.isArray(kd)?kd:(kd.trinkets||[]); }
-    const mc=await fetch('./mechanics.json?cb='+Date.now(),{cache:'no-store'});
+    const mc=await fetch('./mechanics.json?v=0.017&cb='+Date.now(),{cache:'no-store'});
     if(mc.ok){ const md=await mc.json(); mechanics=Array.isArray(md)?md:(md.mechanics||[]); }
     }catch(e){ console.warn('trinkets.json 로드 실패',e); }
     render();

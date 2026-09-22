@@ -177,7 +177,7 @@
         "Bug",
         "Toxic"
       ],
-      "officialUrl": "https://batomon.com/batomon/toximoth",
+      "officialUrl": "https://batomon.com/batomon/venopuff",
       "price": 15,
       "type": "Bug / Toxic",
       "levels": [
@@ -309,7 +309,7 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "official",
       "image_url": "https://batomon.com/game/25377295/monster/venopuff.png",
-      "image_local": "assets/batomon/toximoth.png",
+      "image_local": "assets/batomon/venopuff.png",
       "officialRarity_ko": "일반",
       "name_en": "Venopuff",
       "region": "원향",
@@ -2089,7 +2089,7 @@
       "officialTypes": [
         "Toxic"
       ],
-      "officialUrl": "https://batomon.com/batomon/venopuff",
+      "officialUrl": "https://batomon.com/batomon/puffloon",
       "price": 15,
       "type": "Toxic",
       "levels": [
@@ -2221,7 +2221,7 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "official",
       "image_url": "https://batomon.com/game/25377295/monster/puffloon.png",
-      "image_local": "assets/batomon/venopuff.png",
+      "image_local": "assets/batomon/puffloon.png",
       "officialRarity_ko": "일반",
       "name_en": "Puffloon",
       "region": "원향",
@@ -7915,7 +7915,7 @@
       "officialTypes": [
         "Fire"
       ],
-      "officialUrl": "https://batomon.com/batomon/basilord",
+      "officialUrl": "https://batomon.com/batomon/cobrex",
       "price": 100,
       "type": "Fire",
       "levels": [
@@ -8047,7 +8047,7 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "official",
       "image_url": "https://batomon.com/game/25377295/monster/cobrex.png",
-      "image_local": "assets/batomon/basilord.png",
+      "image_local": "assets/batomon/cobrex.png",
       "officialRarity_ko": "전설",
       "name_en": "Cobrex",
       "region": "원향",
@@ -9396,6 +9396,6 @@
       "region_en": "Wonhyang"
     }
   ],
-  "site_version": "0.015",
+  "site_version": "0.017",
   "region": "원향"
 }
