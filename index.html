@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.019</title>
+<title>바토몬 원향 도감 v0.020</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -73,7 +73,7 @@
 .eventChoice{font-weight:700}
 .eventReward{margin-top:4px;color:#b7d7ff}
 .eventSub{margin-top:3px;font-size:12px;opacity:.72}
-/* v0.019 Damage Calculator UI */
+/* v0.020 Damage Calculator UI */
 .calcPage{background:#0c6673;min-height:calc(100vh - 30px);border:1px solid #153f4a;border-radius:18px;overflow:hidden;box-shadow:0 18px 55px rgba(0,0,0,.28)}
 .calcTopbar{height:58px;background:linear-gradient(180deg,#20c3f0 0%,#13a8d4 100%);border-bottom:3px solid #087c9d;display:flex;align-items:center;justify-content:center;gap:clamp(24px,5vw,90px);font-weight:900;color:#fff;text-shadow:2px 2px 0 rgba(0,0,0,.18)}
 .calcStatus{display:flex;align-items:center;gap:10px;font-size:20px;min-width:110px;justify-content:center}.calcIcon{font-size:30px;line-height:1}.calcDay{font-size:30px}.calcCounter{font-size:20px}
@@ -82,6 +82,19 @@
 .calcCenter{display:flex;flex-direction:column;gap:14px}.calcBox{background:#f3f3f4;border:5px solid #8e929d;outline:2px solid #252a31;border-radius:7px;box-shadow:4px 4px 0 rgba(0,0,0,.2);overflow:hidden}.calcBoxHead{height:40px;padding:6px 12px;font-size:20px;font-weight:900;color:#fff;background:#ffc20f;border-bottom:4px solid #e2a500;text-shadow:2px 2px 0 rgba(0,0,0,.15)}.calcBoxHead.team{background:#ef4d6a;border-bottom-color:#cf3450}.calcSlots{padding:6px;display:grid;gap:7px}.calcSlots.bench{grid-template-columns:repeat(4,1fr)}.calcSlots.team{grid-template-columns:repeat(3,1fr)}.calcSlot{height:110px;background:#fff;border:4px solid #b8bbc4;box-shadow:inset 0 0 0 2px #e6e7ea;display:flex;align-items:center;justify-content:center;position:relative;color:#b3b6bd;font-size:12px;font-weight:900}.calcSlot:after{content:'+';font-size:26px;color:#d0d2d7}.calcSlot:hover{border-color:#8ea7b7;background:#f9fcfd}.calcSlot.teamSlot{height:112px}.calcTeamHint{font-size:12px;color:#66707d;text-align:center;padding:2px 0 8px}.calcRightSpace{min-height:1px}
 .calcShop{margin-top:12px;background:#eef0f1;border:5px solid #8e929d;outline:2px solid #252a31;border-radius:7px;box-shadow:4px 4px 0 rgba(0,0,0,.2);min-height:180px;overflow:hidden}.calcShopHead{height:44px;background:#65c9ee;color:#10232c;border-bottom:4px solid #3ba5c9;font-size:22px;font-weight:900;padding:7px 14px}.calcShopBlank{height:135px;background:#f7f7f7}
 .calcNotice{margin-top:10px;color:#d9f5fb;font-size:12px;text-align:center}.calcNavButton{position:relative}.calcNavButton.on{background:#173247!important;color:#6fd9ff!important}
+/* v0.020 Trainer selector UI */
+.calcTrainerPanel{cursor:pointer;position:relative}
+.calcTrainerPanel:focus-visible{outline:4px solid #20c3f0;outline-offset:3px}
+.calcTrainerChange{position:absolute;right:10px;top:10px;background:rgba(0,0,0,.58);color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:7px;padding:5px 9px;font-size:12px;font-weight:800;z-index:2}
+.trainerSelectOverlay{position:fixed;inset:0;background:rgba(0,0,0,.68);display:none;align-items:center;justify-content:center;padding:20px;z-index:1000}
+.trainerSelectModal{width:min(900px,96vw);max-height:min(760px,90vh);background:#f1f3f5;border:5px solid #8e929d;outline:2px solid #252a31;border-radius:9px;box-shadow:8px 8px 0 rgba(0,0,0,.28);overflow:hidden;display:flex;flex-direction:column}
+.trainerSelectHead{background:#ffc20f;color:#fff;border-bottom:4px solid #e2a500;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px;text-shadow:2px 2px 0 rgba(0,0,0,.15)}
+.trainerSelectHead strong{font-size:21px}.trainerSelectClose{width:38px;height:38px;border:0;border-radius:7px;background:#fff;color:#444;font-size:25px;font-weight:900;cursor:pointer}
+.trainerSelectTools{padding:10px;background:#fff;border-bottom:1px solid #c8ccd2}.trainerSelectTools input{width:100%;box-sizing:border-box;padding:10px 12px;border:2px solid #c4c8cf;border-radius:7px;font-size:15px}
+.trainerSelectGrid{padding:12px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;overflow:auto}
+.trainerSelectCard{border:3px solid #b9bdc5;background:#fff;border-radius:7px;padding:8px;cursor:pointer;text-align:left;min-width:0}.trainerSelectCard:hover,.trainerSelectCard.selected{border-color:#ffc20f;background:#fffbea}.trainerSelectCard img{display:block;width:100%;height:92px;object-fit:contain;background:#eceef0;border-radius:5px;margin-bottom:7px}.trainerSelectName{font-weight:900;color:#3e4650;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.trainerSelectNameEn{font-size:10px;color:#7b838e;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.trainerSelectRegion{font-size:10px;color:#9a6900;margin-top:5px}.trainerSelectEmpty{grid-column:1/-1;text-align:center;color:#707782;padding:30px}
+@media(max-width:720px){.trainerSelectGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.trainerSelectCard img{height:80px}}
+
 @media(max-width:1050px){.calcBattleArea{grid-template-columns:270px 1fr}.calcRightSpace{display:none}.calcTrainerImage{height:165px}.calcTrainerAbility{font-size:15px}.calcSlot,.calcSlot.teamSlot{height:95px}}
 @media(max-width:720px){.calcTopbar{gap:8px;justify-content:space-around}.calcStatus{font-size:14px;min-width:auto}.calcDay{font-size:20px}.calcCounter{font-size:14px}.calcBattleArea{grid-template-columns:1fr}.calcTrainerPanel{max-width:420px;margin:auto;width:100%}.calcCenter{width:100%}.calcSlots.bench{grid-template-columns:repeat(2,1fr)}.calcSlots.team{grid-template-columns:repeat(2,1fr)}.calcBoard{padding:10px}.calcShop{min-height:140px}.calcShopBlank{height:95px}}
 
@@ -91,7 +104,7 @@
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.019</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.020</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -113,10 +126,11 @@
       </div>
       <div class="calcBoard">
         <div class="calcBattleArea">
-          <aside class="calcTrainerPanel">
-            <div class="calcTrainerTitle">알 브리더</div>
+          <aside class="calcTrainerPanel" id="calcTrainerPanel" tabindex="0" role="button" aria-label="트레이너 선택">
+            <div class="calcTrainerChange">트레이너 변경</div>
+            <div class="calcTrainerTitle" id="calcTrainerTitle">알 브리더</div>
             <div class="calcTrainerImage"><img id="calcTrainerImage" alt="알 브리더"></div>
-            <div class="calcTrainerAbility">5일 뒤 레벨 2 <span style="color:#a53dc5">영웅</span> 등급<br>바토몬으로 부화하는 보라색 알을 얻어요.</div>
+            <div class="calcTrainerAbility" id="calcTrainerAbility">트레이너를 불러오는 중…</div>
             <div class="calcTrainerHp"><span>HP</span><div class="calcHpBar">300</div></div>
           </aside>
 
@@ -160,7 +174,7 @@
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.019</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.020</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -234,6 +248,14 @@
     <div id="mechanicStatus" class="trainerStatus">mechanics.json 불러오는 중…</div>
     <div id="mechanicGrid" class="mechanicsGrid"></div>
   </section>
+  </div>
+</div>
+
+<div id="trainerSelectOverlay" class="trainerSelectOverlay" aria-hidden="true">
+  <div class="trainerSelectModal" role="dialog" aria-modal="true" aria-labelledby="trainerSelectTitle">
+    <div class="trainerSelectHead"><strong id="trainerSelectTitle">트레이너 선택</strong><button type="button" class="trainerSelectClose" id="trainerSelectClose" aria-label="닫기">×</button></div>
+    <div class="trainerSelectTools"><input id="calcTrainerSearch" placeholder="트레이너 이름 검색" autocomplete="off"></div>
+    <div id="calcTrainerGrid" class="trainerSelectGrid"></div>
   </div>
 </div>
 
@@ -373,7 +395,13 @@ document.getElementById('fileInput').addEventListener('change',e=>{const f=e.tar
 document.getElementById('zoom').addEventListener('input',e=>{work.zoom=Number(e.target.value);drawEditor()});document.getElementById('posX').addEventListener('input',e=>{work.x=Number(e.target.value);drawEditor()});document.getElementById('posY').addEventListener('input',e=>{work.y=Number(e.target.value);drawEditor()});
 canvas.addEventListener('pointerdown',e=>{dragging=true;canvas.setPointerCapture(e.pointerId);dragStart={x:e.clientX,y:e.clientY,ox:Number(work.x||0),oy:Number(work.y||0)}});canvas.addEventListener('pointermove',e=>{if(!dragging)return;const r=canvas.getBoundingClientRect();work.x=Math.max(-500,Math.min(500,dragStart.ox+(e.clientX-dragStart.x)*canvas.width/r.width));work.y=Math.max(-500,Math.min(500,dragStart.oy+(e.clientY-dragStart.y)*canvas.height/r.height));document.getElementById('posX').value=work.x;document.getElementById('posY').value=work.y;drawEditor()});canvas.addEventListener('pointerup',()=>dragging=false);canvas.addEventListener('pointercancel',()=>dragging=false);
 for(const id of ['statsOverlay','editOverlay'])document.getElementById(id).addEventListener('click',e=>{if(e.target.id===id){id==='statsOverlay'?closeStats():closeEditor()}});
-window.addEventListener('keydown',e=>{if(e.key==='Escape'){if(document.getElementById('editOverlay').style.display==='flex')closeEditor();else if(document.getElementById('statsOverlay').style.display==='flex')closeStats()}});
+window.addEventListener('keydown',e=>{if(e.key==='Escape'){if(document.getElementById('trainerSelectOverlay').style.display==='flex')closeTrainerSelector();else if(document.getElementById('editOverlay').style.display==='flex')closeEditor();else if(document.getElementById('statsOverlay').style.display==='flex')closeStats()}});
+
+const calcTrainerPanel=document.getElementById('calcTrainerPanel');
+if(calcTrainerPanel){calcTrainerPanel.addEventListener('click',openTrainerSelector);calcTrainerPanel.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openTrainerSelector()}})}
+document.getElementById('trainerSelectClose')?.addEventListener('click',closeTrainerSelector);
+document.getElementById('trainerSelectOverlay')?.addEventListener('click',e=>{if(e.target.id==='trainerSelectOverlay')closeTrainerSelector()});
+document.getElementById('calcTrainerSearch')?.addEventListener('input',renderCalcTrainerList);
 
 document.getElementById('search').addEventListener('input',render);
 const trainerSearch=document.getElementById('trainerSearch'); if(trainerSearch)trainerSearch.addEventListener('input',renderTrainers);
@@ -386,6 +414,42 @@ const eventSchedule=document.getElementById('eventSchedule'); if(eventSchedule)e
 const mechanicSearch=document.getElementById('mechanicSearch'); if(mechanicSearch)mechanicSearch.addEventListener('input',renderMechanics);
 const mechanicCategory=document.getElementById('mechanicCategory'); if(mechanicCategory)mechanicCategory.addEventListener('change',renderMechanics);document.getElementById('rank').addEventListener('change',render);document.getElementById('sort').addEventListener('change',render);document.getElementById('resetEdits').addEventListener('click',()=>{if(!confirm('모든 사진 수정 내용을 이 브라우저에서 삭제할까요?'))return;edits={};saveEdits();render()});
 
+
+let calcSelectedTrainerId='egg-breeder';
+
+function getTrainerName(t){return t?.name_ko||t?.name_en||t?.name||'???'}
+function getTrainerAbility(t){return t?.ability_ko||t?.ability_en||t?.ability||'능력 설명 없음'}
+function updateCalcTrainer(){
+  const t=trainers.find(x=>x.id===calcSelectedTrainerId)||trainers.find(x=>x.id==='egg-breeder')||trainers[0];
+  if(!t)return;
+  calcSelectedTrainerId=t.id;
+  const name=getTrainerName(t);
+  document.getElementById('calcTrainerTitle').textContent=name;
+  document.getElementById('calcTrainerAbility').textContent=getTrainerAbility(t);
+  const img=document.getElementById('calcTrainerImage');
+  img.alt=name+' 트레이너';
+  img.src=t.image_url||'';
+}
+function renderCalcTrainerList(){
+  const g=document.getElementById('calcTrainerGrid'); if(!g)return;
+  const q=(document.getElementById('calcTrainerSearch')?.value||'').trim().toLowerCase();
+  const list=trainers.filter(t=>!q||[t.name_ko,t.name_en,t.name,t.ability_ko,t.ability_en,t.ability,t.region_ko,t.region].filter(Boolean).join(' ').toLowerCase().includes(q));
+  g.innerHTML='';
+  if(!list.length){g.innerHTML='<div class="trainerSelectEmpty">검색 결과가 없습니다.</div>';return;}
+  for(const t of list){
+    const card=document.createElement('button');card.type='button';card.className='trainerSelectCard'+(t.id===calcSelectedTrainerId?' selected':'');
+    const img=document.createElement('img');img.src=t.image_url||'';img.alt=getTrainerName(t);img.loading='lazy';img.referrerPolicy='no-referrer';
+    const name=document.createElement('div');name.className='trainerSelectName';name.textContent=getTrainerName(t);
+    const en=document.createElement('div');en.className='trainerSelectNameEn';en.textContent=t.name_en||t.name||'';
+    const region=document.createElement('div');region.className='trainerSelectRegion';region.textContent=t.region_ko||t.region||'지역 미표기';
+    card.append(img,name,en,region);card.addEventListener('click',()=>{calcSelectedTrainerId=t.id;updateCalcTrainer();closeTrainerSelector()});g.appendChild(card);
+  }
+}
+function openTrainerSelector(){
+  const o=document.getElementById('trainerSelectOverlay'); if(!o)return;
+  document.getElementById('calcTrainerSearch').value=''; renderCalcTrainerList(); o.style.display='flex'; o.setAttribute('aria-hidden','false'); document.getElementById('calcTrainerSearch').focus();
+}
+function closeTrainerSelector(){const o=document.getElementById('trainerSelectOverlay');if(!o)return;o.style.display='none';o.setAttribute('aria-hidden','true')}
 
 function switchSection(section){
   const isCalc=section==='calculator';
@@ -634,7 +698,7 @@ function renderMechanics(){
 async function init(){
   loadEdits();
   try{
-    const res=await fetch('./characters.json?v=0.019&cb='+Date.now(),{cache:'no-store'});
+    const res=await fetch('./characters.json?v=0.020&cb='+Date.now(),{cache:'no-store'});
     if(!res.ok) throw new Error(`characters.json HTTP ${res.status}`);
     const data=await res.json();
     characters=Array.isArray(data)?data:(data.characters||[]);
@@ -643,7 +707,7 @@ async function init(){
     // 트레이너 파일은 별도로 로드합니다. 파일이 없거나 GitHub Pages 배포가 아직 안 된 경우에도
     // 사이트의 바토몬 도감은 정상적으로 열리고, 아래 내장된 공식 데이터로 트레이너 탭을 표시합니다.
     try{
-      const tr=await fetch('./trainers.json?v=0.019&cb='+Date.now(),{cache:'no-store'});
+      const tr=await fetch('./trainers.json?v=0.020&cb='+Date.now(),{cache:'no-store'});
       if(tr.ok){
         const td=await tr.json();
         trainers=Array.isArray(td)?td:(td.trainers||[]);
@@ -656,16 +720,17 @@ async function init(){
     }catch(e){ console.warn('trainers.json 로드 실패 → 내장 트레이너 데이터 사용',e); }
 
     if(!trainers.length) trainers=[{"id":"mysterious-trainer","name":"???","ability":"Gain MissingN.","region":null,"tags":["Not offered by Mysterious Mask","Outside random trainer choices"],"url":"https://batomon.com/trainers/mysterious-trainer"},{"id":"black-belt","name":"Black Belt","ability":"On Battle Start If you have exactly 1 Fighting monster on your team, activate its On Victory ability.","region":"Jinto","tags":[],"url":"https://batomon.com/trainers/black-belt"},{"id":"bug-catcher","name":"Bug Catcher","ability":"The first Bug monster you buy each day is free.","region":"Pantra Jinto","tags":[],"url":"https://batomon.com/trainers/bug-catcher"},{"id":"burglar","name":"Burglar","ability":"Trinket gifts only offer 2 choices, but you can take both of them.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/burglar"},{"id":"chef","name":"Chef","ability":"Your singled-typed monsters gain Fire typing. Your Fire monsters have +2 Burn.","region":"Pantra Jinto","tags":[],"url":"https://batomon.com/trainers/pyromaniac"},{"id":"chemist","name":"Chemist","ability":"Your Toxic monsters have +1 Poison. When any monster levels up, increase this effect by +1 Poison.","region":"Pantra Jinto","tags":[],"url":"https://batomon.com/trainers/chemist"},{"id":"egg-breeder","name":"Egg Breeder","ability":"Gain a Purple Egg that hatches into a level 2 Super Rare monster in 5 days.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/egg-breeder"},{"id":"gamer","name":"Gamer","ability":"Gain a Mythical monster and $30 on day 9.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/gamer"},{"id":"gentleman","name":"Gentleman","ability":"From day 4 onwards, your shop no longer stocks Common or Uncommon monsters.","region":"Pantra Jinto","tags":["Unique","Not offered by Mysterious Mask"],"url":"https://batomon.com/trainers/gentleman"},{"id":"lucky-girl","name":"Lucky Girl","ability":"SHINY monsters are more likely to appear.","region":"Pantra Jinto","tags":[],"url":"https://batomon.com/trainers/youngster-f"},{"id":"mad-scientist","name":"Mad Scientist","ability":"On day 7, transform monsters on your active team into random level 1 Legendary monsters.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/mad-scientist"},{"id":"masked-man","name":"Masked Man","ability":"Every 4 days, choose a trainer and gain their ability.","region":"Pantra Jinto","tags":["Not offered by Mysterious Mask"],"url":"https://batomon.com/trainers/masked-man"},{"id":"monster-ranger","name":"Monster Ranger","ability":"Start with an Uncommon monster. Get another copy of that monster every 2 days.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/monster-ranger"},{"id":"musician","name":"Musician","ability":"If you have exactly 1 Electric monster on your team, it will have +150% Shock.","region":"Pantra","tags":[],"url":"https://batomon.com/trainers/musician"},{"id":"painter","name":"Painter","ability":"Random species will be painted with every type this run.","region":"Pantra Jinto","tags":["Unique","Not offered by Mysterious Mask"],"url":"https://batomon.com/trainers/painter"},{"id":"redhead","name":"Redhead","ability":"On Victory Give your Fire monsters +2 Burn permanently.","region":"Pantra Jinto","tags":[],"url":"https://batomon.com/trainers/redhead"},{"id":"rich-lady","name":"Rich Lady","ability":"Gain shop rank +2 and $10.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/lady"},{"id":"scavenger","name":"Scavenger","ability":"Gain an additional copy of each non-unique Common or Uncommon Trinket from a gift.","region":"Pantra Jinto","tags":[],"url":"https://batomon.com/trainers/scavenger"},{"id":"shopkeeper","name":"Shopkeeper","ability":"Your shop stocks Item 1 rarity tier higher and cost 15% less.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/shopkeeper"},{"id":"swim-coach","name":"Swim Coach","ability":"Gain a random Water monster each day.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/swim-coach"},{"id":"treasure-hunter","name":"Treasure Hunter","ability":"When you get Trinket gifts, your choices are 1 rarity tier higher.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/treasure-hunter"},{"id":"twins","name":"Twins","ability":"When monsters merge into level 3, gain an exact copy.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/twins"},{"id":"youngster","name":"Youngster","ability":"Gain 3 free rerolls every day.","region":"Pantra Jinto","tags":["Unique"],"url":"https://batomon.com/trainers/youngster-m"}];
+    updateCalcTrainer();
 
     document.getElementById('status').textContent=`데이터 로드 완료 · 원향 ${characters.length}마리 · 공식 데이터 적용`;
     try{
-      const ev=await fetch('./events.json?v=0.019&cb='+Date.now(),{cache:'no-store'});
+      const ev=await fetch('./events.json?v=0.020&cb='+Date.now(),{cache:'no-store'});
     if(ev.ok){ const ed=await ev.json(); events=Array.isArray(ed)?ed:(ed.events||[]); }
-    const it=await fetch('./items.json?v=0.019&cb='+Date.now(),{cache:'no-store'});
+    const it=await fetch('./items.json?v=0.020&cb='+Date.now(),{cache:'no-store'});
     if(it.ok){ const id=await it.json(); items=Array.isArray(id)?id:(id.items||[]); }
-    const tk=await fetch('./trinkets.json?v=0.019&cb='+Date.now(),{cache:'no-store'});
+    const tk=await fetch('./trinkets.json?v=0.020&cb='+Date.now(),{cache:'no-store'});
       if(tk.ok){ const kd=await tk.json(); trinkets=Array.isArray(kd)?kd:(kd.trinkets||[]); }
-    const mc=await fetch('./mechanics.json?v=0.019&cb='+Date.now(),{cache:'no-store'});
+    const mc=await fetch('./mechanics.json?v=0.020&cb='+Date.now(),{cache:'no-store'});
     if(mc.ok){ const md=await mc.json(); mechanics=Array.isArray(md)?md:(md.mechanics||[]); }
     }catch(e){ console.warn('trinkets.json 로드 실패',e); }
     render();
