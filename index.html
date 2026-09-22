@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.010</title>
+<title>바토몬 원향 도감 v0.011</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -64,7 +64,7 @@
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.010</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22) + 트레이너 23종 + 장신구 93종 + 도구 40종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.011</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22) + 트레이너 23종 + 장신구 93종 + 도구 40종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -81,7 +81,7 @@
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.010</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.011</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -99,7 +99,7 @@
         <option value="Common">일반</option>
         <option value="Uncommon">고급</option>
         <option value="Rare">희귀</option>
-        <option value="Super Rare">슈퍼 레어</option>
+        <option value="Super Rare">영웅</option>
         <option value="Legendary">전설</option>
         <option value="Mythical">신화</option>
       </select>
@@ -116,7 +116,7 @@
         <option value="Common">일반</option>
         <option value="Uncommon">고급</option>
         <option value="Rare">희귀</option>
-        <option value="Super Rare">슈퍼 레어</option>
+        <option value="Super Rare">영웅</option>
         <option value="Legendary">전설</option>
         <option value="Mythical">신화</option>
       </select>
@@ -315,14 +315,14 @@ function renderTrainers(){
     const head=document.createElement('div');head.className='trainerHead';
     const left=document.createElement('div');
     const nm=document.createElement('div');nm.className='trainerName';nm.textContent=t.name_ko||t.name;
-    const rg=document.createElement('div');rg.className='trainerRegion';rg.textContent=t.region||'특수 / 미표기';
+    const rg=document.createElement('div');rg.className='trainerRegion';rg.textContent=t.region_ko||t.region||'특수 / 미표기';
     left.append(nm,rg);head.append(left);
     const portrait=document.createElement('div');portrait.className='trainerPortrait';
     const img=document.createElement('img');img.src=t.image_url||'';img.alt=(t.name_ko||t.name)+' 트레이너';img.loading='lazy';img.referrerPolicy='no-referrer';
     img.onerror=()=>{ if(!img.dataset.proxy && t.image_url){img.dataset.proxy='1';img.src='https://images.weserv.nl/?url='+encodeURIComponent(t.image_url);return;} portrait.style.display='none'; };portrait.appendChild(img);
     const ability=document.createElement('div');ability.className='trainerAbility';ability.textContent=t.ability_ko||t.ability;
     const tags=document.createElement('div');tags.className='trainerTags';
-    for(const tag of (t.tags||[])){const el=document.createElement('span');el.className='trainerTag';el.textContent=tag;tags.appendChild(el);}
+    for(const tag of (t.tags_ko||t.tags||[])){const el=document.createElement('span');el.className='trainerTag';el.textContent=tag;tags.appendChild(el);}
     const link=document.createElement('a');link.href=t.url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='공식 원문 보기 ↗';
     card.append(portrait,head,ability,tags,link);g.appendChild(card);
   }
@@ -369,7 +369,7 @@ function renderTrinkets(){
     rg.className='trinketRarity';
     const rarityKo={
       'Common':'일반','Uncommon':'고급','Rare':'희귀',
-      'Super Rare':'슈퍼 레어','Legendary':'전설','Mythical':'신화'
+      'Super Rare':'영웅','Legendary':'전설','Mythical':'신화'
     };
     rg.textContent=(rarityKo[t.rarity]||t.rarity||'미표기')+(t.unique?' · 고유':'');
     left.append(nm,rg);
@@ -443,7 +443,7 @@ function renderItems(){
     const nm=document.createElement('div');nm.className='trainerName';nm.textContent=t.name_ko||t.name_en;
     const rg=document.createElement('div');rg.className='trinketRarity';rg.textContent=(t.rarity_ko||t.rarity||'미표기')+(t.appears_once_per_day?' · 하루 1회 등장':'');
     left.append(nm,rg);head.append(left);
-    const meta=document.createElement('div');meta.className='trinketRarity';meta.textContent=`가격 $${t.cost}`;
+    const meta=document.createElement('div');meta.className='trinketRarity';meta.textContent=`비용 $${t.cost}`;
     const effect=document.createElement('div');effect.className='trinketEffect';effect.textContent=t.effect_ko||t.effect_en||'효과 정보 없음';
     const link=document.createElement('a');link.href=t.source_url||'https://batomon.com/items';link.target='_blank';link.rel='noopener noreferrer';link.textContent='공식 원문 보기 ↗';
     card.append(portrait,head,meta,effect,link);g.appendChild(card);
@@ -500,7 +500,7 @@ function renderEvents(){
 async function init(){
   loadEdits();
   try{
-    const res=await fetch('./characters.json?v=0.010&cb='+Date.now(),{cache:'no-store'});
+    const res=await fetch('./characters.json?v=0.011&cb='+Date.now(),{cache:'no-store'});
     if(!res.ok) throw new Error(`characters.json HTTP ${res.status}`);
     const data=await res.json();
     characters=Array.isArray(data)?data:(data.characters||[]);

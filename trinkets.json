@@ -13,7 +13,7 @@
       "id": "alpha-crown",
       "name_ko": "알파 왕관",
       "name_en": "Alpha Crown",
-      "effect_ko": "전투 시작 시 자신의 바토몬' 피해 is set to your top-middle 바토몬's 피해이번 전투 동안.",
+      "effect_ko": "전투 시작 시 이번 전투 동안 자신의 모든 바토몬의 피해를 가장 가운데 위쪽 바토몬의 피해와 동일하게 설정합니다.",
       "effect_en": "On Battle Start Your monsters' Damage is set to your top-middle monster's Damage for this battle.",
       "rarity": "Legendary",
       "unique": true,
@@ -21,13 +21,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/alphas_crown.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/alphas_crown.png"
+      "image_local": "assets/trinkets/alphas_crown.png",
+      "rarity_ko": "전설",
+      "site_version": "0.011"
     },
     {
       "id": "ancient-plume",
       "name_ko": "고대 깃털",
       "name_en": "Ancient Plume",
-      "effect_ko": "전투 시작 시 If you only은 1 바토몬, give it +1 멀티캐스트 영구적으로 and 이 장신구를 파괴합니다..",
+      "effect_ko": "전투 시작 시 바토몬이 1마리뿐이라면 해당 바토몬에게 멀티캐스트 +1을 영구적으로 부여하고 이 장신구를 파괴합니다.",
       "effect_en": "On Battle Start If you only have 1 monster, give it +1 Multicast permanently and destroy this.",
       "rarity": "Rare",
       "unique": false,
@@ -35,13 +37,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/ancient_plume.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/ancient_plume.png"
+      "image_local": "assets/trinkets/ancient_plume.png",
+      "rarity_ko": "희귀",
+      "site_version": "0.011"
     },
     {
       "id": "arcade-coins",
       "name_ko": "아케이드 코인",
       "name_en": "Arcade Coins",
-      "effect_ko": "Gain 10 무료 리롤.",
+      "effect_ko": "무료 리롤 10회를 획득합니다.",
       "effect_en": "Gain 10 free rerolls.",
       "rarity": "Rare",
       "unique": true,
@@ -49,7 +53,9 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/arcade_coins.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/arcade_coins.png"
+      "image_local": "assets/trinkets/arcade_coins.png",
+      "rarity_ko": "희귀",
+      "site_version": "0.011"
     },
     {
       "id": "barbell",
@@ -63,13 +69,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/barbell.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/barbell.png"
+      "image_local": "assets/trinkets/barbell.png",
+      "rarity_ko": "전설",
+      "site_version": "0.011"
     },
     {
       "id": "bargain-bin",
       "name_ko": "특가 상자",
       "name_en": "Bargain Bin",
-      "effect_ko": "The first 일반 바토몬 you buy each day is 무료.",
+      "effect_ko": "매일 처음 구매하는 일반 바토몬이 무료가 됩니다.",
       "effect_en": "The first Common monster you buy each day is free.",
       "rarity": "Common",
       "unique": true,
@@ -77,13 +85,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/bargain_bin.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/bargain_bin.png"
+      "image_local": "assets/trinkets/bargain_bin.png",
+      "rarity_ko": "일반",
+      "site_version": "0.011"
     },
     {
       "id": "blitz-bell",
       "name_ko": "질풍 종",
       "name_en": "Blitz Bell",
-      "effect_ko": "Monsters in your 상점은 +30% 쿨다운 속도.",
+      "effect_ko": "상점에 있는 바토몬의 쿨다운 속도가 +30% 증가합니다.",
       "effect_en": "Monsters in your shop have +30% Cooldown Speed.",
       "rarity": "Super Rare",
       "unique": false,
@@ -91,13 +101,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/blitz_bell.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/blitz_bell.png"
+      "image_local": "assets/trinkets/blitz_bell.png",
+      "rarity_ko": "영웅",
+      "site_version": "0.011"
     },
     {
       "id": "blue-incense",
       "name_ko": "푸른 향",
       "name_en": "Blue Incense",
-      "effect_ko": "The next 5 상점s will contain only 희귀 바토몬.",
+      "effect_ko": "다음 5번의 상점에는 희귀 바토몬만 등장합니다.",
       "effect_en": "The next 5 shops will contain only Rare monsters.",
       "rarity": "Rare",
       "unique": false,
@@ -105,13 +117,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/blue_incense.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/blue_incense.png"
+      "image_local": "assets/trinkets/blue_incense.png",
+      "rarity_ko": "희귀",
+      "site_version": "0.011"
     },
     {
       "id": "boxing-glove",
       "name_ko": "복싱 글러브",
       "name_en": "Boxing Glove",
-      "effect_ko": "승리 시 자신의 team 획득합니다. +5 피해 영구적으로.",
+      "effect_ko": "승리 시 자신의 팀에 피해 +5를 영구적으로 부여합니다.",
       "effect_en": "On Victory Your team gains +5 Damage permanently.",
       "rarity": "Common",
       "unique": false,
@@ -119,13 +133,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/boxing_glove.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/boxing_glove.png"
+      "image_local": "assets/trinkets/boxing_glove.png",
+      "rarity_ko": "일반",
+      "site_version": "0.011"
     },
     {
       "id": "bug-net",
       "name_ko": "곤충채집망",
       "name_en": "Bug Net",
-      "effect_ko": "벌레 바토몬 in the 상점 cost 3 less.",
+      "effect_ko": "상점의 벌레 타입 바토몬 비용이 3 감소합니다.",
       "effect_en": "Bug monsters in the shop cost 3 less.",
       "rarity": "Uncommon",
       "unique": true,
@@ -133,13 +149,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/bug_net.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/bug_net.png"
+      "image_local": "assets/trinkets/bug_net.png",
+      "rarity_ko": "고급",
+      "site_version": "0.011"
     },
     {
       "id": "candy-jar",
       "name_ko": "사탕 단지",
       "name_en": "Candy Jar",
-      "effect_ko": "전투 시작 시 자신의 일반 and 고급 바토몬 영구적으로 level up to level 3.",
+      "effect_ko": "전투 시작 시 자신의 일반 및 고급 바토몬을 영구적으로 레벨 3으로 올립니다.",
       "effect_en": "On Battle Start Your Common and Uncommon monsters permanently level up to level 3.",
       "rarity": "Legendary",
       "unique": true,
@@ -147,7 +165,9 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/candy_jar.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/candy_jar.png"
+      "image_local": "assets/trinkets/candy_jar.png",
+      "rarity_ko": "전설",
+      "site_version": "0.011"
     },
     {
       "id": "dryad-s-charm",
@@ -161,13 +181,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/dryad_s_charm.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/dryad_s_charm.png"
+      "image_local": "assets/trinkets/dryad_s_charm.png",
+      "rarity_ko": "전설",
+      "site_version": "0.011"
     },
     {
       "id": "earth-crest",
       "name_ko": "대지 문장",
       "name_en": "Earth Crest",
-      "effect_ko": "전투 시작 시 자신의 바토몬 in the 가장 오른쪽 열 획득합니다. +10% 보호막 영구적으로.",
+      "effect_ko": "전투 시작 시 가장 오른쪽 열의 자신의 바토몬에게 보호막 +10%를 영구적으로 부여합니다.",
       "effect_en": "On Battle Start Your monsters in the rightmost column gain +10% Shield permanently.",
       "rarity": "Uncommon",
       "unique": false,
@@ -175,13 +197,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/earth_crest.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/earth_crest.png"
+      "image_local": "assets/trinkets/earth_crest.png",
+      "rarity_ko": "고급",
+      "site_version": "0.011"
     },
     {
       "id": "echo-bell",
       "name_ko": "메아리 종",
       "name_en": "Echo Bell",
-      "effect_ko": "~할 때 you buy a 0 cost item, use it an additional time.",
+      "effect_ko": "비용이 0인 도구를 구매하면 해당 도구를 한 번 더 사용합니다.",
       "effect_en": "When you buy a 0 cost item, use it an additional time.",
       "rarity": "Super Rare",
       "unique": true,
@@ -189,13 +213,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/echo_bell.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/echo_bell.png"
+      "image_local": "assets/trinkets/echo_bell.png",
+      "rarity_ko": "영웅",
+      "site_version": "0.011"
     },
     {
       "id": "echo-charm",
       "name_ko": "메아리 부적",
       "name_en": "Echo Charm",
-      "effect_ko": "자신의 바토몬' On Bought abilities activate an additional time.",
+      "effect_ko": "자신의 바토몬의 구매 시 능력을 한 번 더 발동합니다.",
       "effect_en": "Your monsters' On Bought abilities activate an additional time.",
       "rarity": "Uncommon",
       "unique": true,
@@ -203,13 +229,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/echo_charm.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/echo_charm.png"
+      "image_local": "assets/trinkets/echo_charm.png",
+      "rarity_ko": "고급",
+      "site_version": "0.011"
     },
     {
       "id": "excalibur",
       "name_ko": "엑스칼리버",
       "name_en": "Excalibur",
-      "effect_ko": "자신의 바토몬은 +350 피해.",
+      "effect_ko": "자신의 바토몬에게 피해 +350을 부여합니다.",
       "effect_en": "Your monsters have +350 Damage.",
       "rarity": "Mythical",
       "unique": false,
@@ -217,13 +245,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/excalibur.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/excalibur.png"
+      "image_local": "assets/trinkets/excalibur.png",
+      "rarity_ko": "신화",
+      "site_version": "0.011"
     },
     {
       "id": "fake-diamond",
       "name_ko": "가짜 다이아몬드",
       "name_en": "Fake Diamond",
-      "effect_ko": "The next time you lose a battle, 획득합니다. $40.",
+      "effect_ko": "다음 전투에서 패배하면 $40를 획득합니다.",
       "effect_en": "The next time you lose a battle, gain $40.",
       "rarity": "Rare",
       "unique": false,
@@ -231,13 +261,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/fake_diamond.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/fake_diamond.png"
+      "image_local": "assets/trinkets/fake_diamond.png",
+      "rarity_ko": "희귀",
+      "site_version": "0.011"
     },
     {
       "id": "fancy-sword",
       "name_ko": "화려한 검",
       "name_en": "Fancy Sword",
-      "effect_ko": "자신의 바토몬은 +3% 피해 for each 장신구 you have.",
+      "effect_ko": "자신이 보유한 장신구 1개당 자신의 바토몬에게 피해 +3%를 부여합니다.",
       "effect_en": "Your monsters have +3% Damage for each Trinket you have.",
       "rarity": "Legendary",
       "unique": false,
@@ -245,13 +277,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/fancy_sword.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/fancy_sword.png"
+      "image_local": "assets/trinkets/fancy_sword.png",
+      "rarity_ko": "전설",
+      "site_version": "0.011"
     },
     {
       "id": "fire-bell",
       "name_ko": "불꽃 종",
       "name_en": "Fire Bell",
-      "effect_ko": "불꽃 바토몬 in your 상점은 +5 화상.",
+      "effect_ko": "상점의 불꽃 타입 바토몬이 화상 +5를 얻습니다.",
       "effect_en": "Fire monsters in your shop have +5 Burn.",
       "rarity": "Uncommon",
       "unique": false,
@@ -259,13 +293,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/fire_bell.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/fire_bell.png"
+      "image_local": "assets/trinkets/fire_bell.png",
+      "rarity_ko": "고급",
+      "site_version": "0.011"
     },
     {
       "id": "fire-orb",
       "name_ko": "불꽃 구슬",
       "name_en": "Fire Orb",
-      "effect_ko": "자신의 불꽃 바토몬은 +3 화상.",
+      "effect_ko": "자신의 불꽃 타입 바토몬이 화상 +3을 얻습니다.",
       "effect_en": "Your Fire monsters have +3 Burn.",
       "rarity": "Uncommon",
       "unique": false,
@@ -273,13 +309,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/fire_orb.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/fire_orb.png"
+      "image_local": "assets/trinkets/fire_orb.png",
+      "rarity_ko": "고급",
+      "site_version": "0.011"
     },
     {
       "id": "fool-s-gold",
       "name_ko": "황철석",
       "name_en": "Fool's Gold",
-      "effect_ko": "수입 증가 by $15. The 상점 no longer stocks 아이템.",
+      "effect_ko": "수입이 $15 증가합니다. 상점에 더 이상 도구가 등장하지 않습니다.",
       "effect_en": "Increase Income by $15. The shop no longer stocks Item.",
       "rarity": "Rare",
       "unique": true,
@@ -287,13 +325,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/fool_s_gold.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/fool_s_gold.png"
+      "image_local": "assets/trinkets/fool_s_gold.png",
+      "rarity_ko": "희귀",
+      "site_version": "0.011"
     },
     {
       "id": "giant-club",
       "name_ko": "거대 곤봉",
       "name_en": "Giant Club",
-      "effect_ko": "자신의 바토몬 with a Cooldown of 5 seconds or above은 +70% stats (except Cooldown and 멀티캐스트).",
+      "effect_ko": "쿨다운이 5초 이상인 자신의 바토몬은 쿨다운과 멀티캐스트를 제외한 능력치가 +70% 증가합니다.",
       "effect_en": "Your monsters with a Cooldown of 5 seconds or above have +70% stats (except Cooldown and Multicast).",
       "rarity": "Legendary",
       "unique": false,
@@ -301,13 +341,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/giant_club.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/giant_club.png"
+      "image_local": "assets/trinkets/giant_club.png",
+      "rarity_ko": "전설",
+      "site_version": "0.011"
     },
     {
       "id": "gold-bar",
       "name_ko": "금괴",
       "name_en": "Gold Bar",
-      "effect_ko": "수입 증가 by $10.",
+      "effect_ko": "수입이 $10 증가합니다.",
       "effect_en": "Increase Income by $10.",
       "rarity": "Rare",
       "unique": false,
@@ -315,13 +357,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/gold_bar.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/gold_bar.png"
+      "image_local": "assets/trinkets/gold_bar.png",
+      "rarity_ko": "희귀",
+      "site_version": "0.011"
     },
     {
       "id": "gold-bracelet",
       "name_ko": "금 팔찌",
       "name_en": "Gold Bracelet",
-      "effect_ko": "At the start of each day, give a random 바토몬 +8 판매 가치.",
+      "effect_ko": "매일 시작할 때 무작위 바토몬 1마리에게 판매 가치 +8을 부여합니다.",
       "effect_en": "At the start of each day, give a random monster +8 Sell Value.",
       "rarity": "Common",
       "unique": false,
@@ -329,13 +373,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/gold_bracelet.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/gold_bracelet.png"
+      "image_local": "assets/trinkets/gold_bracelet.png",
+      "rarity_ko": "일반",
+      "site_version": "0.011"
     },
     {
       "id": "gold-incense",
       "name_ko": "금 향",
       "name_en": "Gold Incense",
-      "effect_ko": "The next 5 상점s will contain only 전설 바토몬.",
+      "effect_ko": "다음 5번의 상점에는 전설 바토몬만 등장합니다.",
       "effect_en": "The next 5 shops will contain only Legendary monsters.",
       "rarity": "Legendary",
       "unique": false,
@@ -343,13 +389,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/gold_incense.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/gold_incense.png"
+      "image_local": "assets/trinkets/gold_incense.png",
+      "rarity_ko": "전설",
+      "site_version": "0.011"
     },
     {
       "id": "gold-nugget",
       "name_ko": "금덩이",
       "name_en": "Gold Nugget",
-      "effect_ko": "수입 증가 by $3.",
+      "effect_ko": "수입이 $3 증가합니다.",
       "effect_en": "Increase Income by $3.",
       "rarity": "Common",
       "unique": false,
@@ -357,13 +405,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/gold_nugget.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/gold_nugget.png"
+      "image_local": "assets/trinkets/gold_nugget.png",
+      "rarity_ko": "일반",
+      "site_version": "0.011"
     },
     {
       "id": "gold-trophy",
       "name_ko": "금 트로피",
       "name_en": "Gold Trophy",
-      "effect_ko": "승리 시 Gain $8.",
+      "effect_ko": "승리 시 $8를 획득합니다.",
       "effect_en": "On Victory Gain $8.",
       "rarity": "Common",
       "unique": false,
@@ -371,13 +421,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/gold_trophy.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/gold_trophy.png"
+      "image_local": "assets/trinkets/gold_trophy.png",
+      "rarity_ko": "일반",
+      "site_version": "0.011"
     },
     {
       "id": "gold-o-matic",
       "name_ko": "골드 자동기",
       "name_en": "Gold-o-matic",
-      "effect_ko": "수입 증가 by $30.",
+      "effect_ko": "수입이 $30 증가합니다.",
       "effect_en": "Increase Income by $30.",
       "rarity": "Legendary",
       "unique": false,
@@ -385,13 +437,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/gold_o_matic.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/gold_o_matic.png"
+      "image_local": "assets/trinkets/gold_o_matic.png",
+      "rarity_ko": "전설",
+      "site_version": "0.011"
     },
     {
       "id": "greedy-gloves",
       "name_ko": "욕심쟁이 장갑",
       "name_en": "Greedy Gloves",
-      "effect_ko": "You can take all of the choices from your next 장신구 gift.",
+      "effect_ko": "다음 장신구 선물의 모든 선택지를 가져갈 수 있습니다.",
       "effect_en": "You can take all of the choices from your next Trinket gift.",
       "rarity": "Uncommon",
       "unique": false,
@@ -399,13 +453,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/greedy_gloves.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/greedy_gloves.png"
+      "image_local": "assets/trinkets/greedy_gloves.png",
+      "rarity_ko": "고급",
+      "site_version": "0.011"
     },
     {
       "id": "grow-lamp",
       "name_ko": "성장 램프",
       "name_en": "Grow Lamp",
-      "effect_ko": "자신의 풀 바토몬 only need 2 copies to level up.",
+      "effect_ko": "자신의 풀 타입 바토몬은 레벨업에 2마리만 필요합니다.",
       "effect_en": "Your Grass monsters only need 2 copies to level up.",
       "rarity": "Super Rare",
       "unique": true,
@@ -413,13 +469,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/grow_lamp.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/grow_lamp.png"
+      "image_local": "assets/trinkets/grow_lamp.png",
+      "rarity_ko": "영웅",
+      "site_version": "0.011"
     },
     {
       "id": "haste-crown",
       "name_ko": "신속 왕관",
       "name_en": "Haste Crown",
-      "effect_ko": "자신의 top middle 바토몬은 +30% 쿨다운 속도.",
+      "effect_ko": "가장 가운데 위쪽 바토몬의 쿨다운 속도가 +30% 증가합니다.",
       "effect_en": "Your top middle monster has +30% Cooldown Speed.",
       "rarity": "Super Rare",
       "unique": false,
@@ -427,13 +485,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/haste_crown.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/haste_crown.png"
+      "image_local": "assets/trinkets/haste_crown.png",
+      "rarity_ko": "영웅",
+      "site_version": "0.011"
     },
     {
       "id": "haste-orb",
       "name_ko": "신속 구슬",
       "name_en": "Haste Orb",
-      "effect_ko": "자신의 바토몬은 +15% 쿨다운 속도.",
+      "effect_ko": "자신의 바토몬의 쿨다운 속도가 +15% 증가합니다.",
       "effect_en": "Your monsters have +15% Cooldown Speed.",
       "rarity": "Super Rare",
       "unique": false,
@@ -441,13 +501,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/haste_orb.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/haste_orb.png"
+      "image_local": "assets/trinkets/haste_orb.png",
+      "rarity_ko": "영웅",
+      "site_version": "0.011"
     },
     {
       "id": "hero-s-sword",
       "name_ko": "영웅의 검",
       "name_en": "Hero's Sword",
-      "effect_ko": "자신의 바토몬은 +12 피해.",
+      "effect_ko": "자신의 바토몬에게 피해 +12를 부여합니다.",
       "effect_en": "Your monsters have +12 Damage.",
       "rarity": "Rare",
       "unique": false,
@@ -455,13 +517,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/hero_s_sword.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/hero_s_sword.png"
+      "image_local": "assets/trinkets/hero_s_sword.png",
+      "rarity_ko": "희귀",
+      "site_version": "0.011"
     },
     {
       "id": "holy-grail",
       "name_ko": "성배",
       "name_en": "Holy Grail",
-      "effect_ko": "승리 시 Gain $100.",
+      "effect_ko": "승리 시 $100를 획득합니다.",
       "effect_en": "On Victory Gain $100.",
       "rarity": "Mythical",
       "unique": false,
@@ -469,13 +533,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/holy_grail.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/holy_grail.png"
+      "image_local": "assets/trinkets/holy_grail.png",
+      "rarity_ko": "신화",
+      "site_version": "0.011"
     },
     {
       "id": "junk",
       "name_ko": "고철",
       "name_en": "Junk",
-      "effect_ko": "Does nothing.",
+      "effect_ko": "아무 효과도 없습니다.",
       "effect_en": "Does nothing.",
       "rarity": "Common",
       "unique": false,
@@ -483,13 +549,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/junk.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/junk.png"
+      "image_local": "assets/trinkets/junk.png",
+      "rarity_ko": "일반",
+      "site_version": "0.011"
     },
     {
       "id": "kaleidoscope",
       "name_ko": "만화경",
       "name_en": "Kaleidoscope",
-      "effect_ko": "자신의 바토몬 that don't share a type with any ally은 +25% 쿨다운 속도.",
+      "effect_ko": "어떤 아군과도 타입을 공유하지 않는 자신의 바토몬은 쿨다운 속도가 +25% 증가합니다.",
       "effect_en": "Your monsters that don't share a type with any ally have +25% Cooldown Speed.",
       "rarity": "Rare",
       "unique": false,
@@ -497,13 +565,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/kaleidoscope.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/kaleidoscope.png"
+      "image_local": "assets/trinkets/kaleidoscope.png",
+      "rarity_ko": "희귀",
+      "site_version": "0.011"
     },
     {
       "id": "link-cable",
       "name_ko": "링크 케이블",
       "name_en": "Link Cable",
-      "effect_ko": "All of 자신의 팀's 바토몬 are now considered adjacent to each other.",
+      "effect_ko": "자신의 팀에 있는 모든 바토몬이 서로 인접한 것으로 간주됩니다.",
       "effect_en": "All of your team's monsters are now considered adjacent to each other.",
       "rarity": "Rare",
       "unique": true,
@@ -511,13 +581,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/link_cable.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/link_cable.png"
+      "image_local": "assets/trinkets/link_cable.png",
+      "rarity_ko": "희귀",
+      "site_version": "0.011"
     },
     {
       "id": "locked-box",
       "name_ko": "잠긴 상자",
       "name_en": "Locked Box",
-      "effect_ko": "The next time you lose a battle, 획득합니다. a random non-unique 장신구 of the highest rarity your 상점 rank allows.",
+      "effect_ko": "다음 전투에서 패배하면 상점 등급이 허용하는 가장 높은 희귀도의 무작위 비고유 장신구 1개를 획득합니다.",
       "effect_en": "The next time you lose a battle, gain a random non-unique Trinket of the highest rarity your shop rank allows.",
       "rarity": "Common",
       "unique": false,
@@ -525,13 +597,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/locked_box.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/locked_box.png"
+      "image_local": "assets/trinkets/locked_box.png",
+      "rarity_ko": "일반",
+      "site_version": "0.011"
     },
     {
       "id": "market-license",
       "name_ko": "시장 허가증",
       "name_en": "Market License",
-      "effect_ko": "Increase 상점 rank by 1.",
+      "effect_ko": "상점 등급을 1 올립니다.",
       "effect_en": "Increase shop rank by 1.",
       "rarity": "Uncommon",
       "unique": false,
@@ -539,13 +613,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/market_license.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/market_license.png"
+      "image_local": "assets/trinkets/market_license.png",
+      "rarity_ko": "고급",
+      "site_version": "0.011"
     },
     {
       "id": "master-crown",
       "name_ko": "마스터 왕관",
       "name_en": "Master Crown",
-      "effect_ko": "자신의 top middle 바토몬은 +80% stats (except Cooldown and 멀티캐스트).",
+      "effect_ko": "가장 가운데 위쪽 바토몬의 쿨다운과 멀티캐스트를 제외한 능력치가 +80% 증가합니다.",
       "effect_en": "Your top middle monster has +80% stats (except Cooldown and Multicast).",
       "rarity": "Mythical",
       "unique": false,
@@ -553,13 +629,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/master_crown.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/master_crown.png"
+      "image_local": "assets/trinkets/master_crown.png",
+      "rarity_ko": "신화",
+      "site_version": "0.011"
     },
     {
       "id": "mega-duplicator",
       "name_ko": "메가 복제기",
       "name_en": "Mega Duplicator",
-      "effect_ko": "Gain 2 additional copies of the next non-unique 장신구 from a gift.",
+      "effect_ko": "선물에서 다음으로 획득하는 비고유 장신구를 2개 추가로 획득합니다.",
       "effect_en": "Gain 2 additional copies of the next non-unique Trinket from a gift.",
       "rarity": "Rare",
       "unique": false,
@@ -567,13 +645,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/mega_duplicator.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/mega_duplicator.png"
+      "image_local": "assets/trinkets/mega_duplicator.png",
+      "rarity_ko": "희귀",
+      "site_version": "0.011"
     },
     {
       "id": "mega-upgrade-disc",
       "name_ko": "메가 업그레이드 디스크",
       "name_en": "Mega Upgrade Disc",
-      "effect_ko": "~할 때 a 바토몬 reaches level 3, level it up again and 이 장신구를 파괴합니다..",
+      "effect_ko": "바토몬이 레벨 3이 되면 한 번 더 레벨업시키고 이 장신구를 파괴합니다.",
       "effect_en": "When a monster reaches level 3, level it up again and destroy this.",
       "rarity": "Mythical",
       "unique": false,
@@ -581,13 +661,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/mega_upgrade_disc.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/mega_upgrade_disc.png"
+      "image_local": "assets/trinkets/mega_upgrade_disc.png",
+      "rarity_ko": "신화",
+      "site_version": "0.011"
     },
     {
       "id": "membership-card",
       "name_ko": "멤버십 카드",
       "name_en": "Membership Card",
-      "effect_ko": "You can use 1 additional 아이템 each day.",
+      "effect_ko": "매일 도구를 1개 더 사용할 수 있습니다.",
       "effect_en": "You can use 1 additional Item each day.",
       "rarity": "Uncommon",
       "unique": false,
@@ -595,13 +677,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/membership_card.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/membership_card.png"
+      "image_local": "assets/trinkets/membership_card.png",
+      "rarity_ko": "고급",
+      "site_version": "0.011"
     },
     {
       "id": "metal-bat",
       "name_ko": "금속 배트",
       "name_en": "Metal Bat",
-      "effect_ko": "전투 시작 시 자신의 바토몬 with the highest Cooldown 획득합니다. +50% 피해이번 전투 동안.",
+      "effect_ko": "전투 시작 시 쿨다운이 가장 긴 자신의 바토몬에게 이번 전투 동안 피해 +50%를 부여합니다.",
       "effect_en": "On Battle Start Your monster with the highest Cooldown gains +50% Damage for this battle.",
       "rarity": "Rare",
       "unique": false,
@@ -609,13 +693,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/metal_bat.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/metal_bat.png"
+      "image_local": "assets/trinkets/metal_bat.png",
+      "rarity_ko": "희귀",
+      "site_version": "0.011"
     },
     {
       "id": "meteorite",
       "name_ko": "운석",
       "name_en": "Meteorite",
-      "effect_ko": "전투 시작 시 자신의 바토몬 with no abilities 획득합니다. +20 피해 영구적으로.",
+      "effect_ko": "전투 시작 시 능력이 없는 자신의 바토몬에게 피해 +20을 영구적으로 부여합니다.",
       "effect_en": "On Battle Start Your monsters with no abilities gain +20 Damage permanently.",
       "rarity": "Rare",
       "unique": false,
@@ -623,13 +709,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/meteorite.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/meteorite.png"
+      "image_local": "assets/trinkets/meteorite.png",
+      "rarity_ko": "희귀",
+      "site_version": "0.011"
     },
     {
       "id": "metronome",
       "name_ko": "메트로놈",
       "name_en": "Metronome",
-      "effect_ko": "~할 때 your 바토몬 cast, they 획득합니다. +10 피해이번 전투 동안.",
+      "effect_ko": "자신의 바토몬이 스킬을 발동할 때마다 이번 전투 동안 피해 +10을 얻습니다.",
       "effect_en": "When your monsters cast, they gain +10 Damage for this battle.",
       "rarity": "Legendary",
       "unique": false,
@@ -637,13 +725,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/metronome.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/metronome.png"
+      "image_local": "assets/trinkets/metronome.png",
+      "rarity_ko": "전설",
+      "site_version": "0.011"
     },
     {
       "id": "mighty-bell",
       "name_ko": "강력한 종",
       "name_en": "Mighty Bell",
-      "effect_ko": "Monsters in your 상점은 +300 피해.",
+      "effect_ko": "상점에 있는 바토몬이 피해 +300을 얻습니다.",
       "effect_en": "Monsters in your shop have +300 Damage.",
       "rarity": "Legendary",
       "unique": false,
@@ -651,13 +741,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/mighty_bell.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/mighty_bell.png"
+      "image_local": "assets/trinkets/mighty_bell.png",
+      "rarity_ko": "전설",
+      "site_version": "0.011"
     },
     {
       "id": "mini-duplicator",
       "name_ko": "미니 복제기",
       "name_en": "Mini Duplicator",
-      "effect_ko": "Gain an additional copy of the next non-unique 장신구 from a gift.",
+      "effect_ko": "선물에서 다음으로 획득하는 비고유 장신구를 1개 추가로 획득합니다.",
       "effect_en": "Gain an additional copy of the next non-unique Trinket from a gift.",
       "rarity": "Common",
       "unique": false,
@@ -665,13 +757,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/mini_duplicator.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/mini_duplicator.png"
+      "image_local": "assets/trinkets/mini_duplicator.png",
+      "rarity_ko": "일반",
+      "site_version": "0.011"
     },
     {
       "id": "momentum-flag",
       "name_ko": "추진 깃발",
       "name_en": "Momentum Flag",
-      "effect_ko": "전투 시작 시 자신의 바토몬 in the 가장 왼쪽 열 획득합니다. +10% 쿨다운 속도 영구적으로.",
+      "effect_ko": "전투 시작 시 가장 왼쪽 열의 자신의 바토몬에게 쿨다운 속도 +10%를 영구적으로 부여합니다.",
       "effect_en": "On Battle Start Your monsters in the leftmost column gain +10% Cooldown Speed permanently.",
       "rarity": "Super Rare",
       "unique": false,
@@ -679,7 +773,9 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/momentum_flag.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/momentum_flag.png"
+      "image_local": "assets/trinkets/momentum_flag.png",
+      "rarity_ko": "영웅",
+      "site_version": "0.011"
     },
     {
       "id": "mysterious-charm",
@@ -693,13 +789,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/mysterious_charm.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/mysterious_charm.png"
+      "image_local": "assets/trinkets/mysterious_charm.png",
+      "rarity_ko": "영웅",
+      "site_version": "0.011"
     },
     {
       "id": "mysterious-chest",
       "name_ko": "신비한 상자",
       "name_en": "Mysterious Chest",
-      "effect_ko": "On Battle Lost Gain a random non-unique 전설 장신구.",
+      "effect_ko": "전투에서 패배하면 무작위 비고유 전설 장신구 1개를 획득합니다.",
       "effect_en": "On Battle Lost Gain a random non-unique Legendary Trinket.",
       "rarity": "Legendary",
       "unique": true,
@@ -707,13 +805,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/mysterious_chest.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/mysterious_chest.png"
+      "image_local": "assets/trinkets/mysterious_chest.png",
+      "rarity_ko": "전설",
+      "site_version": "0.011"
     },
     {
       "id": "mysterious-gem",
       "name_ko": "신비한 보석",
       "name_en": "Mysterious Gem",
-      "effect_ko": "자신의 바토몬은 +20% 피해.",
+      "effect_ko": "자신의 바토몬에게 피해 +20%를 부여합니다.",
       "effect_en": "Your monsters have +20% Damage.",
       "rarity": "Legendary",
       "unique": false,
@@ -721,13 +821,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/mysterious_gem.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/mysterious_gem.png"
+      "image_local": "assets/trinkets/mysterious_gem.png",
+      "rarity_ko": "전설",
+      "site_version": "0.011"
     },
     {
       "id": "mysterious-mask",
       "name_ko": "신비한 가면",
       "name_en": "Mysterious Mask",
-      "effect_ko": "Choose a trainer and 획득합니다. their ability.",
+      "effect_ko": "트레이너 1명을 선택하여 해당 트레이너의 능력을 획득합니다.",
       "effect_en": "Choose a trainer and gain their ability.",
       "rarity": "Super Rare",
       "unique": false,
@@ -735,13 +837,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/mysterious_mask.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/mysterious_mask.png"
+      "image_local": "assets/trinkets/mysterious_mask.png",
+      "rarity_ko": "영웅",
+      "site_version": "0.011"
     },
     {
       "id": "mystic-incense",
       "name_ko": "신비한 향",
       "name_en": "Mystic Incense",
-      "effect_ko": "A 신화 바토몬 will appear in your next 상점.",
+      "effect_ko": "다음 상점에 신화 바토몬 1마리가 등장합니다.",
       "effect_en": "A Mythical monster will appear in your next shop.",
       "rarity": "Mythical",
       "unique": false,
@@ -749,13 +853,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/mystic_incense.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/mystic_incense.png"
+      "image_local": "assets/trinkets/mystic_incense.png",
+      "rarity_ko": "신화",
+      "site_version": "0.011"
     },
     {
       "id": "piggy-bank",
       "name_ko": "돼지 저금통",
       "name_en": "Piggy Bank",
-      "effect_ko": "Gain +$1 for each $10 you은 at the end of each day.",
+      "effect_ko": "매일이 끝날 때 보유한 $10마다 $1를 추가로 획득합니다.",
       "effect_en": "Gain +$1 for each $10 you have at the end of each day.",
       "rarity": "Uncommon",
       "unique": true,
@@ -763,13 +869,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/piggy_bank.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/piggy_bank.png"
+      "image_local": "assets/trinkets/piggy_bank.png",
+      "rarity_ko": "고급",
+      "site_version": "0.011"
     },
     {
       "id": "poison-bell",
       "name_ko": "독 종",
       "name_en": "Poison Bell",
-      "effect_ko": "독성 바토몬 in your 상점은 +6 독.",
+      "effect_ko": "상점의 독성 타입 바토몬이 독 +6을 얻습니다.",
       "effect_en": "Toxic monsters in your shop have +6 Poison.",
       "rarity": "Uncommon",
       "unique": false,
@@ -777,13 +885,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/poison_bell.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/poison_bell.png"
+      "image_local": "assets/trinkets/poison_bell.png",
+      "rarity_ko": "고급",
+      "site_version": "0.011"
     },
     {
       "id": "poison-orb",
       "name_ko": "독 구슬",
       "name_en": "Poison Orb",
-      "effect_ko": "자신의 독성 바토몬은 +3 독.",
+      "effect_ko": "자신의 독성 타입 바토몬이 독 +3을 얻습니다.",
       "effect_en": "Your Toxic monsters have +3 Poison.",
       "rarity": "Uncommon",
       "unique": false,
@@ -791,13 +901,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/poison_orb.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/poison_orb.png"
+      "image_local": "assets/trinkets/poison_orb.png",
+      "rarity_ko": "고급",
+      "site_version": "0.011"
     },
     {
       "id": "power-band",
       "name_ko": "힘의 밴드",
       "name_en": "Power Band",
-      "effect_ko": "Give the first 바토몬 you buy each day +20 피해.",
+      "effect_ko": "매일 처음 구매하는 바토몬에게 피해 +20을 부여합니다.",
       "effect_en": "Give the first monster you buy each day +20 Damage.",
       "rarity": "Uncommon",
       "unique": false,
@@ -805,13 +917,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/power_band.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/power_band.png"
+      "image_local": "assets/trinkets/power_band.png",
+      "rarity_ko": "고급",
+      "site_version": "0.011"
     },
     {
       "id": "power-bell",
       "name_ko": "힘의 종",
       "name_en": "Power Bell",
-      "effect_ko": "Monsters in your 상점은 +25 피해.",
+      "effect_ko": "상점에 있는 바토몬이 피해 +25를 얻습니다.",
       "effect_en": "Monsters in your shop have +25 Damage.",
       "rarity": "Rare",
       "unique": false,
@@ -819,13 +933,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/power_bell.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/power_bell.png"
+      "image_local": "assets/trinkets/power_bell.png",
+      "rarity_ko": "희귀",
+      "site_version": "0.011"
     },
     {
       "id": "power-crown",
       "name_ko": "힘의 왕관",
       "name_en": "Power Crown",
-      "effect_ko": "자신의 top middle 바토몬은 +20 피해.",
+      "effect_ko": "가장 가운데 위쪽 바토몬에게 피해 +20을 부여합니다.",
       "effect_en": "Your top middle monster has +20 Damage.",
       "rarity": "Uncommon",
       "unique": false,
@@ -833,13 +949,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/power_crown.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/power_crown.png"
+      "image_local": "assets/trinkets/power_crown.png",
+      "rarity_ko": "고급",
+      "site_version": "0.011"
     },
     {
       "id": "power-pouch",
       "name_ko": "힘의 주머니",
       "name_en": "Power Pouch",
-      "effect_ko": "~할 때 you buy an item, give your 바토몬 +2 피해.",
+      "effect_ko": "도구를 구매할 때마다 자신의 바토몬에게 피해 +2를 부여합니다.",
       "effect_en": "When you buy an item, give your monsters +2 Damage.",
       "rarity": "Common",
       "unique": false,
@@ -847,13 +965,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/power_pouch.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/power_pouch.png"
+      "image_local": "assets/trinkets/power_pouch.png",
+      "rarity_ko": "일반",
+      "site_version": "0.011"
     },
     {
       "id": "purple-incense",
       "name_ko": "보라색 향",
       "name_en": "Purple Incense",
-      "effect_ko": "The next 5 상점s will contain only Super 희귀 바토몬.",
+      "effect_ko": "다음 5번의 상점에는 영웅 바토몬만 등장합니다.",
       "effect_en": "The next 5 shops will contain only Super Rare monsters.",
       "rarity": "Super Rare",
       "unique": false,
@@ -861,13 +981,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/purple_incense.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/purple_incense.png"
+      "image_local": "assets/trinkets/purple_incense.png",
+      "rarity_ko": "영웅",
+      "site_version": "0.011"
     },
     {
       "id": "quick-bell",
       "name_ko": "신속 종",
       "name_en": "Quick Bell",
-      "effect_ko": "Monsters in your 상점은 +5% 쿨다운 속도.",
+      "effect_ko": "상점에 있는 바토몬의 쿨다운 속도가 +5% 증가합니다.",
       "effect_en": "Monsters in your shop have +5% Cooldown Speed.",
       "rarity": "Common",
       "unique": false,
@@ -875,13 +997,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/quick_bell.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/quick_bell.png"
+      "image_local": "assets/trinkets/quick_bell.png",
+      "rarity_ko": "일반",
+      "site_version": "0.011"
     },
     {
       "id": "quick-flag",
       "name_ko": "신속 깃발",
       "name_en": "Quick Flag",
-      "effect_ko": "자신의 바토몬 in the 가장 왼쪽 열은 +5% 쿨다운 속도.",
+      "effect_ko": "가장 왼쪽 열의 자신의 바토몬의 쿨다운 속도가 +5% 증가합니다.",
       "effect_en": "Your monsters in the leftmost column have +5% Cooldown Speed.",
       "rarity": "Common",
       "unique": false,
@@ -889,13 +1013,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/quick_flag.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/quick_flag.png"
+      "image_local": "assets/trinkets/quick_flag.png",
+      "rarity_ko": "일반",
+      "site_version": "0.011"
     },
     {
       "id": "rainbow-berry",
       "name_ko": "무지개 열매",
       "name_en": "Rainbow Berry",
-      "effect_ko": "자신의 바토몬은 +4 피해 for each unique type on 자신의 팀.",
+      "effect_ko": "자신의 팀에 있는 서로 다른 타입 1개당 자신의 바토몬에게 피해 +4를 부여합니다.",
       "effect_en": "Your monsters have +4 Damage for each unique type on your team.",
       "rarity": "Common",
       "unique": false,
@@ -903,13 +1029,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/rainbow_berry.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/rainbow_berry.png"
+      "image_local": "assets/trinkets/rainbow_berry.png",
+      "rarity_ko": "일반",
+      "site_version": "0.011"
     },
     {
       "id": "rainbow-pearl",
       "name_ko": "무지개 진주",
       "name_en": "Rainbow Pearl",
-      "effect_ko": "All 바토몬 in your 상점 are SHINY.",
+      "effect_ko": "상점의 모든 바토몬이 SHINY로 등장합니다.",
       "effect_en": "All monsters in your shop are SHINY.",
       "rarity": "Mythical",
       "unique": true,
@@ -917,13 +1045,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/rainbow_pearl.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/rainbow_pearl.png"
+      "image_local": "assets/trinkets/rainbow_pearl.png",
+      "rarity_ko": "신화",
+      "site_version": "0.011"
     },
     {
       "id": "rally-flag",
       "name_ko": "집결 깃발",
       "name_en": "Rally Flag",
-      "effect_ko": "전투 시작 시 자신의 바토몬 in the 가장 왼쪽 열 획득합니다. +12 피해 영구적으로.",
+      "effect_ko": "전투 시작 시 가장 왼쪽 열의 자신의 바토몬에게 피해 +12를 영구적으로 부여합니다.",
       "effect_en": "On Battle Start Your monsters in the leftmost column gain +12 Damage permanently.",
       "rarity": "Uncommon",
       "unique": false,
@@ -931,13 +1061,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/rally_flag.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/rally_flag.png"
+      "image_local": "assets/trinkets/rally_flag.png",
+      "rarity_ko": "고급",
+      "site_version": "0.011"
     },
     {
       "id": "razor-beak",
       "name_ko": "날카로운 부리",
       "name_en": "Razor Beak",
-      "effect_ko": "자신의 비행 바토몬은 +1 멀티캐스트.",
+      "effect_ko": "자신의 비행 타입 바토몬이 멀티캐스트 +1을 얻습니다.",
       "effect_en": "Your Flying monsters have +1 Multicast.",
       "rarity": "Super Rare",
       "unique": false,
@@ -945,13 +1077,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/razor_beak.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/razor_beak.png"
+      "image_local": "assets/trinkets/razor_beak.png",
+      "rarity_ko": "영웅",
+      "site_version": "0.011"
     },
     {
       "id": "repeater-charm",
       "name_ko": "반복 부적",
       "name_en": "Repeater Charm",
-      "effect_ko": "자신의 바토몬' 전투 시작 시 abilities activate an additional time.",
+      "effect_ko": "자신의 바토몬의 전투 시작 시 능력을 한 번 더 발동합니다.",
       "effect_en": "Your monsters' On Battle Start abilities activate an additional time.",
       "rarity": "Super Rare",
       "unique": true,
@@ -959,13 +1093,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/repeater_charm.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/repeater_charm.png"
+      "image_local": "assets/trinkets/repeater_charm.png",
+      "rarity_ko": "영웅",
+      "site_version": "0.011"
     },
     {
       "id": "research-notes",
       "name_ko": "연구 노트",
       "name_en": "Research Notes",
-      "effect_ko": "전설 바토몬 are much more likely to appear in your 상점.",
+      "effect_ko": "전설 바토몬이 상점에 등장할 확률이 크게 증가합니다.",
       "effect_en": "Legendary monsters are much more likely to appear in your shop.",
       "rarity": "Legendary",
       "unique": false,
@@ -973,13 +1109,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/research_notes.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/research_notes.png"
+      "image_local": "assets/trinkets/research_notes.png",
+      "rarity_ko": "전설",
+      "site_version": "0.011"
     },
     {
       "id": "rigged-dice",
       "name_ko": "조작된 주사위",
       "name_en": "Rigged Dice",
-      "effect_ko": "The first 상점 each day stocks only the rarest 바토몬 and items your 상점 rank allows.",
+      "effect_ko": "매일 첫 번째 상점에는 상점 등급에서 등장 가능한 가장 높은 희귀도의 바토몬과 도구만 등장합니다.",
       "effect_en": "The first shop each day stocks only the rarest monsters and items your shop rank allows.",
       "rarity": "Rare",
       "unique": true,
@@ -987,13 +1125,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/rigged_dice.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/rigged_dice.png"
+      "image_local": "assets/trinkets/rigged_dice.png",
+      "rarity_ko": "희귀",
+      "site_version": "0.011"
     },
     {
       "id": "rocket-boots",
       "name_ko": "로켓 부츠",
       "name_en": "Rocket Boots",
-      "effect_ko": "Monsters in your 상점 획득합니다. 비행 typing.",
+      "effect_ko": "상점에 있는 바토몬에게 비행 타입을 부여합니다.",
       "effect_en": "Monsters in your shop gain Flying typing.",
       "rarity": "Super Rare",
       "unique": true,
@@ -1001,13 +1141,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/rocket_boots.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/rocket_boots.png"
+      "image_local": "assets/trinkets/rocket_boots.png",
+      "rarity_ko": "영웅",
+      "site_version": "0.011"
     },
     {
       "id": "sapphire-amulet",
       "name_ko": "사파이어 목걸이",
       "name_en": "Sapphire Amulet",
-      "effect_ko": "회복량을 25% more 회복.",
+      "effect_ko": "받는 회복량이 25% 증가합니다.",
       "effect_en": "You receive 25% more Heal.",
       "rarity": "Rare",
       "unique": false,
@@ -1015,13 +1157,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/sapphire_amulet.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/sapphire_amulet.png"
+      "image_local": "assets/trinkets/sapphire_amulet.png",
+      "rarity_ko": "희귀",
+      "site_version": "0.011"
     },
     {
       "id": "sapphire-ring",
       "name_ko": "사파이어 반지",
       "name_en": "Sapphire Ring",
-      "effect_ko": "Monsters in your 상점은 +10% 회복.",
+      "effect_ko": "상점에 있는 바토몬이 회복 +10%를 얻습니다.",
       "effect_en": "Monsters in your shop have +10% Heal.",
       "rarity": "Common",
       "unique": false,
@@ -1029,13 +1173,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/sapphire_ring.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/sapphire_ring.png"
+      "image_local": "assets/trinkets/sapphire_ring.png",
+      "rarity_ko": "일반",
+      "site_version": "0.011"
     },
     {
       "id": "scrap-sword",
       "name_ko": "고철 검",
       "name_en": "Scrap Sword",
-      "effect_ko": "자신의 바토몬은 +2 피해 for each 일반 장신구 you have.",
+      "effect_ko": "자신이 보유한 일반 장신구 1개당 자신의 바토몬에게 피해 +2를 부여합니다.",
       "effect_en": "Your monsters have +2 Damage for each Common Trinket you have.",
       "rarity": "Rare",
       "unique": false,
@@ -1043,13 +1189,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/scrap_sword.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/scrap_sword.png"
+      "image_local": "assets/trinkets/scrap_sword.png",
+      "rarity_ko": "희귀",
+      "site_version": "0.011"
     },
     {
       "id": "sea-crest",
       "name_ko": "바다 문장",
       "name_en": "Sea Crest",
-      "effect_ko": "전투 시작 시 자신의 바토몬 in the 가장 오른쪽 열 획득합니다. +10% 회복 영구적으로.",
+      "effect_ko": "전투 시작 시 가장 오른쪽 열의 자신의 바토몬에게 회복 +10%를 영구적으로 부여합니다.",
       "effect_en": "On Battle Start Your monsters in the rightmost column gain +10% Heal permanently.",
       "rarity": "Uncommon",
       "unique": false,
@@ -1057,13 +1205,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/sea_crest.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/sea_crest.png"
+      "image_local": "assets/trinkets/sea_crest.png",
+      "rarity_ko": "고급",
+      "site_version": "0.011"
     },
     {
       "id": "silver-watch",
       "name_ko": "은 시계",
       "name_en": "Silver Watch",
-      "effect_ko": "~할 때 a 바토몬 levels up from a merge, it 획득합니다. +15% 쿨다운 속도.",
+      "effect_ko": "바토몬이 합성으로 레벨업하면 쿨다운 속도 +15%를 얻습니다.",
       "effect_en": "When a monster levels up from a merge, it gains +15% Cooldown Speed.",
       "rarity": "Rare",
       "unique": false,
@@ -1071,13 +1221,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/silver_watch.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/silver_watch.png"
+      "image_local": "assets/trinkets/silver_watch.png",
+      "rarity_ko": "희귀",
+      "site_version": "0.011"
     },
     {
       "id": "small-club",
       "name_ko": "작은 곤봉",
       "name_en": "Small Club",
-      "effect_ko": "자신의 바토몬 with a Cooldown of 5 seconds or above은 +20% 피해.",
+      "effect_ko": "쿨다운이 5초 이상인 자신의 바토몬은 피해 +20%를 얻습니다.",
       "effect_en": "Your monsters with a Cooldown of 5 seconds or above have +20% Damage.",
       "rarity": "Uncommon",
       "unique": false,
@@ -1085,13 +1237,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/small_club.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/small_club.png"
+      "image_local": "assets/trinkets/small_club.png",
+      "rarity_ko": "고급",
+      "site_version": "0.011"
     },
     {
       "id": "speed-crest",
       "name_ko": "속도 문장",
       "name_en": "Speed Crest",
-      "effect_ko": "자신의 바토몬 in the 가장 오른쪽 열은 +20% 쿨다운 속도.",
+      "effect_ko": "가장 오른쪽 열의 자신의 바토몬의 쿨다운 속도가 +20% 증가합니다.",
       "effect_en": "Your monsters in the rightmost column have +20% Cooldown Speed.",
       "rarity": "Rare",
       "unique": false,
@@ -1099,13 +1253,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/speed_crest.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/speed_crest.png"
+      "image_local": "assets/trinkets/speed_crest.png",
+      "rarity_ko": "희귀",
+      "site_version": "0.011"
     },
     {
       "id": "speed-whistle",
       "name_ko": "속도 호루라기",
       "name_en": "Speed Whistle",
-      "effect_ko": "The next 바토몬 you buy은 +15% 쿨다운 속도.",
+      "effect_ko": "다음에 구매하는 바토몬의 쿨다운 속도가 +15% 증가합니다.",
       "effect_en": "The next monster you buy has +15% Cooldown Speed.",
       "rarity": "Common",
       "unique": false,
@@ -1113,13 +1269,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/speed_whistle.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/speed_whistle.png"
+      "image_local": "assets/trinkets/speed_whistle.png",
+      "rarity_ko": "일반",
+      "site_version": "0.011"
     },
     {
       "id": "tempo-charm",
       "name_ko": "템포 부적",
       "name_en": "Tempo Charm",
-      "effect_ko": "전투 시작 시 A random 바토몬 획득합니다. +5% 쿨다운 속도 영구적으로.",
+      "effect_ko": "전투 시작 시 무작위 바토몬 1마리에게 쿨다운 속도 +5%를 영구적으로 부여합니다.",
       "effect_en": "On Battle Start A random monster gains +5% Cooldown Speed permanently.",
       "rarity": "Common",
       "unique": false,
@@ -1127,13 +1285,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/tempo_charm.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/tempo_charm.png"
+      "image_local": "assets/trinkets/tempo_charm.png",
+      "rarity_ko": "일반",
+      "site_version": "0.011"
     },
     {
       "id": "terrarium",
       "name_ko": "테라리움",
       "name_en": "Terrarium",
-      "effect_ko": "자신의 벌레 바토몬은 +20% 피해.",
+      "effect_ko": "자신의 벌레 타입 바토몬에게 피해 +20%를 부여합니다.",
       "effect_en": "Your Bug monsters have +20% Damage.",
       "rarity": "Rare",
       "unique": false,
@@ -1141,13 +1301,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/terrarium.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/terrarium.png"
+      "image_local": "assets/trinkets/terrarium.png",
+      "rarity_ko": "희귀",
+      "site_version": "0.011"
     },
     {
       "id": "topaz-amulet",
       "name_ko": "토파즈 목걸이",
       "name_en": "Topaz Amulet",
-      "effect_ko": "회복량을 25% more 보호막.",
+      "effect_ko": "받는 보호막이 25% 증가합니다.",
       "effect_en": "You receive 25% more Shield.",
       "rarity": "Rare",
       "unique": false,
@@ -1155,13 +1317,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/topaz_amulet.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/topaz_amulet.png"
+      "image_local": "assets/trinkets/topaz_amulet.png",
+      "rarity_ko": "희귀",
+      "site_version": "0.011"
     },
     {
       "id": "topaz-ring",
       "name_ko": "토파즈 반지",
       "name_en": "Topaz Ring",
-      "effect_ko": "Monsters in your 상점은 +10% 보호막.",
+      "effect_ko": "상점에 있는 바토몬이 보호막 +10%를 얻습니다.",
       "effect_en": "Monsters in your shop have +10% Shield.",
       "rarity": "Common",
       "unique": false,
@@ -1169,7 +1333,9 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/topaz_ring.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/topaz_ring.png"
+      "image_local": "assets/trinkets/topaz_ring.png",
+      "rarity_ko": "일반",
+      "site_version": "0.011"
     },
     {
       "id": "training-weights",
@@ -1183,13 +1349,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/training_weights.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/training_weights.png"
+      "image_local": "assets/trinkets/training_weights.png",
+      "rarity_ko": "일반",
+      "site_version": "0.011"
     },
     {
       "id": "treasure-map",
       "name_ko": "보물 지도",
       "name_en": "Treasure Map",
-      "effect_ko": "자신의 next 장신구 gift choices are 1 rarity tier higher.",
+      "effect_ko": "다음 장신구 선물의 선택지 희귀도가 1단계 높아집니다.",
       "effect_en": "Your next Trinket gift choices are 1 rarity tier higher.",
       "rarity": "Common",
       "unique": false,
@@ -1197,13 +1365,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/treasure_map.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/treasure_map.png"
+      "image_local": "assets/trinkets/treasure_map.png",
+      "rarity_ko": "일반",
+      "site_version": "0.011"
     },
     {
       "id": "ultra-duplicator",
       "name_ko": "울트라 복제기",
       "name_en": "Ultra Duplicator",
-      "effect_ko": "Gain an additional copy of each non-unique 장신구 from a gift.",
+      "effect_ko": "선물에서 비고유 장신구를 종류별로 1개씩 추가로 획득합니다.",
       "effect_en": "Gain an additional copy of each non-unique Trinket from a gift.",
       "rarity": "Mythical",
       "unique": true,
@@ -1211,13 +1381,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/ultra_duplicator.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/ultra_duplicator.png"
+      "image_local": "assets/trinkets/ultra_duplicator.png",
+      "rarity_ko": "신화",
+      "site_version": "0.011"
     },
     {
       "id": "upgrade-disc",
       "name_ko": "업그레이드 디스크",
       "name_en": "Upgrade Disc",
-      "effect_ko": "~할 때 you buy a 바토몬, level it up and 이 장신구를 파괴합니다..",
+      "effect_ko": "바토몬을 구매하면 해당 바토몬을 레벨업시키고 이 장신구를 파괴합니다.",
       "effect_en": "When you buy a monster, level it up and destroy this.",
       "rarity": "Super Rare",
       "unique": false,
@@ -1225,13 +1397,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/upgrade_disc.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/upgrade_disc.png"
+      "image_local": "assets/trinkets/upgrade_disc.png",
+      "rarity_ko": "영웅",
+      "site_version": "0.011"
     },
     {
       "id": "vip-pass",
       "name_ko": "VIP 패스",
       "name_en": "VIP Pass",
-      "effect_ko": "자신의 상점 no longer stocks anything 일반 or 고급.",
+      "effect_ko": "상점에 더 이상 일반 및 고급 바토몬이 등장하지 않습니다.",
       "effect_en": "Your shop no longer stocks anything Common or Uncommon.",
       "rarity": "Super Rare",
       "unique": true,
@@ -1239,13 +1413,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/vip_pass.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/vip_pass.png"
+      "image_local": "assets/trinkets/vip_pass.png",
+      "rarity_ko": "영웅",
+      "site_version": "0.011"
     },
     {
       "id": "warhorn",
       "name_ko": "전쟁 뿔피리",
       "name_en": "Warhorn",
-      "effect_ko": "전투 시작 시 자신의 바토몬 획득합니다. +10 피해 영구적으로.",
+      "effect_ko": "전투 시작 시 자신의 바토몬에게 피해 +10을 영구적으로 부여합니다.",
       "effect_en": "On Battle Start Your monsters gain +10 Damage permanently.",
       "rarity": "Rare",
       "unique": false,
@@ -1253,13 +1429,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/warhorn.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/warhorn.png"
+      "image_local": "assets/trinkets/warhorn.png",
+      "rarity_ko": "희귀",
+      "site_version": "0.011"
     },
     {
       "id": "winged-crown",
       "name_ko": "날개 왕관",
       "name_en": "Winged Crown",
-      "effect_ko": "자신의 top middle 바토몬은 +1 멀티캐스트.",
+      "effect_ko": "가장 가운데 위쪽 바토몬의 멀티캐스트가 +1 증가합니다.",
       "effect_en": "Your top middle monster has +1 Multicast.",
       "rarity": "Legendary",
       "unique": true,
@@ -1267,13 +1445,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/winged_crown.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/winged_crown.png"
+      "image_local": "assets/trinkets/winged_crown.png",
+      "rarity_ko": "전설",
+      "site_version": "0.011"
     },
     {
       "id": "winged-fossil",
       "name_ko": "날개 화석",
       "name_en": "Winged Fossil",
-      "effect_ko": "자신의 비행 바토몬은 +25% stats (except Cooldown and 멀티캐스트).",
+      "effect_ko": "자신의 비행 타입 바토몬은 쿨다운과 멀티캐스트를 제외한 능력치가 +25% 증가합니다.",
       "effect_en": "Your Flying monsters have +25% stats (except Cooldown and Multicast).",
       "rarity": "Uncommon",
       "unique": false,
@@ -1281,13 +1461,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/winged_fossil.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/winged_fossil.png"
+      "image_local": "assets/trinkets/winged_fossil.png",
+      "rarity_ko": "고급",
+      "site_version": "0.011"
     },
     {
       "id": "wood-sword",
       "name_ko": "나무 검",
       "name_en": "Wood Sword",
-      "effect_ko": "자신의 바토몬은 +5 피해.",
+      "effect_ko": "자신의 바토몬에게 피해 +5를 부여합니다.",
       "effect_en": "Your monsters have +5 Damage.",
       "rarity": "Common",
       "unique": false,
@@ -1295,13 +1477,15 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/wood_sword.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/wood_sword.png"
+      "image_local": "assets/trinkets/wood_sword.png",
+      "rarity_ko": "일반",
+      "site_version": "0.011"
     },
     {
       "id": "zenith-stone",
       "name_ko": "정점의 돌",
       "name_en": "Zenith Stone",
-      "effect_ko": "~할 때 your 바토몬 획득합니다. stats, they 획득합니다. +80% more (except 멀티캐스트).",
+      "effect_ko": "자신의 바토몬이 능력치를 얻을 때 멀티캐스트를 제외한 증가량이 80% 더 증가합니다.",
       "effect_en": "When your monsters gain stats, they gain +80% more (except Multicast).",
       "rarity": "Legendary",
       "unique": false,
@@ -1309,10 +1493,12 @@
       "source_url": "https://batomon.com/trinkets",
       "image_url": "https://batomon.com/game/25377295/trinket/zenith_stone.png",
       "image_source": "Batomon.com official trinket sprite",
-      "image_local": "assets/trinkets/zenith_stone.png"
+      "image_local": "assets/trinkets/zenith_stone.png",
+      "rarity_ko": "전설",
+      "site_version": "0.011"
     }
   ],
   "image_source": "https://batomon.com/trinkets",
   "image_source_note": "Official Batomon.com sprite URL verified against each current Trinket reference page; site uses locally hosted copies fetched from the official image URLs.",
-  "site_version": "0.005"
+  "site_version": "0.011"
 }

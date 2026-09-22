@@ -1,5 +1,5 @@
 {
-  "site_version": "0.007",
+  "site_version": "0.011",
   "source": "https://batomon.com/wiki",
   "events_source": "https://batomon.com/events",
   "patch": "Balance 22",
@@ -439,13 +439,13 @@
           "Accept a life and a trinket",
           "생명과 장신구를 받는다",
           "Get a Super Rare trinket gift",
-          "슈퍼 레어 장신구 선물을 획득합니다."
+          "영웅 장신구 선물을 획득합니다."
         ],
         [
           "Accept a life and a monster",
           "생명과 바토몬을 받는다",
           "Gain a random level 2 Super Rare monster",
-          "무작위 레벨 2 슈퍼 레어 바토몬을 획득합니다."
+          "무작위 레벨 2 영웅 바토몬을 획득합니다."
         ],
         [
           "Accept a life and a charm",

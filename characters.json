@@ -22,7 +22,7 @@
       "rank": "일반",
       "rankClass": "normal",
       "officialName": "Spinarai",
-      "officialRarity": "Common",
+      "officialRarity": "일반",
       "officialTypes": [
         "Bug",
         "Toxic"
@@ -159,7 +159,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/spinarai.png",
-      "image_local": "assets/batomon/spinarai.png"
+      "image_local": "assets/batomon/spinarai.png",
+      "officialRarity_ko": "일반"
     },
     {
       "no": 2,
@@ -168,7 +169,7 @@
       "rank": "일반",
       "rankClass": "normal",
       "officialName": "Toximoth",
-      "officialRarity": "Common",
+      "officialRarity": "일반",
       "officialTypes": [
         "Bug",
         "Toxic"
@@ -305,7 +306,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/toximoth.png",
-      "image_local": "assets/batomon/toximoth.png"
+      "image_local": "assets/batomon/toximoth.png",
+      "officialRarity_ko": "일반"
     },
     {
       "no": 3,
@@ -314,7 +316,7 @@
       "rank": "일반",
       "rankClass": "normal",
       "officialName": "Dribblet",
-      "officialRarity": "Common",
+      "officialRarity": "일반",
       "officialTypes": [
         "Water"
       ],
@@ -390,7 +392,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/dribblet.png",
-      "image_local": "assets/batomon/dribblet.png"
+      "image_local": "assets/batomon/dribblet.png",
+      "officialRarity_ko": "일반"
     },
     {
       "no": 4,
@@ -399,7 +402,7 @@
       "rank": "일반",
       "rankClass": "normal",
       "officialName": "Guardiant",
-      "officialRarity": "Common",
+      "officialRarity": "일반",
       "officialTypes": [
         "Bug"
       ],
@@ -535,7 +538,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/guardiant.png",
-      "image_local": "assets/batomon/guardiant.png"
+      "image_local": "assets/batomon/guardiant.png",
+      "officialRarity_ko": "일반"
     },
     {
       "no": 5,
@@ -544,7 +548,7 @@
       "rank": "일반",
       "rankClass": "normal",
       "officialName": "Joltail",
-      "officialRarity": "Common",
+      "officialRarity": "일반",
       "officialTypes": [
         "Electric"
       ],
@@ -680,7 +684,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/joltail.png",
-      "image_local": "assets/batomon/joltail.png"
+      "image_local": "assets/batomon/joltail.png",
+      "officialRarity_ko": "일반"
     },
     {
       "no": 6,
@@ -689,7 +694,7 @@
       "rank": "일반",
       "rankClass": "normal",
       "officialName": "Stingarde",
-      "officialRarity": "Common",
+      "officialRarity": "일반",
       "officialTypes": [
         "Bug"
       ],
@@ -825,7 +830,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/stingarde.png",
-      "image_local": "assets/batomon/stingarde.png"
+      "image_local": "assets/batomon/stingarde.png",
+      "officialRarity_ko": "일반"
     },
     {
       "no": 7,
@@ -834,7 +840,7 @@
       "rank": "일반",
       "rankClass": "normal",
       "officialName": "Scorchimp",
-      "officialRarity": "Common",
+      "officialRarity": "일반",
       "officialTypes": [
         "Fire"
       ],
@@ -910,7 +916,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/scorchimp.png",
-      "image_local": "assets/batomon/scorchimp.png"
+      "image_local": "assets/batomon/scorchimp.png",
+      "officialRarity_ko": "일반"
     },
     {
       "no": 8,
@@ -919,7 +926,7 @@
       "rank": "일반",
       "rankClass": "normal",
       "officialName": "Panbud",
-      "officialRarity": "Common",
+      "officialRarity": "일반",
       "officialTypes": [
         "Grass"
       ],
@@ -995,7 +1002,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/panbud.png",
-      "image_local": "assets/batomon/panbud.png"
+      "image_local": "assets/batomon/panbud.png",
+      "officialRarity_ko": "일반"
     },
     {
       "no": 9,
@@ -1004,7 +1012,7 @@
       "rank": "일반",
       "rankClass": "normal",
       "officialName": "Velocect",
-      "officialRarity": "Common",
+      "officialRarity": "일반",
       "officialTypes": [
         "Bug",
         "Flying"
@@ -1141,7 +1149,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/velocect.png",
-      "image_local": "assets/batomon/velocect.png"
+      "image_local": "assets/batomon/velocect.png",
+      "officialRarity_ko": "일반"
     },
     {
       "no": 10,
@@ -1150,7 +1159,7 @@
       "rank": "일반",
       "rankClass": "normal",
       "officialName": "Mosslug",
-      "officialRarity": "Common",
+      "officialRarity": "일반",
       "officialTypes": [
         "Water",
         "Grass"
@@ -1287,7 +1296,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/mosslug.png",
-      "image_local": "assets/batomon/mosslug.png"
+      "image_local": "assets/batomon/mosslug.png",
+      "officialRarity_ko": "일반"
     },
     {
       "no": 11,
@@ -1296,7 +1306,7 @@
       "rank": "일반",
       "rankClass": "normal",
       "officialName": "Pebbler",
-      "officialRarity": "Common",
+      "officialRarity": "일반",
       "officialTypes": [
         "Rock"
       ],
@@ -1432,7 +1442,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/pebbler.png",
-      "image_local": "assets/batomon/pebbler.png"
+      "image_local": "assets/batomon/pebbler.png",
+      "officialRarity_ko": "일반"
     },
     {
       "no": 12,
@@ -1441,7 +1452,7 @@
       "rank": "일반",
       "rankClass": "normal",
       "officialName": "Bumblebolt",
-      "officialRarity": "Common",
+      "officialRarity": "일반",
       "officialTypes": [
         "Bug",
         "Electric"
@@ -1578,7 +1589,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/bumblebolt.png",
-      "image_local": "assets/batomon/bumblebolt.png"
+      "image_local": "assets/batomon/bumblebolt.png",
+      "officialRarity_ko": "일반"
     },
     {
       "no": 13,
@@ -1587,7 +1599,7 @@
       "rank": "일반",
       "rankClass": "normal",
       "officialName": "Magmite",
-      "officialRarity": "Common",
+      "officialRarity": "일반",
       "officialTypes": [
         "Fire",
         "Rock"
@@ -1724,7 +1736,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/magmite.png",
-      "image_local": "assets/batomon/magmite.png"
+      "image_local": "assets/batomon/magmite.png",
+      "officialRarity_ko": "일반"
     },
     {
       "no": 14,
@@ -1733,7 +1746,7 @@
       "rank": "고급",
       "rankClass": "advanced",
       "officialName": "Gildshell",
-      "officialRarity": "Uncommon",
+      "officialRarity": "고급",
       "officialTypes": [
         "Bug"
       ],
@@ -1869,7 +1882,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/gildshell.png",
-      "image_local": "assets/batomon/gildshell.png"
+      "image_local": "assets/batomon/gildshell.png",
+      "officialRarity_ko": "고급"
     },
     {
       "no": 15,
@@ -1878,7 +1892,7 @@
       "rank": "고급",
       "rankClass": "advanced",
       "officialName": "Vipair",
-      "officialRarity": "Rare",
+      "officialRarity": "희귀",
       "officialTypes": [
         "Toxic",
         "Curio"
@@ -2015,7 +2029,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/vipair.png",
-      "image_local": "assets/batomon/vipair.png"
+      "image_local": "assets/batomon/vipair.png",
+      "officialRarity_ko": "희귀"
     },
     {
       "no": 16,
@@ -2024,7 +2039,7 @@
       "rank": "고급",
       "rankClass": "advanced",
       "officialName": "Venopuff",
-      "officialRarity": "Common",
+      "officialRarity": "일반",
       "officialTypes": [
         "Toxic"
       ],
@@ -2160,7 +2175,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/venopuff.png",
-      "image_local": "assets/batomon/venopuff.png"
+      "image_local": "assets/batomon/venopuff.png",
+      "officialRarity_ko": "일반"
     },
     {
       "no": 17,
@@ -2169,7 +2185,7 @@
       "rank": "고급",
       "rankClass": "advanced",
       "officialName": "Boomagon",
-      "officialRarity": "Uncommon",
+      "officialRarity": "고급",
       "officialTypes": [
         "Dragon"
       ],
@@ -2305,7 +2321,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/boomagon.png",
-      "image_local": "assets/batomon/boomagon.png"
+      "image_local": "assets/batomon/boomagon.png",
+      "officialRarity_ko": "고급"
     },
     {
       "no": 18,
@@ -2314,7 +2331,7 @@
       "rank": "고급",
       "rankClass": "advanced",
       "officialName": "Electranade",
-      "officialRarity": "Uncommon",
+      "officialRarity": "고급",
       "officialTypes": [
         "Electric"
       ],
@@ -2450,7 +2467,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/galvanade.png",
-      "image_local": "assets/batomon/galvanade.png"
+      "image_local": "assets/batomon/galvanade.png",
+      "officialRarity_ko": "고급"
     },
     {
       "no": 19,
@@ -2459,7 +2477,7 @@
       "rank": "고급",
       "rankClass": "advanced",
       "officialName": "Craghorn",
-      "officialRarity": "Uncommon",
+      "officialRarity": "고급",
       "officialTypes": [
         "Grass",
         "Rock"
@@ -2596,7 +2614,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/alpinine.png",
-      "image_local": "assets/batomon/alpinine.png"
+      "image_local": "assets/batomon/alpinine.png",
+      "officialRarity_ko": "고급"
     },
     {
       "no": 20,
@@ -2605,7 +2624,7 @@
       "rank": "고급",
       "rankClass": "advanced",
       "officialName": "Runerock",
-      "officialRarity": "Uncommon",
+      "officialRarity": "고급",
       "officialTypes": [
         "Rock"
       ],
@@ -2741,7 +2760,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/runerock.png",
-      "image_local": "assets/batomon/runerock.png"
+      "image_local": "assets/batomon/runerock.png",
+      "officialRarity_ko": "고급"
     },
     {
       "no": 21,
@@ -2750,7 +2770,7 @@
       "rank": "고급",
       "rankClass": "advanced",
       "officialName": "Pyronade",
-      "officialRarity": "Uncommon",
+      "officialRarity": "고급",
       "officialTypes": [
         "Fire"
       ],
@@ -2886,7 +2906,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/infernade.png",
-      "image_local": "assets/batomon/infernade.png"
+      "image_local": "assets/batomon/infernade.png",
+      "officialRarity_ko": "고급"
     },
     {
       "no": 22,
@@ -2895,7 +2916,7 @@
       "rank": "고급",
       "rankClass": "advanced",
       "officialName": "Cinderfly",
-      "officialRarity": "Uncommon",
+      "officialRarity": "고급",
       "officialTypes": [
         "Bug",
         "Fire"
@@ -3032,7 +3053,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/cinderfly.png",
-      "image_local": "assets/batomon/cinderfly.png"
+      "image_local": "assets/batomon/cinderfly.png",
+      "officialRarity_ko": "고급"
     },
     {
       "no": 23,
@@ -3041,7 +3063,7 @@
       "rank": "고급",
       "rankClass": "advanced",
       "officialName": "Berroon",
-      "officialRarity": "Uncommon",
+      "officialRarity": "고급",
       "officialTypes": [
         "Grass"
       ],
@@ -3177,7 +3199,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/berroon.png",
-      "image_local": "assets/batomon/berroon.png"
+      "image_local": "assets/batomon/berroon.png",
+      "officialRarity_ko": "고급"
     },
     {
       "no": 24,
@@ -3186,7 +3209,7 @@
       "rank": "고급",
       "rankClass": "advanced",
       "officialName": "Shogapede",
-      "officialRarity": "Uncommon",
+      "officialRarity": "고급",
       "officialTypes": [
         "Bug",
         "Toxic"
@@ -3323,7 +3346,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/shogapede.png",
-      "image_local": "assets/batomon/shogapede.png"
+      "image_local": "assets/batomon/shogapede.png",
+      "officialRarity_ko": "고급"
     },
     {
       "no": 25,
@@ -3332,7 +3356,7 @@
       "rank": "고급",
       "rankClass": "advanced",
       "officialName": "Brawlmantis",
-      "officialRarity": "Uncommon",
+      "officialRarity": "고급",
       "officialTypes": [
         "Bug",
         "Fighting"
@@ -3469,7 +3493,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/brawlmantis.png",
-      "image_local": "assets/batomon/brawlmantis.png"
+      "image_local": "assets/batomon/brawlmantis.png",
+      "officialRarity_ko": "고급"
     },
     {
       "no": 26,
@@ -3478,7 +3503,7 @@
       "rank": "고급",
       "rankClass": "advanced",
       "officialName": "Frizzly",
-      "officialRarity": "Uncommon",
+      "officialRarity": "고급",
       "officialTypes": [
         "Electric"
       ],
@@ -3614,7 +3639,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/frizzly.png",
-      "image_local": "assets/batomon/frizzly.png"
+      "image_local": "assets/batomon/frizzly.png",
+      "officialRarity_ko": "고급"
     },
     {
       "no": 27,
@@ -3623,7 +3649,7 @@
       "rank": "고급",
       "rankClass": "advanced",
       "officialName": "Plunderbird",
-      "officialRarity": "Uncommon",
+      "officialRarity": "고급",
       "officialTypes": [
         "Water",
         "Flying"
@@ -3760,7 +3786,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/plunderbird.png",
-      "image_local": "assets/batomon/plunderbird.png"
+      "image_local": "assets/batomon/plunderbird.png",
+      "officialRarity_ko": "고급"
     },
     {
       "no": 28,
@@ -3769,7 +3796,7 @@
       "rank": "희귀",
       "rankClass": "rare",
       "officialName": "Thorntail",
-      "officialRarity": "Rare",
+      "officialRarity": "희귀",
       "officialTypes": [
         "Grass",
         "Toxic"
@@ -3906,7 +3933,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/thorntail.png",
-      "image_local": "assets/batomon/thorntail.png"
+      "image_local": "assets/batomon/thorntail.png",
+      "officialRarity_ko": "희귀"
     },
     {
       "no": 29,
@@ -3915,7 +3943,7 @@
       "rank": "희귀",
       "rankClass": "rare",
       "officialName": "Cicadence",
-      "officialRarity": "Rare",
+      "officialRarity": "희귀",
       "officialTypes": [
         "Bug"
       ],
@@ -4051,7 +4079,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/cicadence.png",
-      "image_local": "assets/batomon/cicadence.png"
+      "image_local": "assets/batomon/cicadence.png",
+      "officialRarity_ko": "희귀"
     },
     {
       "no": 30,
@@ -4060,7 +4089,7 @@
       "rank": "희귀",
       "rankClass": "rare",
       "officialName": "Formiqueen",
-      "officialRarity": "Rare",
+      "officialRarity": "희귀",
       "officialTypes": [
         "Bug"
       ],
@@ -4196,7 +4225,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/formiqueen.png",
-      "image_local": "assets/batomon/formiqueen.png"
+      "image_local": "assets/batomon/formiqueen.png",
+      "officialRarity_ko": "희귀"
     },
     {
       "no": 31,
@@ -4205,7 +4235,7 @@
       "rank": "희귀",
       "rankClass": "rare",
       "officialName": "Noxalith",
-      "officialRarity": "Rare",
+      "officialRarity": "희귀",
       "officialTypes": [
         "Toxic"
       ],
@@ -4341,7 +4371,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/noxalith.png",
-      "image_local": "assets/batomon/noxalith.png"
+      "image_local": "assets/batomon/noxalith.png",
+      "officialRarity_ko": "희귀"
     },
     {
       "no": 32,
@@ -4350,7 +4381,7 @@
       "rank": "희귀",
       "rankClass": "rare",
       "officialName": "Cherubble",
-      "officialRarity": "Rare",
+      "officialRarity": "희귀",
       "officialTypes": [
         "Rock"
       ],
@@ -4486,7 +4517,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/cherubble.png",
-      "image_local": "assets/batomon/cherubble.png"
+      "image_local": "assets/batomon/cherubble.png",
+      "officialRarity_ko": "희귀"
     },
     {
       "no": 33,
@@ -4495,7 +4527,7 @@
       "rank": "희귀",
       "rankClass": "rare",
       "officialName": "Aster",
-      "officialRarity": "Rare",
+      "officialRarity": "희귀",
       "officialTypes": [
         "Water"
       ],
@@ -4631,7 +4663,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/aster.png",
-      "image_local": "assets/batomon/aster.png"
+      "image_local": "assets/batomon/aster.png",
+      "officialRarity_ko": "희귀"
     },
     {
       "no": 34,
@@ -4640,7 +4673,7 @@
       "rank": "희귀",
       "rankClass": "rare",
       "officialName": "Aristobat",
-      "officialRarity": "Rare",
+      "officialRarity": "희귀",
       "officialTypes": [
         "Toxic",
         "Flying"
@@ -4777,7 +4810,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/aristobat.png",
-      "image_local": "assets/batomon/aristobat.png"
+      "image_local": "assets/batomon/aristobat.png",
+      "officialRarity_ko": "희귀"
     },
     {
       "no": 35,
@@ -4786,7 +4820,7 @@
       "rank": "희귀",
       "rankClass": "rare",
       "officialName": "Humbolt",
-      "officialRarity": "Rare",
+      "officialRarity": "희귀",
       "officialTypes": [
         "Electric",
         "Flying"
@@ -4923,7 +4957,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/humbolt.png",
-      "image_local": "assets/batomon/humbolt.png"
+      "image_local": "assets/batomon/humbolt.png",
+      "officialRarity_ko": "희귀"
     },
     {
       "no": 36,
@@ -4932,7 +4967,7 @@
       "rank": "희귀",
       "rankClass": "rare",
       "officialName": "Lignite",
-      "officialRarity": "Rare",
+      "officialRarity": "희귀",
       "officialTypes": [
         "Fire"
       ],
@@ -5068,7 +5103,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/lignite.png",
-      "image_local": "assets/batomon/lignite.png"
+      "image_local": "assets/batomon/lignite.png",
+      "officialRarity_ko": "희귀"
     },
     {
       "no": 37,
@@ -5077,7 +5113,7 @@
       "rank": "희귀",
       "rankClass": "rare",
       "officialName": "Magmalith",
-      "officialRarity": "Rare",
+      "officialRarity": "희귀",
       "officialTypes": [
         "Fire",
         "Rock"
@@ -5214,7 +5250,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/magmalith.png",
-      "image_local": "assets/batomon/magmalith.png"
+      "image_local": "assets/batomon/magmalith.png",
+      "officialRarity_ko": "희귀"
     },
     {
       "no": 38,
@@ -5223,7 +5260,7 @@
       "rank": "희귀",
       "rankClass": "rare",
       "officialName": "Dracana",
-      "officialRarity": "Rare",
+      "officialRarity": "희귀",
       "officialTypes": [
         "Dragon"
       ],
@@ -5359,7 +5396,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/dracana.png",
-      "image_local": "assets/batomon/dracana.png"
+      "image_local": "assets/batomon/dracana.png",
+      "officialRarity_ko": "희귀"
     },
     {
       "no": 39,
@@ -5368,7 +5406,7 @@
       "rank": "희귀",
       "rankClass": "rare",
       "officialName": "Dirgefin",
-      "officialRarity": "Rare",
+      "officialRarity": "희귀",
       "officialTypes": [
         "Water"
       ],
@@ -5504,7 +5542,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/dirgefin.png",
-      "image_local": "assets/batomon/dirgefin.png"
+      "image_local": "assets/batomon/dirgefin.png",
+      "officialRarity_ko": "희귀"
     },
     {
       "no": 40,
@@ -5513,7 +5552,7 @@
       "rank": "희귀",
       "rankClass": "rare",
       "officialName": "Ironcore",
-      "officialRarity": "Rare",
+      "officialRarity": "희귀",
       "officialTypes": [
         "Steel"
       ],
@@ -5649,7 +5688,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/ironcore.png",
-      "image_local": "assets/batomon/ironcore.png"
+      "image_local": "assets/batomon/ironcore.png",
+      "officialRarity_ko": "희귀"
     },
     {
       "no": 41,
@@ -5658,7 +5698,7 @@
       "rank": "희귀",
       "rankClass": "rare",
       "officialName": "Stalagrove",
-      "officialRarity": "Rare",
+      "officialRarity": "희귀",
       "officialTypes": [
         "Grass",
         "Rock"
@@ -5795,7 +5835,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/stalagrove.png",
-      "image_local": "assets/batomon/stalagrove.png"
+      "image_local": "assets/batomon/stalagrove.png",
+      "officialRarity_ko": "희귀"
     },
     {
       "no": 42,
@@ -5804,7 +5845,7 @@
       "rank": "영웅",
       "rankClass": "epic",
       "officialName": "Dryadell",
-      "officialRarity": "Super Rare",
+      "officialRarity": "영웅",
       "officialTypes": [
         "Grass"
       ],
@@ -5940,7 +5981,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/dryadell.png",
-      "image_local": "assets/batomon/dryadell.png"
+      "image_local": "assets/batomon/dryadell.png",
+      "officialRarity_ko": "영웅"
     },
     {
       "no": 43,
@@ -5949,7 +5991,7 @@
       "rank": "영웅",
       "rankClass": "epic",
       "officialName": "Fumungus",
-      "officialRarity": "Super Rare",
+      "officialRarity": "영웅",
       "officialTypes": [
         "Grass",
         "Toxic"
@@ -6086,7 +6128,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/fumungus.png",
-      "image_local": "assets/batomon/fumungus.png"
+      "image_local": "assets/batomon/fumungus.png",
+      "officialRarity_ko": "영웅"
     },
     {
       "no": 44,
@@ -6095,7 +6138,7 @@
       "rank": "영웅",
       "rankClass": "epic",
       "officialName": "Prismagon",
-      "officialRarity": "Super Rare",
+      "officialRarity": "영웅",
       "officialTypes": [
         "Dragon"
       ],
@@ -6231,7 +6274,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/prismagon.png",
-      "image_local": "assets/batomon/prismagon.png"
+      "image_local": "assets/batomon/prismagon.png",
+      "officialRarity_ko": "영웅"
     },
     {
       "no": 45,
@@ -6240,7 +6284,7 @@
       "rank": "영웅",
       "rankClass": "epic",
       "officialName": "Sirenade",
-      "officialRarity": "Super Rare",
+      "officialRarity": "영웅",
       "officialTypes": [
         "Water"
       ],
@@ -6376,7 +6420,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/sirenade.png",
-      "image_local": "assets/batomon/sirenade.png"
+      "image_local": "assets/batomon/sirenade.png",
+      "officialRarity_ko": "영웅"
     },
     {
       "no": 46,
@@ -6385,7 +6430,7 @@
       "rank": "영웅",
       "rankClass": "epic",
       "officialName": "Celestia",
-      "officialRarity": "Super Rare",
+      "officialRarity": "영웅",
       "officialTypes": [
         "Dragon"
       ],
@@ -6521,7 +6566,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/celestia.png",
-      "image_local": "assets/batomon/celestia.png"
+      "image_local": "assets/batomon/celestia.png",
+      "officialRarity_ko": "영웅"
     },
     {
       "no": 47,
@@ -6530,7 +6576,7 @@
       "rank": "영웅",
       "rankClass": "epic",
       "officialName": "Blazewing",
-      "officialRarity": "Super Rare",
+      "officialRarity": "영웅",
       "officialTypes": [
         "Fire",
         "Flying"
@@ -6667,7 +6713,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/blazewing.png",
-      "image_local": "assets/batomon/blazewing.png"
+      "image_local": "assets/batomon/blazewing.png",
+      "officialRarity_ko": "영웅"
     },
     {
       "no": 48,
@@ -6676,7 +6723,7 @@
       "rank": "영웅",
       "rankClass": "epic",
       "officialName": "Shelldra",
-      "officialRarity": "Super Rare",
+      "officialRarity": "영웅",
       "officialTypes": [
         "Water",
         "Dragon"
@@ -6813,7 +6860,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/shelldra.png",
-      "image_local": "assets/batomon/shelldra.png"
+      "image_local": "assets/batomon/shelldra.png",
+      "officialRarity_ko": "영웅"
     },
     {
       "no": 49,
@@ -6822,7 +6870,7 @@
       "rank": "영웅",
       "rankClass": "epic",
       "officialName": "Coalem",
-      "officialRarity": "Super Rare",
+      "officialRarity": "영웅",
       "officialTypes": [
         "Fire",
         "Rock"
@@ -6959,7 +7007,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/coalem.png",
-      "image_local": "assets/batomon/coalem.png"
+      "image_local": "assets/batomon/coalem.png",
+      "officialRarity_ko": "영웅"
     },
     {
       "no": 50,
@@ -6968,7 +7017,7 @@
       "rank": "영웅",
       "rankClass": "epic",
       "officialName": "Clawnetic",
-      "officialRarity": "Super Rare",
+      "officialRarity": "영웅",
       "officialTypes": [
         "Steel"
       ],
@@ -7104,7 +7153,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/clawnetic.png",
-      "image_local": "assets/batomon/clawnetic.png"
+      "image_local": "assets/batomon/clawnetic.png",
+      "officialRarity_ko": "영웅"
     },
     {
       "no": 51,
@@ -7113,7 +7163,7 @@
       "rank": "영웅",
       "rankClass": "epic",
       "officialName": "Reapra",
-      "officialRarity": "Super Rare",
+      "officialRarity": "영웅",
       "officialTypes": [
         "Ghost"
       ],
@@ -7249,7 +7299,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/reapra.png",
-      "image_local": "assets/batomon/reapra.png"
+      "image_local": "assets/batomon/reapra.png",
+      "officialRarity_ko": "영웅"
     },
     {
       "no": 52,
@@ -7258,7 +7309,7 @@
       "rank": "영웅",
       "rankClass": "epic",
       "officialName": "Zephyrex",
-      "officialRarity": "Super Rare",
+      "officialRarity": "영웅",
       "officialTypes": [
         "Flying"
       ],
@@ -7394,7 +7445,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/zephyrex.png",
-      "image_local": "assets/batomon/zephyrex.png"
+      "image_local": "assets/batomon/zephyrex.png",
+      "officialRarity_ko": "영웅"
     },
     {
       "no": 53,
@@ -7403,7 +7455,7 @@
       "rank": "영웅",
       "rankClass": "epic",
       "officialName": "Aegistruct",
-      "officialRarity": "Super Rare",
+      "officialRarity": "영웅",
       "officialTypes": [
         "Rock"
       ],
@@ -7539,7 +7591,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/aegistruct.png",
-      "image_local": "assets/batomon/aegistruct.png"
+      "image_local": "assets/batomon/aegistruct.png",
+      "officialRarity_ko": "영웅"
     },
     {
       "no": 54,
@@ -7548,7 +7601,7 @@
       "rank": "영웅",
       "rankClass": "epic",
       "officialName": "Pylong",
-      "officialRarity": "Super Rare",
+      "officialRarity": "영웅",
       "officialTypes": [
         "Electric"
       ],
@@ -7684,7 +7737,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/pylong.png",
-      "image_local": "assets/batomon/pylong.png"
+      "image_local": "assets/batomon/pylong.png",
+      "officialRarity_ko": "영웅"
     },
     {
       "no": 55,
@@ -7693,7 +7747,7 @@
       "rank": "전설",
       "rankClass": "legendary",
       "officialName": "Basilord",
-      "officialRarity": "Legendary",
+      "officialRarity": "전설",
       "officialTypes": [
         "Fire"
       ],
@@ -7829,7 +7883,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/basilord.png",
-      "image_local": "assets/batomon/basilord.png"
+      "image_local": "assets/batomon/basilord.png",
+      "officialRarity_ko": "전설"
     },
     {
       "no": 56,
@@ -7838,7 +7893,7 @@
       "rank": "전설",
       "rankClass": "legendary",
       "officialName": "Torrantler",
-      "officialRarity": "Legendary",
+      "officialRarity": "전설",
       "officialTypes": [
         "Water"
       ],
@@ -7974,7 +8029,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/torrantler.png",
-      "image_local": "assets/batomon/torrantler.png"
+      "image_local": "assets/batomon/torrantler.png",
+      "officialRarity_ko": "전설"
     },
     {
       "no": 57,
@@ -7983,7 +8039,7 @@
       "rank": "전설",
       "rankClass": "legendary",
       "officialName": "Galvanine",
-      "officialRarity": "Legendary",
+      "officialRarity": "전설",
       "officialTypes": [
         "Electric"
       ],
@@ -8119,7 +8175,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/galvanine.png",
-      "image_local": "assets/batomon/galvanine.png"
+      "image_local": "assets/batomon/galvanine.png",
+      "officialRarity_ko": "전설"
     },
     {
       "no": 58,
@@ -8128,7 +8185,7 @@
       "rank": "전설",
       "rankClass": "legendary",
       "officialName": "Geminiss",
-      "officialRarity": "Legendary",
+      "officialRarity": "전설",
       "officialTypes": [
         "Rock"
       ],
@@ -8264,7 +8321,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/geminiss.png",
-      "image_local": "assets/batomon/geminiss.png"
+      "image_local": "assets/batomon/geminiss.png",
+      "officialRarity_ko": "전설"
     },
     {
       "no": 59,
@@ -8273,7 +8331,7 @@
       "rank": "전설",
       "rankClass": "legendary",
       "officialName": "Blixie",
-      "officialRarity": "Legendary",
+      "officialRarity": "전설",
       "officialTypes": [
         "Fire"
       ],
@@ -8409,7 +8467,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/blixie.png",
-      "image_local": "assets/batomon/blixie.png"
+      "image_local": "assets/batomon/blixie.png",
+      "officialRarity_ko": "전설"
     },
     {
       "no": 60,
@@ -8418,7 +8477,7 @@
       "rank": "전설",
       "rankClass": "legendary",
       "officialName": "Onsetra",
-      "officialRarity": "Legendary",
+      "officialRarity": "전설",
       "officialTypes": [
         "Dragon"
       ],
@@ -8554,7 +8613,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/onsetra.png",
-      "image_local": "assets/batomon/onsetra.png"
+      "image_local": "assets/batomon/onsetra.png",
+      "officialRarity_ko": "전설"
     },
     {
       "no": 61,
@@ -8563,7 +8623,7 @@
       "rank": "전설",
       "rankClass": "legendary",
       "officialName": "Gaiadrasil",
-      "officialRarity": "Legendary",
+      "officialRarity": "전설",
       "officialTypes": [
         "Grass"
       ],
@@ -8699,7 +8759,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/gaiadrasil.png",
-      "image_local": "assets/batomon/gaiadrasil.png"
+      "image_local": "assets/batomon/gaiadrasil.png",
+      "officialRarity_ko": "전설"
     },
     {
       "no": 62,
@@ -8708,7 +8769,7 @@
       "rank": "전설",
       "rankClass": "legendary",
       "officialName": "Draconarch",
-      "officialRarity": "Legendary",
+      "officialRarity": "전설",
       "officialTypes": [
         "Dragon"
       ],
@@ -8844,7 +8905,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/dragonarch.png",
-      "image_local": "assets/batomon/dragonarch.png"
+      "image_local": "assets/batomon/dragonarch.png",
+      "officialRarity_ko": "전설"
     },
     {
       "no": 63,
@@ -8853,7 +8915,7 @@
       "rank": "전설",
       "rankClass": "legendary",
       "officialName": "Saberhorn",
-      "officialRarity": "Legendary",
+      "officialRarity": "전설",
       "officialTypes": [
         "Dragon"
       ],
@@ -8989,7 +9051,8 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/saberhorn.png",
-      "image_local": "assets/batomon/saberhorn.png"
+      "image_local": "assets/batomon/saberhorn.png",
+      "officialRarity_ko": "전설"
     },
     {
       "no": 64,
@@ -8998,7 +9061,7 @@
       "rank": "전설",
       "rankClass": "legendary",
       "officialName": "Stellagon",
-      "officialRarity": "Legendary",
+      "officialRarity": "전설",
       "officialTypes": [
         "Dragon"
       ],
@@ -9134,8 +9197,9 @@
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
       "image_url": "https://batomon.com/game/25377295/monster/stellagon.png",
-      "image_local": "assets/batomon/stellagon.png"
+      "image_local": "assets/batomon/stellagon.png",
+      "officialRarity_ko": "전설"
     }
   ],
-  "site_version": "0.010"
+  "site_version": "0.011"
 }
