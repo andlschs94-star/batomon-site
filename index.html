@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.024</title>
+<title>바토몬 원향 도감 v0.025</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -73,7 +73,7 @@
 .eventChoice{font-weight:700}
 .eventReward{margin-top:4px;color:#b7d7ff}
 .eventSub{margin-top:3px;font-size:12px;opacity:.72}
-/* v0.024 Damage Calculator UI */
+/* v0.025 Damage Calculator UI */
 .calcPage{background:#0c6673;min-height:calc(100vh - 30px);border:1px solid #153f4a;border-radius:18px;overflow:hidden;box-shadow:0 18px 55px rgba(0,0,0,.28)}
 .calcTopbar{height:58px;background:linear-gradient(180deg,#20c3f0 0%,#13a8d4 100%);border-bottom:3px solid #087c9d;display:flex;align-items:center;justify-content:center;gap:clamp(24px,5vw,90px);font-weight:900;color:#fff;text-shadow:2px 2px 0 rgba(0,0,0,.18)}
 .calcStatus{display:flex;align-items:center;gap:10px;font-size:20px;min-width:110px;justify-content:center}.calcIcon{font-size:30px;line-height:1}.calcDay{font-size:30px}.calcCounter{font-size:20px}
@@ -82,7 +82,7 @@
 .calcCenter{display:flex;flex-direction:column;gap:14px}.calcBox{background:#f3f3f4;border:5px solid #8e929d;outline:2px solid #252a31;border-radius:7px;box-shadow:4px 4px 0 rgba(0,0,0,.2);overflow:hidden}.calcBoxHead{height:40px;padding:6px 12px;font-size:20px;font-weight:900;color:#fff;background:#ffc20f;border-bottom:4px solid #e2a500;text-shadow:2px 2px 0 rgba(0,0,0,.15)}.calcBoxHead.team{background:#ef4d6a;border-bottom-color:#cf3450}.calcSlots{padding:6px;display:grid;gap:7px}.calcSlots.bench{grid-template-columns:repeat(4,1fr)}.calcSlots.team{grid-template-columns:repeat(3,1fr)}.calcSlot{height:110px;background:#fff;border:4px solid #b8bbc4;box-shadow:inset 0 0 0 2px #e6e7ea;display:flex;align-items:center;justify-content:center;position:relative;color:#b3b6bd;font-size:12px;font-weight:900}.calcSlot:after{content:'+';font-size:26px;color:#d0d2d7}.calcSlot:hover{border-color:#8ea7b7;background:#f9fcfd}.calcSlot.teamSlot{height:112px}.calcTeamHint{font-size:12px;color:#66707d;text-align:center;padding:2px 0 8px}.calcRightSpace{display:none}
 .calcShop{grid-column:3;grid-row:1;margin-top:0;background:#eef0f1;border:5px solid #8e929d;outline:2px solid #252a31;border-radius:7px;box-shadow:4px 4px 0 rgba(0,0,0,.2);min-height:330px;overflow:hidden}.calcShopHead{height:38px;background:#65c9ee;color:#10232c;border-bottom:4px solid #3ba5c9;font-size:19px;font-weight:900;padding:6px 12px}.calcShopBlank{height:285px;background:#f7f7f7}
 .calcNotice{margin-top:10px;color:#d9f5fb;font-size:12px;text-align:center}.calcNavButton{position:relative}.calcNavButton.on{background:#173247!important;color:#6fd9ff!important}
-/* v0.024 Trainer selector UI */
+/* v0.025 Trainer selector UI */
 .calcTrainerPanel{cursor:pointer;position:relative}
 .calcTrainerPanel:focus-visible{outline:4px solid #20c3f0;outline-offset:3px}
 .calcTrainerChange{position:absolute;right:10px;top:10px;background:rgba(0,0,0,.58);color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:7px;padding:5px 9px;font-size:12px;font-weight:800;z-index:2}
@@ -99,14 +99,14 @@
 @media(max-width:720px){.calcTopbar{gap:8px;justify-content:space-around}.calcStatus{font-size:14px;min-width:auto}.calcDay{font-size:20px}.calcCounter{font-size:14px}.calcBattleArea{grid-template-columns:1fr}.calcTrainerPanel{max-width:220px;margin:auto;width:100%}.calcCenter{width:100%}.calcSlots.team{grid-template-columns:repeat(2,1fr)}.calcBoard{padding:10px}.calcShop{grid-column:1;grid-row:3;min-height:140px}.calcShopBlank{height:95px}}
 
 
-/* v0.024 UI: calculator opens by default; shop moved below and widened */
+/* v0.025 UI: calculator opens by default; shop moved below and widened */
 .calcBattleArea{grid-template-columns:180px minmax(460px,1fr);}
 .calcShop{grid-column:1/-1;grid-row:2;width:100%;min-height:190px;margin-top:0;}
 .calcShopBlank{height:140px;}
 @media(max-width:1050px){.calcBattleArea{grid-template-columns:150px 1fr}.calcShop{grid-column:1/-1;grid-row:2;min-height:170px}.calcShopBlank{height:120px}}
 @media(max-width:720px){.calcBattleArea{grid-template-columns:1fr}.calcShop{grid-column:1;grid-row:3;min-height:150px}.calcShopBlank{height:105px}}
 
-/* v0.024 Batomon list / team placement UI */
+/* v0.025 Batomon list / team placement UI */
 .calcShopGrid{height:140px;background:#f7f7f7;padding:8px;display:grid;grid-template-columns:repeat(8,minmax(72px,1fr));gap:7px;overflow-y:auto;overflow-x:hidden}
 .calcBatomonCard{border:2px solid #c4c7cd;background:#fff;border-radius:6px;padding:3px;cursor:pointer;display:grid;grid-template-columns:28px 1fr;grid-template-rows:44px 18px;column-gap:4px;align-items:center;min-width:0;text-align:left}
 .calcBatomonCard:hover{border-color:#20a9d0;background:#eefaff}.calcBatomonCard img{grid-column:1/-1;width:100%;height:44px;object-fit:contain}.calcBatomonNo{font-size:9px;font-weight:900;color:#7b818b}.calcBatomonName{font-size:10px;font-weight:900;color:#303741;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -118,7 +118,7 @@
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.024</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.025</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -158,6 +158,10 @@
               <div class="calcTeamHint">바토몬 배치 영역 · 계산 기능은 다음 단계에서 연결됩니다.</div>
             </div>
           </main>
+          <aside class="calcTrinketPanel" id="calcTrinketPanel" tabindex="0" role="button" aria-label="장신구 선택">
+            <div class="calcTrinketHead">장신구</div>
+            <div class="calcTrinketBody" id="calcTrinketBody"><div class="calcTrinketHint">장신구를 선택하세요</div></div>
+          </aside>
           <div class="calcShop">
             <div class="calcShopHead">바토몬 목록</div>
             <div class="calcShopGrid" id="calcBatomonGrid"></div>
@@ -181,7 +185,7 @@
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.024</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.025</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -258,6 +262,13 @@
   </div>
 </div>
 
+<div id="trinketSelectOverlay" class="trainerSelectOverlay" aria-hidden="true">
+  <div class="trainerSelectModal calcTrinketModal" role="dialog" aria-modal="true" aria-labelledby="trinketSelectTitle">
+    <div class="trainerSelectHead"><strong id="trinketSelectTitle">장신구 선택</strong><button type="button" class="trainerSelectClose" id="trinketSelectClose" aria-label="닫기">×</button></div>
+    <div class="trainerSelectTools"><input id="calcTrinketSearch" placeholder="장신구 이름 검색" autocomplete="off"></div>
+    <div id="calcTrinketGrid" class="trainerSelectGrid"></div>
+  </div>
+</div>
 <div id="trainerSelectOverlay" class="trainerSelectOverlay" aria-hidden="true">
   <div class="trainerSelectModal" role="dialog" aria-modal="true" aria-labelledby="trainerSelectTitle">
     <div class="trainerSelectHead"><strong id="trainerSelectTitle">트레이너 선택</strong><button type="button" class="trainerSelectClose" id="trainerSelectClose" aria-label="닫기">×</button></div>
@@ -275,6 +286,7 @@
 let characters=[];
 let trainers=[];
 let trinkets=[];
+let calcSelectedTrinketId=null;
 let items=[];
 let events=[];
 let mechanics=[];
@@ -402,11 +414,16 @@ document.getElementById('fileInput').addEventListener('change',e=>{const f=e.tar
 document.getElementById('zoom').addEventListener('input',e=>{work.zoom=Number(e.target.value);drawEditor()});document.getElementById('posX').addEventListener('input',e=>{work.x=Number(e.target.value);drawEditor()});document.getElementById('posY').addEventListener('input',e=>{work.y=Number(e.target.value);drawEditor()});
 canvas.addEventListener('pointerdown',e=>{dragging=true;canvas.setPointerCapture(e.pointerId);dragStart={x:e.clientX,y:e.clientY,ox:Number(work.x||0),oy:Number(work.y||0)}});canvas.addEventListener('pointermove',e=>{if(!dragging)return;const r=canvas.getBoundingClientRect();work.x=Math.max(-500,Math.min(500,dragStart.ox+(e.clientX-dragStart.x)*canvas.width/r.width));work.y=Math.max(-500,Math.min(500,dragStart.oy+(e.clientY-dragStart.y)*canvas.height/r.height));document.getElementById('posX').value=work.x;document.getElementById('posY').value=work.y;drawEditor()});canvas.addEventListener('pointerup',()=>dragging=false);canvas.addEventListener('pointercancel',()=>dragging=false);
 for(const id of ['statsOverlay','editOverlay'])document.getElementById(id).addEventListener('click',e=>{if(e.target.id===id){id==='statsOverlay'?closeStats():closeEditor()}});
-window.addEventListener('keydown',e=>{if(e.key==='Escape'){if(document.getElementById('trainerSelectOverlay').style.display==='flex')closeTrainerSelector();else if(document.getElementById('editOverlay').style.display==='flex')closeEditor();else if(document.getElementById('statsOverlay').style.display==='flex')closeStats()}});
+window.addEventListener('keydown',e=>{if(e.key==='Escape'){if(document.getElementById('trainerSelectOverlay').style.display==='flex')closeTrainerSelector();else if(document.getElementById('trinketSelectOverlay').style.display==='flex')closeTrinketSelector();else if(document.getElementById('editOverlay').style.display==='flex')closeEditor();else if(document.getElementById('statsOverlay').style.display==='flex')closeStats()}});
 
 const calcTrainerPanel=document.getElementById('calcTrainerPanel');
 if(calcTrainerPanel){calcTrainerPanel.addEventListener('click',openTrainerSelector);calcTrainerPanel.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openTrainerSelector()}})}
 document.getElementById('trainerSelectClose')?.addEventListener('click',closeTrainerSelector);
+document.getElementById('calcTrinketPanel')?.addEventListener('click',openTrinketSelector);
+document.getElementById('calcTrinketPanel')?.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openTrinketSelector()}});
+document.getElementById('trinketSelectClose')?.addEventListener('click',closeTrinketSelector);
+document.getElementById('trinketSelectOverlay')?.addEventListener('click',e=>{if(e.target.id==='trinketSelectOverlay')closeTrinketSelector()});
+document.getElementById('calcTrinketSearch')?.addEventListener('input',renderCalcTrinketList);
 document.getElementById('trainerSelectOverlay')?.addEventListener('click',e=>{if(e.target.id==='trainerSelectOverlay')closeTrainerSelector()});
 document.getElementById('calcTrainerSearch')?.addEventListener('input',renderCalcTrainerList);
 
@@ -458,6 +475,34 @@ function addBatomonToTeam(item){
   const num=document.createElement('span'); num.className='calcTeamSlotNo'; num.textContent=String(item.no||'').padStart(2,'0');
   empty.append(img,num,label);
 }
+
+function getTrinketName(t){return t?.name_ko||t?.name_en||t?.name||'장신구';}
+function renderCalcTrinket(){
+  const body=document.getElementById('calcTrinketBody'); if(!body)return;
+  const t=trinkets.find(x=>String(x.id||x.slug||x.name_en||x.name_ko)===String(calcSelectedTrinketId));
+  body.innerHTML='';
+  if(!t){body.innerHTML='<div class="calcTrinketHint">장신구를 선택하세요</div>';return;}
+  const img=document.createElement('img'); img.alt=getTrinketName(t); img.loading='lazy'; img.referrerPolicy='no-referrer';
+  const sources=[t.image_local||'',t.image_url||''].filter(Boolean); let i=0; const next=()=>{if(i>=sources.length){img.style.display='none';return;}img.src=sources[i++];}; img.onerror=next; next();
+  const name=document.createElement('div');name.className='calcTrinketName';name.textContent=getTrinketName(t); body.append(img,name);
+}
+function renderCalcTrinketList(){
+  const g=document.getElementById('calcTrinketGrid');if(!g)return;
+  const q=(document.getElementById('calcTrinketSearch')?.value||'').trim().toLowerCase();
+  const list=trinkets.filter(t=>!q||[t.name_ko,t.name_en,t.name,t.effect_ko,t.effect_en].filter(Boolean).join(' ').toLowerCase().includes(q));
+  g.innerHTML='';
+  if(!list.length){g.innerHTML='<div class="trainerSelectEmpty">검색 결과가 없습니다.</div>';return;}
+  for(const t of list){
+    const card=document.createElement('button');card.type='button';card.className='trainerSelectCard';
+    const img=document.createElement('img');img.alt=getTrinketName(t);img.loading='lazy';img.referrerPolicy='no-referrer';
+    const sources=[t.image_local||'',t.image_url||''].filter(Boolean);let i=0;const next=()=>{if(i>=sources.length){img.style.display='none';return;}img.src=sources[i++];};img.onerror=next;next();
+    const name=document.createElement('div');name.className='trainerSelectName';name.textContent=getTrinketName(t);
+    const en=document.createElement('div');en.className='trainerSelectNameEn';en.textContent=t.name_en||t.name||'';
+    card.append(img,name,en);card.addEventListener('click',()=>{calcSelectedTrinketId=t.id||t.slug||t.name_en||t.name_ko;renderCalcTrinket();closeTrinketSelector()});g.appendChild(card);
+  }
+}
+function openTrinketSelector(){const o=document.getElementById('trinketSelectOverlay');if(!o)return;document.getElementById('calcTrinketSearch').value='';renderCalcTrinketList();o.style.display='flex';o.setAttribute('aria-hidden','false');document.getElementById('calcTrinketSearch').focus();}
+function closeTrinketSelector(){const o=document.getElementById('trinketSelectOverlay');if(!o)return;o.style.display='none';o.setAttribute('aria-hidden','true');}
 
 function updateCalcTrainer(){
   const t=trainers.find(x=>x.id===calcSelectedTrainerId)||trainers.find(x=>x.id==='egg-breeder')||trainers[0];
@@ -768,13 +813,14 @@ async function init(){
     if(ev.ok){ const ed=await ev.json(); events=Array.isArray(ed)?ed:(ed.events||[]); }
     const it=await fetch('./items.json?v=0.024&cb='+Date.now(),{cache:'no-store'});
     if(it.ok){ const id=await it.json(); items=Array.isArray(id)?id:(id.items||[]); }
-    const tk=await fetch('./trinkets.json?v=0.024&cb='+Date.now(),{cache:'no-store'});
+    const tk=await fetch('./trinkets.json?v=0.025&cb='+Date.now(),{cache:'no-store'});
       if(tk.ok){ const kd=await tk.json(); trinkets=Array.isArray(kd)?kd:(kd.trinkets||[]); }
     const mc=await fetch('./mechanics.json?v=0.024&cb='+Date.now(),{cache:'no-store'});
     if(mc.ok){ const md=await mc.json(); mechanics=Array.isArray(md)?md:(md.mechanics||[]); }
     }catch(e){ console.warn('trinkets.json 로드 실패',e); }
     render();
     renderCalcBatomonList();
+    renderCalcTrinket();
     renderTrainers();
     renderTrinkets();
     renderItems();
@@ -789,4 +835,30 @@ async function init(){
 init();
 </script>
 </body>
-</html>
+</html>/* v0.025 UI: compact team + trinket panel */
+.calcBattleArea{grid-template-columns:150px minmax(360px,1fr) 150px;gap:14px;align-items:start}
+.calcTrainerPanel,.calcTrinketPanel{width:150px}
+.calcTrainerTitle{height:26px;font-size:12px;padding:5px 7px}
+.calcTrainerImage{height:76px}
+.calcTrainerAbility{min-height:54px;padding:6px 5px;font-size:9px;line-height:1.3}
+.calcTrainerHp{height:23px;font-size:9px;padding:2px 4px}
+.calcHpBar{height:15px;line-height:13px;font-size:9px}
+.calcTrainerChange{right:6px;top:6px;padding:3px 6px;font-size:9px}
+.calcBoxHead{height:34px;padding:5px 9px;font-size:17px}
+.calcSlots.team{padding:5px;gap:5px}
+.calcSlot.teamSlot{height:86px;border-width:3px;padding:2px}
+.calcSlot.teamSlot img{width:58px;height:58px}
+.calcTeamSlotNo{left:3px;top:3px;font-size:8px;padding:1px 3px}
+.calcTeamSlotName{font-size:9px}
+.calcTeamHint{font-size:10px;padding:2px 0 5px}
+.calcTrinketPanel{background:#f3f3f4;border:4px solid #8e929d;outline:2px solid #252a31;border-radius:7px;box-shadow:4px 4px 0 rgba(0,0,0,.2);overflow:hidden;cursor:pointer}
+.calcTrinketHead{height:26px;background:#9b7be8;color:#fff;border-bottom:3px solid #7454bd;font-size:12px;font-weight:900;padding:5px 7px;text-shadow:1px 1px 0 rgba(0,0,0,.18)}
+.calcTrinketBody{height:118px;background:#fafafa;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:5px;box-sizing:border-box}
+.calcTrinketBody img{width:72px;height:72px;object-fit:contain}
+.calcTrinketName{font-size:9px;font-weight:900;color:#39414b;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.calcTrinketHint{font-size:9px;color:#89909a;text-align:center}
+.calcTrinketPanel:focus-visible{outline:4px solid #20c3f0;outline-offset:3px}
+.calcTrinketModal .trainerSelectCard img{height:58px}
+@media(max-width:1050px){.calcBattleArea{grid-template-columns:145px minmax(330px,1fr) 145px}.calcTrainerPanel,.calcTrinketPanel{width:145px}.calcShop{grid-column:1/-1;grid-row:2}}
+@media(max-width:720px){.calcBattleArea{grid-template-columns:1fr}.calcTrainerPanel,.calcTrinketPanel{width:100%;max-width:220px;margin:auto}.calcTrinketPanel{grid-row:2}.calcCenter{width:100%}.calcShop{grid-column:1;grid-row:3}.calcSlots.team{grid-template-columns:repeat(3,1fr)}}
+
