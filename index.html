@@ -284,17 +284,37 @@ function updateStats(){
   document.getElementById("stAbility").textContent=v.ability||item.ability||"확인 필요";
   document.getElementById("stSource").textContent=(statsVariant==="normal"?v.source:"SHINY 데이터 확인 필요");
 }
+async function loadCharacterData(){
+  // 1) GitHub Pages의 같은 폴더에서 읽기
+  const urls=[
+    new URL("characters.json", document.baseURI).href,
+    "https://raw.githubusercontent.com/andlschs94-star/batamon-site/main/characters.json",
+    "https://raw.githubusercontent.com/andlschs94-star/batamon-site/master/characters.json"
+  ];
+  let lastError=null;
+  for(const url of urls){
+    try{
+      const res=await fetch(url,{cache:"no-store"});
+      if(!res.ok) throw new Error("HTTP "+res.status);
+      const data=await res.json();
+      const list=Array.isArray(data)?data:(data.characters||[]);
+      if(Array.isArray(list)&&list.length){ return list; }
+      throw new Error("캐릭터 배열이 비어 있습니다.");
+    }catch(err){
+      lastError=err;
+      console.warn("캐릭터 데이터 로드 실패:",url,err);
+    }
+  }
+  throw lastError || new Error("characters.json을 찾을 수 없습니다.");
+}
 async function init(){
   try{
-    const res=await fetch("./characters.json",{cache:"no-store"});
-    if(!res.ok) throw new Error("characters.json HTTP "+res.status);
-    const data=await res.json();
-    ORIGINALS=Array.isArray(data)?data:(data.characters||[]);
-    if(!ORIGINALS.length) throw new Error("캐릭터 데이터가 없습니다.");
-    loadSaved();render();
+    ORIGINALS=await loadCharacterData();
+    loadSaved();
+    render();
   }catch(err){
     console.error(err);
-    document.getElementById("grid").innerHTML='<div style="grid-column:1/-1;padding:40px;text-align:center;color:#ffb4b4;background:#2a1b1b;border:1px solid #7a3d3d;border-radius:14px">캐릭터 데이터를 불러오지 못했습니다.<br><small>characters.json 파일이 같은 위치에 있는지 확인해주세요.</small></div>';
+    document.getElementById("grid").innerHTML='<div style="grid-column:1/-1;padding:40px;text-align:center;color:#ffb4b4;background:#2a1b1b;border:1px solid #7a3d3d;border-radius:14px">캐릭터 데이터를 불러오지 못했습니다.<br><small>characters.json을 GitHub Pages에서 읽지 못했습니다.<br>'+escapeHtml(err&&err.message?err.message:String(err))+'</small></div>';
   }
 }
 init();
