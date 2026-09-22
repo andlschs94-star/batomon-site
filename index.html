@@ -41,6 +41,7 @@
 .trainerPortrait{height:118px;display:flex;align-items:center;justify-content:center;margin:-14px -14px 12px;background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,0));border-radius:14px 14px 0 0;overflow:hidden}
 .trainerPortrait img{width:128px;height:128px;object-fit:contain;image-rendering:auto;filter:drop-shadow(0 4px 8px rgba(0,0,0,.25))}
 </style>
+<!-- English originals are retained in trainers.json only: name_en / ability_en -->
 </head>
 <body>
 <div class="wrap">
@@ -202,23 +203,23 @@ function switchSection(section){
 function renderTrainers(){
   const g=document.getElementById('trainerGrid');
   const q=(document.getElementById('trainerSearch')?.value||'').trim().toLowerCase();
-  const list=trainers.filter(t=>!q||[t.name,t.ability,t.region,(t.tags||[]).join(' ')].join(' ').toLowerCase().includes(q));
+  const list=trainers.filter(t=>!q||[t.name_ko,t.ability_ko,t.name,t.ability,t.region,(t.tags||[]).join(' ')].join(' ').toLowerCase().includes(q));
   g.innerHTML='';
   if(!list.length){g.innerHTML='<div class="empty">조건에 맞는 트레이너가 없습니다.</div>';return;}
   for(const t of list){
     const card=document.createElement('div');card.className='trainerCard';
     const head=document.createElement('div');head.className='trainerHead';
     const left=document.createElement('div');
-    const nm=document.createElement('div');nm.className='trainerName';nm.textContent=t.name;
-    const rg=document.createElement('div');rg.className='trainerRegion';rg.textContent=t.region||'특수/미표기';
+    const nm=document.createElement('div');nm.className='trainerName';nm.textContent=t.name_ko||t.name;
+    const rg=document.createElement('div');rg.className='trainerRegion';rg.textContent=t.region||'특수 / 미표기';
     left.append(nm,rg);head.append(left);
     const portrait=document.createElement('div');portrait.className='trainerPortrait';
     const img=document.createElement('img');img.src=t.image_url||'';img.alt=t.name+' trainer';img.loading='lazy';
     img.onerror=()=>{portrait.style.display='none';};portrait.appendChild(img);
-    const ability=document.createElement('div');ability.className='trainerAbility';ability.textContent=t.ability;
+    const ability=document.createElement('div');ability.className='trainerAbility';ability.textContent=t.ability_ko||t.ability;
     const tags=document.createElement('div');tags.className='trainerTags';
     for(const tag of (t.tags||[])){const el=document.createElement('span');el.className='trainerTag';el.textContent=tag;tags.appendChild(el);}
-    const link=document.createElement('a');link.href=t.url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='batomon.com 원문 보기 ↗';
+    const link=document.createElement('a');link.href=t.url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='공식 원문 보기 ↗';
     card.append(portrait,head,ability,tags,link);g.appendChild(card);
   }
   document.getElementById('trainerStatus').textContent=`트레이너 ${trainers.length}종 · Balance 22 / 1.0.0 · 현재 표시 ${list.length}종`;
