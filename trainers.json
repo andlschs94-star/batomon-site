@@ -16,7 +16,11 @@
         "Outside random trainer choices"
       ],
       "url": "https://batomon.com/trainers/mysterious-trainer",
-      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/mysterious_trainer.png"
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/mysterious_trainer.png",
+      "name_ko": "???",
+      "ability_ko": "MissingN. 획득",
+      "name_en": "???",
+      "ability_en": "Gain MissingN."
     },
     {
       "id": "black-belt",
@@ -25,7 +29,11 @@
       "region": "Jinto",
       "tags": [],
       "url": "https://batomon.com/trainers/black-belt",
-      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/black_belt.png"
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/black_belt.png",
+      "name_ko": "검은띠",
+      "ability_ko": "전투 시작 시 팀에 격투 타입 바토몬이 정확히 1마리 있다면, 해당 바토몬의 '승리 시' 능력을 발동합니다.",
+      "name_en": "Black Belt",
+      "ability_en": "On Battle Start If you have exactly 1 Fighting monster on your team, activate its On Victory ability."
     },
     {
       "id": "bug-catcher",
@@ -34,7 +42,11 @@
       "region": "Pantra Jinto",
       "tags": [],
       "url": "https://batomon.com/trainers/bug-catcher",
-      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/bug_catcher.png"
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/bug_catcher.png",
+      "name_ko": "곤충채집가",
+      "ability_ko": "매일 처음 구매하는 벌레 타입 바토몬이 무료가 됩니다.",
+      "name_en": "Bug Catcher",
+      "ability_en": "The first Bug monster you buy each day is free."
     },
     {
       "id": "burglar",
@@ -45,7 +57,11 @@
         "Unique"
       ],
       "url": "https://batomon.com/trainers/burglar",
-      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/burglar.png"
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/burglar.png",
+      "name_ko": "도둑",
+      "ability_ko": "트링켓 선물의 선택지가 2개만 제공되지만, 두 선택지를 모두 가져갈 수 있습니다.",
+      "name_en": "Burglar",
+      "ability_en": "Trinket gifts only offer 2 choices, but you can take both of them."
     },
     {
       "id": "chef",
@@ -54,7 +70,11 @@
       "region": "Pantra Jinto",
       "tags": [],
       "url": "https://batomon.com/trainers/pyromaniac",
-      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/pyromaniac.png"
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/pyromaniac.png",
+      "name_ko": "요리사",
+      "ability_ko": "단일 타입 바토몬에게 불꽃 타입을 추가합니다. 불꽃 타입 바토몬은 화상 +2를 얻습니다.",
+      "name_en": "Chef",
+      "ability_en": "Your singled-typed monsters gain Fire typing. Your Fire monsters have +2 Burn."
     },
     {
       "id": "chemist",
@@ -63,7 +83,11 @@
       "region": "Pantra Jinto",
       "tags": [],
       "url": "https://batomon.com/trainers/chemist",
-      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/chemist.png"
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/chemist.png",
+      "name_ko": "화학자",
+      "ability_ko": "독성 타입 바토몬의 독이 +1 증가합니다. 바토몬이 레벨업할 때마다 이 효과가 독 +1씩 증가합니다.",
+      "name_en": "Chemist",
+      "ability_en": "Your Toxic monsters have +1 Poison. When any monster levels up, increase this effect by +1 Poison."
     },
     {
       "id": "egg-breeder",
@@ -74,7 +98,11 @@
         "Unique"
       ],
       "url": "https://batomon.com/trainers/egg-breeder",
-      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/egg_breeder.png"
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/egg_breeder.png",
+      "name_ko": "알 부화가",
+      "ability_ko": "5일 후 레벨 2 슈퍼 레어 바토몬으로 부화하는 보라색 알을 획득합니다.",
+      "name_en": "Egg Breeder",
+      "ability_en": "Gain a Purple Egg that hatches into a level 2 Super Rare monster in 5 days."
     },
     {
       "id": "gamer",
@@ -85,7 +113,11 @@
         "Unique"
       ],
       "url": "https://batomon.com/trainers/gamer",
-      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/gamer.png"
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/gamer.png",
+      "name_ko": "게이머",
+      "ability_ko": "9일째에 신화 등급 바토몬 1마리와 $30을 획득합니다.",
+      "name_en": "Gamer",
+      "ability_en": "Gain a Mythical monster and $30 on day 9."
     },
     {
       "id": "gentleman",
@@ -97,7 +129,11 @@
         "Not offered by Mysterious Mask"
       ],
       "url": "https://batomon.com/trainers/gentleman",
-      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/gentleman.png"
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/gentleman.png",
+      "name_ko": "신사",
+      "ability_ko": "4일째부터 상점에 일반 및 고급 바토몬이 등장하지 않습니다.",
+      "name_en": "Gentleman",
+      "ability_en": "From day 4 onwards, your shop no longer stocks Common or Uncommon monsters."
     },
     {
       "id": "lucky-girl",
@@ -106,7 +142,11 @@
       "region": "Pantra Jinto",
       "tags": [],
       "url": "https://batomon.com/trainers/youngster-f",
-      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/youngster_f.png"
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/youngster_f.png",
+      "name_ko": "행운아",
+      "ability_ko": "샤이니 바토몬이 등장할 확률이 증가합니다.",
+      "name_en": "Lucky Girl",
+      "ability_en": "SHINY monsters are more likely to appear."
     },
     {
       "id": "mad-scientist",
@@ -117,7 +157,11 @@
         "Unique"
       ],
       "url": "https://batomon.com/trainers/mad-scientist",
-      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/mad_scientist.png"
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/mad_scientist.png",
+      "name_ko": "미친 과학자",
+      "ability_ko": "7일째에 현재 팀의 바토몬을 무작위 레벨 1 전설 바토몬으로 변환합니다.",
+      "name_en": "Mad Scientist",
+      "ability_en": "On day 7, transform monsters on your active team into random level 1 Legendary monsters."
     },
     {
       "id": "masked-man",
@@ -128,7 +172,11 @@
         "Not offered by Mysterious Mask"
       ],
       "url": "https://batomon.com/trainers/masked-man",
-      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/masked_man.png"
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/masked_man.png",
+      "name_ko": "가면 남자",
+      "ability_ko": "4일마다 트레이너를 하나 선택하여 해당 트레이너의 능력을 획득합니다.",
+      "name_en": "Masked Man",
+      "ability_en": "Every 4 days, choose a trainer and gain their ability."
     },
     {
       "id": "monster-ranger",
@@ -139,7 +187,11 @@
         "Unique"
       ],
       "url": "https://batomon.com/trainers/monster-ranger",
-      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/monster_ranger.png"
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/monster_ranger.png",
+      "name_ko": "몬스터 레인저",
+      "ability_ko": "고급 바토몬 1마리와 함께 시작합니다. 이후 2일마다 해당 바토몬을 1마리씩 추가로 획득합니다.",
+      "name_en": "Monster Ranger",
+      "ability_en": "Start with an Uncommon monster. Get another copy of that monster every 2 days."
     },
     {
       "id": "musician",
@@ -148,7 +200,11 @@
       "region": "Pantra",
       "tags": [],
       "url": "https://batomon.com/trainers/musician",
-      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/musician.png"
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/musician.png",
+      "name_ko": "음악가",
+      "ability_ko": "팀에 전기 타입 바토몬이 정확히 1마리 있다면, 해당 바토몬의 감전이 +150% 증가합니다.",
+      "name_en": "Musician",
+      "ability_en": "If you have exactly 1 Electric monster on your team, it will have +150% Shock."
     },
     {
       "id": "painter",
@@ -160,7 +216,11 @@
         "Not offered by Mysterious Mask"
       ],
       "url": "https://batomon.com/trainers/painter",
-      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/painter.png"
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/painter.png",
+      "name_ko": "화가",
+      "ability_ko": "이번 게임 동안 무작위 종족의 바토몬에 모든 타입이 부여됩니다.",
+      "name_en": "Painter",
+      "ability_en": "Random species will be painted with every type this run."
     },
     {
       "id": "redhead",
@@ -169,7 +229,11 @@
       "region": "Pantra Jinto",
       "tags": [],
       "url": "https://batomon.com/trainers/redhead",
-      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/redhead.png"
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/redhead.png",
+      "name_ko": "빨간머리",
+      "ability_ko": "승리 시 자신의 불꽃 타입 바토몬에게 화상 +2를 영구적으로 부여합니다.",
+      "name_en": "Redhead",
+      "ability_en": "On Victory Give your Fire monsters +2 Burn permanently."
     },
     {
       "id": "rich-lady",
@@ -180,7 +244,11 @@
         "Unique"
       ],
       "url": "https://batomon.com/trainers/lady",
-      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/lady.png"
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/lady.png",
+      "name_ko": "부자 아가씨",
+      "ability_ko": "상점 등급 +2와 $10을 획득합니다.",
+      "name_en": "Rich Lady",
+      "ability_en": "Gain shop rank +2 and $10."
     },
     {
       "id": "scavenger",
@@ -189,7 +257,11 @@
       "region": "Pantra Jinto",
       "tags": [],
       "url": "https://batomon.com/trainers/scavenger",
-      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/scavenger.png"
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/scavenger.png",
+      "name_ko": "수집가",
+      "ability_ko": "선물에서 일반 또는 고급 비고유 트링켓을 획득하면 해당 트링켓을 1개 추가로 획득합니다.",
+      "name_en": "Scavenger",
+      "ability_en": "Gain an additional copy of each non-unique Common or Uncommon Trinket from a gift."
     },
     {
       "id": "shopkeeper",
@@ -200,7 +272,11 @@
         "Unique"
       ],
       "url": "https://batomon.com/trainers/shopkeeper",
-      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/shopkeeper.png"
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/shopkeeper.png",
+      "name_ko": "상점 주인",
+      "ability_ko": "상점에 1단계 더 높은 희귀도의 아이템이 등장하며, 가격이 15% 감소합니다.",
+      "name_en": "Shopkeeper",
+      "ability_en": "Your shop stocks Item 1 rarity tier higher and cost 15% less."
     },
     {
       "id": "swim-coach",
@@ -211,7 +287,11 @@
         "Unique"
       ],
       "url": "https://batomon.com/trainers/swim-coach",
-      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/swim_coach.png"
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/swim_coach.png",
+      "name_ko": "수영 코치",
+      "ability_ko": "매일 무작위 물 타입 바토몬을 획득합니다.",
+      "name_en": "Swim Coach",
+      "ability_en": "Gain a random Water monster each day."
     },
     {
       "id": "treasure-hunter",
@@ -222,7 +302,11 @@
         "Unique"
       ],
       "url": "https://batomon.com/trainers/treasure-hunter",
-      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/treasure_hunter.png"
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/treasure_hunter.png",
+      "name_ko": "보물 사냥꾼",
+      "ability_ko": "트링켓 선물을 받을 때 선택지의 희귀도가 1단계 높아집니다.",
+      "name_en": "Treasure Hunter",
+      "ability_en": "When you get Trinket gifts, your choices are 1 rarity tier higher."
     },
     {
       "id": "twins",
@@ -233,7 +317,11 @@
         "Unique"
       ],
       "url": "https://batomon.com/trainers/twins",
-      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/twins.png"
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/twins.png",
+      "name_ko": "쌍둥이",
+      "ability_ko": "바토몬이 합쳐져 레벨 3이 될 때 동일한 복사본을 1마리 획득합니다.",
+      "name_en": "Twins",
+      "ability_en": "When monsters merge into level 3, gain an exact copy."
     },
     {
       "id": "youngster",
@@ -244,9 +332,16 @@
         "Unique"
       ],
       "url": "https://batomon.com/trainers/youngster-m",
-      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/youngster_m.png"
+      "image_url": "https://sunderarmor.com/OMR/Batomon/images/trainers/youngster_m.png",
+      "name_ko": "소년",
+      "ability_ko": "매일 무료 리롤 3회를 획득합니다.",
+      "name_en": "Youngster",
+      "ability_en": "Gain 3 free rerolls every day."
     }
   ],
   "image_source": "https://www.critcap.gg/batomon/trainers/",
-  "image_source_note": "Trainer sprite image URLs resolved from the image links exposed by the trainer catalog."
+  "image_source_note": "Trainer sprite image URLs resolved from the image links exposed by the trainer catalog.",
+  "display_language": "ko",
+  "original_language": "en",
+  "translation_note": "화면에는 한국어를 표시하고, 영어 원문은 name_en / ability_en으로 보존합니다."
 }
