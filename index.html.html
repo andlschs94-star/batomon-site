@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>원향 맵 바토몬 1~64 - 편집판</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0d1117;color:#edf1f6;font-family:Arial,"Malgun Gothic",sans-serif}
+header{position:sticky;top:0;z-index:10;background:#151b24;border-bottom:1px solid #303846;padding:14px 18px}
+h1{margin:0 0 4px;font-size:22px}.sub{font-size:12px;color:#98a1ae}
+.wrap{max-width:1560px;margin:auto;padding:14px}
+.info{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}.badge{padding:5px 9px;border:1px solid #3a4654;border-radius:999px;background:#131922;color:#c1c9d5;font-size:11px}
+.grid{display:grid;grid-template-columns:repeat(8,1fr);gap:8px}
+.card{position:relative;background:#151b24;border:1px solid #2d3744;border-radius:9px;padding:5px;min-width:0}
+.card:hover{border-color:#7285a7}
+.card img{display:block;width:100%;aspect-ratio:253/193;object-fit:cover;border-radius:5px;background:#0f141a}
+.num{position:absolute;left:8px;top:8px;z-index:2;padding:3px 5px;border-radius:4px;background:rgba(0,0,0,.78);color:#fff;font-size:11px;font-weight:700}
+.name{font-size:11px;font-weight:700;margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.editbtn{display:block;width:100%;margin-top:5px;padding:6px 7px;border-radius:6px;border:1px solid #4b586c;background:#273241;color:#fff;font-size:10px;cursor:pointer}
+.editbtn:hover{background:#35445a}
+.note{margin-top:12px;padding:9px;background:#121820;border:1px solid #2b3542;border-radius:8px;color:#8f98a6;font-size:10px}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:50;padding:20px}
+.modal{width:min(1050px,100%);height:min(850px,96vh);margin:auto;background:#151b24;border:1px solid #3b4655;border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.modalhead{display:flex;justify-content:space-between;align-items:center;padding:12px 15px;border-bottom:1px solid #303846}
+.modalhead h2{margin:0;font-size:16px}.close{padding:6px 10px}
+.editor{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:12px;padding:12px;min-height:0;flex:1}
+.canvasWrap{min-height:0;display:flex;align-items:center;justify-content:center;background:#0b0f14;border:1px solid #303846;border-radius:9px;overflow:hidden}
+canvas{max-width:100%;max-height:100%;background:#20262f;cursor:grab}
+canvas.drag{cursor:grabbing}
+.controls{background:#11161d;border:1px solid #303846;border-radius:9px;padding:11px;overflow:auto}
+.controls label{display:block;font-size:11px;color:#aeb7c4;margin:10px 0 5px}
+.controls input[type=file]{width:100%;font-size:10px}
+.controls input[type=range]{width:100%}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.btnrow{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:7px}
+.controls button,.modalfooter button{width:100%;padding:8px;border-radius:7px;border:1px solid #435064;background:#252f3e;color:#fff;cursor:pointer}
+.controls button:hover,.modalfooter button:hover{background:#344359}
+.primary{background:#42536e!important;border-color:#617493!important}
+.danger{background:#42292d!important;border-color:#70444b!important}
+.small{font-size:10px;color:#808a98;line-height:1.45}
+.modalfooter{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:10px 12px;border-top:1px solid #303846}
+input[type=number]{width:100%;padding:6px;background:#0c1016;color:#fff;border:1px solid #374150;border-radius:6px}
+.status{margin-top:10px;padding:7px;border-radius:7px;background:#141c25;border:1px solid #2c3948;font-size:10px;color:#a9b4c2;min-height:30px}
+@media(max-width:1200px){.grid{grid-template-columns:repeat(6,1fr)}}
+@media(max-width:950px){.grid{grid-template-columns:repeat(5,1fr)}}
+@media(max-width:800px){.editor{grid-template-columns:1fr}.controls{max-height:280px}.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:500px){.grid{grid-template-columns:repeat(2,1fr)}.modal{height:98vh}.overlay{padding:5px}}
+
+.statsOverlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:60;padding:18px}
+.statsModal{width:min(660px,96vw);max-height:94vh;overflow:auto;margin:3vh auto;background:#151b23;border:1px solid #3f4b5b;border-radius:12px}
+.statsHead{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid #303846}.statsHead h2{margin:0;font-size:17px}.statsHead button{background:#27313e;color:#fff;border:1px solid #465366;border-radius:6px;padding:6px 10px}
+.statsBody{padding:12px}.variantTabs{display:grid;grid-template-columns:1fr 1fr;gap:7px}.variantTabs button,.levelTabs button{background:#202a36;color:#d9e0e8;border:1px solid #3a4657;border-radius:7px;padding:8px;cursor:pointer}.variantTabs button.on,.levelTabs button.on{background:#465978;border-color:#6c82a5}
+.levelTabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:7px}.statPanel{margin-top:10px;border:1px solid #303946;background:#0e141b;border-radius:8px;padding:10px}.statRow{display:grid;grid-template-columns:115px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid #232c36;font-size:11px;line-height:1.45}.statRow:last-child{border-bottom:0}.sl{color:#7f8997}.sv{color:#d6dde6}.sourceNote{margin-top:8px;color:#87919e;font-size:9px;line-height:1.5}
+</style>
+</head>
+<body>
+<header>
+<h1>원향 맵 바토몬 도감</h1>
+<div class="sub">1번부터 64번 · 각 카드의 <b>수정</b> 버튼으로 사진을 직접 편집할 수 있습니다.</div>
+</header>
+
+<div class="wrap">
+<div class="info">
+<span class="badge">원향</span><span class="badge">64종</span><span class="badge">1 → 64</span>
+<span class="badge" id="savedBadge">수정 내용 자동 저장</span>
+</div>
+<div class="grid" id="grid"></div>
+<div class="note">
+사진은 이 브라우저의 로컬 저장소에 자동 저장됩니다. 브라우저 데이터를 삭제하거나 다른 PC에서 열면 수정 내용이 사라질 수 있습니다.
+</div>
+</div>
+
+<div class="overlay" id="overlay">
+<div class="modal">
+<div class="modalhead"><h2 id="editTitle">사진 수정</h2><button class="close" onclick="closeEditor()">닫기</button></div>
+<div class="editor">
+<div class="canvasWrap"><canvas id="canvas" width="760" height="580"></canvas></div>
+<div class="controls">
+<label>새 사진 선택</label>
+<input id="fileInput" type="file" accept="image/*">
+<div class="small" style="margin-top:6px">기존 사진을 그대로 두고 확대/축소·이동하거나, 새 사진을 불러와 카드 안에 맞출 수 있습니다.</div>
+
+<label>확대/축소</label>
+<input id="zoom" type="range" min="0.2" max="3" step="0.05" value="1">
+
+<label>가로 이동</label>
+<input id="posX" type="range" min="-500" max="500" step="1" value="0">
+
+<label>세로 이동</label>
+<input id="posY" type="range" min="-500" max="500" step="1" value="0">
+
+<label>회전</label>
+<div class="btnrow">
+<button onclick="rotate(-90)">↶ 90°</button><button onclick="rotate(90)">↷ 90°</button>
+</div>
+
+<label>빠른 조정</label>
+<div class="btnrow">
+<button onclick="fitImage()">프레임에 맞추기</button><button onclick="centerImage()">가운데</button>
+</div>
+
+<label>사진 초기화</label>
+<div class="btnrow">
+<button onclick="resetPhoto()">원본으로</button><button class="danger" onclick="removeCustom()">수정본 삭제</button>
+</div>
+
+<div class="status" id="status">마우스로 사진을 드래그해서 위치를 직접 조정할 수 있습니다.</div>
+</div>
+</div>
+<div class="modalfooter">
+<button onclick="saveEditor()" class="primary">저장</button>
+<button onclick="downloadEdited()">현재 사진 저장</button>
+<button onclick="closeEditor()">취소</button>
+</div>
+</div>
+</div>
+
+<script>
+let ORIGINALS = [];
+const STORAGE_KEY = "batomon_wonhyang_64_edits_v1";
+let edits = {};
+let currentNo = null;
+let baseImg = null;
+let work = {src:"",x:0,y:0,zoom:1,rotation:0};
+let canvas = document.getElementById("canvas");
+let ctx = canvas.getContext("2d");
+let dragging = false, dragStart = null;
+
+function loadSaved(){
+  try{edits = JSON.parse(localStorage.getItem(STORAGE_KEY)||"{}") || {};}catch(e){edits={};}
+}
+function saveSaved(){
+  try{
+    localStorage.setItem(STORAGE_KEY,JSON.stringify(edits));
+    document.getElementById("savedBadge").textContent="수정 내용 저장됨";
+  }catch(e){
+    document.getElementById("savedBadge").textContent="저장 공간 부족";
+  }
+}
+function currentSrc(no){
+  return edits[String(no)]?.src || ORIGINALS.find(x=>x.no===no).src;
+}
+function render(){
+  const g=document.getElementById("grid");
+  g.innerHTML="";
+  ORIGINALS.forEach(item=>{
+    const c=document.createElement("div");
+    c.className="card "+item.rankClass;
+    c.innerHTML='<span class="num">'+String(item.no).padStart(2,"0")+'</span>'+
+      '<img id="img-'+item.no+'" src="'+currentSrc(item.no)+'" alt="'+escapeHtml(item.name)+'">'+
+      '<div class="name">'+escapeHtml(item.name)+'</div>'+
+      '<span class="rank '+item.rankClass+'">'+item.rank+'</span>'+
+      '<button class="viewBtn" onclick="openStats('+item.no+')">능력치 보기</button>'+
+      '<button class="editbtn" onclick="openEditor('+item.no+')">✎ 사진 수정</button>';
+    g.appendChild(c);
+  });
+}
+function escapeHtml(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+
+function openEditor(no){
+  currentNo=no;
+  document.getElementById("editTitle").textContent="사진 수정 · "+String(no).padStart(2,"0")+"번 "+ORIGINALS.find(x=>x.no===no).name;
+  const saved=edits[String(no)];
+  work=saved?{...saved}:{src:currentSrc(no),x:0,y:0,zoom:1,rotation:0};
+  document.getElementById("zoom").value=work.zoom;
+  document.getElementById("posX").value=work.x;
+  document.getElementById("posY").value=work.y;
+  loadEditorImage(work.src);
+  document.getElementById("overlay").style.display="block";
+}
+function loadEditorImage(src){
+  baseImg=new Image();
+  baseImg.onload=()=>{fitImage(); if(work.x!==0||work.y!==0||work.zoom!==1) draw();};
+  baseImg.src=src;
+}
+function draw(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle="#20262f";ctx.fillRect(0,0,canvas.width,canvas.height);
+  if(!baseImg||!baseImg.complete)return;
+  const fit=Math.min(canvas.width/baseImg.width,canvas.height/baseImg.height);
+  const scale=fit*work.zoom;
+  ctx.save();
+  ctx.translate(canvas.width/2+work.x,canvas.height/2+work.y);
+  ctx.rotate(work.rotation*Math.PI/180);
+  ctx.drawImage(baseImg,-baseImg.width*scale/2,-baseImg.height*scale/2,baseImg.width*scale,baseImg.height*scale);
+  ctx.restore();
+}
+function fitImage(){
+  work.zoom=1;work.x=0;work.y=0;
+  document.getElementById("zoom").value=1;
+  document.getElementById("posX").value=0;
+  document.getElementById("posY").value=0;
+  draw();
+}
+function centerImage(){
+  work.x=0;work.y=0;
+  document.getElementById("posX").value=0;document.getElementById("posY").value=0;draw();
+}
+function rotate(d){work.rotation=(work.rotation+d)%360;draw();}
+function resetPhoto(){
+  const orig=ORIGINALS.find(x=>x.no===currentNo);
+  work={src:orig.src,x:0,y:0,zoom:1,rotation:0};
+  document.getElementById("zoom").value=1;document.getElementById("posX").value=0;document.getElementById("posY").value=0;
+  loadEditorImage(work.src);
+  document.getElementById("status").textContent="원본 사진으로 되돌렸습니다.";
+}
+function removeCustom(){
+  if(currentNo!==null)delete edits[String(currentNo)];
+  saveSaved();render();openEditor(currentNo);
+  document.getElementById("status").textContent="수정본을 삭제하고 원본으로 복원했습니다.";
+}
+function saveEditor(){
+  if(currentNo===null)return;
+  edits[String(currentNo)]={...work};
+  saveSaved();render();
+  document.getElementById("status").textContent="저장되었습니다.";
+}
+function downloadEdited(){
+  if(!baseImg)return;
+  const out=document.createElement("canvas");out.width=canvas.width;out.height=canvas.height;
+  const ox=out.getContext("2d");
+  ox.fillStyle="#20262f";ox.fillRect(0,0,out.width,out.height);
+  const fit=Math.min(out.width/baseImg.width,out.height/baseImg.height),scale=fit*work.zoom;
+  ox.save();ox.translate(out.width/2+work.x,out.height/2+work.y);ox.rotate(work.rotation*Math.PI/180);
+  ox.drawImage(baseImg,-baseImg.width*scale/2,-baseImg.height*scale/2,baseImg.width*scale,baseImg.height*scale);ox.restore();
+  out.toBlob(blob=>{
+    const a=document.createElement("a");a.href=URL.createObjectURL(blob);
+    a.download="batomon_"+String(currentNo).padStart(2,"0")+"_edited.jpg";a.click();
+    setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+  },"image/jpeg",.95);
+}
+function closeEditor(){document.getElementById("overlay").style.display="none";currentNo=null;baseImg=null;}
+document.getElementById("fileInput").addEventListener("change",e=>{
+  const f=e.target.files&&e.target.files[0];if(!f)return;
+  const rd=new FileReader();
+  rd.onload=()=>{work={src:rd.result,x:0,y:0,zoom:1,rotation:0};document.getElementById("zoom").value=1;document.getElementById("posX").value=0;document.getElementById("posY").value=0;loadEditorImage(work.src);};
+  rd.readAsDataURL(f);
+});
+document.getElementById("zoom").addEventListener("input",e=>{work.zoom=Number(e.target.value);draw();});
+document.getElementById("posX").addEventListener("input",e=>{work.x=Number(e.target.value);draw();});
+document.getElementById("posY").addEventListener("input",e=>{work.y=Number(e.target.value);draw();});
+canvas.addEventListener("pointerdown",e=>{
+  dragging=true;canvas.classList.add("drag");canvas.setPointerCapture(e.pointerId);
+  dragStart={x:e.clientX,y:e.clientY,ox:work.x,oy:work.y};
+});
+canvas.addEventListener("pointermove",e=>{
+  if(!dragging)return;
+  work.x=dragStart.ox+(e.clientX-dragStart.x)*canvas.width/canvas.getBoundingClientRect().width;
+  work.y=dragStart.oy+(e.clientY-dragStart.y)*canvas.height/canvas.getBoundingClientRect().height;
+  work.x=Math.max(-500,Math.min(500,work.x));work.y=Math.max(-500,Math.min(500,work.y));
+  document.getElementById("posX").value=work.x;document.getElementById("posY").value=work.y;draw();
+});
+canvas.addEventListener("pointerup",()=>{dragging=false;canvas.classList.remove("drag")});
+canvas.addEventListener("pointercancel",()=>{dragging=false;canvas.classList.remove("drag")});
+document.getElementById("overlay").addEventListener("click",e=>{if(e.target.id==="overlay")closeEditor();});
+window.addEventListener("keydown",e=>{if(e.key==="Escape"&&currentNo!==null)closeEditor();});
+
+
+let statsNo=null,statsVariant="normal",statsLevel=1;
+function openStats(no){
+  const item=ORIGINALS.find(x=>x.no===no); if(!item)return;
+  statsNo=no;statsVariant="normal";statsLevel=1;
+  document.getElementById("statsTitle").textContent=String(no).padStart(2,"0")+"번 "+item.name+" · 능력치";
+  document.getElementById("statsOverlay").style.display="block";
+  updateStats();
+}
+function closeStats(){document.getElementById("statsOverlay").style.display="none";statsNo=null}
+function setStatsVariant(v){statsVariant=v;updateStats()}
+function setStatsLevel(l){statsLevel=l;updateStats()}
+function updateStats(){
+  if(statsNo===null)return;
+  const item=ORIGINALS.find(x=>x.no===statsNo);
+  const list=statsVariant==="normal"?item.levels:item.shinyLevels;
+  const v=list[statsLevel-1]||{};
+  document.getElementById("normalStats").classList.toggle("on",statsVariant==="normal");
+  document.getElementById("shinyStats").classList.toggle("on",statsVariant==="shiny");
+  document.querySelectorAll("#levelTabs button").forEach((b,i)=>b.classList.toggle("on",i===statsLevel-1));
+  document.getElementById("stRank").textContent=item.rank||"-";
+  document.getElementById("stType").textContent=item.type||"-";
+  document.getElementById("stStats").textContent=v.stats||"확인 필요";
+  document.getElementById("stCooldown").textContent=v.cooldown||"확인 필요";
+  document.getElementById("stMulti").textContent=v.multicast||"확인 필요";
+  document.getElementById("stAbility").textContent=v.ability||item.ability||"확인 필요";
+  document.getElementById("stSource").textContent=(statsVariant==="normal"?v.source:"SHINY 데이터 확인 필요");
+}
+async function init(){
+  try{
+    const res=await fetch("./characters.json",{cache:"no-store"});
+    if(!res.ok) throw new Error("characters.json HTTP "+res.status);
+    const data=await res.json();
+    ORIGINALS=Array.isArray(data)?data:(data.characters||[]);
+    if(!ORIGINALS.length) throw new Error("캐릭터 데이터가 없습니다.");
+    loadSaved();render();
+  }catch(err){
+    console.error(err);
+    document.getElementById("grid").innerHTML='<div style="grid-column:1/-1;padding:40px;text-align:center;color:#ffb4b4;background:#2a1b1b;border:1px solid #7a3d3d;border-radius:14px">캐릭터 데이터를 불러오지 못했습니다.<br><small>characters.json 파일이 같은 위치에 있는지 확인해주세요.</small></div>';
+  }
+}
+init();
+</script>
+<div class="statsOverlay" id="statsOverlay" onclick="if(event.target===this)closeStats()"><div class="statsModal">
+<div class="statsHead"><h2 id="statsTitle">능력치</h2><button onclick="closeStats()">닫기</button></div>
+<div class="statsBody">
+<div class="variantTabs"><button id="normalStats" class="on" onclick="setStatsVariant('normal')">일반</button><button id="shinyStats" onclick="setStatsVariant('shiny')">SHINY</button></div>
+<div class="levelTabs" id="levelTabs"><button class="on" onclick="setStatsLevel(1)">Lv1</button><button onclick="setStatsLevel(2)">Lv2</button><button onclick="setStatsLevel(3)">Lv3</button><button onclick="setStatsLevel(4)">Lv4</button></div>
+<div class="statPanel">
+<div class="statRow"><div class="sl">등급</div><div class="sv" id="stRank">-</div></div>
+<div class="statRow"><div class="sl">타입</div><div class="sv" id="stType">-</div></div>
+<div class="statRow"><div class="sl">기본 스탯</div><div class="sv" id="stStats">-</div></div>
+<div class="statRow"><div class="sl">쿨다운</div><div class="sv" id="stCooldown">-</div></div>
+<div class="statRow"><div class="sl">멀티캐스트</div><div class="sv" id="stMulti">-</div></div>
+<div class="statRow"><div class="sl">능력</div><div class="sv" id="stAbility">-</div></div>
+</div>
+<div class="sourceNote" id="stSource">-</div>
+<div class="sourceNote">※ 공개된 수치만 입력했습니다. 빈 항목은 계산으로 만들지 않았습니다.</div>
+</div></div></div></body>
+</html>
