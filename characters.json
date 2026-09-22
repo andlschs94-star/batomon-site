@@ -2449,8 +2449,8 @@
       "sourceBuild": "Balance 22 / Steam build 25377295",
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
-      "image_url": "https://batomon.com/game/25377295/monster/electranade.png",
-      "image_local": "assets/batomon/electranade.png"
+      "image_url": "https://batomon.com/game/25377295/monster/galvanade.png",
+      "image_local": "assets/batomon/galvanade.png"
     },
     {
       "no": 19,
@@ -2595,8 +2595,8 @@
       "sourceBuild": "Balance 22 / Steam build 25377295",
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
-      "image_url": "https://batomon.com/game/25377295/monster/craghorn.png",
-      "image_local": "assets/batomon/craghorn.png"
+      "image_url": "https://batomon.com/game/25377295/monster/alpinine.png",
+      "image_local": "assets/batomon/alpinine.png"
     },
     {
       "no": 20,
@@ -2885,8 +2885,8 @@
       "sourceBuild": "Balance 22 / Steam build 25377295",
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
-      "image_url": "https://batomon.com/game/25377295/monster/pyronade.png",
-      "image_local": "assets/batomon/pyronade.png"
+      "image_url": "https://batomon.com/game/25377295/monster/infernade.png",
+      "image_local": "assets/batomon/infernade.png"
     },
     {
       "no": 22,
@@ -8843,8 +8843,8 @@
       "sourceBuild": "Balance 22 / Steam build 25377295",
       "sourceCollectedAt": "2026-09-22T11:36:44.811Z",
       "image_source": "Batomon.com official Batomon sprite",
-      "image_url": "https://batomon.com/game/25377295/monster/draconarch.png",
-      "image_local": "assets/batomon/draconarch.png"
+      "image_url": "https://batomon.com/game/25377295/monster/dragonarch.png",
+      "image_local": "assets/batomon/dragonarch.png"
     },
     {
       "no": 63,
@@ -9137,5 +9137,5 @@
       "image_local": "assets/batomon/stellagon.png"
     }
   ],
-  "site_version": "0.009"
+  "site_version": "0.010"
 }
