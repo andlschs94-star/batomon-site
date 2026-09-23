@@ -325,7 +325,7 @@
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.060</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.063</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -475,13 +475,14 @@ function currentSrc(no){
   const c=getItem(no);
   const edit=edits[String(no)];
   if(edit?.src) return edit.src;
-  return c?.image_local || c?.image_url || '';
+  return c?.image_local || c?.image_url || c?.src || '';
 }
 function officialFallbackUrls(item){
   if(!item) return [];
   const urls=[];
   if(item.image_local) urls.push(item.image_local);
   if(item.image_url) urls.push(item.image_url);
+  if(item.src) urls.push(item.src);
   if(item.image_url) urls.push('https://images.weserv.nl/?url='+encodeURIComponent(item.image_url));
   return urls;
 }
