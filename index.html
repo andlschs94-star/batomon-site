@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.061</title>
+<title>바토몬 원향 도감 v0.060</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -248,7 +248,7 @@
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.061</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.060</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -325,7 +325,7 @@
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.061</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.060</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -531,18 +531,9 @@ function drawStats(){
   for(const [key,label] of modes){const b=document.createElement('button');b.textContent=label;b.className=statsMode===key?'on':'';b.onclick=()=>{statsMode=key;drawStats()};mt.appendChild(b)}
   const lt=document.getElementById('levelTabs'); lt.innerHTML='';
   for(let lv=1;lv<=4;lv++){const b=document.createElement('button');b.textContent=`Lv${lv}`;b.className=statsLevel===lv?'on':'';b.onclick=()=>{statsLevel=lv;drawStats()};lt.appendChild(b)}
-  const d=getCalcEntryStats(statsCurrent,statsLevel,statsMode==='shiny');
-  const evo=getEvolutionInfo(statsCurrent,statsLevel);
+  const arr=statsMode==='normal'?(statsCurrent.levels||[]):(statsCurrent.shinyLevels||[]);
+  const d=arr.find(x=>Number(x.level)===statsLevel)||{};
   const box=document.getElementById('statContent'); box.innerHTML='';
-  if(evo){
-    const target=findByOfficialName(evo.target);
-    box.innerHTML='<div style="margin-bottom:8px;padding:8px 10px;background:#fff4cf;border:1px solid #e8cf7a;border-radius:8px;font-size:11px;font-weight:900;color:#725b00">Lv${evo.at}부터 ${evo.target}로 진화 · 진화 후 스탯 적용</div>';
-  }
-  if(d._evolutionPending){
-    const pending=document.createElement('div'); pending.className='statrow'; pending.innerHTML='<div class="label">진화</div><div>Lv'+d._evolutionAt+' → '+safe(d._evolutionTo)+' (진화 후 스탯 대기)</div>'; box.appendChild(pending);
-    const ps=document.createElement('div'); ps.className='source'; ps.innerHTML='출처: <a href="'+safe(statsCurrent.officialUrl||'https://batomon.com')+'" target="_blank" rel="noopener noreferrer">batomon.com</a>'; box.appendChild(ps);
-    return;
-  }
   const rows=[
     ['공식 이름',statsCurrent.officialName||'미입력'],
     ['커스텀 등급',statsCurrent.rank||'미입력'],
@@ -791,36 +782,9 @@ function openBatomonInfoEditor(item){
   teamEditMode='preset'; teamEditIndex=null; teamEditItem=item; teamEditLevel=Number(preset.level||1); teamEditShiny=!!preset.shiny;
   showTeamEditor(item,'바토몬 목록 · 기본 설정');
 }
-const evolutionMap={
-  3:{at:3,target:'Emperooze'},
-  7:{at:3,target:'Sunsage'},
-  8:{at:3,target:'Bambudo'}
-};
-function getEvolutionInfo(item, level){
-  const no=Number(item?.no);
-  const e=evolutionMap[no];
-  return e && Number(level)>=e.at ? e : null;
-}
-function findByOfficialName(name){
-  return characters.find(x=>String(x?.officialName||x?.name_en||'').toLowerCase()===String(name).toLowerCase() || String(x?.name||'').toLowerCase()===String(name).toLowerCase());
-}
 function getCalcEntryStats(item, level, shiny){
   const arr=shiny?(item?.shinyLevels||[]):(item?.levels||[]);
-  const own=arr.find(x=>Number(x.level)===Number(level));
-  if(own && Object.keys(own).length) return own;
-  const evo=getEvolutionInfo(item,level);
-  if(evo){
-    const target=findByOfficialName(evo.target);
-    if(target){
-      const targetArr=shiny?(target.shinyLevels||[]):(target.levels||[]);
-      const targetStat=targetArr.find(x=>Number(x.level)===Number(level));
-      if(targetStat && Object.keys(targetStat).length) return {...targetStat,_evolutionFrom:item.name,_evolutionTo:evo.target,_evolutionAt:evo.at};
-    }
-  }
-  if(evo){
-    return {_evolutionFrom:item.name,_evolutionTo:evo.target,_evolutionAt:evo.at,_evolutionPending:true};
-  }
-  return own||{};
+  return arr.find(x=>Number(x.level)===Number(level))||{};
 }
 function translateAbilityText(text){
   const original=String(text??'').trim();
@@ -981,11 +945,9 @@ function translateAbilityText(text){
 function renderTeamEditStats(item, level, shiny){
   const box=document.getElementById('teamEditStats'); if(!box)return;
   const d=getCalcEntryStats(item,level,shiny);
-  const evo=getEvolutionInfo(item,level);
-  const title=(shiny?'SHINY 스탯':'도감 스탯')+(evo?' · '+evo.target+' 진화 스탯':'');
+  const title=shiny?'SHINY 스탯':'도감 스탯';
   const rows=[['피해',d.damage],['회복',d.heal],['실드',d.shield],['화상',d.burn],['독',d.poison],['전격',d.shock],['멀티캐스트',d.multicast==null?null:'×'+d.multicast],['재사용',d.cooldown==null?null:d.cooldown+'초']];
-  const pending=d._evolutionPending;
-  box.innerHTML='<div class="teamEditStatsTitle">'+title+' · Lv.'+Number(level)+'</div>' + (pending?'<div class="teamEditStatsEmpty">Lv'+d._evolutionAt+'부터 '+d._evolutionTo+'로 진화 · 진화 후 바토몬의 스탯을 적용합니다.</div>':Object.keys(d).length?'<div class="teamEditStatsGrid">'+rows.map(([l,v])=>'<div class="teamEditStat"><span class="teamEditStatLabel">'+l+'</span><span class="teamEditStatValue">'+(v==null?'—':String(v))+'</span></div>').join('')+'</div>'+(d.ability?'<div class="teamEditAbility"><div class="abilityOriginalLabel">원문</div><div>'+safe(d.ability)+'</div><div class="abilityKoLabel">한국어</div><div>'+safe(translateAbilityText(d.ability))+'</div></div>':''):'<div class="teamEditStatsEmpty">해당 레벨의 스탯 데이터가 없습니다.</div>');
+  box.innerHTML='<div class="teamEditStatsTitle">'+title+' · Lv.'+Number(level)+'</div>' + (Object.keys(d).length?'<div class="teamEditStatsGrid">'+rows.map(([l,v])=>'<div class="teamEditStat"><span class="teamEditStatLabel">'+l+'</span><span class="teamEditStatValue">'+(v==null?'—':String(v))+'</span></div>').join('')+'</div>'+(d.ability?'<div class="teamEditAbility"><div class="abilityOriginalLabel">원문</div><div>'+safe(d.ability)+'</div><div class="abilityKoLabel">한국어</div><div>'+safe(translateAbilityText(d.ability))+'</div></div>':''):'<div class="teamEditStatsEmpty">해당 레벨의 스탯 데이터가 없습니다.</div>');
 }
 function showTeamEditor(item,sub){
   const overlay=document.getElementById('teamEditOverlay');
