@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.053</title>
+<title>바토몬 원향 도감 v0.056</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -248,7 +248,7 @@
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.053</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.056</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -325,7 +325,7 @@
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.053</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.056</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -548,7 +548,7 @@ function drawStats(){
     ['전격',d.shock==null?'—':d.shock],
     ['멀티캐스트',d.multicast==null?'—':`×${d.multicast}`],
     ['재사용',d.cooldown==null?'—':`${d.cooldown}초`],
-    ['능력',d.ability||'없음']
+    ['능력',d.ability?('원문: '+d.ability+'\n한국어: '+translateAbilityText(d.ability)):'없음']
   ];
   for(const [l,v] of rows){const row=document.createElement('div');row.className='statrow';const a=document.createElement('div');a.className='label';a.textContent=l;const b=document.createElement('div');b.textContent=String(v);row.append(a,b);box.appendChild(row)}
   const s=document.createElement('div');s.className='source';s.innerHTML=`출처: <a href="${safe(d.source||statsCurrent.officialUrl||'https://batomon.com')}" target="_blank" rel="noopener noreferrer">batomon.com</a>`;box.appendChild(s);
@@ -786,12 +786,153 @@ function getCalcEntryStats(item, level, shiny){
   const arr=shiny?(item?.shinyLevels||[]):(item?.levels||[]);
   return arr.find(x=>Number(x.level)===Number(level))||{};
 }
+function translateAbilityText(text){
+  const original=String(text??'').trim();
+  if(!original)return '';
+  let t=original;
+
+  // 고유명사/타입명은 먼저 치환합니다.
+  const names=[
+    [/\bDracana\b/g,'비술룡'],[/\bIroncore\b/g,'쇠심장'],[/\bZephyrex\b/g,'질풍수리'],
+    [/\bAegistruct\b/g,'철벽석상'],[/\bTorrantler\b/g,'밀물사슴'],[/\bBerries\b/g,'나무열매'],
+    [/\bToxic\b/g,'포이즌'],[/\bWater\b/g,'물'],[/\bFire\b/g,'불'],[/\bGrass\b/g,'풀'],
+    [/\bElectric\b/g,'전기'],[/\bFlying\b/g,'비행'],[/\bBug\b/g,'벌레'],[/\bRock\b/g,'바위'],
+    [/\bIce\b/g,'얼음'],[/\bGround\b/g,'땅'],[/\bPsychic\b/g,'에스퍼'],[/\bDragon\b/g,'드래곤'],
+    [/\bDark\b/g,'악'],[/\bSteel\b/g,'강철'],[/\bFairy\b/g,'페어리'],[/\bNormal\b/g,'노말'],
+    [/\bFighting\b/g,'격투'],[/\bGhost\b/g,'고스트']
+  ];
+  for(const [re,r] of names)t=t.replace(re,r);
+
+  // 고정/반고정 문구
+  const fixed=[
+    [/^ON BATTLE START\s*\|\s*/,'배틀 시작 시 · '],
+    [/^ON CAST\s*\|\s*/,'발동 시 · '],
+    [/^ON VICTORY\s*\|\s*/,'승리 시 · '],
+    [/\bOngoing Has additional Damage equal to (\d+(?:\.\d+)?) times this monster's Sell Value\./g,'지속 · 이 바토몬의 판매 가격의 $1배만큼 추가 피해를 얻어요.'],
+    [/\b지속 Has additional Damage equal to (\d+(?:\.\d+)?) times this monster's Sell Value\./g,'지속 · 이 바토몬의 판매 가격의 $1배만큼 추가 피해를 얻어요.'],
+    [/\bOngoing\b/g,'지속'],
+    [/\bTrigger adjacent 물 allies\. \(Except other 밀물사슴\)/g,'인접한 물 타입 아군을 발동해요(다른 밀물사슴 제외)'],
+    [/\bTrigger the Bug ally above and give it\b/g,'위 벌레 타입 아군을 발동하고 해당 아군에게'],
+    [/\bTrigger the Bug ally above\b/g,'위 벌레 타입 아군을 발동해요'],
+    [/\bTrigger the Grass ally above\b/g,'위 풀 타입 아군을 발동해요'],
+    [/\bTrigger this\b/g,'자신을 발동해요'],
+    [/\bActivate the On Battle Start abilities of adjacent allies\b/g,'인접한 아군의 배틀 시작 시 능력을 발동하고'],
+    [/\bDisable abilities of all Ongoing monsters in this row\b/g,'이 줄의 모든 지속 바토몬의 능력을 비활성화해요'],
+    [/\bDisable abilities of enemy Ongoing monsters in this row\b/g,'이 줄의 적 지속 바토몬의 능력을 비활성화해요'],
+    [/\bThe next (\d+) items in your shop will be 나무열매\./g,'상점의 다음 $1개 아이템이 나무열매가 돼요.'],
+    [/\bThe next (\d+) items in your shop will be 나무열매\. When you use an item, this gains \+(\d+) Damage\./g,'상점의 다음 $1개 아이템이 나무열매가 돼요. 아이템을 사용하면 자신에게 피해 +$2를 영구적으로 부여해요.'],
+    [/\bWhen you use an item, this gains \+(\d+) Damage and Shield\./g,'아이템을 사용하면 자신에게 피해 +$1 및 실드 +$1을 부여해요.'],
+    [/\bWhen you receive shield, this gains Damage for this battle equal to (\d+(?:\.\d+)?)% of the amount shielded\./g,'실드를 받으면 이번 배틀 동안 받은 실드량의 $1%만큼 피해를 얻어요.'],
+    [/\bWhen allies inflict Poison, this gains \+(\d+) Damage permanently\./g,'아군이 독을 부여하면 자신에게 피해 +$1을 영구적으로 부여해요.'],
+    [/\bWhenever an ally inflicts Shock, Charge this by (\d+(?:\.\d+)?) second\(s\)\./g,'아군이 전격을 부여할 때마다 자신을 $1초 차지해요.'],
+    [/\bGain \$(\d+)\./g,'\$$1을 획득해요.'],
+    [/\bGain Shield for this battle equal to (.+)\./g,'이번 배틀 동안 $1만큼 실드를 획득해요.'],
+    [/이번 배틀 동안 (\d+(?:\.\d+)?)x the 실드 of 인접한 아군만큼 실드를 획득해요\./g,'이번 배틀 동안 인접한 아군의 실드의 $1배만큼 실드를 획득해요.'],
+    [/이번 배틀 동안 the 실드 of 인접한 아군만큼 실드를 획득해요\./g,'이번 배틀 동안 인접한 아군의 실드만큼 실드를 획득해요.'],
+    [/\bThis and adjacent Water allies gain \+(\d+) Heal permanently\./g,'자신과 인접한 물 타입 아군에게 회복 +$1을 영구적으로 부여해요.'],
+    [/\bAdjacent Water allies gain \+(\d+) Heal permanently\./g,'인접한 물 타입 아군에게 회복 +$1을 영구적으로 부여해요.'],
+    [/\bAdjacent Fire allies gain \+(\d+) Burn permanently\./g,'인접한 불 타입 아군에게 화상 +$1을 영구적으로 부여해요.'],
+    [/\bAdjacent 포이즌 allies gain \+(\d+) Poison permanently\./g,'인접한 포이즌 타입 아군에게 독 +$1을 영구적으로 부여해요.'],
+    [/\bAdjacent 비행 allies gain \+(\d+) Multicast permanently\. \(질풍수리 can\'t have Multicast\)/g,'인접한 비행 타입 아군에게 다중 발동 +$1을 영구적으로 부여해요(질풍수리는 다중 발동을 가질 수 없어요).'],
+    [/\bGive the Flying ally in front \+(\d+) Multicast permanently\. \(질풍수리 can\'t have Multicast\)/g,'앞의 비행 타입 아군에게 다중 발동 +$1을 영구적으로 부여해요(질풍수리는 다중 발동을 가질 수 없어요).'],
+    [/\bCharge adjacent 전기 allies by (\d+(?:\.\d+)?) second\(s\)\. \(쇠심장 can\'t receive charge\)/g,'인접한 전기 타입 아군을 $1초 차지해요(쇠심장은 차지를 받을 수 없어요).'],
+    [/\bCharge the ally behind by (\d+(?:\.\d+)?) second\(s\) and give this \+(\d+)% Cooldown Speed for this battle\. \(비술룡 can\'t receive charge\)/g,'뒤 아군을 $1초 차지하고 자신에게 이번 배틀 동안 쿨가속 +$2%를 부여해요(비술룡은 차지를 받을 수 없어요).'],
+    [/\bCharge the ally behind by (\d+(?:\.\d+)?) second\(s\)\. \(비술룡 can\'t receive charge\)/g,'뒤 아군을 $1초 차지해요(비술룡은 차지를 받을 수 없어요).'],
+    [/\bGive adjacent allies \+(\d+) Damage permanently and Protect 1\./g,'인접한 아군에게 피해 +$1과 프로텍트 1을 영구적으로 부여해요.'],
+    [/\bGive adjacent allies \+(\d+)% Shield for this battle\./g,'인접한 아군에게 이번 배틀 동안 실드 +$1%를 부여해요.'],
+    [/\bGive adjacent allies Protect 1\./g,'인접한 아군에게 프로텍트 1을 부여해요.'],
+    [/\bGive the Fire ally above \+(\d+) Burn permanently\./g,'위 불 타입 아군에게 화상 +$1을 영구적으로 부여해요.'],
+    [/\bGive the Fire ally behind (.+)x this monster\'s Burn for this battle\./g,'뒤 불 타입 아군에게 이번 배틀 동안 이 바토몬의 화상 $1배를 부여해요.'],
+    [/\bGive the Toxic ally above \+(\d+) Poison permanently\./g,'위 포이즌 타입 아군에게 독 +$1을 영구적으로 부여해요.'],
+    [/\bGive the ally behind \+(\d+)% Cooldown Speed permanently\./g,'뒤 아군에게 쿨가속 +$1%를 영구적으로 부여해요.'],
+    [/\bGive the ally in front \+(\d+) Multicast and increase this monster\'s Cooldown by (\d+) seconds for this battle\./g,'앞 아군에게 다중 발동 +$1을 부여하고, 이번 배틀 동안 이 바토몬의 쿨타임을 $2초 증가시켜요.'],
+    [/\bKnockout a random enemy\./g,'무작위 적을 녹아웃해요.'],
+    [/\bKnockout all Common allies and enemies and gain \+(\d+) Damage permanently for each Knockout\./g,'모든 일반 아군과 적을 녹아웃하고, 녹아웃 1회마다 피해 +$1을 영구적으로 얻어요.'],
+    [/\bKnockout all Common allies and enemies\./g,'모든 일반 아군과 적을 녹아웃해요.'],
+    [/\bKnockout self\./g,'자신을 녹아웃해요.'],
+    [/\bKnockout the enemy opposite of this\./g,'자신의 맞은편 적을 녹아웃해요.'],
+    [/\bRemove (\d+) stacks of every debuff on your team\./g,'내 팀의 모든 디버프를 $1중첩 제거해요.'],
+    [/\bRemove (\d+)% of debuffs on your team\./g,'내 팀의 디버프를 $1% 제거해요.'],
+    [/\bGive adjacent allies\b/g,'인접한 아군에게'],
+    [/\bThis and\b/g,'자신과'],
+    [/\bThis gains\b/g,'자신은'],
+    [/\+(\d+) Sell Value permanently\./g,'판매 가격 +$1을 영구적으로 부여해요.'],
+    [/\bOngoing Has additional Damage equal to (\d+(?:\.\d+)?) times this monster's Sell Value\./g,'지속 · 이 바토몬의 판매 가격의 $1배만큼 추가 피해를 얻어요.'],
+    [/\bHas additional Damage equal to (.+)\./g,'추가 피해는 $1만큼 증가해요.'],
+    [/\+(\d+) 판매 가격 영구적으로\./g,'판매 가격 +$1을 영구적으로 부여해요.'],
+    [/\b지속 추가 피해는 (.+) 배 이 바토몬's 판매 가격만큼 증가해요\./g,'지속 · 이 바토몬의 판매 가격의 $1배만큼 추가 피해를 얻어요.'],
+  ];
+  for(const [re,r] of fixed)t=t.replace(re,r);
+
+  const stat=[
+    [/\bPoison\b/g,'독'],[/\bShock\b/g,'전격'],[/\bBurn\b/g,'화상'],[/\bDamage\b/g,'피해'],
+    [/\bHeal\b/g,'회복'],[/\bShield\b/g,'실드'],[/\bMulticast\b/g,'다중 발동'],
+    [/\bCooldown Speed\b/g,'쿨가속'],[/\bCooldown\b/g,'쿨타임'],[/\bProtect\b/g,'프로텍트'],
+    [/\bKnockout\b/g,'녹아웃'],[/\bSell Value\b/g,'판매 가격']
+  ];
+  for(const [re,r] of stat)t=t.replace(re,r);
+
+  // 남은 일반 문장 조각을 정리합니다.
+  const generic=[
+    [/\bpermanently\b/gi,'영구적으로'],[/\bfor this battle\b/gi,'이번 배틀 동안'],[/\bfor each unique type on your team\b/gi,'내 팀의 서로 다른 타입 하나마다'],
+    [/\bfor each\b/gi,'마다'],[/\bequal to\b/gi,'만큼'],[/\btimes\b/gi,'배'],[/\bstacks\b/gi,'중첩'],[/\bdebuffs\b/gi,'디버프'],
+    [/\bthis monster\b/gi,'이 바토몬'],[/\byour team\b/gi,'내 팀'],[/\bAdjacent\b/gi,'인접한'],[/\ballies\b/gi,'아군'],[/\bally\b/gi,'아군'],
+    [/\benemies\b/gi,'적'],[/\benemy\b/gi,'적'],[/\bbehind\b/gi,'뒤'],[/\bin front\b/gi,'앞'],[/\babove\b/gi,'위'],[/\bbelow\b/gi,'아래'],
+    [/\brandom\b/gi,'무작위'],[/\bDisable\b/gi,'비활성화'],[/\babilities\b/gi,'능력'],[/\bability\b/gi,'능력'],
+    [/\bActivate\b/gi,'발동'],[/\bGive\b/gi,'부여'],[/\bGain\b/gi,'획득'],[/\bRemove\b/gi,'제거'],[/\bTrigger\b/gi,'발동'],
+    [/\bWhen you use an item\b/gi,'아이템을 사용하면'],[/\bWhen you receive shield\b/gi,'실드를 받으면'],
+    [/\bWhen allies inflict Poison\b/gi,'아군이 독을 부여하면'],[/\bWhenever an ally inflicts Shock\b/gi,'아군이 전격을 부여할 때마다'],
+    [/\bitems in your shop\b/gi,'상점의 아이템'],[/\bshop\b/gi,'상점'],[/\bnext\b/gi,'다음'],[/\bseconds?\b/gi,'초'],[/\bsecond\(s\)\b/gi,'초'],
+    [/\bcan\'t have\b/gi,'가질 수 없어요'],[/\bcan\'t receive charge\b/gi,'차지를 받을 수 없어요'],
+    [/\bthe\b/gi,''],[/\bit\b/gi,'해당 아군'],[/\bwith no abilities\b/gi,'능력이 없는'],[/\ball Ongoing monsters in this row\b/gi,'이 줄의 모든 지속 바토몬'],[/\benemy Ongoing monsters in this row\b/gi,'이 줄의 적 지속 바토몬'],
+    [/\bExcept other ([^)]+)\b/gi,'다른 $1 제외'],[/\bin this row\b/gi,'이 줄에 있는'],[/\bmonsters\b/gi,'바토몬'],[/\bby (\d+) seconds\b/gi,'$1초만큼'],[/\bincrease ([^.]*) by (\d+) 이번 배틀 동안/gi,'$1을 이번 배틀 동안 $2 증가시켜요'],[/\bincrease 이 바토몬's 쿨타임 by (\d+) 이번 배틀 동안/gi,'이 바토몬의 쿨타임을 이번 배틀 동안 $1초 증가시켜요'],[/\bthis gains \+(\d+) 피해\b/gi,'자신에게 피해 +$1을 부여해요'],
+    [/\band\b/gi,'그리고'],[/\bof\b/gi,'의'],
+  ];
+  for(const [re,r] of generic)t=t.replace(re,r);
+
+  const cleanup=[
+    [/이 바토몬's/g,'이 바토몬의'],
+    [/\bwith no 능력\b/g,'능력이 없는'],
+    [/\ball 지속 바토몬 이 줄에 있는/g,'이 줄의 모든 지속 바토몬'],
+    [/\b비활성화 능력 의 적 지속 바토몬 이 줄에 있는/g,'이 줄의 적 지속 바토몬의 능력을 비활성화해요'],
+    [/\b비활성화 능력 의 이 줄의 모든 지속 바토몬/g,'이 줄의 모든 지속 바토몬의 능력을 비활성화해요'],
+    [/\(Except other 철벽석상\)/g,'(다른 철벽석상 제외)'],
+    [/\bthis gains \+(\d+) 피해/g,'자신에게 피해 +$1을 부여해요'],
+    [/\bthis gains\b/g,'자신은'],
+    [/\bGive 불 아군 뒤 (.+)x 이 바토몬의 화상 이번 배틀 동안/g,'뒤 불 타입 아군에게 이번 배틀 동안 이 바토몬의 화상 $1배를 부여해요'],
+    [/\bGive 불 아군 뒤 이 바토몬의 화상 이번 배틀 동안/g,'뒤 불 타입 아군에게 이번 배틀 동안 이 바토몬의 화상을 부여해요'],
+    [/\bGive 불 아군 위 \+(\d+) 화상 영구적으로/g,'위 불 타입 아군에게 화상 +$1을 영구적으로 부여해요'],
+    [/\bGive 비행 아군 앞 \+(\d+) 다중 발동 영구적으로/g,'앞 비행 타입 아군에게 다중 발동 +$1을 영구적으로 부여해요'],
+    [/\bGive 포이즌 아군 위 \+(\d+) 독 영구적으로/g,'위 포이즌 타입 아군에게 독 +$1을 영구적으로 부여해요'],
+    [/\b인접한 아군의 배틀 시작 시 능력을 발동하고 그리고 이 바토몬의 쿨타임을 이번 배틀 동안 (\d+) 증가시켜요/g,'인접한 아군의 배틀 시작 시 능력을 발동하고, 이번 배틀 동안 이 바토몬의 쿨타임을 $1초 증가시켜요'],
+    [/\b발동 the 벌레 아군 위 그리고 부여 it \+(\d+) 피해 영구적으로\./g,'위 벌레 타입 아군을 발동하고 해당 아군에게 피해 +$1을 영구적으로 부여해요.'],
+    [/\b발동 the 벌레 아군 위\./g,'위 벌레 타입 아군을 발동해요.'],
+    [/\b발동 the 풀 아군 위\./g,'위 풀 타입 아군을 발동해요.'],
+    [/\b인접한 아군 with no 능력 획득 \+(\d+) 다중 발동 영구적으로\./g,'능력이 없는 인접한 아군에게 다중 발동 +$1을 영구적으로 부여해요.'],
+    [/\b배틀 시작 시 · 상점의 다음 (\d+)개 아이템이 나무열매가 돼요\. 아이템을 사용하면, this gains \+(\d+) 피해\./g,'배틀 시작 시 · 상점의 다음 $1개 아이템이 나무열매가 돼요. 아이템을 사용하면 자신에게 피해 +$2를 영구적으로 부여해요.'],
+    [/\b이번 배틀 동안 (\d+(?:\.\d+)?)x 실드 의 인접한 아군만큼 실드를 획득해요\. \(Except other 철벽석상\)/g,'이번 배틀 동안 인접한 아군의 실드의 $1배만큼 실드를 획득해요(다른 철벽석상 제외).'],
+    [/\b이번 배틀 동안 실드 의 인접한 아군만큼 실드를 획득해요\. \(Except other 철벽석상\)/g,'이번 배틀 동안 인접한 아군의 실드만큼 실드를 획득해요(다른 철벽석상 제외).']
+  ];
+  for(const [re,r] of cleanup)t=t.replace(re,r);
+  t=t.replace(/부여 불 아군 뒤 (\d+(?:\.\d+)?)x 이 바토몬의 화상 이번 배틀 동안\./g,'뒤 불 타입 아군에게 이번 배틀 동안 이 바토몬의 화상 $1배를 부여해요.');
+  t=t.replace(/부여 불 아군 뒤 이 바토몬의 화상 이번 배틀 동안\./g,'뒤 불 타입 아군에게 이번 배틀 동안 이 바토몬의 화상을 부여해요.');
+  t=t.replace(/인접한 아군 with no 능력 획득 \+(\d+) 다중 발동 영구적으로\./g,'능력이 없는 인접한 아군에게 다중 발동 +$1을 영구적으로 부여해요.');
+  t=t.replace(/이번 배틀 동안 (\d+(?:\.\d+)?)x 실드 의 인접한 아군만큼 실드를 획득해요\. \(다른 철벽석상 제외\)/g,'이번 배틀 동안 인접한 아군의 실드의 $1배만큼 실드를 획득해요(다른 철벽석상 제외).');
+  t=t.replace(/이번 배틀 동안 실드 의 인접한 아군만큼 실드를 획득해요\. \(다른 철벽석상 제외\)/g,'이번 배틀 동안 인접한 아군의 실드만큼 실드를 획득해요(다른 철벽석상 제외).');
+  t=t.replace(/부여 불 아군 뒤 ([0-9.]+)x 이 바토몬의 화상 이번 배틀 동안\./g,'뒤 불 타입 아군에게 이번 배틀 동안 이 바토몬의 화상 $1배를 부여해요.');
+  t=t.replace(/이번 배틀 동안 ([0-9.]+)x 실드 의 인접한 아군만큼 실드를 획득해요\. \(다른 철벽석상 제외\)/g,'이번 배틀 동안 인접한 아군의 실드의 $1배만큼 실드를 획득해요(다른 철벽석상 제외).');
+  t=t.replace(/이번 배틀 동안 실드 의 인접한 아군만큼 실드를 획득해요\. \(다른 철벽석상 제외\)/g,'이번 배틀 동안 인접한 아군의 실드만큼 실드를 획득해요(다른 철벽석상 제외).');
+  t=t.replace(/인접한 아군 with no 능력 획득 \+([0-9]+) 다중 발동 영구적으로\./g,'능력이 없는 인접한 아군에게 다중 발동 +$1을 영구적으로 부여해요.');
+  t=t.replace(/\s+/g,' ').replace(/\s+([.,)])/g,'$1').replace(/\(\s+/g,'(').trim();
+  return t;
+}
+
 function renderTeamEditStats(item, level, shiny){
   const box=document.getElementById('teamEditStats'); if(!box)return;
   const d=getCalcEntryStats(item,level,shiny);
   const title=shiny?'SHINY 스탯':'도감 스탯';
   const rows=[['피해',d.damage],['회복',d.heal],['실드',d.shield],['화상',d.burn],['독',d.poison],['전격',d.shock],['멀티캐스트',d.multicast==null?null:'×'+d.multicast],['재사용',d.cooldown==null?null:d.cooldown+'초']];
-  box.innerHTML='<div class="teamEditStatsTitle">'+title+' · Lv.'+Number(level)+'</div>' + (Object.keys(d).length?'<div class="teamEditStatsGrid">'+rows.map(([l,v])=>'<div class="teamEditStat"><span class="teamEditStatLabel">'+l+'</span><span class="teamEditStatValue">'+(v==null?'—':String(v))+'</span></div>').join('')+'</div>'+(d.ability?'<div class="teamEditAbility">'+safe(d.ability)+'</div>':''):'<div class="teamEditStatsEmpty">해당 레벨의 스탯 데이터가 없습니다.</div>');
+  box.innerHTML='<div class="teamEditStatsTitle">'+title+' · Lv.'+Number(level)+'</div>' + (Object.keys(d).length?'<div class="teamEditStatsGrid">'+rows.map(([l,v])=>'<div class="teamEditStat"><span class="teamEditStatLabel">'+l+'</span><span class="teamEditStatValue">'+(v==null?'—':String(v))+'</span></div>').join('')+'</div>'+(d.ability?'<div class="teamEditAbility"><div class="abilityOriginalLabel">원문</div><div>'+safe(d.ability)+'</div><div class="abilityKoLabel">한국어</div><div>'+safe(translateAbilityText(d.ability))+'</div></div>':''):'<div class="teamEditStatsEmpty">해당 레벨의 스탯 데이터가 없습니다.</div>');
 }
 function showTeamEditor(item,sub){
   const overlay=document.getElementById('teamEditOverlay');
