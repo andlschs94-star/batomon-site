@@ -40,7 +40,19 @@
       "name_en": "Black Belt",
       "ability_en": "On Battle Start If you have exactly 1 Fighting monster on your team, activate its On Victory ability.",
       "tags_ko": [],
-      "region_ko": "진토"
+      "region_ko": "진토",
+      "meta": {
+        "popularity": 4.5,
+        "seen_rate": 9.4,
+        "chosen_when_seen": 48.1,
+        "picks": 45649,
+        "appearances": 94900,
+        "choices": 1014227,
+        "source": "https://batomon.com/meta/trainers?version=22",
+        "period": "2026-08-24 to 2026-09-22",
+        "mode": "ranked",
+        "balance": 22
+      }
     },
     {
       "id": "bug-catcher",
@@ -55,7 +67,19 @@
       "name_en": "Bug Catcher",
       "ability_en": "The first Bug monster you buy each day is free.",
       "tags_ko": [],
-      "region_ko": "판트라 진토"
+      "region_ko": "판트라 진토",
+      "meta": {
+        "popularity": 2.6,
+        "seen_rate": 13.1,
+        "chosen_when_seen": 20.1,
+        "picks": 26725,
+        "appearances": 133158,
+        "choices": 1014227,
+        "source": "https://batomon.com/meta/trainers?version=22",
+        "period": "2026-08-24 to 2026-09-22",
+        "mode": "ranked",
+        "balance": 22
+      }
     },
     {
       "id": "burglar",
@@ -74,7 +98,19 @@
       "tags_ko": [
         "고유"
       ],
-      "region_ko": "판트라 진토"
+      "region_ko": "판트라 진토",
+      "meta": {
+        "popularity": 6.7,
+        "seen_rate": 13.7,
+        "chosen_when_seen": 48.9,
+        "picks": 67867,
+        "appearances": 138808,
+        "choices": 1014227,
+        "source": "https://batomon.com/meta/trainers?version=22",
+        "period": "2026-08-24 to 2026-09-22",
+        "mode": "ranked",
+        "balance": 22
+      }
     },
     {
       "id": "chef",
@@ -89,7 +125,19 @@
       "name_en": "Chef",
       "ability_en": "Your singled-typed monsters gain Fire typing. Your Fire monsters have +2 Burn.",
       "tags_ko": [],
-      "region_ko": "판트라 진토"
+      "region_ko": "판트라 진토",
+      "meta": {
+        "popularity": 3.6,
+        "seen_rate": 14.9,
+        "chosen_when_seen": 24.0,
+        "picks": 36121,
+        "appearances": 150644,
+        "choices": 1014227,
+        "source": "https://batomon.com/meta/trainers?version=22",
+        "period": "2026-08-24 to 2026-09-22",
+        "mode": "ranked",
+        "balance": 22
+      }
     },
     {
       "id": "chemist",
@@ -104,7 +152,19 @@
       "name_en": "Chemist",
       "ability_en": "Your Toxic monsters have +1 Poison. When any monster levels up, increase this effect by +1 Poison.",
       "tags_ko": [],
-      "region_ko": "판트라 진토"
+      "region_ko": "판트라 진토",
+      "meta": {
+        "popularity": 4.5,
+        "seen_rate": 13.7,
+        "chosen_when_seen": 33.1,
+        "picks": 45878,
+        "appearances": 138794,
+        "choices": 1014227,
+        "source": "https://batomon.com/meta/trainers?version=22",
+        "period": "2026-08-24 to 2026-09-22",
+        "mode": "ranked",
+        "balance": 22
+      }
     },
     {
       "id": "egg-breeder",
@@ -123,7 +183,19 @@
       "tags_ko": [
         "고유"
       ],
-      "region_ko": "판트라 진토"
+      "region_ko": "판트라 진토",
+      "meta": {
+        "popularity": 4.2,
+        "seen_rate": 14.4,
+        "chosen_when_seen": 29.3,
+        "picks": 42872,
+        "appearances": 146194,
+        "choices": 1014227,
+        "source": "https://batomon.com/meta/trainers?version=22",
+        "period": "2026-08-24 to 2026-09-22",
+        "mode": "ranked",
+        "balance": 22
+      }
     },
     {
       "id": "gamer",
@@ -142,7 +214,19 @@
       "tags_ko": [
         "고유"
       ],
-      "region_ko": "판트라 진토"
+      "region_ko": "판트라 진토",
+      "meta": {
+        "popularity": 4.7,
+        "seen_rate": 14.1,
+        "chosen_when_seen": 32.9,
+        "picks": 47231,
+        "appearances": 143419,
+        "choices": 1014227,
+        "source": "https://batomon.com/meta/trainers?version=22",
+        "period": "2026-08-24 to 2026-09-22",
+        "mode": "ranked",
+        "balance": 22
+      }
     },
     {
       "id": "gentleman",
@@ -163,7 +247,19 @@
         "고유",
         "신비한 가면에서 제공되지 않음"
       ],
-      "region_ko": "판트라 진토"
+      "region_ko": "판트라 진토",
+      "meta": {
+        "popularity": 3.7,
+        "seen_rate": 16.6,
+        "chosen_when_seen": 22.0,
+        "picks": 37062,
+        "appearances": 168260,
+        "choices": 1014227,
+        "source": "https://batomon.com/meta/trainers?version=22",
+        "period": "2026-08-24 to 2026-09-22",
+        "mode": "ranked",
+        "balance": 22
+      }
     },
     {
       "id": "lucky-girl",
@@ -178,7 +274,19 @@
       "name_en": "Lucky Girl",
       "ability_en": "SHINY monsters are more likely to appear.",
       "tags_ko": [],
-      "region_ko": "판트라 진토"
+      "region_ko": "판트라 진토",
+      "meta": {
+        "popularity": 7.3,
+        "seen_rate": 13.3,
+        "chosen_when_seen": 55.1,
+        "picks": 74352,
+        "appearances": 134884,
+        "choices": 1014227,
+        "source": "https://batomon.com/meta/trainers?version=22",
+        "period": "2026-08-24 to 2026-09-22",
+        "mode": "ranked",
+        "balance": 22
+      }
     },
     {
       "id": "mad-scientist",
@@ -197,7 +305,19 @@
       "tags_ko": [
         "고유"
       ],
-      "region_ko": "판트라 진토"
+      "region_ko": "판트라 진토",
+      "meta": {
+        "popularity": 2.5,
+        "seen_rate": 16.4,
+        "chosen_when_seen": 15.2,
+        "picks": 25234,
+        "appearances": 166486,
+        "choices": 1014227,
+        "source": "https://batomon.com/meta/trainers?version=22",
+        "period": "2026-08-24 to 2026-09-22",
+        "mode": "ranked",
+        "balance": 22
+      }
     },
     {
       "id": "masked-man",
@@ -216,7 +336,19 @@
       "tags_ko": [
         "신비한 가면에서 제공되지 않음"
       ],
-      "region_ko": "판트라 진토"
+      "region_ko": "판트라 진토",
+      "meta": {
+        "popularity": 4.1,
+        "seen_rate": 14.9,
+        "chosen_when_seen": 27.7,
+        "picks": 41871,
+        "appearances": 150909,
+        "choices": 1014227,
+        "source": "https://batomon.com/meta/trainers?version=22",
+        "period": "2026-08-24 to 2026-09-22",
+        "mode": "ranked",
+        "balance": 22
+      }
     },
     {
       "id": "monster-ranger",
@@ -235,7 +367,19 @@
       "tags_ko": [
         "고유"
       ],
-      "region_ko": "판트라 진토"
+      "region_ko": "판트라 진토",
+      "meta": {
+        "popularity": 6.8,
+        "seen_rate": 13.7,
+        "chosen_when_seen": 49.9,
+        "picks": 69295,
+        "appearances": 138941,
+        "choices": 1014227,
+        "source": "https://batomon.com/meta/trainers?version=22",
+        "period": "2026-08-24 to 2026-09-22",
+        "mode": "ranked",
+        "balance": 22
+      }
     },
     {
       "id": "musician",
@@ -250,7 +394,19 @@
       "name_en": "Musician",
       "ability_en": "If you have exactly 1 Electric monster on your team, it will have +150% Shock.",
       "tags_ko": [],
-      "region_ko": "판트라"
+      "region_ko": "판트라",
+      "meta": {
+        "popularity": 1.8,
+        "seen_rate": 6.9,
+        "chosen_when_seen": 27.0,
+        "picks": 18729,
+        "appearances": 69494,
+        "choices": 1014227,
+        "source": "https://batomon.com/meta/trainers?version=22",
+        "period": "2026-08-24 to 2026-09-22",
+        "mode": "ranked",
+        "balance": 22
+      }
     },
     {
       "id": "painter",
@@ -271,7 +427,19 @@
         "고유",
         "신비한 가면에서 제공되지 않음"
       ],
-      "region_ko": "판트라 진토"
+      "region_ko": "판트라 진토",
+      "meta": {
+        "popularity": 6.4,
+        "seen_rate": 14.4,
+        "chosen_when_seen": 44.6,
+        "picks": 65408,
+        "appearances": 146540,
+        "choices": 1014227,
+        "source": "https://batomon.com/meta/trainers?version=22",
+        "period": "2026-08-24 to 2026-09-22",
+        "mode": "ranked",
+        "balance": 22
+      }
     },
     {
       "id": "redhead",
@@ -286,7 +454,19 @@
       "name_en": "Redhead",
       "ability_en": "On Victory Give your Fire monsters +2 Burn permanently.",
       "tags_ko": [],
-      "region_ko": "판트라 진토"
+      "region_ko": "판트라 진토",
+      "meta": {
+        "popularity": 2.9,
+        "seen_rate": 12.5,
+        "chosen_when_seen": 23.1,
+        "picks": 29212,
+        "appearances": 126409,
+        "choices": 1014227,
+        "source": "https://batomon.com/meta/trainers?version=22",
+        "period": "2026-08-24 to 2026-09-22",
+        "mode": "ranked",
+        "balance": 22
+      }
     },
     {
       "id": "rich-lady",
@@ -305,7 +485,19 @@
       "tags_ko": [
         "고유"
       ],
-      "region_ko": "판트라 진토"
+      "region_ko": "판트라 진토",
+      "meta": {
+        "popularity": 4.8,
+        "seen_rate": 14.2,
+        "chosen_when_seen": 34.0,
+        "picks": 48779,
+        "appearances": 143604,
+        "choices": 1014227,
+        "source": "https://batomon.com/meta/trainers?version=22",
+        "period": "2026-08-24 to 2026-09-22",
+        "mode": "ranked",
+        "balance": 22
+      }
     },
     {
       "id": "scavenger",
@@ -320,7 +512,19 @@
       "name_en": "Scavenger",
       "ability_en": "Gain an additional copy of each non-unique Common or Uncommon Trinket from a gift.",
       "tags_ko": [],
-      "region_ko": "판트라 진토"
+      "region_ko": "판트라 진토",
+      "meta": {
+        "popularity": 4.7,
+        "seen_rate": 14.9,
+        "chosen_when_seen": 31.6,
+        "picks": 47906,
+        "appearances": 151383,
+        "choices": 1014227,
+        "source": "https://batomon.com/meta/trainers?version=22",
+        "period": "2026-08-24 to 2026-09-22",
+        "mode": "ranked",
+        "balance": 22
+      }
     },
     {
       "id": "shopkeeper",
@@ -339,7 +543,19 @@
       "tags_ko": [
         "고유"
       ],
-      "region_ko": "판트라 진토"
+      "region_ko": "판트라 진토",
+      "meta": {
+        "popularity": 3.9,
+        "seen_rate": 13.5,
+        "chosen_when_seen": 28.9,
+        "picks": 39497,
+        "appearances": 136458,
+        "choices": 1014227,
+        "source": "https://batomon.com/meta/trainers?version=22",
+        "period": "2026-08-24 to 2026-09-22",
+        "mode": "ranked",
+        "balance": 22
+      }
     },
     {
       "id": "swim-coach",
@@ -358,7 +574,19 @@
       "tags_ko": [
         "고유"
       ],
-      "region_ko": "판트라 진토"
+      "region_ko": "판트라 진토",
+      "meta": {
+        "popularity": 5.3,
+        "seen_rate": 12.4,
+        "chosen_when_seen": 43.3,
+        "picks": 54197,
+        "appearances": 125281,
+        "choices": 1014227,
+        "source": "https://batomon.com/meta/trainers?version=22",
+        "period": "2026-08-24 to 2026-09-22",
+        "mode": "ranked",
+        "balance": 22
+      }
     },
     {
       "id": "treasure-hunter",
@@ -377,7 +605,19 @@
       "tags_ko": [
         "고유"
       ],
-      "region_ko": "판트라 진토"
+      "region_ko": "판트라 진토",
+      "meta": {
+        "popularity": 5.0,
+        "seen_rate": 13.9,
+        "chosen_when_seen": 35.6,
+        "picks": 50237,
+        "appearances": 140957,
+        "choices": 1014227,
+        "source": "https://batomon.com/meta/trainers?version=22",
+        "period": "2026-08-24 to 2026-09-22",
+        "mode": "ranked",
+        "balance": 22
+      }
     },
     {
       "id": "twins",
@@ -396,7 +636,19 @@
       "tags_ko": [
         "고유"
       ],
-      "region_ko": "판트라 진토"
+      "region_ko": "판트라 진토",
+      "meta": {
+        "popularity": 6.1,
+        "seen_rate": 14.5,
+        "chosen_when_seen": 42.5,
+        "picks": 62308,
+        "appearances": 146671,
+        "choices": 1014227,
+        "source": "https://batomon.com/meta/trainers?version=22",
+        "period": "2026-08-24 to 2026-09-22",
+        "mode": "ranked",
+        "balance": 22
+      }
     },
     {
       "id": "youngster",
@@ -415,7 +667,19 @@
       "tags_ko": [
         "고유"
       ],
-      "region_ko": "판트라 진토"
+      "region_ko": "판트라 진토",
+      "meta": {
+        "popularity": 3.7,
+        "seen_rate": 14.8,
+        "chosen_when_seen": 25.1,
+        "picks": 37797,
+        "appearances": 150487,
+        "choices": 1014227,
+        "source": "https://batomon.com/meta/trainers?version=22",
+        "period": "2026-08-24 to 2026-09-22",
+        "mode": "ranked",
+        "balance": 22
+      }
     }
   ],
   "image_source": "https://www.critcap.gg/batomon/trainers/",
@@ -423,5 +687,9 @@
   "display_language": "ko",
   "original_language": "en",
   "translation_note": "화면에는 한국어를 표시하고, 영어 원문은 name_en / ability_en으로 보존합니다.",
-  "site_version": "0.019"
+  "site_version": "0.019",
+  "meta_source": "https://batomon.com/meta/trainers?version=22",
+  "meta_note": "Official trainer choice statistics. These are choice rates, not win rates.",
+  "meta_period": "2026-08-24 to 2026-09-22",
+  "meta_updated": "2026-09-22"
 }

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.083</title>
+<title>바토몬 원향 도감 v0.084</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -31,6 +31,8 @@
 .trainerTag{font-size:10px;padding:4px 6px;border-radius:6px;background:#252d38;color:#cbd2dc}
 .trainerCard a{display:inline-block;margin-top:12px;color:#8ed0ff;text-decoration:none;font-size:11px}
 .trainerCard a:hover{text-decoration:underline}
+.trainerMeta{margin-top:12px;border:1px solid #2d3948;border-radius:10px;background:#0d131b;overflow:hidden}.trainerMetaHead{padding:7px 9px;font-size:10px;color:#8ea6bf;font-weight:800;border-bottom:1px solid #273240;letter-spacing:.2px}.trainerMetaGrid{display:grid;grid-template-columns:repeat(3,1fr)}.trainerMetaCell{padding:8px 7px;border-right:1px solid #273240}.trainerMetaCell:last-child{border-right:0}.trainerMetaLabel{font-size:9px;color:#7f8da0}.trainerMetaValue{font-size:15px;font-weight:900;margin-top:3px;color:#fff}.trainerMetaSub{font-size:9px;color:#7890a8;margin-top:2px}.trainerMetaSource{margin-top:6px;font-size:9px;color:#6f8195}.trainerSelectMeta{font-size:9px;color:#6e8093;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.trainerMetaNote{margin-top:8px;font-size:11px;color:#9aa9b9}
+
 .sectionTabs{display:flex;gap:8px;margin-bottom:14px}
 .sectionTabs button{height:40px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--text);padding:0 16px;font-weight:800;cursor:pointer}
 .sectionTabs button.on{background:#2a4459;border-color:#4e8ab3}
@@ -249,7 +251,7 @@
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.083</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.084</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -331,7 +333,7 @@
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.083</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.084</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -1235,6 +1237,9 @@ function updateCalcTrainer(){
   img.onerror=()=>{ if(imageIndex<urls.length){ img.src=urls[imageIndex++]; } else { img.removeAttribute('src'); } };
   img.src=urls[imageIndex++]||'';
 }
+function formatPct(v){return v==null?'—':Number(v).toFixed(1)+'%'}
+function trainerMetaHtml(t, compact=false){const m=t?.meta;if(!m)return ''; if(compact){return `<div class="trainerSelectMeta">픽 ${formatPct(m.popularity)} · 등장 ${formatPct(m.seen_rate)} · 선택 ${formatPct(m.chosen_when_seen)}</div>`;} return `<div class="trainerMeta"><div class="trainerMetaHead">공식 메타 · 픽/등장/선택 통계 <span style="float:right">랭크 · Balance 22</span></div><div class="trainerMetaGrid"><div class="trainerMetaCell"><div class="trainerMetaLabel">픽률</div><div class="trainerMetaValue">${formatPct(m.popularity)}</div><div class="trainerMetaSub">${Number(m.picks).toLocaleString()}회 선택</div></div><div class="trainerMetaCell"><div class="trainerMetaLabel">등장률</div><div class="trainerMetaValue">${formatPct(m.seen_rate)}</div><div class="trainerMetaSub">${Number(m.appearances).toLocaleString()}회 등장</div></div><div class="trainerMetaCell"><div class="trainerMetaLabel">등장 시 선택</div><div class="trainerMetaValue">${formatPct(m.chosen_when_seen)}</div><div class="trainerMetaSub">선택 ÷ 등장</div></div></div><div class="trainerMetaSource">공식 메타 통계 · 2026-08-24 ~ 2026-09-22 · 승률 데이터 아님</div></div>`;}
+
 function renderCalcTrainerList(){
   const g=document.getElementById('calcTrainerGrid'); if(!g)return;
   const q=(document.getElementById('calcTrainerSearch')?.value||'').trim().toLowerCase();
@@ -1248,7 +1253,7 @@ function renderCalcTrainerList(){
     const name=document.createElement('div');name.className='trainerSelectName';name.textContent=getTrainerName(t);
     const en=document.createElement('div');en.className='trainerSelectNameEn';en.textContent=t.name_en||t.name||'';
     const region=document.createElement('div');region.className='trainerSelectRegion';region.textContent=t.region_ko||t.region||'지역 미표기';
-    card.append(img,name,en,region);card.addEventListener('click',()=>{calcSelectedTrainerId=t.id;updateCalcTrainer();closeTrainerSelector()});g.appendChild(card);
+    card.append(img,name,en,region); card.insertAdjacentHTML('beforeend',trainerMetaHtml(t,true)); card.addEventListener('click',()=>{calcSelectedTrainerId=t.id;updateCalcTrainer();closeTrainerSelector()});g.appendChild(card);
   }
 }
 function openTrainerSelector(){
@@ -1296,9 +1301,9 @@ function renderTrainers(){
     const tags=document.createElement('div');tags.className='trainerTags';
     for(const tag of (t.tags_ko||t.tags||[])){const el=document.createElement('span');el.className='trainerTag';el.textContent=tag;tags.appendChild(el);}
     const link=document.createElement('a');link.href=t.url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='공식 원문 보기 ↗';
-    card.append(portrait,head,ability,tags,link);g.appendChild(card);
+    card.append(portrait,head,ability,tags); if(t.meta) card.insertAdjacentHTML('beforeend',trainerMetaHtml(t)); card.append(link); g.appendChild(card);
   }
-  document.getElementById('trainerStatus').textContent=`트레이너 ${trainers.length}종 · Balance 22 / 1.0.0 · 현재 표시 ${list.length}종`;
+  document.getElementById('trainerStatus').innerHTML=`트레이너 ${trainers.length}종 · Balance 22 · 현재 표시 ${list.length}종 · <span class="trainerMetaNote">픽률/등장률/등장 시 선택률은 공식 메타 통계이며 승률이 아닙니다.</span>`;
 }
 
 
