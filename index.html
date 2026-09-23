@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.090</title>
+<title>바토몬 원향 도감 v0.091</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -249,7 +249,7 @@
 @media(max-width:720px){.calcBattleArea{grid-template-columns:1fr}.calcTrainerPanel,.calcTrinketPanel{width:100%;max-width:320px}.calcCenter>.calcBox{width:var(--team-w,190px);max-width:100%;}}
 </style>
 <style id="v089TrainerCompare">
-/* v0.090: trainer selector / comparison + first-screen calculator fit */
+/* v0.091: trainer selector / comparison + first-screen calculator fit */
 @media(min-width:721px){
   body.calcView{overflow:hidden}
   .calcPage{height:calc(100vh - 118px);min-height:0}
@@ -269,8 +269,8 @@
 .trainerCompareModal{width:min(1080px,96vw);max-height:min(760px,calc(100vh - 30px));background:#151b23;border:2px solid #3a4655;border-radius:14px;box-shadow:0 18px 60px rgba(0,0,0,.5);overflow:hidden;display:flex;flex-direction:column}
 .trainerCompareHead{padding:13px 16px;border-bottom:1px solid #303b49;display:flex;align-items:center;justify-content:space-between;gap:12px;background:#1b222d}.trainerCompareHead strong{font-size:20px}.trainerCompareClose{width:36px;height:36px;border:1px solid #465364;border-radius:8px;background:#252e3a;color:#fff;font-size:22px;font-weight:900;cursor:pointer}
 .trainerCompareIntro{padding:10px 16px;color:#aeb9c7;font-size:12px;border-bottom:1px solid #303b49}
-.trainerCompareSlots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:12px 16px;border-bottom:1px solid #303b49}
-.trainerCompareSlot{min-height:58px;border:1px dashed #4a5869;border-radius:9px;background:#11161d;padding:8px;display:flex;align-items:center;gap:9px;cursor:pointer}.trainerCompareSlot.selected{border-style:solid;border-color:#20c3f0;background:#15232b}.trainerCompareSlot img{width:52px;height:52px;object-fit:contain;background:#0c1118;border-radius:7px}.trainerCompareSlotEmpty{color:#738093;font-size:12px}.trainerCompareSlotName{font-weight:900}.trainerCompareSlotEn{font-size:10px;color:#7f8c9d;margin-top:2px}
+.trainerCompareSlots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:12px 16px;border-bottom:1px solid #303b49;background:#121821}
+.trainerCompareSlot{min-height:92px;border:1px dashed #4a5869;border-radius:10px;background:#0f151d;padding:9px;display:flex;align-items:center;justify-content:center;gap:10px;cursor:pointer;position:relative;box-sizing:border-box}.trainerCompareSlot.selected{border-style:solid;border-color:#20c3f0;background:#152730}.trainerCompareSlot img{width:70px;height:70px;flex:0 0 70px;object-fit:contain;background:#0c1118;border-radius:8px}.trainerCompareSlotName{font-size:14px;font-weight:900;line-height:1.25}.trainerCompareSlotEn{font-size:10px;color:#7f8c9d;margin-top:4px}.trainerCompareSlotEmpty{color:#738093;font-size:12px;text-align:center}.trainerCompareSlotRemove{position:absolute;right:6px;top:5px;width:22px;height:22px;border:1px solid #475565;border-radius:50%;background:#202a36;color:#cbd5e1;font-size:13px;line-height:18px;text-align:center}
 .trainerCompareBody{display:flex;flex-direction:column;min-height:0;overflow:auto}.trainerComparePicker{padding:12px 16px;border-bottom:1px solid #303b49;min-height:0}.trainerCompareSearch{width:100%;height:36px;box-sizing:border-box;border:1px solid #3a4655;border-radius:8px;background:#0f141b;color:#fff;padding:0 10px;margin-bottom:10px}.trainerCompareGrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}.trainerCompareCard{border:1px solid #394657;border-radius:8px;background:#1a212b;color:#fff;padding:6px;text-align:left;cursor:pointer;min-width:0}.trainerCompareCard:hover{border-color:#20c3f0}.trainerCompareCard.selected{border-color:#20c3f0;background:#132b35}.trainerCompareCard img{width:100%;height:62px;object-fit:contain;background:#0d1219;border-radius:5px}.trainerCompareCardName{font-size:11px;font-weight:900;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.trainerCompareCardMeta{font-size:9px;color:#7f8c9d;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .trainerCompareResult{padding:12px 16px;min-width:0;overflow:auto}.trainerCompareEmpty{height:100%;min-height:250px;display:flex;align-items:center;justify-content:center;color:#748295;font-size:13px;text-align:center}.trainerCompareTable{width:100%;border-collapse:separate;border-spacing:0;table-layout:fixed}.trainerCompareTable th,.trainerCompareTable td{border-right:1px solid #303b49;border-bottom:1px solid #303b49;padding:9px 8px;vertical-align:middle}.trainerCompareTable th:last-child,.trainerCompareTable td:last-child{border-right:0}.trainerCompareTable thead th{background:#202936;text-align:center}.trainerCompareTable .metricLabel{width:115px;text-align:left;background:#171e27;color:#9ba8b8;font-size:11px;font-weight:800}.trainerCompareTable .trainerColName{font-size:13px;font-weight:900}.trainerCompareTable .trainerColEn{font-size:9px;color:#7f8c9d;margin-top:3px}.trainerCompareTable .metricValue{font-size:18px;font-weight:900;text-align:center;color:#fff}.trainerCompareTable .metricSub{display:block;font-size:9px;color:#738196;margin-top:2px}.trainerCompareNote{font-size:10px;color:#6f7f92;margin-top:9px}.trainerCompareAction{padding:10px 16px;border-top:1px solid #303b49;display:flex;justify-content:flex-end;gap:8px}.trainerCompareAction button{border:1px solid #405063;border-radius:8px;background:#202a36;color:#fff;padding:7px 12px;cursor:pointer}.trainerCompareAction .primary{background:#0e7996;border-color:#22bce4}.trainerCompareAction button:disabled{opacity:.45;cursor:default}
 @media(max-width:1050px){.trainerCompareGrid{grid-template-columns:repeat(5,minmax(0,1fr))}}
@@ -281,7 +281,7 @@
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.090</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.091</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -363,7 +363,7 @@
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.090</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.091</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -1346,22 +1346,37 @@ function trainerCompareImageUrls(t){
   if(typeof getOfficialTrainerImageUrls==='function') return getOfficialTrainerImageUrls(t)||[];
   return [];
 }
+function loadTrainerCompareImage(img,t){
+  const sources=getTrainerImageSources(t);
+  let i=0;
+  const fallback=()=>{
+    img.onerror=null;
+    img.removeAttribute('src');
+    img.alt=getTrainerName(t);
+    img.style.display='block';
+    img.style.objectFit='contain';
+  };
+  img.onerror=()=>{ if(i<sources.length){ img.src=sources[i++]; } else fallback(); };
+  if(sources.length) img.src=sources[i++]; else fallback();
+}
 function renderTrainerCompareSlots(){
   const host=document.getElementById('trainerCompareSlots'); if(!host)return;
   host.innerHTML='';
   for(let i=0;i<3;i++){
     const t=trainers.find(x=>x.id===trainerCompareSelected[i]);
     const slot=document.createElement('div'); slot.className='trainerCompareSlot'+(t?' selected':'');
-    slot.title=t?'클릭하면 선택 해제':'트레이너 선택';
+    slot.title=t?'클릭하면 선택 해제':'아래 목록에서 트레이너를 선택하세요';
     if(t){
-      const img=document.createElement('img'); img.alt=getTrainerName(t); loadTrainerImage(img,t,slot);
+      const img=document.createElement('img'); img.alt=getTrainerName(t); loadTrainerCompareImage(img,t);
       const wrap=document.createElement('div');
       const nm=document.createElement('div');nm.className='trainerCompareSlotName';nm.textContent=getTrainerName(t);
       const en=document.createElement('div');en.className='trainerCompareSlotEn';en.textContent=t.name_en||t.name||'';
-      wrap.append(nm,en);slot.append(img,wrap);
+      wrap.append(nm,en);
+      const remove=document.createElement('div');remove.className='trainerCompareSlotRemove';remove.textContent='×';remove.title='선택 해제';
+      slot.append(img,wrap,remove);
       slot.addEventListener('click',()=>{trainerCompareSelected=trainerCompareSelected.filter(id=>id!==t.id);renderTrainerCompare();});
     }else{
-      const empty=document.createElement('div');empty.className='trainerCompareSlotEmpty';empty.textContent=`트레이너 ${i+1} 선택`;
+      const empty=document.createElement('div');empty.className='trainerCompareSlotEmpty';empty.innerHTML=`<strong>트레이너 ${i+1}</strong><br>아래에서 선택`;
       slot.appendChild(empty);
     }
     host.appendChild(slot);
