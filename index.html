@@ -77,6 +77,7 @@
 .calcPage{background:#0c6673;min-height:calc(100vh - 30px);border:1px solid #153f4a;border-radius:18px;overflow:hidden;box-shadow:0 18px 55px rgba(0,0,0,.28)}
 .calcTopbar{height:58px;background:linear-gradient(180deg,#20c3f0 0%,#13a8d4 100%);border-bottom:3px solid #087c9d;display:flex;align-items:center;justify-content:center;gap:clamp(24px,5vw,90px);font-weight:900;color:#fff;text-shadow:2px 2px 0 rgba(0,0,0,.18)}
 .calcStatus{display:flex;align-items:center;gap:10px;font-size:20px;min-width:110px;justify-content:center}.calcIcon{font-size:30px;line-height:1}.calcDay{font-size:30px}.calcCounter{font-size:20px}
+.calcLifeStatus{position:relative;min-width:110px}.calcLifeButton{appearance:none;border:0;background:transparent;color:#fff;font:inherit;font-weight:900;display:flex;align-items:center;gap:10px;cursor:pointer;text-shadow:2px 2px 0 rgba(0,0,0,.18);padding:5px 9px;border-radius:8px}.calcLifeButton:hover,.calcLifeButton:focus-visible{background:rgba(255,255,255,.16);outline:2px solid rgba(255,255,255,.7);outline-offset:2px}.calcLifeButton .calcIcon{font-family:Arial,sans-serif;font-size:32px;line-height:1;color:#fff}.calcLifeIconUpside{display:inline-block;transform:rotate(180deg)}.calcLifeMenu{position:absolute;top:calc(100% + 5px);left:50%;transform:translateX(-50%);display:none;grid-template-columns:repeat(4,1fr);gap:5px;padding:7px;background:#116a7c;border:2px solid #075064;border-radius:9px;box-shadow:0 8px 18px rgba(0,0,0,.3);z-index:1000;min-width:170px}.calcLifeMenu.open{display:grid}.calcLifeOption{border:1px solid rgba(255,255,255,.25);border-radius:6px;background:#1b8798;color:#fff;font-weight:900;font-size:15px;padding:7px 5px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:4px}.calcLifeOption:hover,.calcLifeOption.selected{background:#0a5262;outline:2px solid #fff}.calcLifeOption .lifeHeart{font-family:Arial,sans-serif;font-size:18px;line-height:1}.calcLifeOption .lifeHeart.upside{display:inline-block;transform:rotate(180deg)}
 .calcBoard{position:relative;padding:14px 18px 18px;background-color:#0c6875;background-image:linear-gradient(135deg,rgba(38,184,210,.14) 25%,transparent 25%,transparent 75%,rgba(38,184,210,.14) 75%),linear-gradient(315deg,rgba(38,184,210,.08) 25%,transparent 25%,transparent 75%,rgba(38,184,210,.08) 75%);background-size:150px 150px;background-position:0 0,75px 75px}
 .calcBattleArea{display:grid;grid-template-columns:180px minmax(460px,1fr) 280px;gap:18px;align-items:start;min-height:390px}.calcTrainerPanel{background:#f4f4f5;border:4px solid #8f939e;outline:2px solid #252a31;border-radius:7px;box-shadow:4px 4px 0 rgba(0,0,0,.2);overflow:hidden}.calcTrainerTitle{height:30px;background:#ffc20f;color:#fff;font-size:14px;font-weight:900;padding:6px 8px;border-bottom:3px solid #e6a800;text-shadow:1px 1px 0 rgba(0,0,0,.2)}.calcTrainerImage{height:95px;background:#e7e8ea;display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:3px solid #a7a9b2}.calcTrainerImage img{width:100%;height:100%;object-fit:contain;image-rendering:auto}.calcTrainerAbility{min-height:72px;padding:8px 7px;color:#555c68;font-size:11px;line-height:1.4;font-weight:800;text-align:center;background:#fafafa}.calcTrainerHp{height:28px;background:#fff;border-top:3px solid #a7a9b2;display:flex;align-items:center;padding:3px 6px;font-size:11px;font-weight:900;color:#ffbd00}.calcHpBar{height:18px;flex:1;background:#2de83b;border:1px solid #8a8d95;margin-left:5px;box-shadow:inset 0 0 0 1px #15b622;color:#fff;text-align:center;line-height:16px;text-shadow:1px 1px 0 rgba(0,0,0,.55)}
 .calcCenter{display:flex;flex-direction:column;gap:14px}.calcBox{background:#f3f3f4;border:5px solid #8e929d;outline:2px solid #252a31;border-radius:7px;box-shadow:4px 4px 0 rgba(0,0,0,.2);overflow:hidden}.calcBoxHead{height:40px;padding:6px 12px;font-size:20px;font-weight:900;color:#fff;background:#ffc20f;border-bottom:4px solid #e2a500;text-shadow:2px 2px 0 rgba(0,0,0,.15)}.calcBoxHead.team{background:#ef4d6a;border-bottom-color:#cf3450}.calcSlots{padding:6px;display:grid;gap:7px}.calcSlots.bench{grid-template-columns:repeat(4,1fr)}.calcSlots.team{grid-template-columns:repeat(3,1fr)}.calcSlot{height:110px;background:#fff;border:4px solid #b8bbc4;box-shadow:inset 0 0 0 2px #e6e7ea;display:flex;align-items:center;justify-content:center;position:relative;color:#b3b6bd;font-size:12px;font-weight:900}.calcSlot:after{content:'+';font-size:26px;color:#d0d2d7}.calcSlot:hover{border-color:#8ea7b7;background:#f9fcfd}.calcSlot.teamSlot{height:112px}.calcTeamHint{font-size:12px;color:#66707d;text-align:center;padding:2px 0 8px}.calcRightSpace{display:none}
@@ -264,7 +265,12 @@
   <section id="calculatorSection" class="section on">
     <div class="calcPage">
       <div class="calcTopbar">
-        <div class="calcStatus"><span class="calcIcon">🫀</span><span>10</span></div>
+        <div class="calcStatus calcLifeStatus" id="calcLifeStatus" aria-label="생명력 선택">
+          <button class="calcLifeButton" id="calcLifeButton" type="button" aria-haspopup="listbox" aria-expanded="false">
+            <span class="calcIcon" id="calcLifeIcon">♥</span><span id="calcLifeValue">10</span>
+          </button>
+          <div class="calcLifeMenu" id="calcLifeMenu" role="listbox" aria-label="생명력 선택"></div>
+        </div>
         <div class="calcDay">1일차</div>
         <div class="calcStatus"><span class="calcIcon">🪙</span><span class="calcCounter">0/10</span></div>
       </div>
@@ -325,7 +331,7 @@
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.063</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.065</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -978,6 +984,33 @@ function saveTeamEditor(){
   if(teamEditItem){calcBatomonPresets[getTeamSpeciesKey(teamEditItem)]={level:teamEditLevel,shiny:teamEditShiny};}
   closeTeamEditor();
 }
+let calcLifeValue=10;
+function renderCalcLife(){
+  const valueEl=document.getElementById('calcLifeValue');
+  const iconEl=document.getElementById('calcLifeIcon');
+  const menu=document.getElementById('calcLifeMenu');
+  if(!valueEl||!iconEl||!menu)return;
+  valueEl.textContent=String(calcLifeValue);
+  iconEl.classList.toggle('calcLifeIconUpside',calcLifeValue===-1);
+  menu.innerHTML='';
+  for(let v=-1;v<=10;v++){
+    const b=document.createElement('button');
+    b.type='button'; b.className='calcLifeOption'+(v===calcLifeValue?' selected':''); b.setAttribute('role','option'); b.setAttribute('aria-selected',v===calcLifeValue?'true':'false');
+    const h=document.createElement('span'); h.className='lifeHeart'+(v===-1?' upside':''); h.textContent='♥';
+    const n=document.createElement('span'); n.textContent=String(v);
+    b.append(h,n);
+    b.onclick=()=>{calcLifeValue=v; renderCalcLife(); menu.classList.remove('open'); document.getElementById('calcLifeButton')?.setAttribute('aria-expanded','false');};
+    menu.appendChild(b);
+  }
+}
+function initCalcLifeControl(){
+  const btn=document.getElementById('calcLifeButton'); const menu=document.getElementById('calcLifeMenu');
+  if(!btn||!menu)return;
+  btn.onclick=e=>{e.stopPropagation(); menu.classList.toggle('open'); btn.setAttribute('aria-expanded',menu.classList.contains('open')?'true':'false');};
+  document.addEventListener('click',e=>{if(!document.getElementById('calcLifeStatus')?.contains(e.target)){menu.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
+  renderCalcLife();
+}
+
 function toggleTeamHint(){
   const hint=document.querySelector('.calcTeamHint');
   if(hint) hint.classList.toggle('show');
@@ -1491,6 +1524,8 @@ init();
   }
   addHandle(trainer,'trainer'); addHandle(team,'team'); addHandle(trinket,'trinket'); addHandle(selected,'selected');
 })();
+
+initCalcLifeControl();
 </script>
 </body>
 </html>
