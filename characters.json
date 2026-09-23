@@ -1,5 +1,5 @@
 {
-  "version": "3.0",
+  "version": "0.081",
   "updated": "2026-09-23",
   "source": "https://batomon.com",
   "sourcePolicy": "batomon.com only",
@@ -1143,7 +1143,7 @@
           "multicast": null,
           "cooldown": 6,
           "stats": "회복 30",
-          "ability": "발동 시 +20 피해을 이번 배틀 동안 얻어요",
+          "ability": "발동 시 +20 피해를 이번 배틀 동안 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nMosslug\nMosslug\nCommon\nWater\nGrass\nLevel\nLv 1\nheal\n30\n6s\nCOOLDOWN\nHeal\n30\nON CAST\n+20 Damage for this battle.\nLv 1\nLv 2\nLv 3\nLv 4\nShiny\n$10\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 79 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         },
@@ -1158,7 +1158,7 @@
           "multicast": null,
           "cooldown": 6,
           "stats": "회복 60",
-          "ability": "발동 시 +40 피해을 이번 배틀 동안 얻어요",
+          "ability": "발동 시 +40 피해를 이번 배틀 동안 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nMosslug\nMosslug\nCommon\nWater\nGrass\nLevel\nLv 2\nheal\n60\n6s\nCOOLDOWN\nHeal\n60\nON CAST\n+40 Damage for this battle.\nLv 1\nLv 2\nLv 3\nLv 4\nShiny\n$10\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 79 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         },
@@ -1173,7 +1173,7 @@
           "multicast": null,
           "cooldown": 6,
           "stats": "회복 90",
-          "ability": "발동 시 +60 피해을 이번 배틀 동안 얻어요",
+          "ability": "발동 시 +60 피해를 이번 배틀 동안 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nMosslug\nMosslug\nCommon\nWater\nGrass\nLevel\nLv 3\nheal\n90\n6s\nCOOLDOWN\nHeal\n90\nON CAST\n+60 Damage for this battle.\nLv 1\nLv 2\nLv 3\nLv 4\nShiny\n$10\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 79 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         },
@@ -1188,7 +1188,7 @@
           "multicast": null,
           "cooldown": 6,
           "stats": "회복 90",
-          "ability": "발동 시 +120 피해을 이번 배틀 동안 얻어요",
+          "ability": "발동 시 +120 피해를 이번 배틀 동안 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nMosslug\nMosslug\nCommon\nWater\nGrass\nLevel\nLv 4\nheal\n90\n6s\nCOOLDOWN\nHeal\n90\nON CAST\n+120 Damage for this battle.\nLv 1\nLv 2\nLv 3\nLv 4\nShiny\n$10\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 79 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         }
@@ -1205,7 +1205,7 @@
           "multicast": null,
           "cooldown": 6,
           "stats": "회복 36",
-          "ability": "발동 시 +24 피해을 이번 배틀 동안 얻어요",
+          "ability": "발동 시 +24 피해를 이번 배틀 동안 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nMosslug\nMosslug\nCommon\nWater\nGrass\nLevel\nLv 1\nheal\n36\n6s\nCOOLDOWN\nHeal\n36\nON CAST\n+24 Damage for this battle.\nLv 1\nLv 2\nLv 3\nLv 4\nShiny\n$10\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 79 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         },
@@ -1220,7 +1220,7 @@
           "multicast": null,
           "cooldown": 6,
           "stats": "회복 72",
-          "ability": "발동 시 +48 피해을 이번 배틀 동안 얻어요",
+          "ability": "발동 시 +48 피해를 이번 배틀 동안 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nMosslug\nMosslug\nCommon\nWater\nGrass\nLevel\nLv 2\nheal\n72\n6s\nCOOLDOWN\nHeal\n72\nON CAST\n+48 Damage for this battle.\nLv 1\nLv 2\nLv 3\nLv 4\nShiny\n$10\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 79 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         },
@@ -1235,7 +1235,7 @@
           "multicast": null,
           "cooldown": 6,
           "stats": "회복 108",
-          "ability": "발동 시 +72 피해을 이번 배틀 동안 얻어요",
+          "ability": "발동 시 +72 피해를 이번 배틀 동안 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nMosslug\nMosslug\nCommon\nWater\nGrass\nLevel\nLv 3\nheal\n108\n6s\nCOOLDOWN\nHeal\n108\nON CAST\n+72 Damage for this battle.\nLv 1\nLv 2\nLv 3\nLv 4\nShiny\n$10\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 79 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         },
@@ -1250,7 +1250,7 @@
           "multicast": null,
           "cooldown": 6,
           "stats": "회복 108",
-          "ability": "발동 시 +144 피해을 이번 배틀 동안 얻어요",
+          "ability": "발동 시 +144 피해를 이번 배틀 동안 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nMosslug\nMosslug\nCommon\nWater\nGrass\nLevel\nLv 4\nheal\n108\n6s\nCOOLDOWN\nHeal\n108\nON CAST\n+144 Damage for this battle.\nLv 1\nLv 2\nLv 3\nLv 4\nShiny\n$10\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 79 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         }
@@ -1285,7 +1285,7 @@
           "multicast": null,
           "cooldown": 5,
           "stats": "실드 20",
-          "ability": "발동 시 +15 실드을 이번 배틀 동안 얻어요",
+          "ability": "발동 시 +15 실드를 이번 배틀 동안 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nPebbler\nPebbler\nCommon\nRock\nLevel\nLv 1\nshield\n20\n5s\nCOOLDOWN\nShield\n20\nON CAST\n+15 Shield for this battle.\nLv 1\nLv 2\nLv 3\nLv 4\nShiny\n$15\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 95 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         },
@@ -1300,7 +1300,7 @@
           "multicast": null,
           "cooldown": 5,
           "stats": "실드 40",
-          "ability": "발동 시 +30 실드을 이번 배틀 동안 얻어요",
+          "ability": "발동 시 +30 실드를 이번 배틀 동안 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nPebbler\nPebbler\nCommon\nRock\nLevel\nLv 2\nshield\n40\n5s\nCOOLDOWN\nShield\n40\nON CAST\n+30 Shield for this battle.\nLv 1\nLv 2\nLv 3\nLv 4\nShiny\n$15\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 95 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         },
@@ -1315,7 +1315,7 @@
           "multicast": null,
           "cooldown": 5,
           "stats": "실드 60",
-          "ability": "발동 시 +45 실드을 이번 배틀 동안 얻어요",
+          "ability": "발동 시 +45 실드를 이번 배틀 동안 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nPebbler\nPebbler\nCommon\nRock\nLevel\nLv 3\nshield\n60\n5s\nCOOLDOWN\nShield\n60\nON CAST\n+45 Shield for this battle.\nLv 1\nLv 2\nLv 3\nLv 4\nShiny\n$15\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 95 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         },
@@ -1330,7 +1330,7 @@
           "multicast": null,
           "cooldown": 5,
           "stats": "실드 120",
-          "ability": "발동 시 +90 실드을 이번 배틀 동안 얻어요",
+          "ability": "발동 시 +90 실드를 이번 배틀 동안 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nPebbler\nPebbler\nCommon\nRock\nLevel\nLv 4\nshield\n120\n5s\nCOOLDOWN\nShield\n120\nON CAST\n+90 Shield for this battle.\nLv 1\nLv 2\nLv 3\nLv 4\nShiny\n$15\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 95 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         }
@@ -1347,7 +1347,7 @@
           "multicast": null,
           "cooldown": 5,
           "stats": "실드 24",
-          "ability": "발동 시 +18 실드을 이번 배틀 동안 얻어요",
+          "ability": "발동 시 +18 실드를 이번 배틀 동안 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nPebbler\nPebbler\nCommon\nRock\nLevel\nLv 1\nshield\n24\n5s\nCOOLDOWN\nShield\n24\nON CAST\n+18 Shield for this battle.\nLv 1\nLv 2\nLv 3\nLv 4\nShiny\n$15\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 95 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         },
@@ -1362,7 +1362,7 @@
           "multicast": null,
           "cooldown": 5,
           "stats": "실드 48",
-          "ability": "발동 시 +36 실드을 이번 배틀 동안 얻어요",
+          "ability": "발동 시 +36 실드를 이번 배틀 동안 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nPebbler\nPebbler\nCommon\nRock\nLevel\nLv 2\nshield\n48\n5s\nCOOLDOWN\nShield\n48\nON CAST\n+36 Shield for this battle.\nLv 1\nLv 2\nLv 3\nLv 4\nShiny\n$15\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 95 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         },
@@ -1377,7 +1377,7 @@
           "multicast": null,
           "cooldown": 5,
           "stats": "실드 72",
-          "ability": "발동 시 +54 실드을 이번 배틀 동안 얻어요",
+          "ability": "발동 시 +54 실드를 이번 배틀 동안 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nPebbler\nPebbler\nCommon\nRock\nLevel\nLv 3\nshield\n72\n5s\nCOOLDOWN\nShield\n72\nON CAST\n+54 Shield for this battle.\nLv 1\nLv 2\nLv 3\nLv 4\nShiny\n$15\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 95 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         },
@@ -1392,7 +1392,7 @@
           "multicast": null,
           "cooldown": 5,
           "stats": "실드 144",
-          "ability": "발동 시 +108 실드을 이번 배틀 동안 얻어요",
+          "ability": "발동 시 +108 실드를 이번 배틀 동안 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nPebbler\nPebbler\nCommon\nRock\nLevel\nLv 4\nshield\n144\n5s\nCOOLDOWN\nShield\n144\nON CAST\n+108 Shield for this battle.\nLv 1\nLv 2\nLv 3\nLv 4\nShiny\n$15\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 95 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         }
@@ -1775,7 +1775,7 @@
           "multicast": null,
           "cooldown": 2,
           "stats": "피해 1",
-          "ability": "배틀 시작 시 +20 판매 가치를 영구히 얻어요. 지속 이 바토몬의 판매 가치의 0.5배만큼 추가 피해를 얻어요",
+          "ability": "배틀 시작 시 +20 판매 가치를 영구히 얻어요. 지속: 이 바토몬의 판매 가치의 0.5배만큼 추가 피해를 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nGildshell\nGildshell\nUncommon\nBug\nLevel\nLv 1\ndamage\n1\n2s\nCOOLDOWN\nDamage\n1\nON BATTLE START\n+20 Sell Value permanently. Ongoing Has additional Damage equal to 0.5 times this monster's Sell Value.\nLv 1\nLv 2\nLv 3\nLv 4\nShiny\n$20\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 59 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         },
@@ -1790,7 +1790,7 @@
           "multicast": null,
           "cooldown": 2,
           "stats": "피해 1",
-          "ability": "배틀 시작 시 +40 판매 가치를 영구히 얻어요. 지속 이 바토몬의 판매 가치의 0.5배만큼 추가 피해를 얻어요",
+          "ability": "배틀 시작 시 +40 판매 가치를 영구히 얻어요. 지속: 이 바토몬의 판매 가치의 0.5배만큼 추가 피해를 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nGildshell\nGildshell\nUncommon\nBug\nLevel\nLv 2\ndamage\n1\n2s\nCOOLDOWN\nDamage\n1\nON BATTLE START\n+40 Sell Value permanently. Ongoing Has additional Damage equal to 0.5 times this monster's Sell Value.\nLv 1\nLv 2\nLv 3\nLv 4\nShiny\n$20\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 59 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         },
@@ -1805,7 +1805,7 @@
           "multicast": null,
           "cooldown": 2,
           "stats": "피해 1",
-          "ability": "배틀 시작 시 +60 판매 가치를 영구히 얻어요. 지속 이 바토몬의 판매 가치의 0.5배만큼 추가 피해를 얻어요",
+          "ability": "배틀 시작 시 +60 판매 가치를 영구히 얻어요. 지속: 이 바토몬의 판매 가치의 0.5배만큼 추가 피해를 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nGildshell\nGildshell\nUncommon\nBug\nLevel\nLv 3\ndamage\n1\n2s\nCOOLDOWN\nDamage\n1\nON BATTLE START\n+60 Sell Value permanently. Ongoing Has additional Damage equal to 0.5 times this monster's Sell Value.\nLv 1\nLv 2\nLv 3\nLv 4\nShiny\n$20\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 59 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         },
@@ -1820,7 +1820,7 @@
           "multicast": null,
           "cooldown": 2,
           "stats": "피해 100",
-          "ability": "배틀 시작 시 +240 판매 가치를 영구히 얻어요. 지속 이 바토몬의 판매 가치의 0.5배만큼 추가 피해를 얻어요",
+          "ability": "배틀 시작 시 +240 판매 가치를 영구히 얻어요. 지속: 이 바토몬의 판매 가치의 0.5배만큼 추가 피해를 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nGildshell\nGildshell\nUncommon\nBug\nLevel\nLv 4\ndamage\n100\n2s\nCOOLDOWN\nDamage\n100\nON BATTLE START\n+240 Sell Value permanently. Ongoing Has additional Damage equal to 0.5 times this monster's Sell Value.\nLv 1\nLv 2\nLv 3\nLv 4\nShiny\n$20\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 59 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         }
@@ -8828,7 +8828,7 @@
           "multicast": null,
           "cooldown": 6,
           "stats": "피해 150",
-          "ability": "지속 능력이 없는 인접한 아군이 +2 다중 발동을 얻어요",
+          "ability": "능력이 없는 인접한 아군이 +2 다중 발동을 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nStellagon\nStellagon\nLegendary\nDragon\nLevel\nLv 1\ndamage\n150\n6s\nCOOLDOWN\nDamage\n150\nONGOING\nAdjacent allies with no abilities have +2 Multicast.\nLv 1\nLv 2\nLv 3\nLv 4\nShiny\n$50\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 131 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         },
@@ -8843,7 +8843,7 @@
           "multicast": null,
           "cooldown": 6,
           "stats": "피해 300",
-          "ability": "지속 능력이 없는 인접한 아군이 +4 다중 발동을 얻어요",
+          "ability": "능력이 없는 인접한 아군이 +4 다중 발동을 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nStellagon\nStellagon\nLegendary\nDragon\nLevel\nLv 2\ndamage\n300\n6s\nCOOLDOWN\nDamage\n300\nONGOING\nAdjacent allies with no abilities have +4 Multicast.\nLv 1\nLv 2\nLv 3\nLv 4\nShiny\n$50\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 131 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         },
@@ -8858,7 +8858,7 @@
           "multicast": null,
           "cooldown": 6,
           "stats": "피해 450",
-          "ability": "지속 능력이 없는 인접한 아군이 +6 다중 발동을 얻어요",
+          "ability": "능력이 없는 인접한 아군이 +6 다중 발동을 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nStellagon\nStellagon\nLegendary\nDragon\nLevel\nLv 3\ndamage\n450\n6s\nCOOLDOWN\nDamage\n450\nONGOING\nAdjacent allies with no abilities have +6 Multicast.\nLv 1\nLv 2\nLv 3\nLv 4\nShiny\n$50\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 131 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         },
@@ -8873,7 +8873,7 @@
           "multicast": null,
           "cooldown": 6,
           "stats": "피해 4500",
-          "ability": "지속 능력이 없는 인접한 아군이 +60 다중 발동을 얻어요",
+          "ability": "능력이 없는 인접한 아군이 +60 다중 발동을 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nStellagon\nStellagon\nLegendary\nDragon\nLevel\nLv 4\ndamage\n4500\n6s\nCOOLDOWN\nDamage\n4500\nONGOING\nAdjacent allies with no abilities have +60 Multicast.\nLv 1\nLv 2\nLv 3\nLv 4\nShiny\n$50\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 131 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         }
@@ -8970,7 +8970,7 @@
           "multicast": null,
           "cooldown": 3.5,
           "stats": "피해 30 · 회복 45",
-          "ability": "배틀 시작 시 +50 피해와 +50 회복을 영구히 얻어요 | 진화 전 | 또르방 | 레벨 3에서",
+          "ability": "배틀 시작 시 +50 피해와 +50 회복을 영구히 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nEmperooze\nEmperooze\nCommon\nWater\nLevel\nLv 3\ndamage\n30\nheal\n45\n3.5s\nCOOLDOWN\nDamage\n30\nHeal\n45\nON BATTLE START\n+50 Damage and +50 Heal permanently.\nEvolves from\nDribblet\nat level 3\nLv 3\nLv 4\nShiny\n$10\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 45 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         },
@@ -8985,7 +8985,7 @@
           "multicast": null,
           "cooldown": 3.5,
           "stats": "피해 60 · 회복 90",
-          "ability": "배틀 시작 시 +100 피해와 +100 회복을 영구히 얻어요 | 진화 전 | 또르방 | 레벨 3에서",
+          "ability": "배틀 시작 시 +100 피해와 +100 회복을 영구히 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nEmperooze\nEmperooze\nCommon\nWater\nLevel\nLv 4\ndamage\n60\nheal\n90\n3.5s\nCOOLDOWN\nDamage\n60\nHeal\n90\nON BATTLE START\n+100 Damage and +100 Heal permanently.\nEvolves from\nDribblet\nat level 3\nLv 3\nLv 4\nShiny\n$10\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 45 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         }
@@ -9002,7 +9002,7 @@
           "multicast": null,
           "cooldown": 3.5,
           "stats": "피해 36 · 회복 54",
-          "ability": "배틀 시작 시 +60 피해와 +60 회복을 영구히 얻어요 | 진화 전 | 또르방 | 레벨 3에서",
+          "ability": "배틀 시작 시 +60 피해와 +60 회복을 영구히 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nEmperooze\nEmperooze\nCommon\nWater\nLevel\nLv 3\ndamage\n36\nheal\n54\n3.5s\nCOOLDOWN\nDamage\n36\nHeal\n54\nON BATTLE START\n+60 Damage and +60 Heal permanently.\nEvolves from\nDribblet\nat level 3\nLv 3\nLv 4\nShiny\n$10\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 45 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         },
@@ -9017,7 +9017,7 @@
           "multicast": null,
           "cooldown": 3.5,
           "stats": "피해 72 · 회복 108",
-          "ability": "배틀 시작 시 +120 피해와 +120 회복을 영구히 얻어요 | 진화 전 | 또르방 | 레벨 3에서",
+          "ability": "배틀 시작 시 +120 피해와 +120 회복을 영구히 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nEmperooze\nEmperooze\nCommon\nWater\nLevel\nLv 4\ndamage\n72\nheal\n108\n3.5s\nCOOLDOWN\nDamage\n72\nHeal\n108\nON BATTLE START\n+120 Damage and +120 Heal permanently.\nEvolves from\nDribblet\nat level 3\nLv 3\nLv 4\nShiny\n$10\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 45 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         }
@@ -9052,7 +9052,7 @@
           "multicast": null,
           "cooldown": 5.5,
           "stats": "피해 15 · 화상 15",
-          "ability": "배틀 시작 시 불 타입 아군 하나당 +20% 쿨가속을 영구히 얻어요 | 진화 전 | 불잔나비 | 레벨 3에서",
+          "ability": "배틀 시작 시 불꽃 타입 아군 하나마다 영구히 +20% 쿨가속을 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nSunsage\nSunsage\nCommon\nFire\nLevel\nLv 3\ndamage\n15\nburn\n15\n5.5s\nCOOLDOWN\nDamage\n15\nBurn\n15\nON BATTLE START\nFor each Fire ally, this gains +20% Cooldown Speed permanently.\nEvolves from\nScorchimp\nat level 3\nLv 3\nLv 4\nShiny\n$10\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 134 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         },
@@ -9067,7 +9067,7 @@
           "multicast": 2,
           "cooldown": 5.5,
           "stats": "피해 15 · 화상 15",
-          "ability": "배틀 시작 시 불 타입 아군 하나당 +20% 쿨가속을 영구히 얻어요 | 진화 전 | 불잔나비 | 레벨 3에서",
+          "ability": "배틀 시작 시 불꽃 타입 아군 하나마다 영구히 +20% 쿨가속을 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nSunsage\nSunsage\nCommon\nFire\nLevel\nLv 4\ndamage\n15\nburn\n15\nmulticast\nx2\n5.5s\nCOOLDOWN\nDamage\n15\nBurn\n15\nMulticast\n2\nON BATTLE START\nFor each Fire ally, this gains +20% Cooldown Speed permanently.\nEvolves from\nScorchimp\nat level 3\nLv 3\nLv 4\nShiny\n$10\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 134 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         }
@@ -9084,7 +9084,7 @@
           "multicast": null,
           "cooldown": 5.5,
           "stats": "피해 18 · 화상 18",
-          "ability": "배틀 시작 시 불 타입 아군 하나당 +24% 쿨가속을 영구히 얻어요 | 진화 전 | 불잔나비 | 레벨 3에서",
+          "ability": "배틀 시작 시 불꽃 타입 아군 하나마다 영구히 +24% 쿨가속을 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nSunsage\nSunsage\nCommon\nFire\nLevel\nLv 3\ndamage\n18\nburn\n18\n5.5s\nCOOLDOWN\nDamage\n18\nBurn\n18\nON BATTLE START\nFor each Fire ally, this gains +24% Cooldown Speed permanently.\nEvolves from\nScorchimp\nat level 3\nLv 3\nLv 4\nShiny\n$10\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 134 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         },
@@ -9099,7 +9099,7 @@
           "multicast": 2,
           "cooldown": 5.5,
           "stats": "피해 18 · 화상 18",
-          "ability": "배틀 시작 시 불 타입 아군 하나당 +24% 쿨가속을 영구히 얻어요 | 진화 전 | 불잔나비 | 레벨 3에서",
+          "ability": "배틀 시작 시 불꽃 타입 아군 하나마다 영구히 +24% 쿨가속을 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nSunsage\nSunsage\nCommon\nFire\nLevel\nLv 4\ndamage\n18\nburn\n18\nmulticast\nx2\n5.5s\nCOOLDOWN\nDamage\n18\nBurn\n18\nMulticast\n2\nON BATTLE START\nFor each Fire ally, this gains +24% Cooldown Speed permanently.\nEvolves from\nScorchimp\nat level 3\nLv 3\nLv 4\nShiny\n$10\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 134 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         }
@@ -9134,7 +9134,7 @@
           "multicast": null,
           "cooldown": 5.5,
           "stats": "피해 75",
-          "ability": "발동 시 +35 피해을 영구히 얻어요 | 진화 전 | 새싹판다 | 레벨 3에서",
+          "ability": "발동 시 영구히 +35 피해를 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nBambudo\nBambudo\nCommon\nGrass\nLevel\nLv 3\ndamage\n75\n5.5s\nCOOLDOWN\nDamage\n75\nON CAST\n+35 Damage permanently.\nEvolves from\nPanbud\nat level 3\nLv 3\nLv 4\nShiny\n$10\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 5 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         },
@@ -9149,7 +9149,7 @@
           "multicast": null,
           "cooldown": 5.5,
           "stats": "피해 150",
-          "ability": "발동 시 +70 피해을 영구히 얻어요 | 진화 전 | 새싹판다 | 레벨 3에서",
+          "ability": "발동 시 영구히 +70 피해를 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nBambudo\nBambudo\nCommon\nGrass\nLevel\nLv 4\ndamage\n150\n5.5s\nCOOLDOWN\nDamage\n150\nON CAST\n+70 Damage permanently.\nEvolves from\nPanbud\nat level 3\nLv 3\nLv 4\nShiny\n$10\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 5 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         }
@@ -9166,7 +9166,7 @@
           "multicast": null,
           "cooldown": 5.5,
           "stats": "피해 90",
-          "ability": "발동 시 +42 피해을 영구히 얻어요 | 진화 전 | 새싹판다 | 레벨 3에서",
+          "ability": "발동 시 영구히 +42 피해를 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nBambudo\nBambudo\nCommon\nGrass\nLevel\nLv 3\ndamage\n90\n5.5s\nCOOLDOWN\nDamage\n90\nON CAST\n+42 Damage permanently.\nEvolves from\nPanbud\nat level 3\nLv 3\nLv 4\nShiny\n$10\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 5 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         },
@@ -9181,7 +9181,7 @@
           "multicast": null,
           "cooldown": 5.5,
           "stats": "피해 180",
-          "ability": "발동 시 +84 피해을 영구히 얻어요 | 진화 전 | 새싹판다 | 레벨 3에서",
+          "ability": "발동 시 영구히 +84 피해를 얻어요",
           "source": "https://batomon.com",
           "sourceRaw": "COMMUNITY META COMPANION\nOPEN COMPANION\nLIVE PATCH\nBalance 22\nSteam build 25377295\nGame data\nCOMPS\nWIKI\n⌄\nMETA\nPAIRS\nLEADERBOARD\nTEAM BUILDER\nHome\n/\nBatomon\n/\nBambudo\nBambudo\nCommon\nGrass\nLevel\nLv 4\ndamage\n180\n5.5s\nCOOLDOWN\nDamage\n180\nON CAST\n+84 Damage permanently.\nEvolves from\nPanbud\nat level 3\nLv 3\nLv 4\nShiny\n$10\nBack to Batomon\nUse in Build Lab\nWiki\nInstall\nPlatforms\nFAQ\nOpen Companion\nGame data\nPrivacy & opt-out\nTerms of Use\n🦇 Batomon 데이터 수집기 V2.1\n수집 중 | 5 / 149\n▶ 새로 시작\n▶ 재개\n⏸ 일시정지\n💾 JSON 저장\n🗑 데이터 초기화\n실제 존재하는 레벨만 수집 · Lv1/Lv2/Lv4가 없어도 자동 건너뜀\n레벨당 약 1.8초 대기 · 중단 후 재개 가능"
         }
