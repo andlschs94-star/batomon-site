@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.074</title>
+<title>바토몬 원향 도감 v0.075</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -249,7 +249,7 @@
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.074</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.075</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -331,7 +331,7 @@
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.074</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.075</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -685,14 +685,14 @@ function renderCalcBatomonList(){
   const list=[...characters].filter(item=>{
     const name=[item.name,item.name_ko,item.name_en,item.officialName,item.no].filter(Boolean).join(' ').toLowerCase();
     const types=Array.isArray(item.officialTypes)?item.officialTypes.map(String):String(item.type||'').split('/').map(v=>v.trim()).filter(Boolean);
-    const itemRarity=String(item.officialRarity||item.officialRarity_ko||item.rank||'');
+    const itemRarity=String(item.rank||item.officialRarity_ko||item.officialRarity||'');
     return (!q||name.includes(q))&&(!rarities.length||rarities.includes(itemRarity))&&(!typesSelected.length||types.some(t=>typesSelected.includes(t)));
   }).sort((a,b)=>Number(a.no||0)-Number(b.no||0));
   const count=document.getElementById('calcBatomonCount');
   if(count)count.textContent=`${list.length} / ${characters.length}마리 표시`;
   if(!list.length){g.innerHTML='<div class="calcShopEmpty">바토몬 데이터를 불러오는 중입니다.</div>';return;}
   for(const item of list){
-    const card=document.createElement('button'); card.type='button'; card.draggable=true; const rarityValue=String(item.officialRarity||item.officialRarity_ko||item.rank||''); card.className='calcBatomonCard rarity-'+(calcRarityClassMap[rarityValue]||rarityValue.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''));
+    const card=document.createElement('button'); card.type='button'; card.draggable=true; const rarityValue=String(item.rank||item.officialRarity_ko||item.officialRarity||''); card.className='calcBatomonCard rarity-'+(calcRarityClassMap[rarityValue]||rarityValue.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''));
     const img=document.createElement('img'); img.alt=item.name||item.officialName||''; img.loading='lazy'; img.referrerPolicy='no-referrer';
     const urls=officialFallbackUrls(item); let idx=0;
     const next=()=>{if(idx>=urls.length){img.style.display='none';return;} img.src=urls[idx++];};
