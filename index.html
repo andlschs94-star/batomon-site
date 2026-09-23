@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.088</title>
+<title>바토몬 원향 도감 v0.089</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -248,11 +248,35 @@
 @media(max-width:1050px){.calcBattleArea{grid-template-columns:var(--trainer-w,145px) minmax(330px,1fr) var(--trinket-w,145px)}.calcTrainerPanel{width:var(--trainer-w,145px);height:var(--trainer-h,180px)}.calcTrinketPanel{width:var(--trinket-w,145px);height:var(--trinket-h,160px)}}
 @media(max-width:720px){.calcBattleArea{grid-template-columns:1fr}.calcTrainerPanel,.calcTrinketPanel{width:100%;max-width:320px}.calcCenter>.calcBox{width:var(--team-w,190px);max-width:100%;}}
 </style>
+<style id="v089TrainerCompare">
+/* v0.089: trainer selector / comparison + first-screen calculator fit */
+@media(min-width:721px){
+  body.calcView{overflow:hidden}
+  .calcPage{height:calc(100vh - 118px);min-height:0}
+  .calcBoard{height:calc(100% - 58px);overflow:auto}
+}
+.trainerSelectModal{width:min(900px,96vw);max-height:min(720px,calc(100vh - 28px))}
+.trainerSelectGrid{grid-template-columns:repeat(6,minmax(0,1fr));overflow-y:hidden;overflow-x:hidden;align-content:start}
+.trainerSelectCard img{height:62px}
+@media(max-width:1050px){.trainerSelectGrid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(max-width:720px){.trainerSelectModal{width:96vw;max-height:92vh}.trainerSelectGrid{grid-template-columns:repeat(3,minmax(0,1fr));overflow-y:auto}.trainerSelectCard img{height:62px}}
+.calcTrainerCompareButton{position:absolute;right:10px;top:46px;background:rgba(20,42,52,.92);color:#fff;border:1px solid rgba(255,255,255,.55);border-radius:7px;padding:5px 9px;font-size:11px;font-weight:900;z-index:3;cursor:pointer}
+.calcTrainerCompareButton:hover{background:#123e4d;border-color:#20c3f0}
+.trainerCompareOverlay{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;padding:18px;z-index:1100}
+.trainerCompareModal{width:min(1080px,96vw);max-height:min(760px,calc(100vh - 30px));background:#151b23;border:2px solid #3a4655;border-radius:14px;box-shadow:0 18px 60px rgba(0,0,0,.5);overflow:hidden;display:flex;flex-direction:column}
+.trainerCompareHead{padding:13px 16px;border-bottom:1px solid #303b49;display:flex;align-items:center;justify-content:space-between;gap:12px;background:#1b222d}.trainerCompareHead strong{font-size:20px}.trainerCompareClose{width:36px;height:36px;border:1px solid #465364;border-radius:8px;background:#252e3a;color:#fff;font-size:22px;font-weight:900;cursor:pointer}
+.trainerCompareIntro{padding:10px 16px;color:#aeb9c7;font-size:12px;border-bottom:1px solid #303b49}
+.trainerCompareSlots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:12px 16px;border-bottom:1px solid #303b49}
+.trainerCompareSlot{min-height:58px;border:1px dashed #4a5869;border-radius:9px;background:#11161d;padding:8px;display:flex;align-items:center;gap:9px;cursor:pointer}.trainerCompareSlot.selected{border-style:solid;border-color:#20c3f0;background:#15232b}.trainerCompareSlot img{width:52px;height:52px;object-fit:contain;background:#0c1118;border-radius:7px}.trainerCompareSlotEmpty{color:#738093;font-size:12px}.trainerCompareSlotName{font-weight:900}.trainerCompareSlotEn{font-size:10px;color:#7f8c9d;margin-top:2px}
+.trainerCompareBody{display:grid;grid-template-columns:260px 1fr;min-height:0;overflow:hidden}.trainerComparePicker{padding:12px;border-right:1px solid #303b49;min-height:0;overflow:auto}.trainerCompareSearch{width:100%;height:36px;border:1px solid #3a4655;border-radius:8px;background:#0f141b;color:#fff;padding:0 10px;margin-bottom:10px}.trainerCompareGrid{display:grid;grid-template-columns:1fr 1fr;gap:7px}.trainerCompareCard{border:1px solid #394657;border-radius:8px;background:#1a212b;color:#fff;padding:6px;text-align:left;cursor:pointer;min-width:0}.trainerCompareCard:hover{border-color:#20c3f0}.trainerCompareCard.selected{border-color:#20c3f0;background:#132b35}.trainerCompareCard img{width:100%;height:54px;object-fit:contain;background:#0d1219;border-radius:5px}.trainerCompareCardName{font-size:11px;font-weight:900;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.trainerCompareCardMeta{font-size:9px;color:#7f8c9d;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.trainerCompareResult{padding:12px;min-width:0;overflow:auto}.trainerCompareEmpty{height:100%;min-height:250px;display:flex;align-items:center;justify-content:center;color:#748295;font-size:13px;text-align:center}.trainerCompareTable{width:100%;border-collapse:separate;border-spacing:0;table-layout:fixed}.trainerCompareTable th,.trainerCompareTable td{border-right:1px solid #303b49;border-bottom:1px solid #303b49;padding:9px 8px;vertical-align:middle}.trainerCompareTable th:last-child,.trainerCompareTable td:last-child{border-right:0}.trainerCompareTable thead th{background:#202936;text-align:center}.trainerCompareTable .metricLabel{width:115px;text-align:left;background:#171e27;color:#9ba8b8;font-size:11px;font-weight:800}.trainerCompareTable .trainerColName{font-size:13px;font-weight:900}.trainerCompareTable .trainerColEn{font-size:9px;color:#7f8c9d;margin-top:3px}.trainerCompareTable .metricValue{font-size:18px;font-weight:900;text-align:center;color:#fff}.trainerCompareTable .metricSub{display:block;font-size:9px;color:#738196;margin-top:2px}.trainerCompareNote{font-size:10px;color:#6f7f92;margin-top:9px}.trainerCompareAction{padding:10px 16px;border-top:1px solid #303b49;display:flex;justify-content:flex-end;gap:8px}.trainerCompareAction button{border:1px solid #405063;border-radius:8px;background:#202a36;color:#fff;padding:7px 12px;cursor:pointer}.trainerCompareAction .primary{background:#0e7996;border-color:#22bce4}.trainerCompareAction button:disabled{opacity:.45;cursor:default}
+@media(max-width:800px){.trainerCompareBody{grid-template-columns:1fr}.trainerComparePicker{max-height:260px;border-right:0;border-bottom:1px solid #303b49}.trainerCompareGrid{grid-template-columns:repeat(3,1fr)}.trainerCompareSlots{grid-template-columns:1fr}.trainerCompareModal{max-height:94vh}}
+</style>
 </head>
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.088</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.089</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -280,7 +304,7 @@
       <div class="calcBoard">
         <div class="calcBattleArea">
           <aside class="calcTrainerPanel" id="calcTrainerPanel" tabindex="0" role="button" aria-label="트레이너 선택">
-            <div class="calcTrainerChange">트레이너 변경</div>
+            <div class="calcTrainerChange">트레이너 변경</div><button type="button" class="calcTrainerCompareButton" onclick="event.stopPropagation();openTrainerCompare()">트레이너 비교</button>
             <div class="calcTrainerTitle" id="calcTrainerTitle">알 브리더</div>
             <div class="calcTrainerImage"><img id="calcTrainerImage" alt="알 브리더"></div>
             <div class="calcTrainerAbility" id="calcTrainerAbility">트레이너를 불러오는 중…</div>
@@ -334,7 +358,7 @@
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.088</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.089</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -423,6 +447,21 @@
     <div class="trainerSelectHead"><strong id="trainerSelectTitle">트레이너 선택</strong><button type="button" class="trainerSelectClose" id="trainerSelectClose" aria-label="닫기">×</button></div>
     <div class="trainerSelectTools"><input id="calcTrainerSearch" placeholder="트레이너 이름 검색" autocomplete="off"></div>
     <div id="calcTrainerGrid" class="trainerSelectGrid"></div>
+  </div>
+</div>
+<div id="trainerCompareOverlay" class="trainerCompareOverlay" aria-hidden="true">
+  <div class="trainerCompareModal" role="dialog" aria-modal="true" aria-labelledby="trainerCompareTitle">
+    <div class="trainerCompareHead"><strong id="trainerCompareTitle">트레이너 비교</strong><button type="button" class="trainerCompareClose" id="trainerCompareClose" aria-label="닫기">×</button></div>
+    <div class="trainerCompareIntro">실제 게임에서 새 게임 시작 시 트레이너 3명을 제시받는 것처럼, 비교할 트레이너를 최대 3명 선택하세요. 선택한 트레이너는 아래에서 공식 메타 수치를 나란히 비교할 수 있습니다.</div>
+    <div class="trainerCompareSlots" id="trainerCompareSlots"></div>
+    <div class="trainerCompareBody">
+      <div class="trainerComparePicker">
+        <input id="trainerCompareSearch" class="trainerCompareSearch" placeholder="트레이너 이름 검색" autocomplete="off">
+        <div id="trainerCompareGrid" class="trainerCompareGrid"></div>
+      </div>
+      <div class="trainerCompareResult" id="trainerCompareResult"><div class="trainerCompareEmpty">트레이너 3명을 선택하면<br>픽률 · 등장률 · 등장 시 선택률을 비교할 수 있습니다.</div></div>
+    </div>
+    <div class="trainerCompareAction"><button type="button" id="trainerCompareClear">선택 초기화</button><button type="button" class="primary" id="trainerCompareDone" disabled>비교 완료</button></div>
   </div>
 </div>
 
@@ -617,7 +656,7 @@ document.getElementById('zoom').addEventListener('input',e=>{work.zoom=Number(e.
 canvas.addEventListener('pointerdown',e=>{dragging=true;canvas.setPointerCapture(e.pointerId);dragStart={x:e.clientX,y:e.clientY,ox:Number(work.x||0),oy:Number(work.y||0)}});canvas.addEventListener('pointermove',e=>{if(!dragging)return;const r=canvas.getBoundingClientRect();work.x=Math.max(-500,Math.min(500,dragStart.ox+(e.clientX-dragStart.x)*canvas.width/r.width));work.y=Math.max(-500,Math.min(500,dragStart.oy+(e.clientY-dragStart.y)*canvas.height/r.height));document.getElementById('posX').value=work.x;document.getElementById('posY').value=work.y;drawEditor()});canvas.addEventListener('pointerup',()=>dragging=false);canvas.addEventListener('pointercancel',()=>dragging=false);
 for(const id of ['statsOverlay','editOverlay'])document.getElementById(id).addEventListener('click',e=>{if(e.target.id===id){id==='statsOverlay'?closeStats():closeEditor()}});
 document.getElementById('teamEditOverlay').addEventListener('click',e=>{if(e.target.id==='teamEditOverlay')closeTeamEditor();});
-window.addEventListener('keydown',e=>{if(e.key==='Escape'){if(document.getElementById('trainerSelectOverlay').style.display==='flex')closeTrainerSelector();else if(document.getElementById('trinketSelectOverlay').style.display==='flex')closeTrinketSelector();else if(document.getElementById('editOverlay').style.display==='flex')closeEditor();else if(document.getElementById('statsOverlay').style.display==='flex')closeStats()}});
+window.addEventListener('keydown',e=>{if(e.key==='Escape'){if(document.getElementById('trainerCompareOverlay').style.display==='flex')closeTrainerCompare();else if(document.getElementById('trainerSelectOverlay').style.display==='flex')closeTrainerSelector();else if(document.getElementById('trinketSelectOverlay').style.display==='flex')closeTrinketSelector();else if(document.getElementById('editOverlay').style.display==='flex')closeEditor();else if(document.getElementById('statsOverlay').style.display==='flex')closeStats()}});
 
 const calcTrainerPanel=document.getElementById('calcTrainerPanel');
 if(calcTrainerPanel){calcTrainerPanel.addEventListener('click',openTrainerSelector);calcTrainerPanel.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openTrainerSelector()}})}
@@ -629,6 +668,11 @@ document.getElementById('trinketSelectOverlay')?.addEventListener('click',e=>{if
 document.getElementById('calcTrinketSearch')?.addEventListener('input',renderCalcTrinketList);
 document.getElementById('trainerSelectOverlay')?.addEventListener('click',e=>{if(e.target.id==='trainerSelectOverlay')closeTrainerSelector()});
 document.getElementById('calcTrainerSearch')?.addEventListener('input',renderCalcTrainerList);
+document.getElementById('trainerCompareClose')?.addEventListener('click',closeTrainerCompare);
+document.getElementById('trainerCompareOverlay')?.addEventListener('click',e=>{if(e.target.id==='trainerCompareOverlay')closeTrainerCompare()});
+document.getElementById('trainerCompareSearch')?.addEventListener('input',renderTrainerCompareList);
+document.getElementById('trainerCompareClear')?.addEventListener('click',()=>{trainerCompareSelected=[];renderTrainerCompare()});
+document.getElementById('trainerCompareDone')?.addEventListener('click',closeTrainerCompare);
 
 document.getElementById('calcBatomonSearch')?.addEventListener('input',renderCalcBatomonList);
 document.getElementById('calcBatomonFilterReset')?.addEventListener('click',()=>{document.getElementById('calcBatomonSearch').value='';calcBatomonRarityFilters=[];calcBatomonTypeFilters=[];initCalcBatomonFilters();renderCalcBatomonList();});
@@ -1291,6 +1335,83 @@ function renderCalcTrainerList(){
     card.append(img,name,en,region); loadTrainerImage(img,t,card); card.insertAdjacentHTML('beforeend',trainerMetaHtml(t,true)); card.addEventListener('click',()=>{calcSelectedTrainerId=t.id;updateCalcTrainer();closeTrainerSelector()});g.appendChild(card);
   }
 }
+
+let trainerCompareSelected=[];
+function trainerCompareImageUrls(t){
+  if(typeof getOfficialTrainerImageUrls==='function') return getOfficialTrainerImageUrls(t)||[];
+  return [];
+}
+function renderTrainerCompareSlots(){
+  const host=document.getElementById('trainerCompareSlots'); if(!host)return;
+  host.innerHTML='';
+  for(let i=0;i<3;i++){
+    const t=trainers.find(x=>x.id===trainerCompareSelected[i]);
+    const slot=document.createElement('div'); slot.className='trainerCompareSlot'+(t?' selected':'');
+    slot.title=t?'클릭하면 선택 해제':'트레이너 선택';
+    if(t){
+      const img=document.createElement('img'); img.alt=getTrainerName(t); loadTrainerImage(img,t,slot);
+      const wrap=document.createElement('div');
+      const nm=document.createElement('div');nm.className='trainerCompareSlotName';nm.textContent=getTrainerName(t);
+      const en=document.createElement('div');en.className='trainerCompareSlotEn';en.textContent=t.name_en||t.name||'';
+      wrap.append(nm,en);slot.append(img,wrap);
+      slot.addEventListener('click',()=>{trainerCompareSelected=trainerCompareSelected.filter(id=>id!==t.id);renderTrainerCompare();});
+    }else{
+      const empty=document.createElement('div');empty.className='trainerCompareSlotEmpty';empty.textContent=`트레이너 ${i+1} 선택`;
+      slot.appendChild(empty);
+    }
+    host.appendChild(slot);
+  }
+}
+function renderTrainerCompareList(){
+  const g=document.getElementById('trainerCompareGrid'); if(!g)return;
+  const q=(document.getElementById('trainerCompareSearch')?.value||'').trim().toLowerCase();
+  const list=trainers.filter(t=>!q||[t.name_ko,t.name_en,t.name,t.ability_ko,t.ability_en,t.ability,t.region_ko,t.region].filter(Boolean).join(' ').toLowerCase().includes(q));
+  g.innerHTML='';
+  if(!list.length){g.innerHTML='<div style="grid-column:1/-1;color:#718095;font-size:11px;padding:10px">검색 결과가 없습니다.</div>';return;}
+  for(const t of list){
+    const selected=trainerCompareSelected.includes(t.id);
+    const card=document.createElement('button');card.type='button';card.className='trainerCompareCard'+(selected?' selected':'');
+    const img=document.createElement('img');img.alt=getTrainerName(t);loadTrainerImage(img,t,card);
+    const nm=document.createElement('div');nm.className='trainerCompareCardName';nm.textContent=getTrainerName(t);
+    const meta=document.createElement('div');meta.className='trainerCompareCardMeta';
+    meta.textContent=t.meta?`픽 ${formatPct(t.meta.popularity)} · 등장 ${formatPct(t.meta.seen_rate)} · 선택 ${formatPct(t.meta.chosen_when_seen)}`:'메타 통계 없음';
+    card.append(img,nm,meta);
+    card.addEventListener('click',()=>{
+      const i=trainerCompareSelected.indexOf(t.id);
+      if(i>=0){trainerCompareSelected.splice(i,1);}
+      else if(trainerCompareSelected.length<3){trainerCompareSelected.push(t.id);}
+      renderTrainerCompare();
+    });
+    g.appendChild(card);
+  }
+}
+function trainerCompareMetricCell(value,sub){
+  return `<td><div class="metricValue">${value}</div>${sub?`<span class="metricSub">${sub}</span>`:''}</td>`;
+}
+function renderTrainerCompareResult(){
+  const host=document.getElementById('trainerCompareResult'); if(!host)return;
+  const selected=trainerCompareSelected.map(id=>trainers.find(t=>t.id===id)).filter(Boolean);
+  if(selected.length<3){host.innerHTML='<div class="trainerCompareEmpty">트레이너 3명을 선택하면<br>픽률 · 등장률 · 등장 시 선택률을 비교할 수 있습니다.</div>';return;}
+  const th=selected.map(t=>`<th><div class="trainerColName">${getTrainerName(t)}</div><div class="trainerColEn">${t.name_en||t.name||''}</div></th>`).join('');
+  const rows=[
+    ['픽률',t=>formatPct(t?.meta?.popularity),t=>t?.meta?`${Number(t.meta.picks||0).toLocaleString()}회 선택`:'메타 없음'],
+    ['등장률',t=>formatPct(t?.meta?.seen_rate),t=>t?.meta?`${Number(t.meta.appearances||0).toLocaleString()}회 등장`:'메타 없음'],
+    ['등장 시 선택',t=>formatPct(t?.meta?.chosen_when_seen),t=>t?.meta?'선택 ÷ 등장':'메타 없음']
+  ];
+  const body=rows.map(([label,val,sub])=>`<tr><td class="metricLabel">${label}</td>${selected.map(t=>trainerCompareMetricCell(val(t),sub(t))).join('')}</tr>`).join('');
+  host.innerHTML=`<table class="trainerCompareTable"><thead><tr><th class="metricLabel">공식 메타</th>${th}</tr></thead><tbody>${body}</tbody></table><div class="trainerCompareNote">공식 메타 · Balance 22 · 2026-08-24 ~ 2026-09-22 · 이 수치는 선택 통계이며 승률이 아닙니다.</div>`;
+}
+function renderTrainerCompare(){
+  renderTrainerCompareSlots();renderTrainerCompareList();renderTrainerCompareResult();
+  const done=document.getElementById('trainerCompareDone');if(done)done.disabled=trainerCompareSelected.length!==3;
+}
+function openTrainerCompare(){
+  const o=document.getElementById('trainerCompareOverlay');if(!o)return;
+  trainerCompareSelected=[];const search=document.getElementById('trainerCompareSearch');if(search)search.value='';
+  renderTrainerCompare();o.style.display='flex';o.setAttribute('aria-hidden','false');search?.focus();
+}
+function closeTrainerCompare(){const o=document.getElementById('trainerCompareOverlay');if(!o)return;o.style.display='none';o.setAttribute('aria-hidden','true');}
+
 function openTrainerSelector(){
   const o=document.getElementById('trainerSelectOverlay'); if(!o)return;
   document.getElementById('calcTrainerSearch').value=''; renderCalcTrainerList(); o.style.display='flex'; o.setAttribute('aria-hidden','false'); document.getElementById('calcTrainerSearch').focus();
@@ -1299,6 +1420,7 @@ function closeTrainerSelector(){const o=document.getElementById('trainerSelectOv
 
 function switchSection(section){
   const isCalc=section==='calculator';
+  document.body.classList.toggle('calcView',isCalc);
   const isCodex=section==='codex'||['batomon','trainer','trinket','item','event','mechanic'].includes(section);
   document.getElementById('calculatorSection')?.classList.toggle('on',isCalc);
   document.getElementById('codexArea')?.classList.toggle('on',isCodex);
@@ -1592,6 +1714,7 @@ async function init(){
     document.getElementById('grid').innerHTML='<div class="empty">사이트 데이터 로드 중 오류가 발생했습니다.<br><br><b>characters.json / trainers.json / trinkets.json / items.json의 위치와 파일명을 확인하세요.</b></div>';
   }
 }
+document.body.classList.add('calcView');
 init();
 </script>
 
