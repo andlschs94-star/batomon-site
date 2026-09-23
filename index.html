@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.095</title>
+<title>바토몬 원향 도감 v0.096</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -249,7 +249,7 @@
 @media(max-width:720px){.calcBattleArea{grid-template-columns:1fr}.calcTrainerPanel,.calcTrinketPanel{width:100%;max-width:320px}.calcCenter>.calcBox{width:var(--team-w,190px);max-width:100%;}}
 </style>
 <style id="v089TrainerCompare">
-/* v0.095: trainer selector / comparison + first-screen calculator fit */
+/* v0.096: trainer selector / comparison + first-screen calculator fit */
 @media(min-width:721px){
   body.calcView{overflow:hidden}
   .calcPage{height:calc(100vh - 118px);min-height:0}
@@ -276,13 +276,13 @@
 @media(max-width:1050px){.trainerCompareGrid{grid-template-columns:repeat(5,minmax(0,1fr))}}
 @media(max-width:800px){.trainerCompareGrid{grid-template-columns:repeat(4,minmax(0,1fr))}.trainerCompareSlots{grid-template-columns:1fr}.trainerCompareModal{max-height:94vh}}
 @media(max-width:560px){.trainerCompareGrid{grid-template-columns:repeat(3,minmax(0,1fr))}.trainerCompareCard img{height:56px}}
-/* v0.095: trainer comparison picker/result flow fix */
+/* v0.096: trainer comparison picker/result flow fix */
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.095</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.096</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -334,6 +334,7 @@
           <aside class="calcTrinketPanel" id="calcTrinketPanel" tabindex="0" role="button" aria-label="장신구 선택">
             <div class="calcTrinketHead">장신구</div>
             <div class="calcTrinketBody" id="calcTrinketBody"><div class="calcTrinketHint">장신구를 선택하세요</div></div>
+            <button type="button" class="calcTrinketCompareButton" onclick="event.stopPropagation();openTrinketCompare()">장신구 비교</button>
           </aside>
           <div class="calcShop">
             <div class="calcBatomonFilters">
@@ -364,7 +365,7 @@
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.095</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.096</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -471,6 +472,21 @@
   </div>
 </div>
 
+<div id="trinketCompareOverlay" class="trinketCompareOverlay" aria-hidden="true">
+  <div class="trinketCompareModal" role="dialog" aria-modal="true" aria-labelledby="trinketCompareTitle">
+    <div class="trinketCompareHead"><strong id="trinketCompareTitle">장신구 비교</strong><button type="button" class="trinketCompareClose" id="trinketCompareClose" aria-label="닫기">×</button></div>
+    <div class="trinketCompareIntro">실제 게임에서 장신구를 비교해서 고르는 것처럼, 비교할 장신구를 최대 3개 선택하세요. 선택한 장신구의 능력을 한눈에 비교할 수 있습니다.</div>
+    <div class="trinketCompareSlots" id="trinketCompareSlots"></div>
+    <div class="trinketCompareBody">
+      <div class="trinketComparePicker">
+        <input id="trinketCompareSearch" class="trinketCompareSearch" placeholder="장신구 이름 / 효과 검색" autocomplete="off">
+        <div id="trinketCompareGrid" class="trinketCompareGrid"></div>
+      </div>
+    </div>
+    <div class="trinketCompareAction"><button type="button" id="trinketCompareClear">선택 초기화</button><button type="button" class="primary" id="trinketCompareDone" disabled>비교 완료</button></div>
+  </div>
+</div>
+
 <div id="teamEditOverlay" class="overlay teamEditOverlay" aria-hidden="true"><div class="teamEditPanel"><div class="modalhead"><h2 id="teamEditTitle">바토몬 정보 수정</h2><button class="close" type="button" onclick="closeTeamEditor()">×</button></div><div class="teamEditBody"><div class="teamEditPreview"><img id="teamEditImage" alt=""><div><div id="teamEditName" class="teamEditName"></div><div id="teamEditSub" class="teamEditSub"></div></div></div><div class="teamEditRow"><span class="label">레벨</span><div id="teamEditLevels" class="teamEditLevels"></div></div><div class="teamEditRow"><span class="label">샤이니</span><label class="teamEditShiny"><input id="teamEditShiny" type="checkbox"> SHINY</label></div><div class="teamEditStats" id="teamEditStats"></div><div class="teamEditActions"><button class="teamEditCancel" type="button" onclick="closeTeamEditor()">취소</button><button class="teamEditSave" type="button" onclick="saveTeamEditor()">적용</button></div></div></div></div>
 <div id="statsOverlay" class="overlay"><div class="modal"><div class="modalhead"><h2 id="statsTitle">능력치</h2><button class="close" onclick="closeStats()">×</button></div><div class="stats"><div class="tabs" id="modeTabs"></div><div class="levels" id="levelTabs"></div><div class="statbox" id="statContent"></div></div></div></div>
 
@@ -501,6 +517,26 @@
 .teamSlotShiny{position:absolute;left:3px;bottom:3px;background:#ffd43b;color:#5d4500;border-radius:5px;padding:1px 4px;font-size:7px;font-weight:900;z-index:3}
 </style>
 
+
+<style id="v096TrinketCompare">
+/* v0.096: trinket comparison, bright UI matching trainer comparison */
+.calcTrinketPanel{height:205px;min-height:205px;overflow:hidden}
+.calcTrinketBody{height:130px;overflow:auto}
+.calcTrinketCompareButton{display:block;width:calc(100% - 12px);height:30px;margin:5px 6px 6px;box-sizing:border-box;background:#ffc20f;color:#fff;border:1px solid #e0a900;border-radius:7px;padding:4px 8px;font-size:11px;font-weight:900;cursor:pointer;text-shadow:1px 1px 0 rgba(0,0,0,.14)}
+.calcTrinketCompareButton:hover{background:#ffca28;border-color:#d59c00}
+.trinketCompareOverlay{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:18px;z-index:1110}
+.trinketCompareModal{width:min(1080px,96vw);max-height:min(820px,calc(100vh - 30px));background:#f1f3f5;color:#3e4650;border:5px solid #8e929d;outline:2px solid #252a31;border-radius:9px;box-shadow:8px 8px 0 rgba(0,0,0,.28);overflow:hidden;display:flex;flex-direction:column}
+.trinketCompareHead{padding:10px 14px;border-bottom:2px solid #c6cad2;display:flex;align-items:center;justify-content:space-between;gap:12px;background:#ffc20f;color:#fff}.trinketCompareHead strong{font-size:20px;text-shadow:1px 1px 0 rgba(0,0,0,.18)}.trinketCompareClose{width:36px;height:36px;border:1px solid #d9dde4;border-radius:8px;background:#fff;color:#3e4650;font-size:22px;font-weight:900;cursor:pointer}
+.trinketCompareIntro{padding:9px 14px;color:#5f6772;font-size:12px;border-bottom:1px solid #cdd2da;background:#fff}
+.trinketCompareSlots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:12px 14px;border-bottom:1px solid #c8cdd5;background:#e8ebee}
+.trinketCompareSlot{min-height:255px;border:3px solid #b9bdc5;border-radius:7px;background:#fff;padding:6px;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;cursor:pointer;position:relative;box-sizing:border-box;overflow:hidden}.trinketCompareSlot.selected{border-color:#ffc20f;background:#fffbea}
+.trinketCompareSlot img{width:100%;height:112px;flex:0 0 112px;object-fit:contain;background:#eceef0;border-radius:4px}.trinketCompareSlotName{font-size:17px;font-weight:900;line-height:1.2;color:#3e4650;background:#ffc20f;margin:0 -3px;padding:7px 8px;text-align:center;order:-1}.trinketCompareSlotEn{font-size:10px;color:#7b838e;text-align:center;margin-top:3px}.trinketCompareSlotRarity{font-size:10px;color:#687585;text-align:center;margin-top:4px;font-weight:800}.trinketCompareSlotAbility{margin-top:8px;padding:9px 8px;min-height:64px;background:#fff;border:2px solid #d1d4da;color:#4a5058;font-size:12px;line-height:1.45;text-align:center;display:flex;align-items:center;justify-content:center}.trinketCompareSlotEmpty{color:#707782;font-size:12px;text-align:center;margin:auto}.trinketCompareSlotRemove{position:absolute;right:6px;top:6px;width:22px;height:22px;border:1px solid #aeb5bf;border-radius:50%;background:#fff;color:#4c5662;font-size:13px;line-height:18px;text-align:center;z-index:2}
+.trinketCompareBody{display:flex;flex:1 1 auto;flex-direction:column;min-height:0;overflow:auto;background:#f1f3f5}.trinketComparePicker{padding:10px 14px;border-bottom:1px solid #c8cdd5;min-height:0;flex:0 0 auto;overflow:visible;background:#e8ebee}.trinketCompareSearch{width:100%;height:36px;box-sizing:border-box;border:2px solid #9da5b0;border-radius:7px;background:#fff;color:#3e4650;padding:0 10px;margin-bottom:10px}.trinketCompareGrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}.trinketCompareCard{border:3px solid #b9bdc5;border-radius:7px;background:#fff;color:#3e4650;padding:5px;text-align:left;cursor:pointer;min-width:0}.trinketCompareCard:hover,.trinketCompareCard.selected{border-color:#ffc20f;background:#fffbea}.trinketCompareCard img{width:100%;height:62px;object-fit:contain;background:#eceef0;border-radius:4px}.trinketCompareCardName{font-size:11px;font-weight:900;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.trinketCompareCardMeta{font-size:9px;color:#7b838e;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.trinketCompareCardEffect{font-size:9px;color:#66717d;margin-top:3px;line-height:1.25;height:23px;overflow:hidden}
+.trinketCompareAction{padding:9px 14px;border-top:1px solid #c8cdd5;display:flex;justify-content:flex-end;gap:8px;background:#f1f3f5}.trinketCompareAction button{border:2px solid #aeb5bf;border-radius:7px;background:#fff;color:#3e4650;padding:7px 12px;cursor:pointer;font-weight:800}.trinketCompareAction .primary{background:#ffc20f;border-color:#e0a900;color:#fff}.trinketCompareAction button:disabled{opacity:.45;cursor:default}
+@media(max-width:1050px){.trinketCompareGrid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(max-width:800px){.trinketCompareGrid{grid-template-columns:repeat(4,minmax(0,1fr))}.trinketCompareSlots{grid-template-columns:1fr}.trinketCompareModal{max-height:94vh}}
+@media(max-width:560px){.trinketCompareGrid{grid-template-columns:repeat(3,minmax(0,1fr))}.trinketCompareCard img{height:56px}}
+</style>
 <script>
 'use strict';
 let characters=[];
@@ -662,7 +698,7 @@ document.getElementById('zoom').addEventListener('input',e=>{work.zoom=Number(e.
 canvas.addEventListener('pointerdown',e=>{dragging=true;canvas.setPointerCapture(e.pointerId);dragStart={x:e.clientX,y:e.clientY,ox:Number(work.x||0),oy:Number(work.y||0)}});canvas.addEventListener('pointermove',e=>{if(!dragging)return;const r=canvas.getBoundingClientRect();work.x=Math.max(-500,Math.min(500,dragStart.ox+(e.clientX-dragStart.x)*canvas.width/r.width));work.y=Math.max(-500,Math.min(500,dragStart.oy+(e.clientY-dragStart.y)*canvas.height/r.height));document.getElementById('posX').value=work.x;document.getElementById('posY').value=work.y;drawEditor()});canvas.addEventListener('pointerup',()=>dragging=false);canvas.addEventListener('pointercancel',()=>dragging=false);
 for(const id of ['statsOverlay','editOverlay'])document.getElementById(id).addEventListener('click',e=>{if(e.target.id===id){id==='statsOverlay'?closeStats():closeEditor()}});
 document.getElementById('teamEditOverlay').addEventListener('click',e=>{if(e.target.id==='teamEditOverlay')closeTeamEditor();});
-window.addEventListener('keydown',e=>{if(e.key==='Escape'){if(document.getElementById('trainerCompareOverlay').style.display==='flex')closeTrainerCompare();else if(document.getElementById('trainerSelectOverlay').style.display==='flex')closeTrainerSelector();else if(document.getElementById('trinketSelectOverlay').style.display==='flex')closeTrinketSelector();else if(document.getElementById('editOverlay').style.display==='flex')closeEditor();else if(document.getElementById('statsOverlay').style.display==='flex')closeStats()}});
+window.addEventListener('keydown',e=>{if(e.key==='Escape'){if(document.getElementById('trainerCompareOverlay').style.display==='flex')closeTrainerCompare();else if(document.getElementById('trinketCompareOverlay').style.display==='flex')closeTrinketCompare();else if(document.getElementById('trainerSelectOverlay').style.display==='flex')closeTrainerSelector();else if(document.getElementById('trinketSelectOverlay').style.display==='flex')closeTrinketSelector();else if(document.getElementById('editOverlay').style.display==='flex')closeEditor();else if(document.getElementById('statsOverlay').style.display==='flex')closeStats()}});
 
 const calcTrainerPanel=document.getElementById('calcTrainerPanel');
 if(calcTrainerPanel){calcTrainerPanel.addEventListener('click',openTrainerSelector);calcTrainerPanel.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openTrainerSelector()}})}
@@ -679,6 +715,11 @@ document.getElementById('trainerCompareOverlay')?.addEventListener('click',e=>{i
 document.getElementById('trainerCompareSearch')?.addEventListener('input',renderTrainerCompareList);
 document.getElementById('trainerCompareClear')?.addEventListener('click',()=>{trainerCompareSelected=[];renderTrainerCompare()});
 document.getElementById('trainerCompareDone')?.addEventListener('click',closeTrainerCompare);
+document.getElementById('trinketCompareClose')?.addEventListener('click',closeTrinketCompare);
+document.getElementById('trinketCompareOverlay')?.addEventListener('click',e=>{if(e.target.id==='trinketCompareOverlay')closeTrinketCompare()});
+document.getElementById('trinketCompareSearch')?.addEventListener('input',renderTrinketCompareList);
+document.getElementById('trinketCompareClear')?.addEventListener('click',()=>{trinketCompareSelected=[];renderTrinketCompare()});
+document.getElementById('trinketCompareDone')?.addEventListener('click',closeTrinketCompare);
 
 document.getElementById('calcBatomonSearch')?.addEventListener('input',renderCalcBatomonList);
 document.getElementById('calcBatomonFilterReset')?.addEventListener('click',()=>{document.getElementById('calcBatomonSearch').value='';calcBatomonRarityFilters=[];calcBatomonTypeFilters=[];initCalcBatomonFilters();renderCalcBatomonList();});
@@ -1341,6 +1382,69 @@ function renderCalcTrainerList(){
     card.append(img,name,en,region); loadTrainerImage(img,t,card); card.insertAdjacentHTML('beforeend',trainerMetaHtml(t,true)); card.addEventListener('click',()=>{calcSelectedTrainerId=t.id;updateCalcTrainer();closeTrainerSelector()});g.appendChild(card);
   }
 }
+
+let trinketCompareSelected=[];
+function getTrinketCompareImageUrls(t){
+  const id=String(t?.id||t?.slug||t?.name_en||t?.name_ko||'').trim();
+  if(!id)return getTrinketImageSources(t);
+  const slug=id.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+  const under=id.toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,'');
+  return [...getTrinketImageSources(t),
+    `https://batomon.com/game/25377295/trinket/${slug}.png`,
+    `https://batomon.com/game/25377295/trinket/${under}.png`,
+    `https://wsrv.nl/?url=${encodeURIComponent(`https://batomon.com/game/25377295/trinket/${slug}.png`)}`,
+    `https://images.weserv.nl/?url=${encodeURIComponent(`https://batomon.com/game/25377295/trinket/${slug}.png`)}`
+  ].filter(Boolean);
+}
+function loadTrinketCompareImage(img,t){
+  const sources=getTrinketCompareImageUrls(t);let i=0;
+  const next=()=>{if(i>=sources.length){img.removeAttribute('src');img.style.display='none';return;}img.src=sources[i++];};
+  img.onerror=next;next();
+}
+function getTrinketRarityKo(t){
+  const m={Common:'일반',Uncommon:'고급',Rare:'희귀',SuperRare:'영웅',Legendary:'전설',Mythical:'신화'};
+  return m[t?.rarity]||t?.rarity||'';
+}
+function renderTrinketCompareSlots(){
+  const host=document.getElementById('trinketCompareSlots');if(!host)return;host.innerHTML='';
+  for(let i=0;i<3;i++){
+    const t=trinkets.find(x=>String(x.id||x.slug||x.name_en||x.name_ko)===String(trinketCompareSelected[i]));
+    const slot=document.createElement('div');slot.className='trinketCompareSlot'+(t?' selected':'');slot.title=t?'클릭하면 선택 해제':'아래 목록에서 장신구를 선택하세요';
+    if(t){
+      const img=document.createElement('img');img.alt=getTrinketName(t);loadTrinketCompareImage(img,t);
+      const nm=document.createElement('div');nm.className='trinketCompareSlotName';nm.textContent=getTrinketName(t);
+      const en=document.createElement('div');en.className='trinketCompareSlotEn';en.textContent=t.name_en||t.name||'';
+      const rarity=document.createElement('div');rarity.className='trinketCompareSlotRarity';rarity.textContent=getTrinketRarityKo(t)+(t.unique?' · 고유':'');
+      const ability=document.createElement('div');ability.className='trinketCompareSlotAbility';ability.textContent=t.effect_ko||t.effect||t.effect_en||'효과 정보 없음';
+      const remove=document.createElement('div');remove.className='trinketCompareSlotRemove';remove.textContent='×';remove.title='선택 해제';
+      slot.append(nm,img,en,rarity,ability,remove);slot.addEventListener('click',()=>{trinketCompareSelected=trinketCompareSelected.filter(id=>id!==t.id);renderTrinketCompare();});
+    }else{const empty=document.createElement('div');empty.className='trinketCompareSlotEmpty';empty.innerHTML=`<strong>장신구 ${i+1}</strong><br>아래에서 선택`;slot.appendChild(empty);}
+    host.appendChild(slot);
+  }
+}
+function renderTrinketCompareList(){
+  const g=document.getElementById('trinketCompareGrid');if(!g)return;
+  const q=(document.getElementById('trinketCompareSearch')?.value||'').trim().toLowerCase();
+  const list=trinkets.filter(t=>!q||[t.name_ko,t.name_en,t.name,t.effect_ko,t.effect_en,t.rarity].filter(Boolean).join(' ').toLowerCase().includes(q));
+  g.innerHTML='';if(!list.length){g.innerHTML='<div style="grid-column:1/-1;color:#718095;font-size:11px;padding:10px">검색 결과가 없습니다.</div>';return;}
+  for(const t of list){
+    const id=t.id||t.slug||t.name_en||t.name_ko;const selected=trinketCompareSelected.includes(id);
+    const card=document.createElement('button');card.type='button';card.className='trinketCompareCard'+(selected?' selected':'');
+    const img=document.createElement('img');img.alt=getTrinketName(t);loadTrinketCompareImage(img,t);
+    const nm=document.createElement('div');nm.className='trinketCompareCardName';nm.textContent=getTrinketName(t);
+    const meta=document.createElement('div');meta.className='trinketCompareCardMeta';meta.textContent=getTrinketRarityKo(t)+(t.unique?' · 고유':'');
+    const effect=document.createElement('div');effect.className='trinketCompareCardEffect';effect.textContent=t.effect_ko||t.effect_en||'';
+    card.append(img,nm,meta,effect);card.addEventListener('click',()=>{const i=trinketCompareSelected.indexOf(id);if(i>=0)trinketCompareSelected.splice(i,1);else if(trinketCompareSelected.length<3)trinketCompareSelected.push(id);renderTrinketCompare();});g.appendChild(card);
+  }
+}
+function renderTrinketCompare(){renderTrinketCompareSlots();renderTrinketCompareList();const done=document.getElementById('trinketCompareDone');if(done)done.disabled=trinketCompareSelected.length!==3;}
+async function openTrinketCompare(){
+  const o=document.getElementById('trinketCompareOverlay');if(!o)return;
+  trinketCompareSelected=[];const search=document.getElementById('trinketCompareSearch');if(search)search.value='';
+  if(!trinkets.length){try{const r=await fetch('./trinkets.json?v=0.029&cb='+Date.now(),{cache:'no-store'});if(r.ok){const d=await r.json();trinkets=Array.isArray(d)?d:(d.trinkets||[]);}}catch(e){console.warn('장신구 비교 목록 로드 실패',e);}}
+  renderTrinketCompare();o.style.display='flex';o.setAttribute('aria-hidden','false');search?.focus();
+}
+function closeTrinketCompare(){const o=document.getElementById('trinketCompareOverlay');if(!o)return;o.style.display='none';o.setAttribute('aria-hidden','true');}
 
 let trainerCompareSelected=[];
 function trainerCompareImageUrls(t){
