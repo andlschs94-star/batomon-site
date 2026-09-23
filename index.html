@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.084</title>
+<title>바토몬 원향 도감 v0.085</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -251,7 +251,7 @@
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.084</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.085</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -333,7 +333,7 @@
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.084</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.085</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -669,7 +669,6 @@ function getOfficialTrainerImageUrls(t){
   return [
     `https://batomon.com/game/24079270/trainer/${slug}.png`,
     `https://batomon.com/game/25377295/trainer/${slug}.png`,
-    ...(t.image_url?[String(t.image_url)]:[])
   ];
 }
 function getOfficialTrainerImageUrl(t){
@@ -1233,6 +1232,7 @@ function updateCalcTrainer(){
   document.getElementById('calcTrainerAbility').textContent=getTrainerAbility(t);
   const img=document.getElementById('calcTrainerImage');
   img.alt=name+' 트레이너';
+  img.referrerPolicy='origin';
   const urls=getOfficialTrainerImageUrls(t); let imageIndex=0;
   img.onerror=()=>{ if(imageIndex<urls.length){ img.src=urls[imageIndex++]; } else { img.removeAttribute('src'); } };
   img.src=urls[imageIndex++]||'';
@@ -1248,7 +1248,7 @@ function renderCalcTrainerList(){
   if(!list.length){g.innerHTML='<div class="trainerSelectEmpty">검색 결과가 없습니다.</div>';return;}
   for(const t of list){
     const card=document.createElement('button');card.type='button';card.className='trainerSelectCard'+(t.id===calcSelectedTrainerId?' selected':'');
-    const img=document.createElement('img');const trainerImageUrls=getOfficialTrainerImageUrls(t);let trainerImageIndex=0;img.alt=getTrainerName(t);img.loading='lazy';img.referrerPolicy='no-referrer';
+    const img=document.createElement('img');const trainerImageUrls=getOfficialTrainerImageUrls(t);let trainerImageIndex=0;img.alt=getTrainerName(t);img.loading='lazy';img.referrerPolicy='origin';
     img.onerror=()=>{if(trainerImageIndex<trainerImageUrls.length){img.src=trainerImageUrls[trainerImageIndex++];}else{img.style.display='none';}};img.src=trainerImageUrls[trainerImageIndex++]||'';
     const name=document.createElement('div');name.className='trainerSelectName';name.textContent=getTrainerName(t);
     const en=document.createElement('div');en.className='trainerSelectNameEn';en.textContent=t.name_en||t.name||'';
@@ -1295,7 +1295,7 @@ function renderTrainers(){
     const rg=document.createElement('div');rg.className='trainerRegion';rg.textContent=t.region_ko||t.region||'특수 / 미표기';
     left.append(nm,rg);head.append(left);
     const portrait=document.createElement('div');portrait.className='trainerPortrait';
-    const img=document.createElement('img');const trainerImageUrls=getOfficialTrainerImageUrls(t);let trainerImageIndex=0;img.alt=(t.name_ko||t.name)+' 트레이너';img.loading='lazy';img.referrerPolicy='no-referrer';
+    const img=document.createElement('img');const trainerImageUrls=getOfficialTrainerImageUrls(t);let trainerImageIndex=0;img.alt=(t.name_ko||t.name)+' 트레이너';img.loading='lazy';img.referrerPolicy='origin';
     img.onerror=()=>{if(trainerImageIndex<trainerImageUrls.length){img.src=trainerImageUrls[trainerImageIndex++];}else{portrait.style.display='none';}};img.src=trainerImageUrls[trainerImageIndex++]||'';portrait.appendChild(img);
     const ability=document.createElement('div');ability.className='trainerAbility';ability.textContent=t.ability_ko||t.ability;
     const tags=document.createElement('div');tags.className='trainerTags';
