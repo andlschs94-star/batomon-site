@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.056</title>
+<title>바토몬 원향 도감 v0.060</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -248,7 +248,7 @@
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.056</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.060</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -325,7 +325,7 @@
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.056</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.060</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -802,6 +802,21 @@ function translateAbilityText(text){
     [/\bFighting\b/g,'격투'],[/\bGhost\b/g,'고스트']
   ];
   for(const [re,r] of names)t=t.replace(re,r);
+
+  // 사용자 확정 번역(우선 적용)
+  const confirmed=[
+    [/^ON CAST\s*\|\s*\+(\d+(?:\.\d+)?) Damage for this battle\.$/,'발동 시 이번 배틀 동안 +$1 피해'],
+    [/^ON CAST\s*\|\s*Give the ally behind \+(\d+(?:\.\d+)?)% Cooldown Speed permanently\.$/,'발동 시 뒤 아군에게 +$1% 영구히 쿨가속 부여해요'],
+    [/^ON CAST\s*\|\s*Gain \$(\d+)\.$/,'발동 시 \$$1 얻어요'],
+    [/^ON CAST\s*\|\s*Trigger the Bug ally above\.$/,'발동 시 위 벌레 타입 아군을 발동해요'],
+    [/^ON BATTLE START\s*\|\s*Adjacent Water allies gain \+(\d+) Heal permanently\.$/,'배틀 시작 시 인접한 물 타입 아군이 영구히 +$1 회복 얻어요'],
+    [/^ON BATTLE START\s*\|\s*Disable abilities of all Ongoing monsters in this row\.$/,'배틀 시작 시 이 행의 모든 지속 바토몬의 능력을 비활성화해요'],
+    [/^ON CAST\s*\|\s*Knockout the enemy opposite of this\.$/,'발동 시 맞은편의 적을 녹다운시켜요'],
+    [/^ON CAST\s*\|\s*Give the Flying ally in front \+(\d+) Multicast permanently\. \(Zephyrex can't have Multicast\)$/,'앞 비행 타입 아군에게 영구히 +$1 다중 발동 부여해요(질풍수리는 다중 발동 가질 수 없어요)'],
+    [/^ON BATTLE START\s*\|\s*Gain Shield for this battle equal to the Shield of adjacent allies\. \(Except other Aegistruct\)$/,'배틀 시작 시 인접한 아군의 실드 능력치만큼 이번 배틀 동안 실드 능력치를 얻어요(철벽석상 제외)']
+  ];
+  for(const [re,r] of confirmed)t=t.replace(re,r);
+  if(t!==original)return t;
 
   // 고정/반고정 문구
   const fixed=[
