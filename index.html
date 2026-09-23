@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.087</title>
+<title>바토몬 원향 도감 v0.088</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -45,6 +45,7 @@
 
 .trainerPortrait{height:118px;display:flex;align-items:center;justify-content:center;margin:-14px -14px 12px;background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,0));border-radius:14px 14px 0 0;overflow:hidden}
 .trainerPortrait img{width:128px;height:128px;object-fit:contain;image-rendering:auto;filter:drop-shadow(0 4px 8px rgba(0,0,0,.25))}
+.trainerManualPhoto{position:absolute;bottom:7px;left:50%;transform:translateX(-50%);display:none;align-items:center;justify-content:center;padding:5px 8px;border-radius:7px;background:rgba(15,20,28,.92);border:1px solid #4a596d;color:#dce9f7;font-size:10px;cursor:pointer;z-index:3;white-space:nowrap}.trainerManualPhoto:hover{border-color:#8ed0ff;color:#fff}.trainerPortrait{position:relative}.trainerSelectCard{position:relative}.trainerSelectCard .trainerManualPhoto{bottom:7px}.trainerSelectCard .trainerManualPhoto{color:#3e4650;background:rgba(255,255,255,.94);border-color:#aeb7c4}.trainerSelectCard .trainerManualPhoto:hover{border-color:#4c86b8;color:#1e4e77}
 
 .trinketRarity{font-size:11px;color:#b8c7d9;margin-top:5px}
 .trinketEffect{font-size:13px;line-height:1.55;color:#e3e7ec;margin:12px 0;min-height:58px}
@@ -251,12 +252,12 @@
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.087</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.088</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
       <select id="sort"><option value="no">번호순</option><option value="name">이름순</option><option value="rank">등급순</option></select>
-      <button id="resetEdits">사진 수정 전체 초기화</button>
+      <button id="resetEdits">사진 수정 전체 초기화</button> <button id="resetTrainerPhotos">트레이너 수동 사진 초기화</button>
     </div>
   </div>
   <div class="sectionTabs">
@@ -333,7 +334,7 @@
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.087</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.088</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -641,11 +642,18 @@ const itemRarity=document.getElementById('itemRarity'); if(itemRarity)itemRarity
 const eventSearch=document.getElementById('eventSearch'); if(eventSearch)eventSearch.addEventListener('input',renderEvents);
 const eventSchedule=document.getElementById('eventSchedule'); if(eventSchedule)eventSchedule.addEventListener('change',renderEvents);
 const mechanicSearch=document.getElementById('mechanicSearch'); if(mechanicSearch)mechanicSearch.addEventListener('input',renderMechanics);
-const mechanicCategory=document.getElementById('mechanicCategory'); if(mechanicCategory)mechanicCategory.addEventListener('change',renderMechanics);document.getElementById('rank').addEventListener('change',render);document.getElementById('sort').addEventListener('change',render);document.getElementById('resetEdits').addEventListener('click',()=>{if(!confirm('모든 사진 수정 내용을 이 브라우저에서 삭제할까요?'))return;edits={};saveEdits();render()});
+const mechanicCategory=document.getElementById('mechanicCategory'); if(mechanicCategory)mechanicCategory.addEventListener('change',renderMechanics);document.getElementById('rank').addEventListener('change',render);document.getElementById('sort').addEventListener('change',render);document.getElementById('resetEdits').addEventListener('click',()=>{if(!confirm('모든 사진 수정 내용을 이 브라우저에서 삭제할까요?'))return;edits={};saveEdits();render()}); document.getElementById('resetTrainerPhotos').addEventListener('click',()=>{if(!confirm('수동 등록한 트레이너 사진을 이 브라우저에서 모두 삭제할까요?'))return;trainerPhotoEdits={};saveTrainerPhotoEdits();renderTrainers();renderCalcTrainerList();updateCalcTrainer();});
 
 
 let calcSelectedTrainerId='egg-breeder';
+let trainerPhotoEdits={};
+function loadTrainerPhotoEdits(){try{trainerPhotoEdits=JSON.parse(localStorage.getItem('batomon-trainer-photo-edits-v1')||'{}')||{};}catch{trainerPhotoEdits={}}}
+function saveTrainerPhotoEdits(){try{localStorage.setItem('batomon-trainer-photo-edits-v1',JSON.stringify(trainerPhotoEdits));}catch{}}
+loadTrainerPhotoEdits();
 
+function getTrainerManualImage(t){
+  return t ? String(trainerPhotoEdits[String(t.id||'')]||'') : '';
+}
 function getOfficialTrainerImageUrls(t){
   if(!t) return [];
   const rawUrl=String(t.url||'').trim();
@@ -664,20 +672,44 @@ function getOfficialTrainerImageUrls(t){
     slug=slugMap[id]||'';
   }
   if(!slug) return String(t.image_url||'') ? [String(t.image_url)] : [];
-  // Official Wiki trainer sprite. The Wiki pages expose these exact game-asset URLs.
-  // Some official assets intermittently fail as direct browser requests, so keep
-  // the official URL first and use image proxies only as display fallbacks.
   const official=`https://batomon.com/game/24079270/trainer/${slug}.png`;
+  const plain=official.replace(/^https?:\/\//,'');
   const encoded=encodeURIComponent(official);
   return [
     official,
-    `https://images.weserv.nl/?url=${encoded}`,
-    `https://wsrv.nl/?url=${encoded}`
+    `https://wsrv.nl/?url=${plain}`,
+    `https://wsrv.nl/?url=${encoded}`,
+    `https://images.weserv.nl/?url=${plain}`,
+    `https://images.weserv.nl/?url=${encoded}`
   ];
+}
+function getTrainerImageSources(t){
+  const manual=getTrainerManualImage(t);
+  const official=getOfficialTrainerImageUrls(t);
+  return (manual ? [manual] : []).concat(official);
 }
 function getOfficialTrainerImageUrl(t){
   const urls=getOfficialTrainerImageUrls(t);
   return urls[0]||'';
+}
+function showTrainerManualButton(host,t,failed){
+  if(!host||!t)return;
+  let btn=host.querySelector('.trainerManualPhoto');
+  if(!btn){
+    btn=document.createElement('div');btn.className='trainerManualPhoto';btn.textContent='📷 사진 직접 등록';
+    const input=document.createElement('input');input.type='file';input.accept='image/*';input.style.display='none';
+    btn.appendChild(input);
+    btn.addEventListener('click',()=>input.click());
+    input.addEventListener('change',()=>{const file=input.files&&input.files[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{trainerPhotoEdits[String(t.id)]=String(reader.result||'');saveTrainerPhotoEdits();renderTrainers();renderCalcTrainerList();updateCalcTrainer();};reader.readAsDataURL(file);});
+    host.appendChild(btn);
+  }
+  btn.style.display=failed?'inline-flex':'none';
+}
+function loadTrainerImage(img,t,host){
+  const sources=getTrainerImageSources(t);let i=0;
+  img.onerror=()=>{if(i<sources.length){img.src=sources[i++];return;}img.style.display='none';showTrainerManualButton(host,t,true);};
+  img.onload=()=>showTrainerManualButton(host,t,false);
+  if(sources.length){img.src=sources[i++];}else{img.style.display='none';showTrainerManualButton(host,t,true);}
 }
 function getTrainerName(t){return t?.name_ko||t?.name_en||t?.name||'???'}
 function getTrainerAbility(t){return t?.ability_ko||t?.ability_en||t?.ability||'능력 설명 없음'}
@@ -1252,12 +1284,11 @@ function renderCalcTrainerList(){
   if(!list.length){g.innerHTML='<div class="trainerSelectEmpty">검색 결과가 없습니다.</div>';return;}
   for(const t of list){
     const card=document.createElement('button');card.type='button';card.className='trainerSelectCard'+(t.id===calcSelectedTrainerId?' selected':'');
-    const img=document.createElement('img');const trainerImageUrls=getOfficialTrainerImageUrls(t);let trainerImageIndex=0;img.alt=getTrainerName(t);img.loading='lazy';img.referrerPolicy='no-referrer';
-    img.onerror=()=>{if(trainerImageIndex<trainerImageUrls.length){img.src=trainerImageUrls[trainerImageIndex++];}else{img.style.display='none';}};img.src=trainerImageUrls[trainerImageIndex++]||'';
+    const img=document.createElement('img');img.alt=getTrainerName(t);img.loading='lazy';img.referrerPolicy='no-referrer';
     const name=document.createElement('div');name.className='trainerSelectName';name.textContent=getTrainerName(t);
     const en=document.createElement('div');en.className='trainerSelectNameEn';en.textContent=t.name_en||t.name||'';
     const region=document.createElement('div');region.className='trainerSelectRegion';region.textContent=t.region_ko||t.region||'지역 미표기';
-    card.append(img,name,en,region); card.insertAdjacentHTML('beforeend',trainerMetaHtml(t,true)); card.addEventListener('click',()=>{calcSelectedTrainerId=t.id;updateCalcTrainer();closeTrainerSelector()});g.appendChild(card);
+    card.append(img,name,en,region); loadTrainerImage(img,t,card); card.insertAdjacentHTML('beforeend',trainerMetaHtml(t,true)); card.addEventListener('click',()=>{calcSelectedTrainerId=t.id;updateCalcTrainer();closeTrainerSelector()});g.appendChild(card);
   }
 }
 function openTrainerSelector(){
@@ -1299,8 +1330,7 @@ function renderTrainers(){
     const rg=document.createElement('div');rg.className='trainerRegion';rg.textContent=t.region_ko||t.region||'특수 / 미표기';
     left.append(nm,rg);head.append(left);
     const portrait=document.createElement('div');portrait.className='trainerPortrait';
-    const img=document.createElement('img');const trainerImageUrls=getOfficialTrainerImageUrls(t);let trainerImageIndex=0;img.alt=(t.name_ko||t.name)+' 트레이너';img.loading='lazy';img.referrerPolicy='no-referrer';
-    img.onerror=()=>{if(trainerImageIndex<trainerImageUrls.length){img.src=trainerImageUrls[trainerImageIndex++];}else{portrait.style.display='none';}};img.src=trainerImageUrls[trainerImageIndex++]||'';portrait.appendChild(img);
+    const img=document.createElement('img');img.alt=(t.name_ko||t.name)+' 트레이너';img.loading='lazy';img.referrerPolicy='no-referrer';portrait.appendChild(img);loadTrainerImage(img,t,portrait);
     const ability=document.createElement('div');ability.className='trainerAbility';ability.textContent=t.ability_ko||t.ability;
     const tags=document.createElement('div');tags.className='trainerTags';
     for(const tag of (t.tags_ko||t.tags||[])){const el=document.createElement('span');el.className='trainerTag';el.textContent=tag;tags.appendChild(el);}
