@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.089</title>
+<title>바토몬 원향 도감 v0.090</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -249,7 +249,7 @@
 @media(max-width:720px){.calcBattleArea{grid-template-columns:1fr}.calcTrainerPanel,.calcTrinketPanel{width:100%;max-width:320px}.calcCenter>.calcBox{width:var(--team-w,190px);max-width:100%;}}
 </style>
 <style id="v089TrainerCompare">
-/* v0.089: trainer selector / comparison + first-screen calculator fit */
+/* v0.090: trainer selector / comparison + first-screen calculator fit */
 @media(min-width:721px){
   body.calcView{overflow:hidden}
   .calcPage{height:calc(100vh - 118px);min-height:0}
@@ -260,7 +260,10 @@
 .trainerSelectCard img{height:62px}
 @media(max-width:1050px){.trainerSelectGrid{grid-template-columns:repeat(5,minmax(0,1fr))}}
 @media(max-width:720px){.trainerSelectModal{width:96vw;max-height:92vh}.trainerSelectGrid{grid-template-columns:repeat(3,minmax(0,1fr));overflow-y:auto}.trainerSelectCard img{height:62px}}
-.calcTrainerCompareButton{position:absolute;right:10px;top:46px;background:rgba(20,42,52,.92);color:#fff;border:1px solid rgba(255,255,255,.55);border-radius:7px;padding:5px 9px;font-size:11px;font-weight:900;z-index:3;cursor:pointer}
+.calcTrainerPanel{height:235px;min-height:235px;overflow:hidden}
+.calcTrainerImage{height:78px}
+.calcTrainerAbility{min-height:55px;padding:6px 7px}
+.calcTrainerCompareButton{display:block;width:calc(100% - 12px);height:30px;margin:5px 6px 6px;box-sizing:border-box;background:rgba(20,42,52,.92);color:#fff;border:1px solid rgba(255,255,255,.55);border-radius:7px;padding:4px 8px;font-size:11px;font-weight:900;cursor:pointer}
 .calcTrainerCompareButton:hover{background:#123e4d;border-color:#20c3f0}
 .trainerCompareOverlay{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;padding:18px;z-index:1100}
 .trainerCompareModal{width:min(1080px,96vw);max-height:min(760px,calc(100vh - 30px));background:#151b23;border:2px solid #3a4655;border-radius:14px;box-shadow:0 18px 60px rgba(0,0,0,.5);overflow:hidden;display:flex;flex-direction:column}
@@ -268,15 +271,17 @@
 .trainerCompareIntro{padding:10px 16px;color:#aeb9c7;font-size:12px;border-bottom:1px solid #303b49}
 .trainerCompareSlots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:12px 16px;border-bottom:1px solid #303b49}
 .trainerCompareSlot{min-height:58px;border:1px dashed #4a5869;border-radius:9px;background:#11161d;padding:8px;display:flex;align-items:center;gap:9px;cursor:pointer}.trainerCompareSlot.selected{border-style:solid;border-color:#20c3f0;background:#15232b}.trainerCompareSlot img{width:52px;height:52px;object-fit:contain;background:#0c1118;border-radius:7px}.trainerCompareSlotEmpty{color:#738093;font-size:12px}.trainerCompareSlotName{font-weight:900}.trainerCompareSlotEn{font-size:10px;color:#7f8c9d;margin-top:2px}
-.trainerCompareBody{display:grid;grid-template-columns:260px 1fr;min-height:0;overflow:hidden}.trainerComparePicker{padding:12px;border-right:1px solid #303b49;min-height:0;overflow:auto}.trainerCompareSearch{width:100%;height:36px;border:1px solid #3a4655;border-radius:8px;background:#0f141b;color:#fff;padding:0 10px;margin-bottom:10px}.trainerCompareGrid{display:grid;grid-template-columns:1fr 1fr;gap:7px}.trainerCompareCard{border:1px solid #394657;border-radius:8px;background:#1a212b;color:#fff;padding:6px;text-align:left;cursor:pointer;min-width:0}.trainerCompareCard:hover{border-color:#20c3f0}.trainerCompareCard.selected{border-color:#20c3f0;background:#132b35}.trainerCompareCard img{width:100%;height:54px;object-fit:contain;background:#0d1219;border-radius:5px}.trainerCompareCardName{font-size:11px;font-weight:900;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.trainerCompareCardMeta{font-size:9px;color:#7f8c9d;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.trainerCompareResult{padding:12px;min-width:0;overflow:auto}.trainerCompareEmpty{height:100%;min-height:250px;display:flex;align-items:center;justify-content:center;color:#748295;font-size:13px;text-align:center}.trainerCompareTable{width:100%;border-collapse:separate;border-spacing:0;table-layout:fixed}.trainerCompareTable th,.trainerCompareTable td{border-right:1px solid #303b49;border-bottom:1px solid #303b49;padding:9px 8px;vertical-align:middle}.trainerCompareTable th:last-child,.trainerCompareTable td:last-child{border-right:0}.trainerCompareTable thead th{background:#202936;text-align:center}.trainerCompareTable .metricLabel{width:115px;text-align:left;background:#171e27;color:#9ba8b8;font-size:11px;font-weight:800}.trainerCompareTable .trainerColName{font-size:13px;font-weight:900}.trainerCompareTable .trainerColEn{font-size:9px;color:#7f8c9d;margin-top:3px}.trainerCompareTable .metricValue{font-size:18px;font-weight:900;text-align:center;color:#fff}.trainerCompareTable .metricSub{display:block;font-size:9px;color:#738196;margin-top:2px}.trainerCompareNote{font-size:10px;color:#6f7f92;margin-top:9px}.trainerCompareAction{padding:10px 16px;border-top:1px solid #303b49;display:flex;justify-content:flex-end;gap:8px}.trainerCompareAction button{border:1px solid #405063;border-radius:8px;background:#202a36;color:#fff;padding:7px 12px;cursor:pointer}.trainerCompareAction .primary{background:#0e7996;border-color:#22bce4}.trainerCompareAction button:disabled{opacity:.45;cursor:default}
-@media(max-width:800px){.trainerCompareBody{grid-template-columns:1fr}.trainerComparePicker{max-height:260px;border-right:0;border-bottom:1px solid #303b49}.trainerCompareGrid{grid-template-columns:repeat(3,1fr)}.trainerCompareSlots{grid-template-columns:1fr}.trainerCompareModal{max-height:94vh}}
+.trainerCompareBody{display:flex;flex-direction:column;min-height:0;overflow:auto}.trainerComparePicker{padding:12px 16px;border-bottom:1px solid #303b49;min-height:0}.trainerCompareSearch{width:100%;height:36px;box-sizing:border-box;border:1px solid #3a4655;border-radius:8px;background:#0f141b;color:#fff;padding:0 10px;margin-bottom:10px}.trainerCompareGrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}.trainerCompareCard{border:1px solid #394657;border-radius:8px;background:#1a212b;color:#fff;padding:6px;text-align:left;cursor:pointer;min-width:0}.trainerCompareCard:hover{border-color:#20c3f0}.trainerCompareCard.selected{border-color:#20c3f0;background:#132b35}.trainerCompareCard img{width:100%;height:62px;object-fit:contain;background:#0d1219;border-radius:5px}.trainerCompareCardName{font-size:11px;font-weight:900;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.trainerCompareCardMeta{font-size:9px;color:#7f8c9d;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.trainerCompareResult{padding:12px 16px;min-width:0;overflow:auto}.trainerCompareEmpty{height:100%;min-height:250px;display:flex;align-items:center;justify-content:center;color:#748295;font-size:13px;text-align:center}.trainerCompareTable{width:100%;border-collapse:separate;border-spacing:0;table-layout:fixed}.trainerCompareTable th,.trainerCompareTable td{border-right:1px solid #303b49;border-bottom:1px solid #303b49;padding:9px 8px;vertical-align:middle}.trainerCompareTable th:last-child,.trainerCompareTable td:last-child{border-right:0}.trainerCompareTable thead th{background:#202936;text-align:center}.trainerCompareTable .metricLabel{width:115px;text-align:left;background:#171e27;color:#9ba8b8;font-size:11px;font-weight:800}.trainerCompareTable .trainerColName{font-size:13px;font-weight:900}.trainerCompareTable .trainerColEn{font-size:9px;color:#7f8c9d;margin-top:3px}.trainerCompareTable .metricValue{font-size:18px;font-weight:900;text-align:center;color:#fff}.trainerCompareTable .metricSub{display:block;font-size:9px;color:#738196;margin-top:2px}.trainerCompareNote{font-size:10px;color:#6f7f92;margin-top:9px}.trainerCompareAction{padding:10px 16px;border-top:1px solid #303b49;display:flex;justify-content:flex-end;gap:8px}.trainerCompareAction button{border:1px solid #405063;border-radius:8px;background:#202a36;color:#fff;padding:7px 12px;cursor:pointer}.trainerCompareAction .primary{background:#0e7996;border-color:#22bce4}.trainerCompareAction button:disabled{opacity:.45;cursor:default}
+@media(max-width:1050px){.trainerCompareGrid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(max-width:800px){.trainerCompareGrid{grid-template-columns:repeat(4,minmax(0,1fr))}.trainerCompareSlots{grid-template-columns:1fr}.trainerCompareModal{max-height:94vh}}
+@media(max-width:560px){.trainerCompareGrid{grid-template-columns:repeat(3,minmax(0,1fr))}.trainerCompareCard img{height:56px}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.089</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.090</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -304,11 +309,11 @@
       <div class="calcBoard">
         <div class="calcBattleArea">
           <aside class="calcTrainerPanel" id="calcTrainerPanel" tabindex="0" role="button" aria-label="트레이너 선택">
-            <div class="calcTrainerChange">트레이너 변경</div><button type="button" class="calcTrainerCompareButton" onclick="event.stopPropagation();openTrainerCompare()">트레이너 비교</button>
+            <div class="calcTrainerChange">트레이너 변경</div>
             <div class="calcTrainerTitle" id="calcTrainerTitle">알 브리더</div>
             <div class="calcTrainerImage"><img id="calcTrainerImage" alt="알 브리더"></div>
             <div class="calcTrainerAbility" id="calcTrainerAbility">트레이너를 불러오는 중…</div>
-            <div class="calcTrainerHp"><span>HP</span><div class="calcHpBar">300</div></div>
+            <div class="calcTrainerHp"><span>HP</span><div class="calcHpBar">300</div></div><button type="button" class="calcTrainerCompareButton" onclick="event.stopPropagation();openTrainerCompare()">트레이너 비교</button>
           </aside>
 
           <main class="calcCenter">
@@ -358,7 +363,7 @@
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.089</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.090</div>
     <div id="grid" class="grid"></div>
   </section>
 
