@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.096</title>
+<title>바토몬 원향 도감 v0.097</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -249,7 +249,7 @@
 @media(max-width:720px){.calcBattleArea{grid-template-columns:1fr}.calcTrainerPanel,.calcTrinketPanel{width:100%;max-width:320px}.calcCenter>.calcBox{width:var(--team-w,190px);max-width:100%;}}
 </style>
 <style id="v089TrainerCompare">
-/* v0.096: trainer selector / comparison + first-screen calculator fit */
+/* v0.097: trainer selector / comparison + first-screen calculator fit */
 @media(min-width:721px){
   body.calcView{overflow:hidden}
   .calcPage{height:calc(100vh - 118px);min-height:0}
@@ -276,13 +276,13 @@
 @media(max-width:1050px){.trainerCompareGrid{grid-template-columns:repeat(5,minmax(0,1fr))}}
 @media(max-width:800px){.trainerCompareGrid{grid-template-columns:repeat(4,minmax(0,1fr))}.trainerCompareSlots{grid-template-columns:1fr}.trainerCompareModal{max-height:94vh}}
 @media(max-width:560px){.trainerCompareGrid{grid-template-columns:repeat(3,minmax(0,1fr))}.trainerCompareCard img{height:56px}}
-/* v0.096: trainer comparison picker/result flow fix */
+/* v0.097: trainer comparison picker/result flow fix */
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.096</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.097</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -365,7 +365,7 @@
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.096</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.097</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -477,7 +477,12 @@
     <div class="trinketCompareHead"><strong id="trinketCompareTitle">장신구 비교</strong><button type="button" class="trinketCompareClose" id="trinketCompareClose" aria-label="닫기">×</button></div>
     <div class="trinketCompareIntro">실제 게임에서 장신구를 비교해서 고르는 것처럼, 비교할 장신구를 최대 3개 선택하세요. 선택한 장신구의 능력을 한눈에 비교할 수 있습니다.</div>
     <div class="trinketCompareSlots" id="trinketCompareSlots"></div>
-    <div class="trinketCompareBody">
+    <div class="trinketMetaPanel" id="trinketMetaPanel">
+  <div class="trinketMetaHead"><span>공식 메타</span><small>Balance 22 · Ranked · 2026-08-24 ~ 2026-09-22</small></div>
+  <div class="trinketMetaGrid" id="trinketMetaGrid"></div>
+  <div class="trinketMetaSource">Board Presence = 관측된 랭크 보드 등장 비율 · Round Win Association = 해당 장신구가 등장한 라운드의 승리 연관 비율 · 공식 메타 데이터는 승률 자체가 아닙니다.</div>
+</div>
+<div class="trinketCompareBody">
       <div class="trinketComparePicker">
         <input id="trinketCompareSearch" class="trinketCompareSearch" placeholder="장신구 이름 / 효과 검색" autocomplete="off">
         <div id="trinketCompareGrid" class="trinketCompareGrid"></div>
@@ -519,7 +524,7 @@
 
 
 <style id="v096TrinketCompare">
-/* v0.096: trinket comparison, bright UI matching trainer comparison */
+/* v0.097: trinket comparison, bright UI matching trainer comparison */
 .calcTrinketPanel{height:205px;min-height:205px;overflow:hidden}
 .calcTrinketBody{height:130px;overflow:auto}
 .calcTrinketCompareButton{display:block;width:calc(100% - 12px);height:30px;margin:5px 6px 6px;box-sizing:border-box;background:#ffc20f;color:#fff;border:1px solid #e0a900;border-radius:7px;padding:4px 8px;font-size:11px;font-weight:900;cursor:pointer;text-shadow:1px 1px 0 rgba(0,0,0,.14)}
@@ -533,6 +538,16 @@
 .trinketCompareSlot img{width:100%;height:112px;flex:0 0 112px;object-fit:contain;background:#eceef0;border-radius:4px}.trinketCompareSlotName{font-size:17px;font-weight:900;line-height:1.2;color:#3e4650;background:#ffc20f;margin:0 -3px;padding:7px 8px;text-align:center;order:-1}.trinketCompareSlotEn{font-size:10px;color:#7b838e;text-align:center;margin-top:3px}.trinketCompareSlotRarity{font-size:10px;color:#687585;text-align:center;margin-top:4px;font-weight:800}.trinketCompareSlotAbility{margin-top:8px;padding:9px 8px;min-height:64px;background:#fff;border:2px solid #d1d4da;color:#4a5058;font-size:12px;line-height:1.45;text-align:center;display:flex;align-items:center;justify-content:center}.trinketCompareSlotEmpty{color:#707782;font-size:12px;text-align:center;margin:auto}.trinketCompareSlotRemove{position:absolute;right:6px;top:6px;width:22px;height:22px;border:1px solid #aeb5bf;border-radius:50%;background:#fff;color:#4c5662;font-size:13px;line-height:18px;text-align:center;z-index:2}
 .trinketCompareBody{display:flex;flex:1 1 auto;flex-direction:column;min-height:0;overflow:auto;background:#f1f3f5}.trinketComparePicker{padding:10px 14px;border-bottom:1px solid #c8cdd5;min-height:0;flex:0 0 auto;overflow:visible;background:#e8ebee}.trinketCompareSearch{width:100%;height:36px;box-sizing:border-box;border:2px solid #9da5b0;border-radius:7px;background:#fff;color:#3e4650;padding:0 10px;margin-bottom:10px}.trinketCompareGrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}.trinketCompareCard{border:3px solid #b9bdc5;border-radius:7px;background:#fff;color:#3e4650;padding:5px;text-align:left;cursor:pointer;min-width:0}.trinketCompareCard:hover,.trinketCompareCard.selected{border-color:#ffc20f;background:#fffbea}.trinketCompareCard img{width:100%;height:62px;object-fit:contain;background:#eceef0;border-radius:4px}.trinketCompareCardName{font-size:11px;font-weight:900;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.trinketCompareCardMeta{font-size:9px;color:#7b838e;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.trinketCompareCardEffect{font-size:9px;color:#66717d;margin-top:3px;line-height:1.25;height:23px;overflow:hidden}
 .trinketCompareAction{padding:9px 14px;border-top:1px solid #c8cdd5;display:flex;justify-content:flex-end;gap:8px;background:#f1f3f5}.trinketCompareAction button{border:2px solid #aeb5bf;border-radius:7px;background:#fff;color:#3e4650;padding:7px 12px;cursor:pointer;font-weight:800}.trinketCompareAction .primary{background:#ffc20f;border-color:#e0a900;color:#fff}.trinketCompareAction button:disabled{opacity:.45;cursor:default}
+.trinketMetaPanel{margin:0 14px 10px;background:#fff;border:2px solid #c6cad2;border-radius:7px;overflow:hidden;flex:0 0 auto}
+.trinketMetaHead{background:#ffc20f;color:#fff;padding:7px 10px;font-weight:900;display:flex;justify-content:space-between;align-items:center;gap:8px}.trinketMetaHead small{font-size:9px;font-weight:700;color:#fff}
+.trinketMetaGrid{display:grid;grid-template-columns:130px repeat(3,minmax(0,1fr));background:#fff}
+.trinketMetaCell{padding:7px 8px;border-right:1px solid #d4d8de;border-bottom:1px solid #d4d8de;min-height:48px;box-sizing:border-box}.trinketMetaCell:nth-child(4n){border-right:0}
+.trinketMetaLabel{font-size:10px;color:#66717d;font-weight:800}.trinketMetaName{font-size:12px;font-weight:900;color:#3e4650}.trinketMetaEn{font-size:9px;color:#7b838e}.trinketMetaValue{font-size:20px;font-weight:900;color:#20252c;margin-top:2px}.trinketMetaSub{font-size:8px;color:#738091;margin-top:1px}
+.trinketMetaSource{padding:5px 9px;font-size:9px;color:#74808d;background:#f5f6f8;border-top:1px solid #d4d8de}
+.trinketCompareSlotMeta{margin-top:6px;padding:7px 6px;background:#f5f6f8;border:1px solid #d1d4da;color:#4a5058;font-size:9px;line-height:1.35;text-align:center}
+.trinketCompareCardMetaStats{font-size:8px;color:#687585;margin-top:3px;line-height:1.25}
+@media(max-width:800px){.trinketMetaGrid{grid-template-columns:105px repeat(3,minmax(0,1fr))}.trinketMetaValue{font-size:17px}}
+
 @media(max-width:1050px){.trinketCompareGrid{grid-template-columns:repeat(5,minmax(0,1fr))}}
 @media(max-width:800px){.trinketCompareGrid{grid-template-columns:repeat(4,minmax(0,1fr))}.trinketCompareSlots{grid-template-columns:1fr}.trinketCompareModal{max-height:94vh}}
 @media(max-width:560px){.trinketCompareGrid{grid-template-columns:repeat(3,minmax(0,1fr))}.trinketCompareCard img{height:56px}}
@@ -1405,6 +1420,59 @@ function getTrinketRarityKo(t){
   const m={Common:'일반',Uncommon:'고급',Rare:'희귀',SuperRare:'영웅',Legendary:'전설',Mythical:'신화'};
   return m[t?.rarity]||t?.rarity||'';
 }
+let officialTrinketMeta={
+  'gold trophy':{presence:26.9,presenceCount:'35,862',observations:'133,203',win:56.7,winCount:'20,336'},
+  'quick bell':{presence:21.1,presenceCount:'28,094',observations:'133,203',win:56.1,winCount:'15,754'},
+  'membership card':{presence:20.4,presenceCount:'27,130',observations:'133,203',win:57.7,winCount:'15,667'}
+};
+let officialTrinketMetaLoaded=false;
+function normalizeMetaName(s){return String(s||'').trim().toLowerCase().replace(/[’']/g,"'").replace(/\s+/g,' ');}
+function storeOfficialTrinketMeta(name,presence,presenceCount,observations,win,winCount){
+  if(!name)return; officialTrinketMeta[normalizeMetaName(name)]={presence:Number(presence),presenceCount:String(presenceCount||''),observations:String(observations||''),win:Number(win),winCount:String(winCount||'')};
+}
+function findOfficialTrinketMeta(t){
+  if(!t)return null;
+  const keys=[t.name_en,t.name,t.name_ko,t.officialName].filter(Boolean).map(normalizeMetaName);
+  for(const k of keys){if(officialTrinketMeta[k])return officialTrinketMeta[k];}
+  return officialTrinketMeta[normalizeMetaName(t.name_en)]||officialTrinketMeta[normalizeMetaName(t.name)];
+}
+function parseOfficialTrinketMetaText(text){
+  const lines=String(text||'').split(/\n/).map(x=>x.trim()).filter(Boolean);let found=0;
+  const nameList=Array.isArray(trinkets)?trinkets.map(t=>({name:t.name_en||t.name||'',ko:t.name_ko||''})).filter(x=>x.name):[];
+  for(const line of lines){
+    for(const item of nameList){
+      const escaped=item.name.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+      const rx=new RegExp('(?:^|\\|)\\s*(?:\\d+\\s*)?(?:Image[^|]*\\s*)?'+escaped+'\\s*\\|\\s*(\\d+(?:\\.\\d+)?)%[^|]*?([\\d,]+)\\s+of\\s+([\\d,]+)\\s+observations\\s*\\|\\s*(\\d+(?:\\.\\d+)?)%[^|]*?([\\d,]+)\\s+of\\s+([\\d,]+)\\s+observations','i');
+      const m=line.match(rx);
+      if(m){storeOfficialTrinketMeta(item.name,m[1],m[2],m[3],m[4],m[5]);found++;break;}
+    }
+  }
+  officialTrinketMetaLoaded=found>0;return found;
+}
+async function loadOfficialTrinketMeta(){
+  if(officialTrinketMetaLoaded)return;
+  const urls=[
+    'https://batomon.com/meta/trinkets?version=22',
+    'https://r.jina.ai/https://batomon.com/meta/trinkets?version=22'
+  ];
+  for(const url of urls){
+    try{const r=await fetch(url,{cache:'no-store'});if(!r.ok)continue;const text=await r.text();if(parseOfficialTrinketMetaText(text)>0)break;}catch(e){console.warn('공식 장신구 메타 로드 실패',e);}
+  }
+}
+function renderTrinketMeta(){
+  const host=document.getElementById('trinketMetaGrid');if(!host)return;host.innerHTML='';
+  const selected=trinketCompareSelected.map(id=>trinkets.find(t=>String(t.id||t.slug||t.name_en||t.name_ko)===String(id))).filter(Boolean);
+  const labels=['Board Presence','Round Win Association'];
+  const header=document.createElement('div');header.className='trinketMetaCell';header.innerHTML='<div class="trinketMetaLabel">공식 메타</div><div class="trinketMetaEn">Balance 22</div>';host.appendChild(header);
+  for(let i=0;i<3;i++){
+    const t=selected[i];const c=document.createElement('div');c.className='trinketMetaCell';
+    if(t){const m=findOfficialTrinketMeta(t);c.innerHTML=`<div class="trinketMetaName">${escapeHtml(getTrinketName(t))}</div><div class="trinketMetaEn">${escapeHtml(t.name_en||t.name||'')}</div><div class="trinketMetaSub">${m?`등장 ${m.presence}% · 승리 연관 ${m.win}%`:'공식 메타 불러오는 중'}</div>`;}
+    else c.innerHTML='<div class="trinketMetaLabel">장신구 '+(i+1)+'</div><div class="trinketMetaSub">선택 대기</div>';
+    host.appendChild(c);
+  }
+  for(const type of labels){const lab=document.createElement('div');lab.className='trinketMetaCell';lab.innerHTML=`<div class="trinketMetaLabel">${type==='Board Presence'?'등장률':'라운드 승리 연관'}</div>`;host.appendChild(lab);for(let i=0;i<3;i++){const t=selected[i],m=findOfficialTrinketMeta(t);const c=document.createElement('div');c.className='trinketMetaCell';if(m){if(type==='Board Presence')c.innerHTML=`<div class="trinketMetaValue">${m.presence}%</div><div class="trinketMetaSub">${m.presenceCount} / ${m.observations}</div>`;else c.innerHTML=`<div class="trinketMetaValue">${m.win}%</div><div class="trinketMetaSub">${m.winCount} / ${m.presenceCount}</div>`;}else c.innerHTML='<div class="trinketMetaSub">-</div>';host.appendChild(c);}}
+}
+function escapeHtml(v){return String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
 function renderTrinketCompareSlots(){
   const host=document.getElementById('trinketCompareSlots');if(!host)return;host.innerHTML='';
   for(let i=0;i<3;i++){
@@ -1416,8 +1484,9 @@ function renderTrinketCompareSlots(){
       const en=document.createElement('div');en.className='trinketCompareSlotEn';en.textContent=t.name_en||t.name||'';
       const rarity=document.createElement('div');rarity.className='trinketCompareSlotRarity';rarity.textContent=getTrinketRarityKo(t)+(t.unique?' · 고유':'');
       const ability=document.createElement('div');ability.className='trinketCompareSlotAbility';ability.textContent=t.effect_ko||t.effect||t.effect_en||'효과 정보 없음';
+      const meta=findOfficialTrinketMeta(t);const metaBox=document.createElement('div');metaBox.className='trinketCompareSlotMeta';metaBox.textContent=meta?`등장 ${meta.presence}% · 라운드 승리 연관 ${meta.win}%`:'공식 메타 불러오는 중';
       const remove=document.createElement('div');remove.className='trinketCompareSlotRemove';remove.textContent='×';remove.title='선택 해제';
-      slot.append(nm,img,en,rarity,ability,remove);slot.addEventListener('click',()=>{trinketCompareSelected=trinketCompareSelected.filter(id=>id!==t.id);renderTrinketCompare();});
+      slot.append(nm,img,en,rarity,ability,metaBox,remove);slot.addEventListener('click',()=>{trinketCompareSelected=trinketCompareSelected.filter(id=>id!==t.id);renderTrinketCompare();});
     }else{const empty=document.createElement('div');empty.className='trinketCompareSlotEmpty';empty.innerHTML=`<strong>장신구 ${i+1}</strong><br>아래에서 선택`;slot.appendChild(empty);}
     host.appendChild(slot);
   }
@@ -1434,15 +1503,16 @@ function renderTrinketCompareList(){
     const nm=document.createElement('div');nm.className='trinketCompareCardName';nm.textContent=getTrinketName(t);
     const meta=document.createElement('div');meta.className='trinketCompareCardMeta';meta.textContent=getTrinketRarityKo(t)+(t.unique?' · 고유':'');
     const effect=document.createElement('div');effect.className='trinketCompareCardEffect';effect.textContent=t.effect_ko||t.effect_en||'';
-    card.append(img,nm,meta,effect);card.addEventListener('click',()=>{const i=trinketCompareSelected.indexOf(id);if(i>=0)trinketCompareSelected.splice(i,1);else if(trinketCompareSelected.length<3)trinketCompareSelected.push(id);renderTrinketCompare();});g.appendChild(card);
+    const stats=findOfficialTrinketMeta(t);const statsEl=document.createElement('div');statsEl.className='trinketCompareCardMetaStats';statsEl.textContent=stats?`등장 ${stats.presence}% · 승리 연관 ${stats.win}%`:'메타 -';
+    card.append(img,nm,meta,effect,statsEl);card.addEventListener('click',()=>{const i=trinketCompareSelected.indexOf(id);if(i>=0)trinketCompareSelected.splice(i,1);else if(trinketCompareSelected.length<3)trinketCompareSelected.push(id);renderTrinketCompare();});g.appendChild(card);
   }
 }
-function renderTrinketCompare(){renderTrinketCompareSlots();renderTrinketCompareList();const done=document.getElementById('trinketCompareDone');if(done)done.disabled=trinketCompareSelected.length!==3;}
+function renderTrinketCompare(){renderTrinketCompareSlots();renderTrinketCompareList();renderTrinketMeta();const done=document.getElementById('trinketCompareDone');if(done)done.disabled=trinketCompareSelected.length!==3;}
 async function openTrinketCompare(){
   const o=document.getElementById('trinketCompareOverlay');if(!o)return;
   trinketCompareSelected=[];const search=document.getElementById('trinketCompareSearch');if(search)search.value='';
   if(!trinkets.length){try{const r=await fetch('./trinkets.json?v=0.029&cb='+Date.now(),{cache:'no-store'});if(r.ok){const d=await r.json();trinkets=Array.isArray(d)?d:(d.trinkets||[]);}}catch(e){console.warn('장신구 비교 목록 로드 실패',e);}}
-  renderTrinketCompare();o.style.display='flex';o.setAttribute('aria-hidden','false');search?.focus();
+  await loadOfficialTrinketMeta();renderTrinketCompare();o.style.display='flex';o.setAttribute('aria-hidden','false');search?.focus();
 }
 function closeTrinketCompare(){const o=document.getElementById('trinketCompareOverlay');if(!o)return;o.style.display='none';o.setAttribute('aria-hidden','true');}
 
