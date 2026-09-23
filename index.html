@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.070</title>
+<title>바토몬 원향 도감 v0.071</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -249,7 +249,7 @@
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.070</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.071</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -331,7 +331,7 @@
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.070</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.071</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -814,9 +814,26 @@ function openBatomonInfoEditor(item){
   teamEditMode='preset'; teamEditIndex=null; teamEditItem=item; teamEditLevel=Number(preset.level||1); teamEditShiny=!!preset.shiny;
   showTeamEditor(item,'바토몬 목록 · 기본 설정');
 }
+// 원향 진화 연결: 기본형의 Lv.3/Lv.4는 진화형의 동일 레벨 데이터를 사용합니다.
+const evolutionByNo={
+  '3':65,   // 또르방 -> 또르왕 / Dribblet -> Emperooze
+  '7':66,   // 불잔나비 -> 해탈잔나비 / Scorchimp -> Sunsage
+  '8':67    // 새싹판다 -> 왕대판다 / Panbud -> Bambudo
+};
+function getDisplayBatomon(item, level){
+  if(!item)return item;
+  const no=String(item.no ?? '');
+  const lv=Number(level||1);
+  if(lv>=3 && evolutionByNo[no]){
+    const evolved=getItem(evolutionByNo[no]);
+    if(evolved)return evolved;
+  }
+  return item;
+}
 function getCalcEntryStats(item, level, shiny){
-  const arr=shiny?(item?.shinyLevels||[]):(item?.levels||[]);
-  return arr.find(x=>Number(x.level)===Number(level))||{};
+  const displayItem=getDisplayBatomon(item,level);
+  const arr=shiny?(displayItem?.shinyLevels||[]):(displayItem?.levels||[]);
+  return {item:displayItem,data:arr.find(x=>Number(x.level)===Number(level))||{}};
 }
 function translateAbilityText(text){
   const original=String(text??'').trim();
@@ -976,25 +993,30 @@ function translateAbilityText(text){
 
 function renderTeamEditStats(item, level, shiny){
   const box=document.getElementById('teamEditStats'); if(!box)return;
-  const d=getCalcEntryStats(item,level,shiny);
+  const result=getCalcEntryStats(item,level,shiny);
+  const displayItem=result.item||item||{};
+  const d=result.data||{};
   const title=shiny?'SHINY 스탯':'도감 스탯';
+  const evolved=displayItem && String(displayItem.no)!==String(item?.no);
   const rows=[['피해',d.damage],['회복',d.heal],['실드',d.shield],['화상',d.burn],['독',d.poison],['전격',d.shock],['멀티캐스트',d.multicast==null?null:'×'+d.multicast],['재사용',d.cooldown==null?null:d.cooldown+'초']];
-  box.innerHTML='<div class="teamEditStatsTitle">'+title+' · Lv.'+Number(level)+'</div>' + (Object.keys(d).length?'<div class="teamEditStatsGrid">'+rows.map(([l,v])=>'<div class="teamEditStat"><span class="teamEditStatLabel">'+l+'</span><span class="teamEditStatValue">'+(v==null?'—':String(v))+'</span></div>').join('')+'</div>'+(d.ability?'<div class="teamEditAbility"><div class="abilityOriginalLabel">원문</div><div>'+safe(d.ability)+'</div><div class="abilityKoLabel">한국어</div><div>'+safe(translateAbilityText(d.ability))+'</div></div>':''):'<div class="teamEditStatsEmpty">해당 레벨의 스탯 데이터가 없습니다.</div>');
+  const label=evolved?`${displayItem.name||displayItem.officialName||''} · ${title} · Lv.${Number(level)}`:`${title} · Lv.${Number(level)}`;
+  box.innerHTML='<div class="teamEditStatsTitle">'+safe(label)+'</div>' + (Object.keys(d).length?'<div class="teamEditStatsGrid">'+rows.map(([l,v])=>'<div class="teamEditStat"><span class="teamEditStatLabel">'+l+'</span><span class="teamEditStatValue">'+(v==null?'—':String(v))+'</span></div>').join('')+'</div>'+(d.ability?'<div class="teamEditAbility"><div class="abilityOriginalLabel">원문</div><div>'+safe(d.ability)+'</div><div class="abilityKoLabel">한국어</div><div>'+safe(translateAbilityText(d.ability))+'</div></div>':''):'<div class="teamEditStatsEmpty">해당 레벨의 스탯 데이터가 없습니다.</div>');
 }
 function showTeamEditor(item,sub){
   const overlay=document.getElementById('teamEditOverlay');
   const title=document.getElementById('teamEditTitle');
   if(title)title.textContent=teamEditMode==='team'?'내 팀 바토몬 수정':'바토몬 정보 확인 / 기본 설정';
+  const displayItem=getDisplayBatomon(item,teamEditLevel);
   const img=document.getElementById('teamEditImage');
-  const urls=getTeamEntryImageSources(item); let i=0;
+  const urls=getTeamEntryImageSources(displayItem); let i=0;
   const next=()=>{if(i>=urls.length){img.style.display='none';return;} img.src=urls[i++];};
   img.style.display='block'; img.onerror=next; next();
-  document.getElementById('teamEditName').textContent=item?.name||item?.officialName||item?.name_ko||item?.name_en||'';
-  document.getElementById('teamEditSub').textContent='No.'+String(item?.no||'').padStart(2,'0')+' · '+sub;
+  document.getElementById('teamEditName').textContent=displayItem?.name||displayItem?.officialName||displayItem?.name_ko||displayItem?.name_en||'';
+  document.getElementById('teamEditSub').textContent='No.'+String(displayItem?.no||item?.no||'').padStart(2,'0')+' · '+sub+(String(displayItem?.no)!==String(item?.no)?' · 진화형':'');
   document.getElementById('teamEditShiny').checked=teamEditShiny;
   document.getElementById('teamEditShiny').onchange=()=>{teamEditShiny=document.getElementById('teamEditShiny').checked;renderTeamEditStats(teamEditItem,teamEditLevel,teamEditShiny);};
   const levels=document.getElementById('teamEditLevels'); levels.innerHTML='';
-  [1,2,3].forEach(l=>{const b=document.createElement('button');b.type='button';b.className='teamEditLevel'+(l===teamEditLevel?' on':'');b.textContent='Lv.'+l;b.onclick=()=>{teamEditLevel=l;[...levels.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');renderTeamEditStats(teamEditItem,teamEditLevel,teamEditShiny);};levels.appendChild(b);});
+  [1,2,3,4].forEach(l=>{const b=document.createElement('button');b.type='button';b.className='teamEditLevel'+(l===teamEditLevel?' on':'');b.textContent='Lv.'+l;b.onclick=()=>{teamEditLevel=l;[...levels.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');const di=getDisplayBatomon(teamEditItem,teamEditLevel);document.getElementById('teamEditName').textContent=di?.name||di?.officialName||di?.name_ko||di?.name_en||'';document.getElementById('teamEditSub').textContent='No.'+String(di?.no||teamEditItem?.no||'').padStart(2,'0')+' · '+(teamEditMode==='team'?'슬롯 '+(teamEditIndex+1):'바토몬 목록 · 기본 설정')+(String(di?.no)!==String(teamEditItem?.no)?' · 진화형':'');const img=document.getElementById('teamEditImage');const urls=getTeamEntryImageSources(di);let i=0;const next=()=>{if(i>=urls.length){img.style.display='none';return;}img.src=urls[i++];};img.style.display='block';img.onerror=next;next();renderTeamEditStats(teamEditItem,teamEditLevel,teamEditShiny);};levels.appendChild(b);});
   renderTeamEditStats(teamEditItem,teamEditLevel,teamEditShiny);
   overlay.style.display='flex'; overlay.setAttribute('aria-hidden','false');
 }
@@ -1449,7 +1471,7 @@ function renderMechanics(){
 async function init(){
   loadEdits();
   try{
-    const res=await fetch('./characters.json?v=0.067&cb='+Date.now(),{cache:'no-store'});
+    const res=await fetch('./characters.json?v=0.071&cb='+Date.now(),{cache:'no-store'});
     if(!res.ok) throw new Error(`characters.json HTTP ${res.status}`);
     const data=await res.json();
     characters=Array.isArray(data)?data:(data.characters||[]);
