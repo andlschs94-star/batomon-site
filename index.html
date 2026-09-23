@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>바토몬 원향 도감 v0.066</title>
+<title>바토몬 원향 도감 v0.069</title>
 <style>
 :root{--bg:#101318;--panel:#171c24;--panel2:#202733;--text:#f3f5f7;--muted:#9da7b3;--line:#303947;--accent:#7cc8ff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2632 0,#101318 45%,#0d1014 100%);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif}
@@ -249,7 +249,7 @@
 <body>
 <div class="wrap">
   <div class="head">
-    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.066</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
+    <div><div class="title">바토몬 원향 도감 <span class="siteVersion">v0.069</span></div><div class="sub">바토몬 원향 도감 · 공식 데이터(Balance 22 · 원향 지역) + 트레이너 23종 + 장신구 93종 + 도구 40종 + 시스템 30종</div></div>
     <div class="tools">
       <input id="search" placeholder="캐릭터 이름 검색">
       <select id="rank"><option value="">전체 등급</option><option value="일반">일반</option><option value="고급">고급</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="전설">전설</option></select>
@@ -331,7 +331,7 @@
   </div>
 
   <section id="batomonSection" class="section on">
-    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.067</div>
+    <div id="status" class="status">characters.json 불러오는 중… · 사이트 v0.069</div>
     <div id="grid" class="grid"></div>
   </section>
 
@@ -480,7 +480,16 @@ function getItem(no){return characters.find(x=>Number(x.no)===Number(no))}
 function officialMonsterImageUrl(item){
   if(!item) return '';
   let slug='';
-  if(item.officialUrl){
+  // 일부 Batomon은 공식 상세 페이지의 slug와 영문 이름이 다르므로 명시적으로 매핑한다.
+  const officialImageSlugs={
+    'Electranade':'galvanade',
+    'Craghorn':'alpinine',
+    'Draconarch':'dragonarch'
+  };
+  if(item.officialName && officialImageSlugs[String(item.officialName).trim()]){
+    slug=officialImageSlugs[String(item.officialName).trim()];
+  }
+  if(!slug && item.officialUrl){
     const m=String(item.officialUrl).match(/\/batomon\/([^/?#]+)\/?$/i);
     if(m) slug=m[1];
   }
